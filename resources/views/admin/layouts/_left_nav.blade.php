@@ -15,10 +15,10 @@
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
                         <li><a class="J_menuItem" href="{{ route('admin.changePassword', $admin->id) }}">修改密码</a>
                         </li>
-                        <li><a class="J_menuItem" href="">编辑个人资料</a>
+                        <!-- <li><a class="J_menuItem" href="">编辑个人资料</a>
                         </li>
                         <li><a class="J_menuItem" href="">个人资料</a>
-                        </li>
+                        </li> -->
                         <li class="divider"></li>
                         <li><a href="{{ route('admin.logout') }}">安全退出</a>
                         </li>
@@ -43,7 +43,7 @@
                     </li>
                 </ul>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#">
                     <i class="fa fa-user"></i>
                     <span class="nav-label">用户管理</span>
@@ -60,11 +60,26 @@
                         <a class="J_menuItem" href="">编辑个人资料</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <li>
                 <a href="#">
                     <i class="fa fa-home"></i>
                     <span class="nav-label">网站banner</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a class="J_menuItem" href="" data-index="0">banner列表</a>
+                    </li>
+                    <li>
+                      <a class="J_menuItem" href="">添加banner</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-home"></i>
+                    <span class="nav-label">商品优惠券分类</span>
                     <span class="fa arrow"></span>
                 </a>
                 <ul class="nav nav-second-level">
