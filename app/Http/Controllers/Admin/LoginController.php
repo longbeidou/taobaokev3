@@ -13,6 +13,10 @@ class LoginController extends Controller
       $this->middleware('auth', [
         'except' => ['login', 'doLogin']
       ]);
+
+      $this->middleware('guest', [
+        'only' => ['login', 'doLogin']
+      ]);
     }
 
     // 显示管理员的登录页面

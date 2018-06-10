@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="renderer" content="webkit">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<title>@yield('title', '控制面板') - 后台管理系统</title>
+<title>@yield('title', '控制面板') - {{ env('APP_NAME', '') }}后台管理系统</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <!--[if lt IE 8]>

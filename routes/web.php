@@ -25,4 +25,6 @@ Route::prefix('admin')->group(function() {
   Route::post('login', 'Admin\LoginController@doLogin')->name('admin.dologin');
   Route::get('logout', 'Admin\LoginController@logout')->name('admin.logout');
   Route::get('dashboard', 'Admin\DashboardController@dashboard')->name('admin.dashboard');
+  Route::get('changepassword', 'Admin\UserController@changePassword')->name('admin.changePassword');
+  Route::post('changepassword', 'Admin\UserController@doChangePassword')->name('admin.doChangePassword');
 });
