@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管理员登录</title>
+    <title>管理员登录 - {{ env('APP_NAME') }}</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
 
@@ -30,8 +30,8 @@
                 </h1>
             </div>
             <h3>管理员登录系统</h3>
-            @include('admin.layouts._errors')
-            <form class="m-t" role="form" method="post" action="{{ route('admin.checkAdminer') }}">
+            @include('admin.layouts._tips')
+            <form class="m-t" role="form" method="post" action="{{ route('admin.dologin') }}">
               {{ csrf_field() }}
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="邮箱" required="">

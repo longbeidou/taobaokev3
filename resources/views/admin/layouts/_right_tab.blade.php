@@ -3,7 +3,7 @@
     </button>
     <nav class="page-tabs J_menuTabs">
         <div class="page-tabs-content">
-            <a href="javascript:;" class="active J_menuTab" data-id="{{ route('admin.dashbard.index') }}">首页</a>
+            <a href="javascript:;" class="active J_menuTab" data-id="{{ route('admin.dashboard') }}">首页</a>
         </div>
     </nav>
     <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>

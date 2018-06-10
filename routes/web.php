@@ -18,3 +18,11 @@ Route::get('/', function () {
 // 用户默认的用户注册登录路由
 Auth::routes();
 Route::get('/home', 'Home\HomeController@index')->name('home');
+
+// 管理员后台登录
+Route::prefix('admin')->group(function() {
+	Route::get('login', 'Admin\LoginController@login')->name('admin.login');
+  Route::post('login', 'Admin\LoginController@doLogin')->name('admin.dologin');
+  Route::get('logout', 'Admin\LoginController@logout')->name('admin.logout');
+  Route::get('dashboard', 'Admin\DashboardController@dashboard')->name('admin.dashboard');
+});
