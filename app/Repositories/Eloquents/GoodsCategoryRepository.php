@@ -65,4 +65,9 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
   {
     return $this->goodsCategory->selectRaw('*, concat(path, id) as newPath')->orderBy('newPath', 'asc')->paginate($pageSize);
   }
+
+  // 获取制定id的信息
+  public function getItemByItem($id){
+    return $this->goodsCategory->find($id);
+  }
 }

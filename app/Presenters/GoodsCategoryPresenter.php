@@ -2,15 +2,24 @@
 
 namespace App\Presenters;
 
+use App\Services\GoodsCategoryService;
+
 class GoodsCategoryPresenter
 {
+  protected $goodsCategory;
+
+  public function __construct(GoodsCategoryService $goodsCategory)
+  {
+    $this->goodsCategory = $goodsCategory;
+  }
+
   public function isShown($data)
   {
     if ($data == 0) {
-      return '<td  class="text-center text-warning">不展示</td>';
+      return '<td  class="text-center text-warning">不显示</td>';
     }
 
-    return '<td  class="text-center text-navy">展示</td>';
+    return '<td  class="text-center text-navy">显示</td>';
   }
 
   public function isRecommended($data)
@@ -36,5 +45,32 @@ class GoodsCategoryPresenter
     }
 
     return $preNbsp.$preStr.$name;
+  }
+
+  public function isShownForYesOrNo($isShown)
+  {
+    if ($isShown == 0) {
+      return '不显示';
+    }
+
+    return '显示';
+  }
+
+  public function isRecommendedForYesOrNo($isRecommended)
+  {
+    if ($isRecommended == 0) {
+      return '不推荐';
+    }
+
+    return '推荐';
+  }
+
+  public function getParentItemName($parentId)
+  {
+    if ($parentId == 0) {
+        return '顶级栏目';
+    }
+
+    return $this->goodsCategory->find($parentId)->name;
   }
 }

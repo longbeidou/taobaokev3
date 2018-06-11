@@ -27,9 +27,13 @@ class GoodsCategoryController extends Controller
       return view('admin.goodsCategory.index', compact('title', 'goodsCategories'));
     }
 
-    public function show()
+    public function show($id)
     {
       $this->isAdmin();
+      $title = '分类信息详情';
+      $goodsCategory = $this->goodsCategory->find($id);
+
+      return view('admin.goodsCategory.show', compact('goodsCategory', 'title'));
     }
 
     public function create()

@@ -56,4 +56,10 @@ class GoodsCategoryService
   {
     return $this->goodsCategory->getItems($pageSize);
   }
+
+  // 获取指定id的信息
+  public function find($id)
+  {
+    return $this->goodsCategory->getItemByItem($id);
+  }
 }
