@@ -73,4 +73,11 @@ class GoodsCategoryPresenter
 
     return $this->goodsCategory->find($parentId)->name;
   }
+
+  public function isChecked($option, $value)
+  {
+    $option == $value ? $checked = 'checked' : $checked = '';
+
+    return $checked;
+  }
 }

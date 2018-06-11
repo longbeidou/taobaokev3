@@ -7,6 +7,8 @@
 @section('content')
 <div class="row">
   <div class="col-sm-12">
+    @include('admin.layouts.form._errors')
+    @include('admin.layouts.form._tips')
       <div class="ibox float-e-margins">
           <div class="ibox-title">
               <h5>商品分类列表</h5>

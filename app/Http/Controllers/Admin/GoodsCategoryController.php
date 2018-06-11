@@ -30,8 +30,12 @@ class GoodsCategoryController extends Controller
     public function show($id)
     {
       $this->isAdmin();
-      $title = '分类信息详情';
+      $title = '商品分类信息详情';
       $goodsCategory = $this->goodsCategory->find($id);
+
+      if (!$goodsCategory) {
+        return redirect()->route('goodsCategorys.index')->with('warning', '要查看的信息不存在');
+      }
 
       return view('admin.goodsCategory.show', compact('goodsCategory', 'title'));
     }
@@ -67,12 +71,22 @@ class GoodsCategoryController extends Controller
       }
     }
 
-    public function edit()
+    public function edit($id)
     {
       $this->isAdmin();
+      $title = '修改商品分类信息';
+      $goodsCategory = $this->goodsCategory->find($id);
+
+      if (!$goodsCategory) {
+        return redirect()->route('goodsCategorys.index')->with('warning', '准备删除的信息不存在');
+      }
+
+      $options = $this->goodsCategory->optionsForSelect();
+
+      return view('admin.goodsCategory.edit', compact('title', 'goodsCategory', 'options'));
     }
 
-    public function update()
+    public function update($id)
     {
       $this->isAdmin();
     }
