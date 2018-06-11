@@ -10,6 +10,11 @@ use Hash;
 
 class UserController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+  
   // 显示修改管理员密码的页面
   public function changePassword()
   {

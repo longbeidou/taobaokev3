@@ -5,13 +5,6 @@
 
 @stop
 @section('content')
-<div class="row form-body form-horizontal m-t">
-    <div class="col-md-8">
-
-    </div>
-</div>
-
-
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
       <div class="ibox float-e-margins">

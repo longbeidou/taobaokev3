@@ -20,9 +20,10 @@ class CreateGoodsCategorysTable extends Migration
             $table->char('parent_id', 30);                      // 父id
             $table->string('path');                             // 组合路径
             $table->integer('order')->default(0);              // 分类排列顺序
-            $table->boolean('is_shown')->default(true);         // 是否显示
-            $table->boolean('is_recommended')->default(true);  // 是否显示
+            $table->char('is_shown', 1)->default("1");         // 是否显示
+            $table->char('is_recommended', 1)->default("0");  // 是否推荐
             $table->char('font_icon', 250)->nullable();        // 字体图标
+            $table->integer('level');                          // 栏目的等级
             $table->char('image', 200);                        // 图片地址
             $table->index(['id', 'path']);                     // 符合索引
             $table->timestamps();
