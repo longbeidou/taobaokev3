@@ -12,4 +12,7 @@ interface GoodsCategoryInterface
 
   // 根据id获取信息
   public function getInfoById($id);
+
+  // 获取所有的信息
+  public function getItems($pageSize);
 }

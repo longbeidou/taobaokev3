@@ -59,4 +59,10 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
   {
     return $this->goodsCategory->find($id);
   }
+
+  // 获取对应每页显示的信息
+  public function getItems($pageSize)
+  {
+    return $this->goodsCategory->selectRaw('*, concat(path, id) as newPath')->orderBy('newPath', 'asc')->paginate($pageSize);
+  }
 }

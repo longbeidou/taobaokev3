@@ -10,6 +10,7 @@ use Auth;
 class GoodsCategoryController extends Controller
 {
     protected $goodsCategory;
+    protected $pageSize = 50;
 
     public function __construct(GoodsCategoryService $goodsCategory)
     {
@@ -20,7 +21,10 @@ class GoodsCategoryController extends Controller
     public function index()
     {
       $this->isAdmin();
-      dd(route('goodsCategorys.index'));
+      $title = '商品分类列表';
+      $goodsCategories = $this->goodsCategory->get($this->pageSize);
+
+      return view('admin.goodsCategory.index', compact('title', 'goodsCategories'));
     }
 
     public function show()

@@ -50,4 +50,10 @@ class GoodsCategoryService
   {
     return $fatherData->path.$fatherData->id.',';
   }
+
+  // 查询数据表的所有信息
+  public function get($pageSize)
+  {
+    return $this->goodsCategory->getItems($pageSize);
+  }
 }

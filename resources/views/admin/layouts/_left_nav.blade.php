@@ -84,10 +84,10 @@
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a class="J_menuItem" href="{{ route('goodsCategorys.create') }}" data-index="0">增加分类</a>
+                      <a class="J_menuItem" href="{{ route('goodsCategorys.index') }}">商品分类列表</a>
                     </li>
                     <li>
-                      <a class="J_menuItem" href="">添加banner</a>
+                        <a class="J_menuItem" href="{{ route('goodsCategorys.create') }}" data-index="0">增加分类</a>
                     </li>
                 </ul>
             </li>
