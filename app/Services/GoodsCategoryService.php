@@ -65,6 +65,8 @@ class GoodsCategoryService
 
       if ($sonCount) {
         unset($data['parent_id']);
+        unset($data['path']);
+        unset($data['level']);
         session()->flash('warning', '该栏目下存在子栏目，请删除子栏目再进行更新栏目操作！');
         return $this->goodsCategory->updateById($id, $data);
       }
