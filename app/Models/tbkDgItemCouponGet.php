@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class tbkDgItemCouponGet extends Model
+class TbkDgItemCouponGet extends Model
 {
   protected $table = "tbk_dg_item_coupon_get";
 

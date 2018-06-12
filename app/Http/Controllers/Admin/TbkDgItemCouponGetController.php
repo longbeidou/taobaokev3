@@ -30,14 +30,30 @@ class TbkDgItemCouponGetController extends Controller
       return view('admin.couponRule.show', compact('title', 'couponRule'));
     }
 
-    public function create()
+    public function create($goodsCategoryId)
     {
       $this->isAdmin();
+      $title = '增加商品分类优惠券aip获取参数';
+
+      return view('admin.couponRule.create', compact('goodsCategoryId', 'title'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
       $this->isAdmin();
+      $this->validate($request, [
+        'q' => 'required',
+        'page_size' => 'required|min:1|max:100',
+        'goods_category_id' => 'required',
+      ]);
+
+      $result = $this->couponRule->updateOrCreateItem($request->all());
+
+      if (empty($result)) {
+        return redirect()->route('goodsCategorys.index')->with('danger', '创建商品分类id为'.$request->goods_category_id.'的规则失败！');
+      }
+
+      return redirect()->route('goodsCategorys.index')->with('success', '成功创建商品分类id为'.$request->goods_category_id.'的规则！');
     }
 
     public function edit()

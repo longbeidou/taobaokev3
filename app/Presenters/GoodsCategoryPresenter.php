@@ -103,6 +103,6 @@ class GoodsCategoryPresenter
       return $actioinStr;
     }
 
-    return '<a href="'.route('admin.couponRule.show', $goodsCategoryId).'" title="创建规则"><i class="fa fa-plus text-danger"></i></a>';
+    return '<a href="'.route('admin.couponRule.create', $goodsCategoryId).'" title="创建规则"><i class="fa fa-plus text-danger"></i></a>';
   }
 }

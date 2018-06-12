@@ -30,5 +30,6 @@ Route::prefix('admin')->group(function() {
   Route::resource('goodsCategorys', 'Admin\goodsCategoryController');
   Route::get('couponRules/{id}', 'Admin\TbkDgItemCouponGetController@show')->name('admin.couponRule.show');
   Route::get('couponRules/{id}/edit', 'Admin\TbkDgItemCouponGetController@edit')->name('admin.couponRule.edit');
+  Route::post('couponRules/', 'Admin\TbkDgItemCouponGetController@store')->name('admin.couponRule.store');
   Route::get('couponRules/{id}/create', 'Admin\TbkDgItemCouponGetController@create')->name('admin.couponRule.create');
 });
