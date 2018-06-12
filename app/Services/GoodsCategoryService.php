@@ -101,6 +101,18 @@ class GoodsCategoryService
     return $data;
   }
 
+  // 获取对应数量的优惠券获取规则
+  public function manyCouponRules($goodsCategories)
+  {
+    $couponRules = [];
+
+    foreach ($goodsCategories as $goodsCategory) {
+      $couponRules[$goodsCategory->id] = $this->goodsCategory->goodsCategory->find($goodsCategory->id)->couponRule;
+    }
+
+    return $couponRules;
+  }
+
   // 根据文件路径删除文件
   public function unlinkFiles (String $path)
   {

@@ -23,8 +23,9 @@ class GoodsCategoryController extends Controller
       $this->isAdmin();
       $title = '商品分类列表';
       $goodsCategories = $this->goodsCategory->get($this->pageSize);
+      $couponRules = $this->goodsCategory->manyCouponRules($goodsCategories);
 
-      return view('admin.goodsCategory.index', compact('title', 'goodsCategories'));
+      return view('admin.goodsCategory.index', compact('title', 'goodsCategories', 'couponRules'));
     }
 
     public function show($id)

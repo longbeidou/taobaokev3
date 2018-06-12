@@ -93,4 +93,16 @@ class GoodsCategoryPresenter
 
     return '<img src="'.$imgSrc.'" style="max-width:100px;" />';
   }
+
+  public function couponRuleAction($couponRule, $goodsCategoryId)
+  {
+    if (!empty($couponRule)) {
+      $actioinStr = '<a href="'.route('admin.couponRule.edit', $couponRule->id).'" title="编辑规则"><i class="fa fa-edit text-navy"></i></a> | ';
+      $actioinStr .= '<a href="'.route('admin.couponRule.show', $couponRule->id).'" title="查看规则"><i class="fa fa-info text-navy"></i></a>';
+
+      return $actioinStr;
+    }
+
+    return '<a href="'.route('admin.couponRule.show', $goodsCategoryId).'" title="创建规则"><i class="fa fa-plus text-danger"></i></a>';
+  }
 }

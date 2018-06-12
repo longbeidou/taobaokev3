@@ -27,6 +27,9 @@
                           <th>排序</th>
                           <th  class="text-center">是否展示</th>
                           <th  class="text-center">是否推荐</th>
+                          <th  class="text-center">类目id</th>
+                          <th  class="text-center">页大小</th>
+                          <th  class="text-center">查询词</th>
                           <th  class="text-center">编辑</th>
                       </tr>
                   </thead>

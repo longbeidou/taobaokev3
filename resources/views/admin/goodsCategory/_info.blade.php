@@ -1,4 +1,5 @@
 @inject('show', 'App\Presenters\GoodsCategoryPresenter')
+@inject('showCouponRule', 'App\Presenters\CouponRulePresenter')
 @foreach($goodsCategories as $goodsCategory)
 <tr>
     <td>{{ $goodsCategory->id }}</td>
@@ -13,10 +14,14 @@
     <td>{{ $goodsCategory->order }}</td>
     {!! $show->isShown($goodsCategory->is_shown) !!}
     {!! $show->isRecommended($goodsCategory->is_recommended) !!}
-    <td  class="text-center">
-      <a href="{{ route('goodsCategorys.edit', $goodsCategory->id) }}">编辑</a> |
-      <a href="{{ route('goodsCategorys.destroy', $goodsCategory->id) }}">删除</a> |
-      <a href="{{ route('goodsCategorys.show', $goodsCategory->id) }}">详情</a>
+    <td>{{ $showCouponRule->showCat($couponRules[$goodsCategory->id]) }}</td>
+    <td>{{ $showCouponRule->showPageSize($couponRules[$goodsCategory->id]) }}</td>
+    <td>{{ $showCouponRule->showQ($couponRules[$goodsCategory->id]) }}</td>
+    <td  class="text-left">
+      <a href="{{ route('goodsCategorys.edit', $goodsCategory->id) }}" title="编辑"><i class="fa fa-edit"></i></a> |
+      <a href="{{ route('goodsCategorys.destroy', $goodsCategory->id) }}" title="删除"><i class="fa fa-close text-danger"></i></a> |
+      <a href="{{ route('goodsCategorys.show', $goodsCategory->id) }}" title="商品分类详情"><i class="fa fa-info-circle text-info"></i></a> |&nbsp;| 
+      {!! $show->couponRuleAction($couponRules[$goodsCategory->id], $goodsCategory->id) !!}
     </td>
 </tr>
 @endforeach

@@ -28,4 +28,7 @@ Route::prefix('admin')->group(function() {
   Route::get('changepassword', 'Admin\UserController@changePassword')->name('admin.changePassword');
   Route::post('changepassword', 'Admin\UserController@doChangePassword')->name('admin.doChangePassword');
   Route::resource('goodsCategorys', 'Admin\goodsCategoryController');
+  Route::get('couponRules/{id}', 'Admin\TbkDgItemCouponGetController@show')->name('admin.couponRule.show');
+  Route::get('couponRules/{id}/edit', 'Admin\TbkDgItemCouponGetController@edit')->name('admin.couponRule.edit');
+  Route::get('couponRules/{id}/create', 'Admin\TbkDgItemCouponGetController@create')->name('admin.couponRule.create');
 });

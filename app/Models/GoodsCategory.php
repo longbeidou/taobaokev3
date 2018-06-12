@@ -14,4 +14,10 @@ class GoodsCategory extends Model
 
   protected $hidden = [
   ];
+
+  // 与优惠券规则建立一对一关系
+  public function couponRule()
+  {
+    return $this->hasOne('App\Models\tbkDgItemCouponGet', 'goods_category_id');
+  }
 }
