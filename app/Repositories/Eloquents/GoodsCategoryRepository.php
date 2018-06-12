@@ -8,7 +8,7 @@ use App\Models\GoodsCategory;
 
 class GoodsCategoryRepository implements GoodsCategoryInterface
 {
-  protected $goodsCategory;
+  public $goodsCategory;
 
   function __construct(GoodsCategory $goodsCategory)
   {
@@ -28,7 +28,7 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
       case 'all':
         $goodsCategory = $goodsCategory;
         break;
-        
+
       case true:
         $goodsCategory = $goodsCategory->where('is_recommended', true);
         break;
@@ -84,5 +84,11 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
   // 获取制定id的信息
   public function getItemByItem($id){
     return $this->goodsCategory->find($id);
+  }
+
+  // 根据id来更新信息
+  public function updateById($id, $data)
+  {
+    return $this->goodsCategory->where('id', $id)->update($data);
   }
 }

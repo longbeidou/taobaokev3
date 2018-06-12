@@ -18,4 +18,7 @@ interface GoodsCategoryInterface
 
   // 获取制定id的信息
   public function getItemByItem($id);
+
+  // 根据id来更新信息
+  public function updateById($id, $data);
 }

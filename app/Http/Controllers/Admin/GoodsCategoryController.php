@@ -86,9 +86,27 @@ class GoodsCategoryController extends Controller
       return view('admin.goodsCategory.edit', compact('title', 'goodsCategory', 'options'));
     }
 
-    public function update($id)
+    public function update($id, Request $request)
     {
       $this->isAdmin();
+
+      $this->validate($request, [
+        'name' => 'required|min:1|max:30',
+        'parent_id' => 'required|min:1',
+        'order' => 'required|min:0|max:99',
+        'is_shown' => 'required|boolean',
+        'is_recommended' => 'required|boolean',
+        'font_icon' => 'nullable|min:6|max:250',
+        'image' => 'nullable|image',
+      ]);
+
+      $result = $this->goodsCategory->updateById($id, $request);
+
+      if (!$result) {
+        return redirect()->route('goodsCategorys.index')->with('warning', '更新信息失败，请重新操作！');
+      }
+
+      return back()->with('info', '更新信息成功！');
     }
 
     public function destroy()
