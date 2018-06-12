@@ -49,7 +49,7 @@
                       <div class="form-group">
                           <label class="col-sm-3 control-label">图片：</label>
                           <div class="col-sm-9">
-                              <img src="{{ $goodsCategory->image }}" style="max-width:100px;" />
+                              {!! $show->getImage($goodsCategory->image) !!}
                               <input type="file" name="image" class="form-control">
                           </div>
                       </div>

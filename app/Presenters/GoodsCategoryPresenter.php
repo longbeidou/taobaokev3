@@ -80,4 +80,17 @@ class GoodsCategoryPresenter
 
     return $checked;
   }
+
+  public function getImage($imgSrc)
+  {
+    if (empty($imgSrc)) {
+      return '<p class="text-navy">无图片</p>';
+    }
+
+    if (!file_exists(public_path($imgSrc))) {
+      return '<p class="text-danger">图片不存在</p>';
+    }
+
+    return '<img src="'.$imgSrc.'" style="max-width:100px;" />';
+  }
 }

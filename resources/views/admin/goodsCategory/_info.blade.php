@@ -5,7 +5,9 @@
     <td>{{ $show->nbspBeforeName($goodsCategory->name, $goodsCategory->level) }}</td>
     <td>{{ $goodsCategory->parent_id }}</td>
     <td>{{ $goodsCategory->level }}</td>
-    <td  class="text-center"><img src="{{ $goodsCategory->image }}" style="max-width:70px;" /></td>
+    <td  class="text-center">
+      {!! $show->getImage($goodsCategory->image) !!}
+    </td>
     <td  class="text-center">{!! $goodsCategory->font_icon !!}</td>
     <td>{{ $goodsCategory->path }}</td>
     <td>{{ $goodsCategory->order }}</td>
