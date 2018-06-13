@@ -32,4 +32,5 @@ Route::prefix('admin')->group(function() {
   Route::get('couponRules/{id}/edit', 'Admin\TbkDgItemCouponGetController@edit')->name('admin.couponRule.edit');
   Route::post('couponRules/', 'Admin\TbkDgItemCouponGetController@store')->name('admin.couponRule.store');
   Route::get('couponRules/{id}/create', 'Admin\TbkDgItemCouponGetController@create')->name('admin.couponRule.create');
+  Route::post('couponRules/{id}/update', 'Admin\TbkDgItemCouponGetController@update')->name('admin.couponRule.update');
 });

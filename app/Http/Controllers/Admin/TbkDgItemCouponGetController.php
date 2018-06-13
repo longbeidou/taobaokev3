@@ -56,14 +56,30 @@ class TbkDgItemCouponGetController extends Controller
       return redirect()->route('goodsCategorys.index')->with('success', '成功创建商品分类id为'.$request->goods_category_id.'的规则！');
     }
 
-    public function edit()
+    public function edit($goodsCategoryId)
     {
       $this->isAdmin();
+      $couponRule = $this->couponRule->couponRuleService->getItemByGoodsCategoryId($goodsCategoryId);
+      $title = '编辑商品分类优惠券api获取参数';
+
+      return view('admin.couponRule.edit', compact('couponRule', 'goodsCategoryId', 'title'));
     }
 
-    public function update()
+    public function update(Request $request)
     {
       $this->isAdmin();
+      $this->validate($request, [
+        'q' => 'required',
+        'page_size' => 'required|min:1|max:100',
+        'goods_category_id' => 'required',
+      ]);
+      $result = $this->couponRule->updateOrCreateItem($request->all());
+
+      if (empty($result)) {
+        return redirect()->route('goodsCategorys.index')->with('danger', '修改商品分类id为'.$request->goods_category_id.'的规则失败！');
+      }
+
+      return redirect()->route('goodsCategorys.index')->with('success', '成功修改商品分类id为'.$request->goods_category_id.'的规则！');
     }
 
     public function destroy()

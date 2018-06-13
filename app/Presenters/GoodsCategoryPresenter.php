@@ -97,7 +97,7 @@ class GoodsCategoryPresenter
   public function couponRuleAction($couponRule, $goodsCategoryId)
   {
     if (!empty($couponRule)) {
-      $actioinStr = '<a href="'.route('admin.couponRule.edit', $couponRule->id).'" title="编辑规则"><i class="fa fa-edit text-navy"></i></a> | ';
+      $actioinStr = '<a href="'.route('admin.couponRule.edit', $goodsCategoryId).'" title="编辑规则"><i class="fa fa-edit text-navy"></i></a> | ';
       $actioinStr .= '<a href="'.route('admin.couponRule.show', $couponRule->id).'" title="查看规则"><i class="fa fa-info text-navy"></i></a>';
 
       return $actioinStr;

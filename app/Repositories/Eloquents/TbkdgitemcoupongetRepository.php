@@ -29,4 +29,10 @@ class TbkdgitemcoupongetRepository implements TbkdgitemcoupongetInterface
               $data
             );
   }
+
+  // 更加goods_category_id获取信息
+  public function getItemByGoodsCategoryId($goodsCategoryId)
+  {
+    return $this->itemCoupon->where('goods_category_id', $goodsCategoryId)->first();
+  }
 }

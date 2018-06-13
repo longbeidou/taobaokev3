@@ -20,7 +20,8 @@
     <td  class="text-left">
       <a href="{{ route('goodsCategorys.edit', $goodsCategory->id) }}" title="编辑"><i class="fa fa-edit"></i></a> |
       <a href="{{ route('goodsCategorys.destroy', $goodsCategory->id) }}" title="删除"><i class="fa fa-close text-danger"></i></a> |
-      <a href="{{ route('goodsCategorys.show', $goodsCategory->id) }}" title="商品分类详情"><i class="fa fa-info-circle text-info"></i></a> |&nbsp;| 
+      <a href="{{ route('goodsCategorys.show', $goodsCategory->id) }}" title="商品分类详情"><i class="fa fa-info-circle text-info"></i></a>
+      <hr style="margin-top:3px; margin-bottom:3px;" />
       {!! $show->couponRuleAction($couponRules[$goodsCategory->id], $goodsCategory->id) !!}
     </td>
 </tr>
