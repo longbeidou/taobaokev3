@@ -110,9 +110,21 @@ class GoodsCategoryController extends Controller
       return back()->with('info', '更新信息成功！');
     }
 
-    public function destroy()
+    public function destroy(Request $request)
     {
       $this->isAdmin();
+
+      if (empty($request->goods_category_id)) {
+        return redirect()->route('goodsCategorys.index')->with('warning', '删除信息失败，请重新操作！');
+      }
+
+      $result = $this->goodsCategory->destroyById($request->goods_category_id);
+
+      if (!$result) {
+        return back();
+      }
+
+      return back()->with('success', '成功删除id为'.$request->goods_category_id.'的商品分类信息！');
     }
 
     // 判断是否是管理员

@@ -21,4 +21,7 @@ interface GoodsCategoryInterface
 
   // 根据id来更新信息
   public function updateById($id, $data);
+
+  // 根据id删除信息
+  public function deleteById($id);
 }

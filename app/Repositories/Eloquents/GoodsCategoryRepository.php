@@ -91,4 +91,11 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
   {
     return $this->goodsCategory->where('id', $id)->update($data);
   }
+
+  // 根据id删除信息
+  public function deleteById($id)
+  {
+    return $this->goodsCategory->where('id', $id)->delete();
+  }
+
 }

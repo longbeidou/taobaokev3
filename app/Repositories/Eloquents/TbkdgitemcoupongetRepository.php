@@ -35,4 +35,10 @@ class TbkdgitemcoupongetRepository implements TbkdgitemcoupongetInterface
   {
     return $this->itemCoupon->where('goods_category_id', $goodsCategoryId)->first();
   }
+
+  // 根据goods_category_id删除信息
+  public function deleteByGoodsCategoryId($goodsCategoryId)
+  {
+    return $this->itemCoupon->where('goods_category_id', $goodsCategoryId)->delete();
+  }
 }

@@ -46,5 +46,15 @@
 </div>
 @stop
 @section('footJs')
-
+<script type="text/javascript">
+  function destroyGoodsCategory($goodsCategoryId)
+  {
+    r=confirm("确实删除信息吗？");
+    if (r == true) {
+      idStr = 'destroy'+$goodsCategoryId;
+      targetForm = document.getElementById(idStr);
+      targetForm.submit();
+    }
+  }
+</script>
 @stop

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\Contracts\GoodsCategoryInterface;
+use App\Services\CouponRulesService;
 use App\Traits\UploadFiles;
 
 class GoodsCategoryService
@@ -11,9 +12,10 @@ class GoodsCategoryService
 
   protected $goodsCategory;
 
-  function __construct(GoodsCategoryInterface $goodsCategory)
+  function __construct(GoodsCategoryInterface $goodsCategory, CouponRulesService $couponRuleService)
   {
     $this->goodsCategory = $goodsCategory;
+    $this->couponRuleService = $couponRuleService;
   }
 
   // 为分类选择的option提供数据
@@ -99,6 +101,23 @@ class GoodsCategoryService
     }
 
     return $data;
+  }
+
+  // 根据id删除信息
+  public function destroyById($id)
+  {
+    $sonCount = $this->goodsCategory->goodsCategory->where('parent_id', $id)->count();
+
+    if ($sonCount) {
+      session()->flash('warning', '该栏目下存在子栏目，请删除子栏目再进行更新栏目操作！');
+      return false;
+    }
+
+    $goodsCategory = $this->find($id);
+    $this->unlinkFiles($goodsCategory->image);
+    $this->couponRuleService->couponRuleService->deleteByGoodsCategoryId($id);
+
+    return $this->goodsCategory->deleteById($id);
   }
 
   // 获取对应数量的优惠券获取规则
