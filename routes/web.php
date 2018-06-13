@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    echo 'sdfsd';
-});
-
 // 用户默认的用户注册登录路由
 Auth::routes();
 Route::get('/home', 'Home\HomeController@index')->name('home');
@@ -34,3 +30,5 @@ Route::prefix('admin')->group(function() {
   Route::get('couponRules/{id}/create', 'Admin\TbkDgItemCouponGetController@create')->name('admin.couponRule.create');
   Route::post('couponRules/{id}/update', 'Admin\TbkDgItemCouponGetController@update')->name('admin.couponRule.update');
 });
+
+Route::get('/', 'Index\IndexController@index')->name('index');

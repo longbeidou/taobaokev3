@@ -24,7 +24,8 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Longbeidou\\Taobaoke\\": "packages/longbeidou/taobaoke/src/"
         }
     },
     "autoload-dev": {
