@@ -18,6 +18,12 @@ class GoodsCategory extends Model
   // 与优惠券规则建立一对一关系
   public function couponRule()
   {
-    return $this->hasOne('App\Models\tbkDgItemCouponGet', 'goods_category_id');
+    return $this->hasOne('App\Models\TaobaoTbkDgMaterialOptional', 'goods_category_id');
+  }
+
+  // 与通用搜索规则建立一对一关系
+  public function dgMaterialOptionalRule()
+  {
+    return $this->hasOne('App\Models\TaobaoTbkDgMaterialOptional', 'goods_category_id');
   }
 }

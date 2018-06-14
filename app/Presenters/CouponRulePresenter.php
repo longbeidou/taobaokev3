@@ -24,4 +24,22 @@ class CouponRulePresenter
 
     return $qStr;
   }
+
+  public function showSelected($input, $optionValue)
+  {
+    if (!empty($input) && $input == $optionValue) {
+      return 'selected';
+    }
+
+    return '';
+  }
+
+  public function showChecked($input, $optionValue)
+  {
+    if (!empty($input) && $input == $optionValue) {
+      return 'checked';
+    }
+
+    return $input;
+  }
 }

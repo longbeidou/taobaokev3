@@ -7,7 +7,7 @@ use App\Services\CouponRulesService;
 use App\Http\Controllers\Controller;
 use Auth;
 
-class TbkDgItemCouponGetController extends Controller
+class CouponRulesController extends Controller
 {
     protected $couponRule;
 
@@ -45,6 +45,7 @@ class TbkDgItemCouponGetController extends Controller
         'q' => 'required',
         'page_size' => 'required|min:1|max:100',
         'goods_category_id' => 'required',
+        'adzone_id' => 'required',
       ]);
 
       $result = $this->couponRule->updateOrCreateItem($request->all());
@@ -72,6 +73,7 @@ class TbkDgItemCouponGetController extends Controller
         'q' => 'required',
         'page_size' => 'required|min:1|max:100',
         'goods_category_id' => 'required',
+        'adzone_id' => 'required',
       ]);
       $result = $this->couponRule->updateOrCreateItem($request->all());
 

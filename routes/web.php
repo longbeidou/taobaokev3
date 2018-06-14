@@ -24,11 +24,11 @@ Route::prefix('admin')->group(function() {
   Route::get('changepassword', 'Admin\UserController@changePassword')->name('admin.changePassword');
   Route::post('changepassword', 'Admin\UserController@doChangePassword')->name('admin.doChangePassword');
   Route::resource('goodsCategorys', 'Admin\goodsCategoryController');
-  Route::get('couponRules/{id}', 'Admin\TbkDgItemCouponGetController@show')->name('admin.couponRule.show');
-  Route::get('couponRules/{id}/edit', 'Admin\TbkDgItemCouponGetController@edit')->name('admin.couponRule.edit');
-  Route::post('couponRules/', 'Admin\TbkDgItemCouponGetController@store')->name('admin.couponRule.store');
-  Route::get('couponRules/{id}/create', 'Admin\TbkDgItemCouponGetController@create')->name('admin.couponRule.create');
-  Route::post('couponRules/{id}/update', 'Admin\TbkDgItemCouponGetController@update')->name('admin.couponRule.update');
+  Route::get('couponRules/{id}', 'Admin\CouponRulesController@show')->name('admin.couponRule.show');
+  Route::get('couponRules/{id}/edit', 'Admin\CouponRulesController@edit')->name('admin.couponRule.edit');
+  Route::post('couponRules/', 'Admin\CouponRulesController@store')->name('admin.couponRule.store');
+  Route::get('couponRules/{id}/create', 'Admin\CouponRulesController@create')->name('admin.couponRule.create');
+  Route::post('couponRules/{id}/update', 'Admin\CouponRulesController@update')->name('admin.couponRule.update');
 });
 
 Route::get('/', 'Index\IndexController@index')->name('index');

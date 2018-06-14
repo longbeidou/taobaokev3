@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Contracts;
 
-interface TbkdgitemcoupongetInterface
+interface TaobaoTbkDgMaterialOptionalInterface
 {
   // 根据id获取信息
   public function getItemById($id);

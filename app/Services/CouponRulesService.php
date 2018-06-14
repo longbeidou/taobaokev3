@@ -2,13 +2,13 @@
 
 namespace App\Services;
 
-use App\Repositories\Contracts\TbkdgitemcoupongetInterface;
+use App\Repositories\Contracts\TaobaoTbkDgMaterialOptionalInterface;
 
 class CouponRulesService
 {
   public $couponRuleService;
 
-  function __construct(TbkdgitemcoupongetInterface $couponRule)
+  function __construct(TaobaoTbkDgMaterialOptionalInterface $couponRule)
   {
     $this->couponRuleService = $couponRule;
   }

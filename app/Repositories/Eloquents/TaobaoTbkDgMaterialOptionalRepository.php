@@ -3,14 +3,14 @@
 namespace App\Repositories\Eloquents;
 
 use Illuminate\Http\Request;
-use App\Repositories\Contracts\TbkdgitemcoupongetInterface;
-use App\Models\TbkDgItemCouponGet;
+use App\Repositories\Contracts\TaobaoTbkDgMaterialOptionalInterface;
+use App\Models\TaobaoTbkDgMaterialOptional;
 
-class TbkdgitemcoupongetRepository implements TbkdgitemcoupongetInterface
+class TaobaoTbkDgMaterialOptionalRepository implements TaobaoTbkDgMaterialOptionalInterface
 {
   public $itemCoupon;
 
-  function __construct(TbkDgItemCouponGet $itemCoupon)
+  function __construct(TaobaoTbkDgMaterialOptional $itemCoupon)
   {
     $this->itemCoupon = $itemCoupon;
   }
