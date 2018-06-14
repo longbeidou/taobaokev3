@@ -25,5 +25,6 @@ class AppServiceProvider extends ServiceProvider
     {
       $this->app->bind('App\Repositories\Contracts\GoodsCategoryInterface', 'App\Repositories\Eloquents\GoodsCategoryRepository');
       $this->app->bind('App\Repositories\Contracts\TbkdgitemcoupongetInterface', 'App\Repositories\Eloquents\TbkdgitemcoupongetRepository');
+      $this->app->bind('App\Repositories\Contracts\AlimamaRepositoryInterface', 'App\Repositories\Eloquents\AlimamaRepository');
     }
 }

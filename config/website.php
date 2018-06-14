@@ -5,6 +5,9 @@ return [
 	// 网站名称
 	'name' => '我爱你一万年网',
 
+	// 网站首页的title内容
+	'indexTitle' => 'sdfjlsdjf优惠券',
+
 	// 网站的域名
 	'domain' => 'www.52010000.cn',
 
