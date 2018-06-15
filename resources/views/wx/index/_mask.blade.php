@@ -4,60 +4,14 @@
     <div class="mui-col-xs-12 cate">
       <ul>
         <li class="lbd-top">请选择</li>
+        @foreach($topCategory as $category)
         <li>
-          <a href="http://www.baidu.com/">
-            <div class="img"><img src="http://placehold.it/40x40"/></div>
-            <div class="text">服装</div>
+          <a href="{{ $category->id }}">
+            <div class="img"><img src="{{ $category->image }}" style="width: 100%;"/></div>
+            <div class="text">{{ $category->name }}</div>
           </a>
         </li>
-        <li>
-          <a href="http://www.baidu.com/">
-            <div class="img"><img src="http://placehold.it/40x40"/></div>
-            <div class="text">服装</div>
-          </a>
-        </li>
-        <li>
-          <a href="http://www.baidu.com/">
-            <div class="img"><img src="http://placehold.it/40x40"/></div>
-            <div class="text">服装</div>
-          </a>
-        </li>
-        <li>
-          <a href="http://www.baidu.com/">
-            <div class="img"><img src="http://placehold.it/40x40"/></div>
-            <div class="text">服装</div>
-          </a>
-        </li>
-        <li>
-          <a href="http://www.baidu.com/">
-            <div class="img"><img src="http://placehold.it/40x40"/></div>
-            <div class="text">服装</div>
-          </a>
-        </li>
-        <li>
-          <a href="http://www.baidu.com/">
-            <div class="img"><img src="http://placehold.it/40x40"/></div>
-            <div class="text">服装</div>
-          </a>
-        </li>
-        <li>
-          <a href="http://www.baidu.com/">
-            <div class="img"><img src="http://placehold.it/40x40"/></div>
-            <div class="text">服装</div>
-          </a>
-        </li>
-        <li>
-          <a href="http://www.baidu.com/">
-            <div class="img"><img src="http://placehold.it/40x40"/></div>
-            <div class="text">服装</div>
-          </a>
-        </li>
-        <li>
-          <a href="http://www.baidu.com/">
-            <div class="img"><img src="http://placehold.it/40x40"/></div>
-            <div class="text">服装</div>
-          </a>
-        </li>
+        @endforeach
         <li class="lbd-bottom" id="lbd-mask-hide"><i class="mui-icon mui-icon-arrowup"></i></li>
       </ul>
     </div>

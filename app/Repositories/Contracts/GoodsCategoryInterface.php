@@ -24,4 +24,7 @@ interface GoodsCategoryInterface
 
   // 根据id删除信息
   public function deleteById($id);
+
+  // 获取顶级分类的信息
+  public function topCategory(Array $para);
 }

@@ -79,7 +79,8 @@
         data:{
             page_no : pageNo,
             adzone_id : {{ $adzoneId }},
-            page_size : {{ $pageSize }}
+            page_size : {{ $pageSize }},
+            platform : 2
         },
         dataType:'json',//服务器返回json格式数据
         type:'post',//HTTP请求类型

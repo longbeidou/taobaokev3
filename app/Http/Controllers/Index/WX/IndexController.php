@@ -24,7 +24,8 @@ class IndexController extends Controller
       $adzoneId = self::ADZONE_ID;
       $pageSize = self::PAGE_SIZE;
       $couponItems = $this->repository->couponItems(['adzone_id' => self::ADZONE_ID, 'page_size'=>self::PAGE_SIZE]);
+      $topCategory = $this->repository->topCategory(['order' => 'desc']);
 
-      return view('wx.index.index', compact('title', 'couponItems', 'adzoneId', 'pageSize'));
+      return view('wx.index.index', compact('title', 'couponItems', 'adzoneId', 'pageSize', 'topCategory'));
     }
 }

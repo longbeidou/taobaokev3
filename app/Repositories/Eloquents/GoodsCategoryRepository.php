@@ -98,4 +98,24 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
     return $this->goodsCategory->where('id', $id)->delete();
   }
 
+  // 获取顶级分类的信息
+  public function topCategory(Array $para = ['name'=>null, 'order'=>'', 'is_shown'=>'', 'is_recommended'=>''])
+  {
+    $goodsCategory = $this->goodsCategory->where('level', 1);
+
+    if (isset($para['name'])) {
+      $goodsCategory = $goodsCategory->where('name', 'like', '%'.$para['name'].'%');
+    }
+    if (isset($para['is_shown'])) {
+      $goodsCategory = $goodsCategory->where('is_shown', $para['is_shown']);
+    }
+    if (isset($para['is_recommended'])) {
+      $goodsCategory = $goodsCategory->where('is_recommended', $para['is_recommended']);
+    }
+    if (isset($para['order'])) {
+      $goodsCategory = $goodsCategory->orderBy('order', $para['order']);
+    }
+
+    return $goodsCategory->get();
+  }
 }
