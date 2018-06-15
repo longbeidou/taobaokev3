@@ -14,12 +14,12 @@
 
   @include('wx.index._category')
   <!--商品列表 开始-->
-  <div class="mui-row lbd-index-list-head" id="lbd-index-list-head">
+  <div class="mui-row lbd-index-list-head" id="lbd-index-list-head-no-fix">
     <ul>
-      <li class="lbd-active">
-          <a href="https://www.baidu.com">精选</a>
+      <li class="lbd-active" style="width:100%;">
+          <a>每日精选优惠券商品</a>
       </li>
-      <li>
+      <!-- <li>
           <a href="#">销量</a>
       </li>
       <li>
@@ -27,13 +27,13 @@
       </li>
       <li>
           <a href="#">价格</a>
-      </li>
+      </li> -->
     </ul>
   </div>
   <div id="mui-row lbd-position-fixed"></div>
   <div class="mui-row lbd-goods-list" id="lbd-goods-list">
     <ul class="mui-table-view lbd-goods-list-info">
-        @include('wx.layouts._coupon_list')
+        @include('wx.layouts._coupon_list_for_coupon')
     </ul>
     <!--查看更多商品 开始-->
     <div class="mui-col-xs-12 mui-text-center lbd-index-box" id="lbd-index-see-more">
@@ -69,14 +69,49 @@
       placeholder: '/wxstyle/images/lazyimg.gif'
     });
   })(mui);
+  var pageNo = 1;
   mui('#lbd-index-see-more').on('tap', 'button', function() {
     loadingstr = '<button type="button" class="mui-btn mui-btn-block mui-btn-grey lbd-index-info" >玩命加载中...</button>';
     document.getElementById('lbd-index-see-more').innerHTML = loadingstr;
-    var table = document.body.querySelector('.lbd-goods-list-info');
-    var li = document.createElement('li');
-    li.className = 'mui-table-view-cell mui-media';
-    li.innerHTML = 'str';
-    table.appendChild(li);
+    // ajax获取优惠券信息
+    pageNo++
+    mui.ajax('{{ route('api.alimama.taobaoTbkDgItemCouponGet') }}',{
+        data:{
+            page_no : pageNo,
+            adzone_id : {{ $adzoneId }},
+            page_size : {{ $pageSize }}
+        },
+        dataType:'json',//服务器返回json格式数据
+        type:'post',//HTTP请求类型
+        timeout:10000,//超时时间设置为10秒；
+        headers:{
+            'Content-Type':'application/json',
+            'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+        },
+        success:function(data){
+            //服务器返回响应，根据响应结果，分析是否登录成功；
+            if (data == 415) {
+              alert("请求参数出错，请刷新页面重新操作！")
+            } else {
+              var str = '';
+              var len = data.length;
+              var table = document.body.querySelector('.lbd-goods-list-info');
+              for (i = 0; i < len; i++) {
+                item = data[i];
+                @include('wx.layouts._coupon_list_for_js')
+                var li = document.createElement('li');
+                li.className = 'mui-table-view-cell mui-media';
+                li.innerHTML = str;
+                table.appendChild(li);
+                str = '';
+              }
+            }
+        },
+        error:function(xhr,type,errorThrown){
+            //异常处理；
+            console.log(type);
+        }
+    });
     setTimeout(function() {
       seemore = '<button type="button" class="mui-btn mui-btn-block mui-btn-grey lbd-index-info" data-loading-text="提交中">点击查看更多...</button>';
       document.getElementById('lbd-index-see-more').innerHTML = seemore;

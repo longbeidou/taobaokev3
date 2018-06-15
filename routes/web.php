@@ -31,4 +31,8 @@ Route::prefix('admin')->group(function() {
   Route::post('couponRules/{id}/update', 'Admin\CouponRulesController@update')->name('admin.couponRule.update');
 });
 
-Route::get('/', 'Index\IndexController@index')->name('index');
+Route::get('/', 'Index\WX\IndexController@index')->name('index');
+
+Route::prefix('api/alimama')->group(function() {
+	Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('api.alimama.taobaoTbkDgItemCouponGet');
+});

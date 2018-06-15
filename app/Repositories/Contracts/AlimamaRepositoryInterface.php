@@ -7,4 +7,6 @@ namespace App\Repositories\Contracts;
  */
 interface AlimamaRepositoryInterface
 {
+  // 好券清单api
+  public function taobaoTbkDgItemCouponGet(Array $para);
 }
