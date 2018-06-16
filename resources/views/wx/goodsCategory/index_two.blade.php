@@ -75,12 +75,19 @@
     document.getElementById('lbd-index-see-more').innerHTML = loadingstr;
     // ajax获取优惠券信息
     pageNo++
-    mui.ajax('{{ route('api.alimama.taobaoTbkDgItemCouponGet') }}',{
+    mui.ajax('{{ route('api.alimama.taobaoTbkDgMaterialOptional') }}',{
         data:{
-            page_no : pageNo,
-            // adzone_id :  $adzoneId }},
-            // page_size :  $pageSize }},
-            platform : 2
+          page_size : '24',
+          platform : '{{ $para['platform'] or '' }}',
+          is_overseas : '{{ $para['is_overseas'] or '' }}',
+          is_tmall : '{{ $para['is_tmall'] or '' }}',
+          q : '{{ $para['q'] or '' }}',
+          has_coupon : '{{ $para['has_coupon'] or '' }}',
+          adzone_id : '{{ $para['adzone_id'] or '' }}',
+          need_free_shipment : '{{ $para['need_free_shipment'] or '' }}',
+          need_prepay : '{{ $para['need_prepay'] or '' }}',
+          npx_level : '{{ $para['npx_level'] or '' }}',
+          page_no : pageNo
         },
         dataType:'json',//服务器返回json格式数据
         type:'post',//HTTP请求类型
@@ -99,7 +106,7 @@
               var table = document.body.querySelector('.lbd-goods-list-info');
               for (i = 0; i < len; i++) {
                 item = data[i];
-                @include('wx.layouts._coupon_list_for_js')
+                @include('wx.layouts._coupon_list_for_js_material')
                 var li = document.createElement('li');
                 li.className = 'mui-table-view-cell mui-media';
                 li.innerHTML = str;

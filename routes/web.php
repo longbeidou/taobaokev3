@@ -27,4 +27,5 @@ Route::get('/son{id}{sort?}', 'Index\WX\IndexController@categorySon')->name('goo
 
 Route::prefix('api/alimama')->group(function() {
 	Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('api.alimama.taobaoTbkDgItemCouponGet');
+	Route::post('taobaoTbkDgMaterialOptional', 'Api\AlimamaController@taobaoTbkDgMaterialOptional')->name('api.alimama.taobaoTbkDgMaterialOptional');
 });

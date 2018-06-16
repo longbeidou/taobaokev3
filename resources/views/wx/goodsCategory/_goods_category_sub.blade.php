@@ -3,7 +3,7 @@
   <ul>
     @foreach($subGoodsCategory as $category)
     <li>
-      <a href="{{ route('goodsCategorys.categoryTwo', ['id' => $category->id, 'sort' => $sort]) }}">
+      <a href="{{ route('goodsCategorys.categoryTwo', ['id' => $category->id]) }}">
         <div class="lbd-img">
           <img src="{{ $category->image }}"/>
         </div>

@@ -20,4 +20,12 @@ class AlimamaService
 
     return $couponItems;
   }
+
+  //
+  public function taobaoTbkDgMaterialOptional($para)
+  {
+    $couponItems = $this->alimamaRepository->taobaoTbkDgMaterialOptional($para);
+
+    return $couponItems;
+  }
 }

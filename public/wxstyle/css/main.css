@@ -221,7 +221,7 @@ header a
 .lbd-goods-list .lbd-content-more .lbd-from-taobao,
 .lbd-goods-list .lbd-content-more .lbd-from-new
 {
-	border-radius: 5px;	
+	border-radius: 5px;
 	padding: 0px 5px;
 	display: inline-block;
 	line-height: 14px;
@@ -362,7 +362,7 @@ header a
 {
 	color: #000;
 }
-.lbd-goods-info .mui-table-view-cell.mui-collapse.mui-active>.mui-navigate-right:after, 
+.lbd-goods-info .mui-table-view-cell.mui-collapse.mui-active>.mui-navigate-right:after,
 .lbd-goods-info .mui-table-view-cell.mui-collapse.mui-active>.mui-push-right:after
 {
 	color: #999;
@@ -531,7 +531,7 @@ header a
 {
 	font-size: 10px;
 }
-.lbd-goods-coupon .lbd-right 
+.lbd-goods-coupon .lbd-right
 {
 	height: 100%;
 	background-color: #ED2A7A;
@@ -601,22 +601,22 @@ header a
 {
 	color: #ED2A7A;
 }
-.lbd-all-kinds.mui-row.mui-fullscreen>[class*="mui-col-"] 
+.lbd-all-kinds.mui-row.mui-fullscreen>[class*="mui-col-"]
 {
 	height: 100%;
 }
 .lbd-all-kinds .mui-col-xs-3,
-.lbd-all-kinds .mui-control-content 
+.lbd-all-kinds .mui-control-content
 {
 	overflow-y: auto;
 	height: 100%;
 }
-.lbd-all-kinds .mui-segmented-control .mui-control-item 
+.lbd-all-kinds .mui-segmented-control .mui-control-item
 {
 	line-height: 50px;
 	width: 100%;
 }
-.lbd-all-kinds .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active 
+.lbd-all-kinds .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active
 {
 	background-color: #fff;
 	color: #ED2A7A;
@@ -712,7 +712,7 @@ header a
 	/*-webkit-backface-visibility: hidden;
 	-webkit-transition-duration: 400ms;
 	transition-duration: 400ms;*/
-	
+
 	margin: 0;
 }
 .lbd-tqg .mui-pull-top-wrapper .mui-icon,
@@ -787,7 +787,7 @@ header a
 }
 .lbd-tqg .lbd-info .lbd-box
 {
-	position: relative;	
+	position: relative;
 }
 .lbd-tqg .lbd-info .lbd-box .lbd-more,
 .lbd-tqg .lbd-info .lbd-box .lbd-bottom
@@ -900,4 +900,9 @@ header a
 .lbd-search .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar
 {
 	background-color: #ed2a7a;;
+}
+
+.lbd-goods-list-info li
+{
+	min-height: 110px;
 }

@@ -39,8 +39,9 @@ class IndexController extends Controller
       $currentCouponGetRule = $this->repository->currentCouponGetRule($id);
       $couponItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort);
       $subGoodsCategory = $this->repository->subGoodsCategory($id, ['order' => 'desc', 'is_shown' => 1, 'limt' => 8]);
+      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort);
 
-      return view('wx.goodsCategory.index', compact('title', 'id', 'sort', 'couponItems', 'goodsCategoryInfo', 'topGoodsCategory', 'subGoodsCategory'));
+      return view('wx.goodsCategory.index', compact('para', 'title', 'id', 'sort', 'couponItems', 'goodsCategoryInfo', 'topGoodsCategory', 'subGoodsCategory'));
     }
 
     // 二级栏目分类
@@ -53,8 +54,9 @@ class IndexController extends Controller
       $currentCouponGetRule = $this->repository->currentCouponGetRule($id);
       $couponItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort);
       $subGoodsCategory = $this->repository->subGoodsCategory($id, ['order' => 'desc', 'is_shown' => 1, 'limt' => 8]);
+      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort);
 
-      return view('wx.goodsCategory.index_two', compact('title', 'id', 'sort', 'couponItems', 'goodsCategoryInfo', 'topGoodsCategory', 'subGoodsCategory', 'upGoodsCategory'));
+      return view('wx.goodsCategory.index_two', compact('para', 'title', 'id', 'sort', 'couponItems', 'goodsCategoryInfo', 'topGoodsCategory', 'subGoodsCategory', 'upGoodsCategory'));
     }
 
     // 子栏目的分类
@@ -67,7 +69,8 @@ class IndexController extends Controller
       $currentCouponGetRule = $this->repository->currentCouponGetRule($id);
       $couponItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort);
       $subGoodsCategory = $this->repository->subGoodsCategory($id, ['order' => 'desc', 'is_shown' => 1, 'limt' => 8]);
+      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort);
 
-      return view('wx.sonGoodsCategory.index', compact('title', 'id', 'sort', 'couponItems', 'goodsCategoryInfo', 'topGoodsCategory', 'subGoodsCategory', 'upGoodsCategory'));
+      return view('wx.sonGoodsCategory.index', compact('para', 'title', 'id', 'sort', 'couponItems', 'goodsCategoryInfo', 'topGoodsCategory', 'subGoodsCategory', 'upGoodsCategory'));
     }
 }

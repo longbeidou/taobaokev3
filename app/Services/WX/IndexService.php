@@ -105,4 +105,38 @@ class IndexService
         break;
     }
   }
+
+  // 获取ajax请求通用搜素api的参数
+  public function getAjaxPara($goodsCategoryInfo, $sort)
+  {
+    if (empty($goodsCategoryInfo->dgMaterialOptionalRule)) {
+      return [];
+    }
+
+    $paraArr = $goodsCategoryInfo->dgMaterialOptionalRule->toArray();
+
+    foreach ($paraArr as $field => $value) {
+      if (empty($value) || $field == 'sort' || $field == 'created_at' || $field == 'updated_at') {
+        unset($paraArr[$field]);
+      }
+    }
+
+    switch ($sort) {
+      case 'price':
+        $paraArr['sort'] = 'price_asc';
+        break;
+
+      case 'sales':
+        $paraArr['sort'] = 'total_sales_des';
+        break;
+
+      case 'commi':
+        $paraArr['sort'] = 'tk_total_commi_des';
+        break;
+    }
+
+    $paraArr['page_no'] = '1';
+
+    return $paraArr;
+  }
 }

@@ -99,7 +99,7 @@
               var table = document.body.querySelector('.lbd-goods-list-info');
               for (i = 0; i < len; i++) {
                 item = data[i];
-                @include('wx.layouts._coupon_list_for_js')
+                @include('wx.layouts._coupon_list_for_js_coupon')
                 var li = document.createElement('li');
                 li.className = 'mui-table-view-cell mui-media';
                 li.innerHTML = str;
