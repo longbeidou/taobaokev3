@@ -99,9 +99,13 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
   }
 
   // 获取顶级分类的信息
-  public function topCategory(Array $para = ['name'=>null, 'order'=>'', 'is_shown'=>'', 'is_recommended'=>''])
+  public function topCategory(Array $para = ['name'=>null, 'order'=>'desc', 'is_shown'=>1, 'is_recommended'=>null, 'level' => 1])
   {
-    $goodsCategory = $this->goodsCategory->where('level', 1);
+    $goodsCategory = $this->goodsCategory;;
+
+    if (isset($para['level'])) {
+      $goodsCategory = $goodsCategory->where('level', $para['level']);
+    }
 
     if (isset($para['name'])) {
       $goodsCategory = $goodsCategory->where('name', 'like', '%'.$para['name'].'%');
@@ -117,5 +121,35 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
     }
 
     return $goodsCategory->get();
+  }
+
+  // 获取子分类的信息
+  public function subCategory($parentId, Array $para = ['name'=>null, 'order'=>'', 'is_shown'=>1, 'is_recommended'=>null, 'limit'=>8])
+  {
+    $goodsCategory = $this->goodsCategory->where('parent_id', $parentId);
+
+    if (isset($para['name'])) {
+      $goodsCategory = $goodsCategory->where('name', 'like', '%'.$para['name'].'%');
+    }
+    if (isset($para['is_shown'])) {
+      $goodsCategory = $goodsCategory->where('is_shown', $para['is_shown']);
+    }
+    if (isset($para['is_recommended'])) {
+      $goodsCategory = $goodsCategory->where('is_recommended', $para['is_recommended']);
+    }
+    if (isset($para['order'])) {
+      $goodsCategory = $goodsCategory->orderBy('order', $para['order']);
+    }
+    if (isset($para['limit'])) {
+      $goodsCategory = $goodsCategory->take($para['limit']);
+    }
+
+    return $goodsCategory->get();
+  }
+
+  // 更加goods_category_id获取对应的调用api的规则
+  public function getRuleById($id)
+  {
+    return $this->goodsCategory->find($id)->dgMaterialOptionalRule;
   }
 }

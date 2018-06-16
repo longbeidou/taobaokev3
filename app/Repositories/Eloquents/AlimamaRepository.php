@@ -39,4 +39,16 @@ class AlimamaRepository implements AlimamaRepositoryInterface
 
     return $result->results->tbk_coupon;
   }
+
+  // 通用物料搜索API（导购）
+  public function taobaoTbkDgMaterialOptional(Array $para)
+  {
+    $result = $this->alimamaSdk->taobaoTbkDgMaterialOptional($para);
+
+    if (empty($result->result_list)) {
+      return false;
+    }
+
+    return $result->result_list->map_data;
+  }
 }

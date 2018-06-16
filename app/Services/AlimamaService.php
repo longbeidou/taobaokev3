@@ -15,9 +15,4 @@ class AlimamaService
   {
     $this->alimamaRepository = $api;
   }
-
-  public function test()
-  {
-    return 'this is service test';
-  }
 }

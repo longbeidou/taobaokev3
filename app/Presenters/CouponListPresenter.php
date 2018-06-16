@@ -52,4 +52,12 @@ class CouponListPresenter
 
     return $num;
   }
+
+  // 将优惠券排序的标准是否激活
+  public function showActiveForSort($now, $ori)
+  {
+    $now == $ori ? $str = 'lbd-active' : $str = '';
+
+    return $str;
+  }
 }

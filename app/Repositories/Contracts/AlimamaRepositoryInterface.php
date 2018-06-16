@@ -9,4 +9,7 @@ interface AlimamaRepositoryInterface
 {
   // 好券清单api
   public function taobaoTbkDgItemCouponGet(Array $para);
+
+	// 通用物料搜索API（导购）
+	public function taobaoTbkDgMaterialOptional(Array $para);
 }

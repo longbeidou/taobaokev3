@@ -4,7 +4,7 @@
     <div class="mui-col-xs-12 cate">
       <ul>
         <li class="lbd-top">请选择</li>
-        @foreach($topCategory as $category)
+        @foreach($topGoodsCategory as $category)
         <li>
           <a href="{{ $category->id }}">
             <div class="img"><img src="{{ $category->image }}" style="width: 100%;"/></div>

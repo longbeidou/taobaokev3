@@ -27,4 +27,10 @@ interface GoodsCategoryInterface
 
   // 获取顶级分类的信息
   public function topCategory(Array $para);
+
+  // 获取子分类的信息
+  public function subCategory($parentId, Array $para);
+
+  // 更加goods_category_id获取对应的调用api的规则
+  public function getRuleById($id);
 }
