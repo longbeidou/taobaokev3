@@ -48,8 +48,9 @@ class IndexController extends Controller
     public function categoryTwo($id, $sort = null)
     {
       $goodsCategoryInfo = $this->repository->currentCategoryInfo($id);
+      $olderFatherid = $this->repository->currentCategoryInfo($goodsCategoryInfo->parent_id)->id;
       $topGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => 1]);
-      $upGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => $goodsCategoryInfo->level]);
+      $upGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level4' => $goodsCategoryInfo->level, 'parent_id' => $olderFatherid]);
       $title = $this->repository->title($sort, $goodsCategoryInfo->name);
       $currentCouponGetRule = $this->repository->currentCouponGetRule($id);
       $couponItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort);

@@ -99,7 +99,7 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
   }
 
   // 获取顶级分类的信息
-  public function topCategory(Array $para = ['name'=>null, 'order'=>'desc', 'is_shown'=>1, 'is_recommended'=>null, 'level' => 1])
+  public function topCategory(Array $para = ['name'=>null, 'order'=>'desc', 'is_shown'=>1, 'is_recommended'=>null, 'level' => 1, 'parent_id' => null])
   {
     $goodsCategory = $this->goodsCategory;;
 
@@ -115,6 +115,9 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
     }
     if (isset($para['is_recommended'])) {
       $goodsCategory = $goodsCategory->where('is_recommended', $para['is_recommended']);
+    }
+    if (isset($para['parent_id'])) {
+      $goodsCategory = $goodsCategory->where('parent_id', $para['parent_id']);
     }
     if (isset($para['order'])) {
       $goodsCategory = $goodsCategory->orderBy('order', $para['order']);
