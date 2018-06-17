@@ -31,6 +31,9 @@ interface GoodsCategoryInterface
   // 获取子分类的信息
   public function subCategory($parentId, Array $para);
 
+  // 根据参数获取信息
+  public function getItemsByParas(Array $para);
+
   // 更加goods_category_id获取对应的调用api的规则
   public function getRuleById($id);
 }

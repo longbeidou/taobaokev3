@@ -150,6 +150,33 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
     return $goodsCategory->get();
   }
 
+  // 根据参数获取信息
+  public function getItemsByParas(Array $para = ['name'=>null, 'order'=>'', 'is_shown'=>1, 'is_recommended'=>null, 'level'=>'', 'limit'=>null])
+  {
+    $goodsCategory = $this->goodsCategory;
+
+    if (isset($para['name'])) {
+      $goodsCategory = $goodsCategory->where('name', 'like', '%'.$para['name'].'%');
+    }
+    if (isset($para['is_shown'])) {
+      $goodsCategory = $goodsCategory->where('is_shown', $para['is_shown']);
+    }
+    if (isset($para['is_recommended'])) {
+      $goodsCategory = $goodsCategory->where('is_recommended', $para['is_recommended']);
+    }
+    if (isset($para['level'])) {
+      $goodsCategory = $goodsCategory->where('level', $para['level']);
+    }
+    if (isset($para['order'])) {
+      $goodsCategory = $goodsCategory->orderBy('order', $para['order']);
+    }
+    if (isset($para['limit'])) {
+      $goodsCategory = $goodsCategory->take($para['limit']);
+    }
+
+    return $goodsCategory->get();
+  }
+
   // 更加goods_category_id获取对应的调用api的规则
   public function getRuleById($id)
   {

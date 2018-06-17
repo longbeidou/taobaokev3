@@ -10,7 +10,7 @@ class IndexService
   public $alimamaRepository;
   public $goodsCategory;
 
-  function __construct(AlimamaRepositoryInterface $alimama, GoodsCategoryInterface $goodsCategory)
+  public function __construct(AlimamaRepositoryInterface $alimama, GoodsCategoryInterface $goodsCategory)
   {
     $this->alimamaRepository = $alimama;
     $this->goodsCategory = $goodsCategory;
