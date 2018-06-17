@@ -26,6 +26,10 @@ Route::get('/sub{id}{sort?}', 'Index\WX\IndexController@categoryTwo')->name('goo
 Route::get('/son{id}{sort?}', 'Index\WX\IndexController@categorySon')->name('goodsCategorys.categorySon')->where('id', '[0-9]+');
 Route::get('/agc', 'Index\WX\AllGoodsCategoryController@index')->name('wx.allGoodsCategory.index');
 Route::get('/search', 'Index\WX\SearchController@index')->name('wx.search.index');
+Route::get('/search/all/', 'Index\WX\SearchController@all')->name('wx.search.all');
+Route::get('/search/tmall/', 'Index\WX\SearchController@tmall')->name('wx.search.tmall');
+Route::get('/search/ju/', 'Index\WX\SearchController@ju')->name('wx.search.ju');
+Route::get('/search/tpwd/', 'Index\WX\SearchController@tpwd')->name('wx.search.tpwd');
 
 Route::prefix('api/alimama')->group(function() {
 	Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('api.alimama.taobaoTbkDgItemCouponGet');

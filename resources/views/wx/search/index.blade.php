@@ -26,7 +26,7 @@
 		<div class="mui-slider-group">
 			<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
 				<div class="mui-content-padded" >
-					<form action="https://www.baidu.com" method="get">
+					<form action="{{ route('wx.search.all') }}" method="get">
 						<div class="mui-input-row">
 							<textarea id="textarea" name='q' rows="5" placeholder="请输入商品的名称或商品的关键字（例如：T恤 女），商品关键字用空格隔开..." required></textarea>
 						</div>
@@ -39,7 +39,7 @@
 			</div>
 			<div id="item2mobile" class="mui-slider-item mui-control-content">
 				<div class="mui-content-padded" >
-					<form action="https://www.baidu.com" method="get">
+					<form action="{{ route('wx.search.tmall') }}" method="get">
 						<div class="mui-input-row">
 							<textarea id="textarea" name='q' rows="5" placeholder="请输入商品的名称或商品的关键字（例如：T恤 女），商品关键字用空格隔开..." required></textarea>
 						</div>
@@ -52,7 +52,7 @@
 			</div>
 			<div id="item3mobile" class="mui-slider-item mui-control-content">
 				<div class="mui-content-padded" >
-					<form action="https://www.baidu.com" method="get">
+					<form action="{{ route('wx.search.ju') }}" method="get">
 						<div class="mui-input-row">
 							<textarea id="textarea" name='q' rows="5" placeholder="请输入商品的名称或商品的关键字（例如：T恤 女），商品关键字用空格隔开..." required></textarea>
 						</div>
@@ -65,7 +65,7 @@
 			</div>
 			<div id="item4mobile" class="mui-slider-item mui-control-content">
 				<div class="mui-content-padded" >
-					<form action="https://www.baidu.com" method="get">
+					<form action="{{ route('wx.search.tpwd') }}" method="get">
 						<div class="mui-input-row">
 							<textarea id="textarea" name='q' rows="5" placeholder="请粘贴含有淘口令的文字，例如：復·制这段描述，€z8rP0wuMBLc€ ，咑閞【手机淘宝】即可查看。" required></textarea>
 						</div>
