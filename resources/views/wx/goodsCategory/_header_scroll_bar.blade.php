@@ -2,7 +2,7 @@
 <header class="mui-bar mui-bar-nav lbd-index-nav" id="lbd-index-header">
   <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
         <div class="mui-scroll" id="lbd-index-scroll">
-            <a class="mui-control-item" href="{{ route('index') }}">推荐</a>
+            <a class="mui-control-item" href="{{ route('wx.index') }}">推荐</a>
             @foreach($topGoodsCategory as $category)
             <a class="mui-control-item @if($category->id == $id) mui-active @endif " href="{{ route('goodsCategorys.categoryOne', $category->id) }}">{{ $category->name }}</a>
             @endforeach

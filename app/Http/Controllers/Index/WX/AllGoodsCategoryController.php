@@ -22,7 +22,7 @@ class AllGoodsCategoryController extends Controller
     $subCategory = $this->repository->subCategory($leftTopCategory);
     $sonCategory = $this->repository->sonCategory($subCategory);
     $recommendSonCategory = $this->repository->recommendCategory(3);
-// dd($sonCategory);
+
     return view('wx.allGoodsCategory.index', compact('title', 'leftTopCategory', 'recommendSonCategory', 'sonCategory'));
   }
 }
