@@ -7,7 +7,7 @@ couponInfoArr=couponInfo.split('-')
 price_now = item.zk_final_price-couponInfoArr[1]
 price_now = Math.round(parseFloat(price_now)*100)/100
 
-str += '<a href="'+item.coupon_click_url+'">'
+str += '<a href="'+item.coupon_share_url+'">'
 str +=       '<div class="mui-row">'
 str +=         '<div class="mui-col-xs-4 goods-image"><img src="'+item.pict_url+'"/></div>'
 str +=         '<div class="mui-col-xs-8 lbd-content"><p class="lbd-title">'+item.title+'</p></div>'

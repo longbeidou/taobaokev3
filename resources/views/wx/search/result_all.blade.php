@@ -9,7 +9,7 @@
 <header class="mui-bar mui-bar-nav">
     <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
     <a class="mui-icon mui-icon-search mui-pull-right" href="{{ route('wx.search.index') }}"></a>
-    <h1 class="mui-title">优惠券搜索结果</h1>
+    <h1 class="mui-title">淘宝天猫优惠券搜索结果</h1>
 </header>
 
 @include('wx.layouts._footer_tab')
