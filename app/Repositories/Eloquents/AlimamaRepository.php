@@ -51,4 +51,28 @@ class AlimamaRepository implements AlimamaRepositoryInterface
 
     return $result->result_list->map_data;
   }
+
+  // 获取聚划算的信息
+  public function taobaoJuItemsSearch(Array $para)
+  {
+    $juItems = $this->alimamaSdk->taobaoJuItemsSearch($para);
+
+    if (empty($juItems->result->model_list->items)) {
+      return false;
+    }
+
+    return $juItems->result->model_list->items;
+  }
+
+  // 查询解析淘口令
+  public function taobaoWirelessShareTpwdQuery(String $tpwd)
+  {
+    $result = $this->alimamaSdk->taobaoWirelessShareTpwdQuery($tpwd);
+
+    if (empty($result->content)) {
+      return false;
+    }
+
+    return $result;
+  }
 }

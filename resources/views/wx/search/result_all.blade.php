@@ -90,7 +90,13 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
       success:function(data){
           //服务器返回响应，根据响应结果，分析是否登录成功；
           if (data == 415) {
-            alert("请求参数出错，请刷新页面重新操作！")
+            // alert("请求参数出错，请刷新页面重新操作！")
+            document.getElementById('lbd-index-see-more').style.display = 'none';
+            var table = document.body.querySelector('.lbd-goods-list-info');
+      			var li = document.createElement('li');
+      			li.className = 'mui-table-view-cell mui-media';
+      			li.innerHTML = '<h5 class="mui-text-center">使出吃奶的力气也没有找到更多的宝贝了~</h5>';
+            table.appendChild(li);
           } else {
             var str = '';
             var len = data.length;

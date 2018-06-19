@@ -9,7 +9,7 @@
 <header class="mui-bar mui-bar-nav">
     <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
     <a class="mui-icon mui-icon-search mui-pull-right" href="{{ route('wx.search.index') }}"></a>
-    <h1 class="mui-title">天猫优惠券搜索结果</h1>
+    <h1 class="mui-title">淘口令优惠券搜索结果</h1>
 </header>
 
 @include('wx.layouts._footer_tab')
@@ -78,7 +78,6 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
         has_coupon : 'true',
         adzone_id : '{{ $para['adzone_id'] or '' }}',
         sort : '{{ $para['sort'] }}',
-        is_tmall : 'true',
         page_no : pageNo
       },
       dataType:'json',//服务器返回json格式数据

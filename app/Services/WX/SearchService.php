@@ -4,16 +4,19 @@ namespace App\Services\WX;
 
 use App\Services\Share\GuessYouLikeService;
 use App\Repositories\Contracts\AlimamaRepositoryInterface;
+use App\Services\Share\TpwdService;
 
 class SearchService
 {
   public $guessYouLike;
   public $alimama;
+  public $tpwdService;
 
-  public function __construct(GuessYouLikeService $guess, AlimamaRepositoryInterface $alimama)
+  public function __construct(GuessYouLikeService $guess, AlimamaRepositoryInterface $alimama, TpwdService $tpwd)
   {
     $this->guessYouLike = $guess;
     $this->alimama = $alimama;
+    $this->tpwdService = $tpwd;
   }
 
   // 获取猜你喜欢的优惠券数量
@@ -63,6 +66,30 @@ class SearchService
     return $result;
   }
 
+  // 搜索聚划算的商品
+  public function ju($para)
+  {
+    $result = $this->alimama->taobaoJuItemsSearch($para);
+
+    if (empty($result)) {
+      return [];
+    }
+
+    return $result;
+  }
+
+  // 获取解析淘口令
+  public function tpwdQuery($str)
+  {
+    $tpwdResult = $this->alimama->taobaoWirelessShareTpwdQuery($str);
+
+    if (empty($tpwdResult)) {
+      return '';
+    }
+
+    return $tpwdResult->content;
+  }
+
   // 获取sort的值
   public function getSortValue($para)
   {
@@ -84,5 +111,11 @@ class SearchService
     }
 
     return $sort;
+  }
+
+  // 获取淘口令对应的商品名称
+  public function getGoodsTitle($str)
+  {
+    return empty($str) ? '' : $this->tpwdService->getGoodsTitle($str);
   }
 }
