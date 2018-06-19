@@ -14,7 +14,7 @@
 <div class="mui-content">
   <!--商品列表 开始-->
   @inject('showActive', 'App\Presenters\CouponListPresenter')
-  <div class="mui-row lbd-index-list-head" id="lbd-index-list-head">
+  <div class="mui-row lbd-index-list-head lbd-fixed" id="lbd-index-list-head">
     <ul>
       <li class="{{ $showActive->showActiveForSort($sort, '') }}">
           <a href="{{ route('goodsCategorys.categorySon', $id) }}">精选</a>
@@ -30,7 +30,7 @@
       </li>
     </ul>
   </div>
-  <div id="mui-row lbd-position-fixed"></div>
+  <div class="mui-row lbd-position-fixed-height"></div>
   <div class="mui-row lbd-goods-list" id="lbd-goods-list">
     <ul class="mui-table-view lbd-goods-list-info">
         @include('wx.layouts._coupon_list_for_material')

@@ -21,11 +21,19 @@ class AlimamaService
     return $couponItems;
   }
 
-  //
+  // 通用搜索 导购
   public function taobaoTbkDgMaterialOptional($para)
   {
     $couponItems = $this->alimamaRepository->taobaoTbkDgMaterialOptional($para);
 
     return $couponItems;
+  }
+
+  // 获取聚划算的信息
+  public function taobaoJuItemsSearch($para)
+  {
+    $juItems = $this->alimamaRepository->taobaoJuItemsSearch($para);
+
+    return $juItems;
   }
 }

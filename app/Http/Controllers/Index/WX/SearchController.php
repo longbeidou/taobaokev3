@@ -71,7 +71,11 @@ class SearchController extends Controller
 
       $word = $request->q;
       $juItems = $this->repository->ju(['current_page' => 1, 'page_size' => self::PAGE_SIZE, 'word' => $word]);
-      dd($juItems);
+      $para['q'] = $word;
+      $para['adzone_id'] = self::ADZONE_ID;
+      $title = $request->q.'的聚划算搜索结果';
+
+      return view('wx.search.result_ju', compact('title', 'juItems', 'q', 'para'));
     }
 
     // 淘口令搜索

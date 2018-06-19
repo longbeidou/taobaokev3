@@ -60,4 +60,10 @@ class CouponListPresenter
 
     return $str;
   }
+
+  // 将时间戳转换成日期格式
+  public function makeIntergerToDateTimeString($str)
+  {
+    return date('Y-m-d H:i:s', substr($str, 0, 10));
+  }
 }
