@@ -8,7 +8,7 @@
 @section('content')
 <header class="mui-bar mui-bar-nav lbd-search-header">
   <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-  <a class="mui-action-home-bak mui-icon mui-icon-home mui-pull-right"></a>
+  <a class="mui-icon mui-icon-home mui-pull-right" href="{{ route('wx.index') }}"></a>
   <h1 class="mui-title">搜优惠券</h1>
 </header>
 
