@@ -75,4 +75,16 @@ class AlimamaRepository implements AlimamaRepositoryInterface
 
     return $result;
   }
+
+  // 淘抢购api
+  public function taobaoTbkJuTqgGet(Array $para)
+  {
+    $result = $this->alimamaSdk->taobaoTbkJuTqgGet($para);
+
+    if (empty($result->results)) {
+      return false;
+    }
+
+    return $result->results->results;
+  }
 }

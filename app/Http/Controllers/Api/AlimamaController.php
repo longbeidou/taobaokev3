@@ -62,4 +62,20 @@ class AlimamaController extends Controller
 
       return $result;
     }
+
+    // 淘抢购
+    public function taobaoTbkJuTqgGet(Request $request)
+    {
+      if (empty($request->adzone_id) || empty($request->page_size) || empty($request->start_time) || empty($request->end_time)) {
+        return 415;
+      }
+
+      $result = $this->repository->taobaoTbkJuTqgGet($request->all());
+
+      if (!$result) {
+        return 415;
+      }
+
+      return $result;
+    }
 }

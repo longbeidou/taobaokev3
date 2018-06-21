@@ -18,4 +18,7 @@ interface AlimamaRepositoryInterface
 
   // 查询解析淘口令
   public function taobaoWirelessShareTpwdQuery(String $tpwd);
+
+  // 淘抢购api
+  public function taobaoTbkJuTqgGet(Array $para);
 }

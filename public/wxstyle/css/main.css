@@ -811,12 +811,13 @@ header a
 	font-weight: 800;
 }
 .lbd-tqg .lbd-info .lbd-bottom .lbd-m{
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 800;
 }
 .lbd-tqg .lbd-info .lbd-bottom .lbd-price-now
 {
-	font-size: 25px;
+	font-size: 20px;
+	line-height: 24px
 }
 .lbd-tqg .lbd-info .lbd-bottom .lbd-price-ori
 {
