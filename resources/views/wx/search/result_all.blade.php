@@ -46,7 +46,7 @@
     </ul>
     <!--查看更多商品 开始-->
     <div class="mui-col-xs-12 mui-text-center lbd-index-box" id="lbd-index-see-more">
-      <button type="button" class="mui-btn mui-btn-block mui-btn-grey lbd-index-info" data-loading-text="提交中">点击查看更多...</button>
+      <button type="button" class="mui-btn mui-btn-block mui-btn-danger lbd-index-info" data-loading-text="提交中">点击查看更多...</button>
     </div><!--查看更多商品 结束-->
 @endif
   </div><!--商品列表 结束-->
@@ -126,7 +126,7 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
 
 
   setTimeout(function() {
-    seemore = '<button type="button" class="mui-btn mui-btn-block mui-btn-grey lbd-index-info" data-loading-text="提交中">点击查看更多...</button>';
+    seemore = '<button type="button" class="mui-btn mui-btn-block mui-btn-danger lbd-index-info" data-loading-text="提交中">点击查看更多...</button>';
     document.getElementById('lbd-index-see-more').innerHTML = seemore;
   }, 1500);
 })
