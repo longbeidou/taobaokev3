@@ -1,5 +1,5 @@
 hourAfter = data[i].start_time.substr(11, 2);
-str += '<li class="mui-table-view-cell lbd-info"><a href="'+data[i].click_url+'"><div class="mui-row lbd-box">'
+str += '<a href="'+data[i].click_url+'"><div class="mui-row lbd-box">'
 str +=       '<div class="mui-col-xs-4 lbd-img"><img src="'+data[i].pic_url+'"/></div>'
 str +=       '<div class="mui-col-xs-8 lbd-more"><div class="lbd-top"><h4 class="lbd-name">'+data[i].title+'</h4></div></div>'
 str +=       '<div class="mui-col-xs-8 lbd-bottom">'
@@ -8,4 +8,4 @@ str +=           '<p class="mui-text-right"><span class="lbd-m">￥</span><span 
 str +=           '<div class="lbd-tip-no">'+hourAfter+':00准时开抢</div>'
 str +=         '</div>'
 str +=       '</div>'
-str += '</div></a></li>'
+str += '</div></a>'

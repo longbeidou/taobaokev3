@@ -90,9 +90,7 @@
                     success:function(data){
                         //服务器返回响应，根据响应结果，分析是否登录成功；
                         if (data == 415) {
-                          var ul = self.element.querySelector('.mui-table-view');
-                          ul.appendChild(createFragmentNoResult(ul));
-                          self.endPullUpToRefresh();
+                          self.endPullUpToRefresh(true);
                         } else {
                             var ul = self.element.querySelector('.mui-table-view');
                             ul.appendChild(createFragment(data, ul, index));
@@ -115,7 +113,7 @@
 				var li;
 				for (var i = 0, count = data.length; i < count; i++) {
 					li = document.createElement('li');
-					li.className = 'mui-table-view-cell';
+					li.className = 'mui-table-view-cell lbd-info';
           var hour = data[i].start_time.substr(11, 2);
           hourItem = parseInt(hour)
           var d = new Date();
@@ -130,17 +128,6 @@
 				}
 				return fragment;
 			};
-      var createFragmentNoResult = function(ul) {
-        var length = ul.querySelectorAll('li').length;
-        var fragment = document.createDocumentFragment();
-        var li;
-        li = document.createElement('li');
-        li.className = 'mui-table-view-cell';
-        li.innerHTML = '<h5 class="mui-text-center">我是有底线的，所有宝贝都在上面了~</h5>';
-        fragment.appendChild(li);
-
-        return fragment;
-      };
 		});
 	})(mui);
 </script>
