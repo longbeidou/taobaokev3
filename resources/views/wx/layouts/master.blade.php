@@ -9,6 +9,8 @@
     <link href="/wxstyle/css/main.css" rel="stylesheet"/>
     @section('headcss')
     @show
+    <script type="text/javascript">
+  </script>
 </head>
 <body>
     @section('content')
@@ -17,5 +19,12 @@
 	 <script src="/wxstyle/js/mui.min.js"></script>
    @section('footJs')
    @show
+
+   <script type="text/javascript">
+     // 监听tap事件，解决 a标签 不能跳转页面问题
+     mui('#lbd-footer-tab').on('tap','a',function(){
+       document.location.href=this.href;
+     })
+   </script>
 </body>
 </html>
