@@ -85,7 +85,7 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
               item = data[i];
               @include('wx.layouts._coupon_list_for_js_ju')
               var li = document.createElement('li');
-              li.className = 'mui-table-view-cell mui-media';
+              li.className = 'mui-table-view-cell mui-media lbd-ju-info';
               li.innerHTML = str;
               table.appendChild(li);
               str = '';
@@ -97,13 +97,6 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
           console.log(type);
       }
   });
-
-  // var table = document.body.querySelector('.lbd-goods-list-info');
-  // var li = document.createElement('li');
-  // li.className = 'mui-table-view-cell mui-media';
-  // li.innerHTML = 'str';
-  // table.appendChild(li);
-
 
   setTimeout(function() {
     seemore = '<button type="button" class="mui-btn mui-btn-block mui-btn-grey lbd-index-info" data-loading-text="提交中">点击查看更多...</button>';

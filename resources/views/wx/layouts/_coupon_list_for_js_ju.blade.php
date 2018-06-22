@@ -24,7 +24,6 @@ if (Number(mystime.getDate()) + 1 >= 10) {
 }
 end_time = mystime.getFullYear()+'-'+month+'-'+day+' 59:59:59'
 
-str += '<li class="mui-table-view-cell mui-media lbd-ju-info">'
 str +=     '<a href="'+item.wap_url+'">'
 str +=     	'<div class="mui-row">'
 str +=     		'<div class="mui-col-xs-4 goods-image"><img src="'+item.pic_url_for_w_l+'"/></div>'
@@ -42,4 +41,3 @@ str +=     			'</div>'
 str +=     		'</div>'
 str +=     	'</div>'
 str +=     '</a>'
-str += '</li>'
