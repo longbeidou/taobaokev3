@@ -19,15 +19,6 @@
       <li class="lbd-active" style="width:100%;">
           <a>每日精选优惠券商品</a>
       </li>
-      <!-- <li>
-          <a href="#">销量</a>
-      </li>
-      <li>
-          <a href="#">最新</a>
-      </li>
-      <li>
-          <a href="#">价格</a>
-      </li> -->
     </ul>
   </div>
   <div id="mui-row lbd-position-fixed"></div>
@@ -43,7 +34,7 @@
     </ul>
     <!--查看更多商品 开始-->
     <div class="mui-col-xs-12 mui-text-center lbd-index-box" id="lbd-index-see-more">
-      <button type="button" class="mui-btn mui-btn-block mui-btn-grey lbd-index-info" data-loading-text="提交中">点击查看更多...</button>
+      <button type="button" class="mui-btn mui-btn-block mui-btn-danger lbd-index-info" data-loading-text="提交中">点击查看更多...</button>
     </div><!--查看更多商品 结束-->
 @endif
   </div><!--商品列表 结束-->
@@ -127,7 +118,7 @@
         }
     });
     setTimeout(function() {
-      seemore = '<button type="button" class="mui-btn mui-btn-block mui-btn-grey lbd-index-info" data-loading-text="提交中">点击查看更多...</button>';
+      seemore = '<button type="button" class="mui-btn mui-btn-block mui-btn-danger lbd-index-info" data-loading-text="提交中">点击查看更多...</button>';
       document.getElementById('lbd-index-see-more').innerHTML = seemore;
     }, 1500);
   })
