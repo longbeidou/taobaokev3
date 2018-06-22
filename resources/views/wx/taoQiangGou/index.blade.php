@@ -67,6 +67,8 @@
 //								}
 //							},
 					up: {
+            contentrefresh : '玩命加载中...',
+            contentnomore : '使出吃奶的力气也没有找到更多宝贝~~~',
 						callback: function() {
 							var self = this;
 							setTimeout(function() {
