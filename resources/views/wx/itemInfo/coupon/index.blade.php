@@ -75,5 +75,10 @@
 @section('footJs')
 <script type="text/javascript" charset="utf-8">
   mui.init();
+
+  // 监听tap事件，解决 a标签 不能跳转页面问题
+  mui('#lbd-footer-tab-item').on('tap','a',function(){
+    document.location.href=this.href;
+  })
 </script>
 @stop
