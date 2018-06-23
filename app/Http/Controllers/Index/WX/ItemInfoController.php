@@ -17,7 +17,7 @@ class ItemInfoController extends Controller
       $this->repository = $repository;
     }
 
-    // 优惠券的详情页面
+    // 优惠券的详情页面  用于优惠券api获取
     public function couponIndex($id = null, Request $request)
     {
       $id == null ? abort(404) : '';
@@ -28,5 +28,18 @@ class ItemInfoController extends Controller
       $couponInfo = $this->repository->couponInfo($request);
       $guessYouLikeCoupons = $this->repository->guessYouLike(self::ADZONE_ID, '5');
       return view('wx.itemInfo.coupon.index', compact('title', 'itemInfo', 'images', 'couponInfo', 'guessYouLikeCoupons'));
+    }
+
+    // 优惠券的详情页面 用于通用优惠券的获取
+    public function itemIndex($id = null, Request $request)
+    {
+      $id == null ? abort(404) : '';
+      $itemInfo = $this->repository->itemInfo(['num_iids' => $id, 'platform' => '2']);
+      $itemInfo == false ? abort(404) : '';
+      $title = $itemInfo->title;
+      $images = $this->repository->images($itemInfo);
+      $couponInfo = $this->repository->couponInfo($request);
+      $guessYouLikeCoupons = $this->repository->guessYouLike(self::ADZONE_ID, '5');
+      return view('wx.itemInfo.material.index', compact('title', 'itemInfo', 'images', 'couponInfo', 'guessYouLikeCoupons'));
     }
 }

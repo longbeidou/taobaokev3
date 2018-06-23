@@ -66,4 +66,24 @@ class CouponListPresenter
   {
     return date('Y-m-d H:i:s', substr($str, 0, 10));
   }
+
+  // 过滤优惠券api获取的优惠券链接的域名只获取参数
+  public function getParaStrFromCouponUrl($link)
+  {
+    if (empty($link)) {
+      return '';
+    }
+
+    return str_replace('https://uland.taobao.com/coupon/edetail', '', $link);
+  }
+
+  // 过滤通用api获取的优惠券链接的域名只获取参数
+  public function getParaStrFromMaterialUrl($link)
+  {
+    if (empty($link)) {
+      return '';
+    }
+
+    return str_replace('//uland.taobao.com/coupon/edetail', '', $link);
+  }
 }

@@ -13,16 +13,16 @@
 </header>
 
 @if(!empty($couponInfo))
-    @include('wx.itemInfo.coupon._footer')
+    @include('wx.itemInfo.material._footer')
 @else
-    @include('wx.itemInfo.coupon._footer_no')
+    @include('wx.itemInfo.material._footer_no')
 @endif
 
 <div class="mui-content">
   @inject('itemShow', 'App\Presenters\ItemInfoPresenter')
   <!--商品介绍 开始-->
   <div class="mui-row lbd-goods-pic">
-    @include('wx.itemInfo.coupon._banner')
+    @include('wx.itemInfo.material._banner')
     <div class="mui-col-xs-12 lbd-goods-desc">
       <div class="lbd-top">
         <h1>{{ $itemInfo->title }}</h1>
@@ -42,9 +42,9 @@
     </div>
   </div><!--商品介绍 结束-->
   @if(empty($couponInfo))
-      @include('wx.itemInfo.coupon._coupon_info_no')
+      @include('wx.itemInfo.material._coupon_info_no')
   @else
-      @include('wx.itemInfo.coupon._coupon_info')
+      @include('wx.itemInfo.material._coupon_info')
   @endif
   <!--店铺信息 开始-->
   <div class="mui-row lbd-goods-shop">

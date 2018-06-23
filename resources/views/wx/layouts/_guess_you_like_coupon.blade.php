@@ -8,7 +8,7 @@
   <ul class="mui-table-view lbd-goods-list-info">
       @foreach($guessYouLikeCoupons as $coupon)
       <li class="mui-table-view-cell mui-media">
-          <a url="{{ $coupon->coupon_click_url }}" href="{{ route('wx.itemInfo.index', $coupon->num_iid) }}">
+          <a class="addURL" e="{{ $couponShow->getParaStrFromCouponUrl($coupon->coupon_click_url) }}" href="{{ route('wx.itemInfo.index.coupon', $coupon->num_iid) }}">
             <div class="mui-row">
               <div class="mui-col-xs-4 goods-image">
                 <img src="{{ $coupon->pict_url }}"/>
