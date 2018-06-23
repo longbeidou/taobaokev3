@@ -31,6 +31,7 @@ Route::get('/search/tmall/', 'Index\WX\SearchController@tmall')->name('wx.search
 Route::get('/search/ju/', 'Index\WX\SearchController@ju')->name('wx.search.ju');
 Route::get('/search/tpwd/', 'Index\WX\SearchController@tpwd')->name('wx.search.tpwd');
 Route::get('/taoqianggou', 'Index\WX\TaoQiangGouController@index')->name('wx.taoqianggou.index');
+Route::get('/couponInfo/{id?}', 'Index\WX\ItemInfoController@couponIndex')->name('wx.itemInfo.index')->where('id', '[0-9]+');
 
 
 Route::prefix('api/alimama')->group(function() {

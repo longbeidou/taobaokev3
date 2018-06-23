@@ -465,7 +465,7 @@ header a
 .lbd-goods-coupon
 {
 	height: 90px;
-	padding: 10px 15px;
+	padding: 10px 5px;
 }
 .lbd-goods-coupon .lbd-left
 {
@@ -511,7 +511,7 @@ header a
 }
 .lbd-goods-coupon .lbd-left .lbd-money .lbd-m
 {
-	font-size: 18px;
+	font-size: 14px;
 }
 .lbd-goods-coupon .lbd-left .lbd-date
 {
@@ -586,8 +586,8 @@ header a
 .lbd-goods-shop ul li
 {
 	float: left;
-	padding: 0px;
-	width: 25%;
+	padding: 0px 10px 0px 0px;
+	/* width: 25%; */
 	font-size: 12px;
 	color: #888;
 }
@@ -906,6 +906,10 @@ header a
 .lbd-goods-list-info li
 {
 	min-height: 110px;
+}
+.lbd-goods-list-info li a
+{
+	min-height: 145px;
 }
 
 .lbd-goods-list .lbd-ju-info

@@ -21,4 +21,10 @@ interface AlimamaRepositoryInterface
 
   // 淘抢购api
   public function taobaoTbkJuTqgGet(Array $para);
+
+  // 淘宝客商品详情（简版）
+  public function taobaoTbkItemInfoGet(Array $datas);
+
+  // * 阿里妈妈推广券信息查询
+  public function taobaoTbkCouponGet(Array $datas);
 }

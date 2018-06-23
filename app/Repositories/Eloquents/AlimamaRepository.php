@@ -87,4 +87,28 @@ class AlimamaRepository implements AlimamaRepositoryInterface
 
     return $result->results->results;
   }
+
+  // 淘宝客商品详情（简版）
+  public function taobaoTbkItemInfoGet(Array $datas)
+  {
+    $result = $this->alimamaSdk->taobaoTbkItemInfoGet($datas);
+
+    if (empty($result->results->n_tbk_item)) {
+      return false;
+    }
+
+    return $result->results->n_tbk_item[0];
+  }
+
+  // * 阿里妈妈推广券信息查询
+  public function taobaoTbkCouponGet(Array $datas)
+  {
+    $result = $this->alimamaSdk->taobaoTbkCouponGet($datas);
+
+    if (empty($result->data)) {
+      return false;
+    }
+
+    return $result->data;
+  }
 }

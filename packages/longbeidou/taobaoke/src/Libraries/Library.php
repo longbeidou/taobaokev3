@@ -69,7 +69,7 @@ class Library extends Base
 	{
 		$standard = ['platform', 'num_iids'];
 		$req = new TbkItemInfoGetRequest;
-		$req->setFields('num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url,nick,seller_id,volume,cat_leaf_name,cat_name');
+		// $req->setFields('num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url,nick,seller_id,volume,cat_leaf_name,cat_name');
 		$req = $this->setOptions->options($req, $datas, $standard);
 
 		return $this->c->execute($req);
@@ -212,12 +212,12 @@ class Library extends Base
 	{
 		$req = new TbkCouponGetRequest;
 		if (!empty($datas['me'])) {
-			$req->setMe($datas['me']);			
+			$req->setMe($datas['me']);
 		} else {
 			$req->setItemId($datas['item_id']);
 			$req->setActivityId($datas['activity_id']);
 		}
-		
+
 		return $this->c->execute($req);
 	}
 
@@ -327,7 +327,7 @@ class Library extends Base
 	{
 		$req = new WirelessShareTpwdQueryRequest;
 		$req->setPasswordContent($tpwd);
-		
+
 		return $this->c->execute($req);
 	}
 
