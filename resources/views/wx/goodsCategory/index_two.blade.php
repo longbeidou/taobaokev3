@@ -94,6 +94,7 @@
           need_free_shipment : '{{ $para['need_free_shipment'] or '' }}',
           need_prepay : '{{ $para['need_prepay'] or '' }}',
           npx_level : '{{ $para['npx_level'] or '' }}',
+          sort : '{{ $para['sort'] or '' }}',
           page_no : pageNo
         },
         dataType:'json',//服务器返回json格式数据
