@@ -60,10 +60,12 @@
   </div><!--店铺信息 结束-->
   <!--图文详情 开始-->
   <div class="mui-row lbd-goods-info">
-    <ul class="mui-table-view">
+    <ul class="mui-table-view" id="lbd-images-box">
         <li class="mui-table-view-cell mui-collapse" id='lbd-goods-imgs'>
             <a class="mui-navigate-right">图文详情</a>
-            <div class="mui-collapse-content mui-text-center" id="couponInfoDetails"></div>
+            <div class="mui-collapse-content mui-text-center" id="couponInfoDetails">
+              <p>详情加载中...</p>
+            </div>
         </li>
     </ul>
   </div><!--图文详情 结束-->
@@ -75,6 +77,35 @@
 @section('footJs')
 <script type="text/javascript" charset="utf-8">
   mui.init();
+  var loadImg = 0;
+  mui('#lbd-images-box').on('tap', 'li', function() {
+    if (loadImg === 0) {
+      loadImg++;
+      mui.ajax('{{ route('api.itemInfoImages.itemDetailImage') }}', {
+        data : {
+          id : '{{ $itemInfo->num_iid }}'
+        },
+        dataType : 'json',//服务器返回json格式数据
+        type : 'post',//HTTP请求类型
+        timeout : 10000,//超时时间设置为10秒；
+        headers : {
+            'Content-Type':'application/json',
+            'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+        },
+        success : function(data) {
+          if (data == 415) {
+            document.getElementById('couponInfoDetails').innerHTML = '<p>加载商品详情失败！</p>'
+          } else {
+            document.getElementById('couponInfoDetails').innerHTML = data;
+          }
+        },
+        error : function(xhr,type,errorThrown){
+            //异常处理；
+            console.log(type);
+        }
+      });
+    }
+  });
 
   // 监听tap事件，解决 a标签 不能跳转页面问题
   mui('#lbd-footer-tab-item').on('tap','a',function(){

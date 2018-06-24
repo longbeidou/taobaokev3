@@ -42,3 +42,6 @@ Route::prefix('api/alimama')->group(function() {
 	Route::post('taobaoJuItemsSearch', 'Api\AlimamaController@taobaoJuItemsSearch')->name('api.alimama.taobaoJuItemsSearch');
 	Route::post('taobaoTbkJuTqgGet', 'Api\AlimamaController@taobaoTbkJuTqgGet')->name('api.alimama.taobaoTbkJuTqgGet');
 });
+Route::prefix('api/item')->group(function() {
+	Route::post('itemimages/{id?}', 'Api\ItemInfoImagesController@itemDetailImage')->name('api.itemInfoImages.itemDetailImage')->where('id', '[0-9]+');
+});
