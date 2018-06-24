@@ -38,6 +38,14 @@ class AlimamaController extends Controller
         return 415;
       }
 
+      $paraArr = $request->all();
+
+      foreach ($paraArr as $key => $para) {
+        if ($para === null) {
+          unset($paraArr[$key]);
+        }
+      }
+
       $result = $this->repository->taobaoTbkDgMaterialOptional($request->all());
 
       if (!$result) {

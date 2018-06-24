@@ -95,7 +95,18 @@
           need_prepay : '{{ $para['need_prepay'] or '' }}',
           npx_level : '{{ $para['npx_level'] or '' }}',
           sort : '{{ $para['sort'] or '' }}',
-          page_no : pageNo
+          page_no : pageNo,
+          start_dsr : '{{ $para['start_dsr'] or '' }}',
+          end_tk_rate : '{{ $para['end_tk_rate'] or '' }}',
+          start_tk_rate : '{{ $para['start_tk_rate'] or '' }}',
+          end_price : '{{ $para['end_price'] or '' }}',
+          start_price : '{{ $para['start_price'] or '' }}',
+          itemloc : '{{ $para['itemloc'] or '' }}',
+          cat : '{{ $para['cat'] or '' }}',
+          ip : '{{ $para['ip'] or '' }}',
+          include_pay_rate_30 : '{{ $para['include_pay_rate_30'] or '' }}',
+          include_good_rate : '{{ $para['include_good_rate'] or '' }}',
+          include_rfd_rate : '{{ $para['include_rfd_rate'] or '' }}'
         },
         dataType:'json',//服务器返回json格式数据
         type:'post',//HTTP请求类型
