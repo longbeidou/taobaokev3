@@ -8,7 +8,7 @@
 @section('content')
 <header class="mui-bar mui-bar-nav">
     <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-    <a class="mui-icon mui-icon-search mui-pull-right" href="{{ route('wx.search.index') }}"></a>
+    <a class="mui-icon mui-icon-search mui-pull-right lbd-a-no-tap" href="{{ route('wx.search.index') }}"></a>
     <h1 class="mui-title">天猫优惠券搜索结果</h1>
 </header>
 
@@ -20,16 +20,16 @@
   <div class="mui-row lbd-index-list-head lbd-fixed" id="lbd-index-list-head">
     <ul>
       <li class="{{ $showActive->showActiveForSort($sort, '') }}">
-          <a href="{{ route('wx.search.all') }}?q={{ $q }}">精选</a>
+          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?q={{ $q }}">精选</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'sales') }}">
-          <a href="{{ route('wx.search.all') }}?sort=sales&q={{ $q }}">销量</a>
+          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=sales&q={{ $q }}">销量</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'commi') }}">
-          <a href="{{ route('wx.search.all') }}?sort=commi&q={{ $q }}">最热</a>
+          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=commi&q={{ $q }}">最热</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'price') }}">
-          <a href="{{ route('wx.search.all') }}?sort=price&q={{ $q }}">价格</a>
+          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=price&q={{ $q }}">价格</a>
       </li>
     </ul>
   </div>
@@ -130,6 +130,14 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
     seemore = '<button type="button" class="mui-btn mui-btn-block mui-btn-danger lbd-index-info" data-loading-text="提交中">点击查看更多...</button>';
     document.getElementById('lbd-index-see-more').innerHTML = seemore;
   }, 1500);
+})
+// 监听tap事件，让a标签自动加入url的参数
+mui('body').on('tap','.addURL',function(){
+  document.location.href=this.href+'?url='+this.getAttribute('e')+'&coupon_start_time='+this.getAttribute('coupon_start_time')+'&coupon_end_time='+this.getAttribute('coupon_end_time')+'&coupon_amount='+this.getAttribute('coupon_amount');
+})
+// 监听tap事件，让a标签实现点击
+mui('body').on('tap','.lbd-a-no-tap',function(){
+  document.location.href=this.href;
 })
 </script>
 @stop

@@ -17,16 +17,16 @@
   <div class="mui-row lbd-index-list-head" id="lbd-index-list-head">
     <ul>
       <li class="{{ $showActive->showActiveForSort($sort, '') }}">
-          <a href="{{ route('goodsCategorys.categoryOne', $id) }}">精选</a>
+          <a class="lbd-a-no-tap" href="{{ route('goodsCategorys.categoryOne', $id) }}">精选</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'sales') }}">
-          <a href="{{ route('goodsCategorys.categoryOne', ['id' => $id, 'sort' => 'sales']) }}">销量</a>
+          <a class="lbd-a-no-tap" href="{{ route('goodsCategorys.categoryOne', ['id' => $id, 'sort' => 'sales']) }}">销量</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'commi') }}">
-          <a href="{{ route('goodsCategorys.categoryOne', ['id' => $id, 'sort' => 'commi']) }}">最热</a>
+          <a class="lbd-a-no-tap" href="{{ route('goodsCategorys.categoryOne', ['id' => $id, 'sort' => 'commi']) }}">最热</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'price') }}">
-          <a href="{{ route('goodsCategorys.categoryOne', ['id' => $id, 'sort' => 'price']) }}">价格</a>
+          <a class="lbd-a-no-tap" href="{{ route('goodsCategorys.categoryOne', ['id' => $id, 'sort' => 'price']) }}">价格</a>
       </li>
     </ul>
   </div>
@@ -179,7 +179,11 @@
 
   // 监听tap事件，让a标签自动加入url的参数
   mui('body').on('tap','.addURL',function(){
-    document.location.href=this.href+'?url='+this.getAttribute('e');
+    document.location.href=this.href+'?url='+this.getAttribute('e')+'&coupon_start_time='+this.getAttribute('coupon_start_time')+'&coupon_end_time='+this.getAttribute('coupon_end_time')+'&coupon_amount='+this.getAttribute('coupon_amount');
+  })
+  // 监听tap事件，让a标签实现点击
+  mui('body').on('tap','.lbd-a-no-tap',function(){
+    document.location.href=this.href;
   })
   </script>
 @stop

@@ -1,7 +1,7 @@
 @inject('couponShow', 'App\Presenters\CouponListPresenter')
 @foreach($couponItems as $item)
 <li class="mui-table-view-cell mui-media">
-    <a class="addURL" e="{{ $couponShow->getParaStrFromMaterialUrl($item->coupon_share_url) }}" href="{{ route('wx.itemInfo.index.material', $item->num_iid) }}">
+    <a class="addURL" e="{{ $couponShow->getParaStrFromMaterialUrl($item->coupon_share_url) }}" coupon_start_time="{{ $item->coupon_start_time }}" coupon_end_time="{{ $item->coupon_end_time }}" coupon_amount="{{ $couponShow->saveMoney($item->coupon_info, $item->zk_final_price) }}" href="{{ route('wx.itemInfo.item', $item->num_iid) }}">
       <div class="mui-row">
         <div class="mui-col-xs-4 goods-image">
           <img data-lazyload="{{ $item->pict_url }}"/>

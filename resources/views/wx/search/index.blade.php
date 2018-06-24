@@ -86,5 +86,9 @@
 @section('footJs')
 <script type="text/javascript" charset="utf-8">
   mui.init();
+  // 监听tap事件，让a标签自动加入url的参数
+  mui('body').on('tap','.addURL',function(){
+    document.location.href=this.href+'?url='+this.getAttribute('e');
+  })
 </script>
 @stop

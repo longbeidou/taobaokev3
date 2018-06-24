@@ -65,4 +65,20 @@ class ItemInfoService
       return $this->alimama->taobaoTbkCouponGet($para);
     }
   }
+
+  // 获取优惠券的信息
+  public function couponInfoFromUrl($request)
+  {
+    if (
+      empty($request->all()) ||
+      empty($request->url) ||
+      empty($request->coupon_start_time) ||
+      empty($request->coupon_end_time) ||
+      empty($request->coupon_amount)
+    ) {
+      return false;
+    }
+
+    return (object)$request->all();
+  }
 }

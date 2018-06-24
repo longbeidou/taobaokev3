@@ -85,5 +85,9 @@
   mui('body').on('tap','.addURL',function(){
     document.location.href=this.href+'?url='+this.getAttribute('e');
   })
+  // 监听tap事件，让a标签实现点击
+  mui('body').on('tap','.lbd-a-no-tap',function(){
+    document.location.href=this.href;
+  })
 </script>
 @stop
