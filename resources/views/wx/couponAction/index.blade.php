@@ -16,9 +16,15 @@
 		<div id="slider" class="mui-slider lbd-coupon-take-box">
 			<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 				<a class="mui-control-item mui-active" href="#item1mobile">淘口令方式</a>
+        @if($showClient)
 				<a class="mui-control-item" href="#item2mobile">链接方式</a>
+        @endif
 			</div>
+      @if($showClient)
 			<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6" style="background-color: #ED2A7A;"></div>
+      @else
+      <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-12" style="background-color: #ED2A7A;"></div>
+      @endif
 			<div class="mui-slider-group">
 				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="min-height: 400px; background-color: #fff;">
 					<div id="scroll1" class="mui-scroll-wrapper-bak">
@@ -46,6 +52,7 @@
 						</div>
 					</div>
 				</div>
+        @if($showClient)
 				<div id="item2mobile" class="mui-slider-item mui-control-content" style="min-height: 400px; background-color: #fff;">
 					<div id="scroll2" class="mui-scroll-wrapper-bak">
 						<div class="mui-scroll-bak">
@@ -71,6 +78,7 @@
 					</div>
 
 				</div>
+        @endif
 			</div>
 		</div>
 
@@ -80,6 +88,7 @@
 <script src="/wxstyle/js/clipboard.min.js"></script>
 <script type="text/javascript" charset="utf-8">
   mui.init();
+  @if($showClient)
   var a = '{{ $linkPara[0] }}';
   var b = '{{ $linkPara[1] }}';
   var c = '{{ $linkPara[2] }}';
@@ -87,6 +96,7 @@
   mui('#lbd-coupon-take-link').on('tap', 'button', function() {
     document.location.href = a+b+c+d
   });
+  @endif
   // 复制淘口令的操作
       var clipboard = new ClipboardJS('.lbdTpwdCopy');
 

@@ -9,6 +9,7 @@ use App\Services\WX\CouponActionService;
 class CouponActionController extends Controller
 {
   const ADZONE_ID = '770398581';
+  const SHOW_CLIENT = ['pc', 'wx', 'qq'];
 
   public $repository;
 
@@ -32,7 +33,8 @@ class CouponActionController extends Controller
       $itemInfo = null;
     }
     $tpwd = $this->repository->makeTpwd($couponLink, $itemInfo);
+    $showClient = $this->repository->showClient(self::SHOW_CLIENT);
 
-    return view('wx.couponAction.index', compact('title', 'linkPara', 'tpwd', 'itemInfo'));
+    return view('wx.couponAction.index', compact('title', 'linkPara', 'tpwd', 'itemInfo', 'showClient'));
   }
 }

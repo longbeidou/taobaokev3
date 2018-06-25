@@ -3,16 +3,19 @@
 namespace App\Services\WX;
 
 use App\Repositories\Contracts\AlimamaRepositoryInterface;
+use App\Services\Share\CheckSourceClient;
 use Carbon\Carbon;
 
 class CouponActionService
 {
   const TAOBAO_DOMAIN = '//uland.taobao.com/coupon/edetail';
   public $alimamaRepository;
+  public $client;
 
-  public function __construct(AlimamaRepositoryInterface $alimama)
+  public function __construct(AlimamaRepositoryInterface $alimama, CheckSourceClient $client)
   {
     $this->alimamaRepository = $alimama;
+    $this->client = $client;
   }
 
   // 获取优惠券链接
@@ -93,5 +96,13 @@ class CouponActionService
   public function itemInfo($id)
   {
     return $this->alimamaRepository->taobaoTbkItemInfoGet(['num_iids' => $id, 'platform' => '2']);
+  }
+
+  // 是否展示链接跳转按钮
+  public function showClient($canShowClientArr = ['pc', 'wx'])
+  {
+    $client = $this->client->from();
+
+    return in_array($client, $canShowClientArr);
   }
 }
