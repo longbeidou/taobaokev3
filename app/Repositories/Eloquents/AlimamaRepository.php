@@ -111,4 +111,13 @@ class AlimamaRepository implements AlimamaRepositoryInterface
 
     return $result->data;
   }
+
+  // 生成淘口令
+  public function taobaoWirelessShareTpwdCreate(Array $datas)
+  {
+    $result = $this->alimamaSdk->taobaoWirelessShareTpwdCreate($datas);
+    empty($result->model) ? $tpwd = false : $tpwd = $result->model;
+
+    return $tpwd;
+  }
 }

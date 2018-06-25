@@ -1,3 +1,4 @@
+@inject('itemShow', 'App\Presenters\ItemInfoPresenter')
 <nav class="mui-bar mui-bar-tab lbd-footer-tab lbd-goods-footer" id="lbd-footer-tab-item">
     <a class="mui-tab-item" href="{{ route('wx.index') }}" style="width: 100%;">
         <span class="mui-icon mui-icon-home"></span>
@@ -12,7 +13,7 @@
         <span class="mui-tab-label">搜同类</span>
     </a>
 
-    <a class="mui-tab-item lbd-take" style="width: 140px;">
+    <a class="mui-tab-item lbd-take" rel="nofollow" href="{{ route('wx.CouponAction.index', $itemInfo->num_iid) }}{{ $itemShow->concatCouponLinkPara($couponLinkPara) }}" style="width: 140px;">
         <span class="mui-tab-label">
           领取{{ floor($couponInfo->coupon_amount) }}元券
           <div class="lbd-left-circle lbd-01"></div>

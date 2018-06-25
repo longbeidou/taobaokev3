@@ -13,4 +13,17 @@ class ItemInfoPresenter
 
     return $str;
   }
+
+  // 拼接优惠券的参数
+  public function concatCouponLinkPara($paraArr)
+  {
+    $linkStr = '?';
+    $paraArrNew = [];
+
+    foreach ($paraArr as $para => $value) {
+      $paraArrNew[] = $para.'='.$value;
+    }
+
+    return $linkStr.implode('&', $paraArrNew);
+  }
 }

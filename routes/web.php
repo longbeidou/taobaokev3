@@ -34,6 +34,7 @@ Route::get('/taoqianggou', 'Index\WX\TaoQiangGouController@index')->name('wx.tao
 Route::get('/item/{id?}', 'Index\WX\ItemInfoController@item')->name('wx.itemInfo.item')->where('id', '[0-9]+');
 // Route::get('/couponInfo/{id?}', 'Index\WX\ItemInfoController@couponIndex')->name('wx.itemInfo.index.coupon')->where('id', '[0-9]+');
 // Route::get('/itemInfo/{id?}', 'Index\WX\ItemInfoController@itemIndex')->name('wx.itemInfo.index.material')->where('id', '[0-9]+');
+Route::get('/couponaction/{id}', 'Index\WX\CouponActionController@index')->name('wx.CouponAction.index')->where('id', '[0-9]+');
 
 
 Route::prefix('api/alimama')->group(function() {

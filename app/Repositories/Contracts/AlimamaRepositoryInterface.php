@@ -27,4 +27,7 @@ interface AlimamaRepositoryInterface
 
   // * 阿里妈妈推广券信息查询
   public function taobaoTbkCouponGet(Array $datas);
+
+  // 生成淘口令
+  public function taobaoWirelessShareTpwdCreate(Array $datas);
 }

@@ -38,13 +38,14 @@ class ItemInfoController extends Controller
       $title = $itemInfo->title;
       $images = $this->repository->images($itemInfo);
       $guessYouLikeCoupons = $this->repository->guessYouLike(self::ADZONE_ID, '5');
+      $couponLinkPara = $this->repository->couponLinkPrar($request->all());
 
       if ($fromCoupon) {
         $couponInfo = $this->repository->couponInfo($request);
-        return view('wx.itemInfo.coupon.index', compact('title', 'itemInfo', 'images', 'couponInfo', 'guessYouLikeCoupons'));
+        return view('wx.itemInfo.coupon.index', compact('title', 'itemInfo', 'images', 'couponInfo', 'guessYouLikeCoupons', 'couponLinkPara'));
       } else {
         $couponInfo = $this->repository->couponInfoFromUrl($request);
-        return view('wx.itemInfo.material.index', compact('title', 'itemInfo', 'images', 'couponInfo', 'guessYouLikeCoupons'));
+        return view('wx.itemInfo.material.index', compact('title', 'itemInfo', 'images', 'couponInfo', 'guessYouLikeCoupons', 'couponLinkPara'));
       }
     }
 

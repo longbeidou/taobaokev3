@@ -1,3 +1,4 @@
+@inject('itemShow', 'App\Presenters\ItemInfoPresenter')
 <!--优惠券 开始-->
 <div class="mui-row lbd-goods-coupon">
   <div class="mui-col-xs-9 lbd-left">
@@ -16,7 +17,7 @@
     </div>
   </div>
   <div class="mui-col-xs-3 lbd-right">
-    <a rel="nofollow" href="https://www.baidu.com" class="lbd-link lbd-a-no-tap">立即领券</a>
+    <a rel="nofollow" href="{{ route('wx.CouponAction.index', $itemInfo->num_iid) }}{{ $itemShow->concatCouponLinkPara($couponLinkPara) }}" class="lbd-link lbd-a-no-tap">立即领券</a>
     <div class="lbd-right-circle"></div>
   </div>
 </div><!--优惠券 结束-->

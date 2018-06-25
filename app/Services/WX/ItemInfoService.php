@@ -81,4 +81,33 @@ class ItemInfoService
 
     return (object)$request->all();
   }
+
+  // 获取优惠券链接的参数
+  public function couponLinkPrar($paraArr)
+  {
+    $result = [];
+
+    // 来自优惠券api的优惠券参数
+    if (!empty($paraArr['url']) && !empty($paraArr['traceId'])) {
+      $result['e'] = str_replace('?e=', '', $paraArr['url']);
+      $result['traceId'] = $paraArr['traceId'];
+    }
+
+    // 来自通用搜索api的优惠券参数
+    if(
+      !empty($paraArr['url']) &&
+      !empty($paraArr['app_pvid']) &&
+      !empty($paraArr['ptl']) &&
+      !empty($paraArr['mt']) &&
+      !empty($paraArr['union_lens'])
+    ) {
+      $result['e'] = str_replace('?e=', '', $paraArr['url']);
+      $result['app_pvid'] = $paraArr['app_pvid'];
+      $result['ptl'] = $paraArr['ptl'];
+      $result['mt'] = $paraArr['mt'];
+      $result['union_lens'] = $paraArr['union_lens'];
+    }
+
+    return $result;
+  }
 }
