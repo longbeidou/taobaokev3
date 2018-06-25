@@ -1039,3 +1039,8 @@ header a
 {
 	top: 37px;
 }
+
+.lbd-coupon-take-box .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active
+{
+	color: #ED2A7A;
+}

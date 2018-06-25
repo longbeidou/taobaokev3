@@ -6,6 +6,7 @@
     @section('title')
     @show
     <link href="/wxstyle/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/wxstyle/css/icons-extra.css" />
     <link href="/wxstyle/css/main.css" rel="stylesheet"/>
     @section('headcss')
     @show
