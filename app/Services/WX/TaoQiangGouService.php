@@ -51,7 +51,7 @@ class TaoQiangGouService
       4 => ['hour' => '15', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(15), 'end_time' => $this->getDateTimeStr(16, 59, 59), 'page_size' => $pageSize],
       5 => ['hour' => '17', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(17), 'end_time' => $this->getDateTimeStr(18, 59, 59), 'page_size' => $pageSize],
       6 => ['hour' => '19', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(19), 'end_time' => $this->getDateTimeStr(19, 59, 59), 'page_size' => $pageSize],
-      7 => ['hour' => '20', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(20), 'end_time' => $this->getDateTimeStr(20, 59, 59), 'page_size' => $pageSize],
+      // 7 => ['hour' => '20', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(20), 'end_time' => $this->getDateTimeStr(20, 59, 59), 'page_size' => $pageSize],
       8 => ['hour' => '21', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(21), 'end_time' => $this->getDateTimeStr(21, 59, 59), 'page_size' => $pageSize],
       9 => ['hour' => '23', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(23), 'end_time' => $this->getDateTimeStr(23, 59, 59), 'page_size' => $pageSize]
     ];
