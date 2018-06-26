@@ -24,7 +24,12 @@ if (Number(mystime.getDate()) + 1 >= 10) {
 }
 end_time = mystime.getFullYear()+'-'+month+'-'+day+' 59:59:59'
 
-str +=     '<a href="'+item.wap_url+'">'
+urlPara = item.wap_url.split('?')
+urlParaArr = urlPara[1].split('&')
+id = urlParaArr[0].replace(/id=/, '')
+item_id = urlParaArr[1].replace(/item_id=/, '')
+
+str +=     '<a rel="nofollow" href="{{ route('wx.webJump.juForJs') }}/'+id+'/'+item_id+'/">'
 str +=     	'<div class="mui-row">'
 str +=     		'<div class="mui-col-xs-4 goods-image"><img src="'+item.pic_url_for_w_l+'"/></div>'
 str +=     		'<div class="mui-col-xs-8 lbd-content-top">'

@@ -1,7 +1,9 @@
 @inject('couponShow', 'App\Presenters\CouponListPresenter')
+@inject('ju', 'App\Presenters\JuPresenter')
+
 @foreach($juItems as $item)
 <li class="mui-table-view-cell mui-media lbd-ju-info">
-    <a href="{{ $item->wap_url }}">
+    <a rel="nofollow" href="{{ route('wx.webJump.ju') }}?u={{ $ju->getParasStrFromWapUrl($item->wap_url) }}">
     	<div class="mui-row">
     		<div class="mui-col-xs-4 goods-image">
     			<img data-lazyload="{{ $item->pic_url_for_w_l }}"/>
