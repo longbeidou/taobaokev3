@@ -17,10 +17,16 @@ class TaoQiangGouPresenter
   public function activeShow($rulesArr, $key, $value)
   {
     $hour = Carbon::now()->hour;
-
-    if ($value < 23 && in_array($value, $rulesArr[$key]) && $value <= $hour && $rulesArr[$key+1]['hour'] > $hour) {
+    
+    if (
+      $value < 23 &&
+      in_array($value, $rulesArr[$key]) &&
+      $value <= $hour &&
+      $rulesArr[$key+1]['hour'] > $hour
+    ) {
       return 'mui-active';
     }
+
     if ($value == 23 && in_array($value, $rulesArr[$key]) && $value <= $hour) {
       return 'mui-active';
     }
