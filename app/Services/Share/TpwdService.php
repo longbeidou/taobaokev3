@@ -47,4 +47,17 @@ class TpwdService
 
     return $this->alimamaRepository->taobaoWirelessShareTpwdCreate($tpwdPara);
   }
+
+  // 根据配置文件来返回淘口令
+  public function createTpwdByConfigure($link)
+  {
+    $tpwdConfig = config('taobaoke.tpwd_only');
+    
+    return $this->alimamaRepository->taobaoWirelessShareTpwdCreate([
+      'logo' => $tpwdConfig['logo'],
+      'text' => $tpwdConfig['text'],
+      'user_id' => $tpwdConfig['user_id'],
+      'url' => $link
+    ]);
+  }
 }

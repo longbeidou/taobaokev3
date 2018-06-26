@@ -17,6 +17,9 @@ return [
 	// 网站的备案号
 	'domain_beian' => '蜀ICP备15010745号-18',
 
+	// 领取优惠券的页面，链接可以展示的客户端
+	'show_client' => ['pc', 'wx', 'qq'],
+
 	// 网站专用的fonticon地址
 	// 'font_icon_src' => '//at.alicdn.com/t/font_581943_b2zuivwy5g8bmx6r.css',
 	'font_icon_src' => '/css/selfIcon/iconfont.css',

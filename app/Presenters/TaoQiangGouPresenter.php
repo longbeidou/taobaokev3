@@ -27,4 +27,12 @@ class TaoQiangGouPresenter
 
     return '';
   }
+
+  // 获取淘抢购链接的参数
+  public function getParasStrFromClickUrl($click_url)
+  {
+    $url = str_replace('taobao', 'jd', $click_url);
+
+    return urlencode($url);
+  }
 }

@@ -2,9 +2,10 @@
   $hour = \Carbon\Carbon::now()->hour;
   $targetHour = substr($item->start_time, 11, 2);
 ?>
+@inject('tqg', 'App\Presenters\TaoQiangGouPresenter')
 @if ( $hour >= $targetHour)
 <li class="mui-table-view-cell lbd-info">
-  <a href="{{ $item->click_url }}">
+  <a rel="nofollow" href="{{ route('wx.webJump.tqg') }}?u={{ $tqg->getParasStrFromClickUrl($item->click_url) }}">
     <div class="mui-row lbd-box">
       <div class="mui-col-xs-4 lbd-img">
         <img src="{{ $item->pic_url }}"/>
@@ -32,7 +33,7 @@
 </li>
 @else
 <li class="mui-table-view-cell lbd-info">
-  <a href="{{ $item->click_url }}">
+  <a rel="nofollow" href="{{ route('wx.webJump.tqg') }}?u={{ $tqg->getParasStrFromClickUrl($item->click_url) }}">
     <div class="mui-row lbd-box">
       <div class="mui-col-xs-4 lbd-img">
         <img src="{{ $item->pic_url }}"/>
