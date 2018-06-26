@@ -4,6 +4,7 @@ namespace App\Services\WX;
 
 use App\Repositories\Contracts\AlimamaRepositoryInterface;
 use App\Services\Share\CheckSourceClient;
+use App\Services\Share\TpwdService;
 use Carbon\Carbon;
 
 class CouponActionService
@@ -11,11 +12,13 @@ class CouponActionService
   const TAOBAO_DOMAIN = '//uland.taobao.com/coupon/edetail';
   public $alimamaRepository;
   public $client;
+  public $tpwd;
 
-  public function __construct(AlimamaRepositoryInterface $alimama, CheckSourceClient $client)
+  public function __construct(AlimamaRepositoryInterface $alimama, CheckSourceClient $client, TpwdService $tpwd)
   {
     $this->alimamaRepository = $alimama;
     $this->client = $client;
+    $this->tpwd = $tpwd;
   }
 
   // 获取优惠券链接
@@ -81,15 +84,7 @@ class CouponActionService
   // 制作淘口令
   public function makeTpwd($link, $itemInfo = null)
   {
-    $tpwdConfig = config('taobaoke.tpwd');
-    $tpwdPara = [
-      'logo' => empty($tpwdConfig['logo']) ? $itemInfo->pict_url : $tpwdConfig['logo'],
-      'text' => empty($tpwdConfig['text']) ? $itemInfo->title : $tpwdConfig['text'],
-      'user_id' => $tpwdConfig['user_id'],
-    ];
-    $tpwdPara['url'] = $link;
-
-    return $this->alimamaRepository->taobaoWirelessShareTpwdCreate($tpwdPara);
+    return $this->tpwd->makeTpwdByConfigureStandard($link, $itemInfo);
   }
 
   // 获取对应id的商品信息
