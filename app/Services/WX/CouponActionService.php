@@ -27,6 +27,12 @@ class CouponActionService
     return $this->linkFromPara($paraArr);
   }
 
+  // 获取优惠券短连接
+  public function shortCouponLink($couponLink)
+  {
+    return $couponLink;
+  }
+
   // 通过传参的方式获取优惠券的链接
   public function linkFromPara($paraArr)
   {

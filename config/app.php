@@ -178,6 +178,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Longbeidou\Taobaoke\TaobaokeServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -229,6 +231,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Taobaoke' => Longbeidou\Taobaoke\Facades\Taobaoke::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 

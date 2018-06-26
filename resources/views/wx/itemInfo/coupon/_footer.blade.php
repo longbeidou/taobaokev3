@@ -4,7 +4,7 @@
         <span class="mui-icon mui-icon-home"></span>
         <span class="mui-tab-label">首页</span>
     </a>
-    <a class="mui-tab-item" href="https://www.baidu.com" style="width: 100%;">
+    <a class="mui-tab-item" rel="nofollow" href="{{ route('wx.ShareItem.coupon', $itemInfo->num_iid) }}{{ $itemShow->concatCouponLinkPara($couponLinkPara) }}&coupon_amount={{ floor($couponInfo->coupon_amount) }}" style="width: 100%;">
         <span class="mui-icon-extra mui-icon-extra-share"></span>
         <span class="mui-tab-label">分享</span>
     </a>

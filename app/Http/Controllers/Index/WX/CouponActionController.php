@@ -35,6 +35,6 @@ class CouponActionController extends Controller
     $tpwd = $this->repository->makeTpwd($couponLink, $itemInfo);
     $showClient = $this->repository->showClient(self::SHOW_CLIENT);
 
-    return view('wx.couponAction.index', compact('title', 'linkPara', 'tpwd', 'itemInfo', 'showClient'));
+    return view('wx.actionPage.coupon', compact('title', 'linkPara', 'tpwd', 'itemInfo', 'showClient'));
   }
 }
