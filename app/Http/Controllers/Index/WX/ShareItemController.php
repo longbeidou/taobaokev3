@@ -8,8 +8,6 @@ use App\Services\WX\CouponActionService;
 
 class ShareItemController extends Controller
 {
-    const ADZONE_ID = '770398581';
-
     public $repository;
 
     public function __construct(CouponActionService $repository)

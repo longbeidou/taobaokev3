@@ -8,22 +8,29 @@ use App\Services\WX\SearchService;
 
 class SearchController extends Controller
 {
-    const ADZONE_ID = '770398581';
     const PAGE_SIZE = '40';
 
     public $repository;
     public $juPid;
+    public $guessYouLikeAdzoneId;
+    public $searchAllAdzonId;
+    public $searchTmallAdzoneId;
+    public $searchTpwdAdzoneId;
 
     public function __construct(SearchService $repository)
     {
-      $this->juPid = config('adzoneID.ju_search_pid');
+      $this->juPid = config('adzoneID.wx_ju_search_pid');
       $this->repository = $repository;
+      $this->guessYouLikeAdzoneId = config('adzoneID.wx_coupon_guess_you_like');
+      $this->searchAllAdzonId = config('adzoneID.wx_search_all_adzone_id');
+      $this->searchTmallAdzoneId = config('adzoneID.wx_search_tmall_adzone_id');
+      $this->searchTpwdAdzoneId = config('adzoneID.wx_search_tpwd');
     }
 
     public function index()
     {
       $title = "淘宝天猫优惠券查询系统";
-      $guessYouLikeCoupons = $this->repository->guessYouLike(self::ADZONE_ID, '5');
+      $guessYouLikeCoupons = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, '5');
 
       return view('wx.search.index', compact('title', 'guessYouLikeCoupons'));
     }
@@ -39,9 +46,9 @@ class SearchController extends Controller
       $q = $request->q;
       $para['sort'] = $this->repository->getSortValue($request->sort);
       $para['q'] = $request->q;
-      $para['adzone_id'] = self::ADZONE_ID;
+      $para['adzone_id'] = $this->searchAllAdzonId;
       $title = $request->q.'的淘宝天猫优惠券搜索结果';
-      $couponItems = $this->repository->all(['adzone_id' => self::ADZONE_ID, 'page_size' => self::PAGE_SIZE, 'q' => $request->q, 'sort' => $sort]);
+      $couponItems = $this->repository->all(['adzone_id' => $this->searchAllAdzonId, 'page_size' => self::PAGE_SIZE, 'q' => $request->q, 'sort' => $sort]);
 
       return view('wx.search.result_all', compact('title', 'couponItems', 'q', 'para', 'sort'));
     }
@@ -57,9 +64,9 @@ class SearchController extends Controller
       $q = $request->q;
       $para['sort'] = $this->repository->getSortValue($request->sort);
       $para['q'] = $request->q;
-      $para['adzone_id'] = self::ADZONE_ID;
+      $para['adzone_id'] = $this->searchTmallAdzoneId;
       $title = $request->q.'的天猫优惠券搜索结果';
-      $couponItems = $this->repository->tmall(['adzone_id' => self::ADZONE_ID, 'page_size' => self::PAGE_SIZE, 'q' => $request->q, 'sort' => $sort]);
+      $couponItems = $this->repository->tmall(['adzone_id' => $this->searchTmallAdzoneId, 'page_size' => self::PAGE_SIZE, 'q' => $request->q, 'sort' => $sort]);
 
       return view('wx.search.result_tmall', compact('title', 'couponItems', 'q', 'para', 'sort'));
     }
@@ -95,10 +102,10 @@ class SearchController extends Controller
       $tpwdKeyword = $this->repository->tpwdQuery($request->q);
       $q = $this->repository->getGoodsTitle($tpwdKeyword);
       $sort = empty($request->sort) ? '' : $request->sort;
-      $couponItems = $this->repository->all(['adzone_id' => self::ADZONE_ID, 'page_size' => self::PAGE_SIZE, 'q' => $q, 'sort' => $sort]);
+      $couponItems = $this->repository->all(['adzone_id' => $this->searchTpwdAdzoneId, 'page_size' => self::PAGE_SIZE, 'q' => $q, 'sort' => $sort]);
       $para['sort'] = $this->repository->getSortValue($request->sort);
       $para['q'] = $q;
-      $para['adzone_id'] = self::ADZONE_ID;
+      $para['adzone_id'] = $this->searchTpwdAdzoneId;
       $title = $request->q.'的淘口令优惠券搜索结果';
 
       return view('wx.search.result_tpwd', compact('title', 'couponItems', 'q', 'para', 'sort'));

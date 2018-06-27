@@ -8,13 +8,13 @@ use App\Services\WX\ItemInfoService;
 
 class ItemInfoController extends Controller
 {
-    const ADZONE_ID = '770398581';
-
     public $repository;
+    public $guessYouLikeAdzoneId;
 
     public function __construct(ItemInfoService $repository)
     {
       $this->repository = $repository;
+      $this->guessYouLikeAdzoneId = config('adzoneID.wx_coupon_guess_you_like');
     }
 
     // 商品详情页面
@@ -37,7 +37,7 @@ class ItemInfoController extends Controller
       $itemInfo == false ? abort(404) : '';
       $title = $itemInfo->title;
       $images = $this->repository->images($itemInfo);
-      $guessYouLikeCoupons = $this->repository->guessYouLike(self::ADZONE_ID, '5');
+      $guessYouLikeCoupons = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, '5');
       $couponLinkPara = $this->repository->couponLinkPrar($request->all());
 
       if ($fromCoupon) {
@@ -58,7 +58,7 @@ class ItemInfoController extends Controller
       $title = $itemInfo->title;
       $images = $this->repository->images($itemInfo);
       $couponInfo = $this->repository->couponInfo($request);
-      $guessYouLikeCoupons = $this->repository->guessYouLike(self::ADZONE_ID, '5');
+      $guessYouLikeCoupons = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, '5');
       return view('wx.itemInfo.coupon.index', compact('title', 'itemInfo', 'images', 'couponInfo', 'guessYouLikeCoupons'));
     }
 
@@ -71,7 +71,7 @@ class ItemInfoController extends Controller
       $title = $itemInfo->title;
       $images = $this->repository->images($itemInfo);
       $couponInfo = $this->repository->couponInfoFromUrl($request);
-      $guessYouLikeCoupons = $this->repository->guessYouLike(self::ADZONE_ID, '5');
+      $guessYouLikeCoupons = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, '5');
       return view('wx.itemInfo.material.index', compact('title', 'itemInfo', 'images', 'couponInfo', 'guessYouLikeCoupons'));
     }
 }

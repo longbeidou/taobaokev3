@@ -9,8 +9,6 @@ use App\Services\Share\MakeCouponShareImageService;
 
 class ImageController extends Controller
 {
-    const ADZONE_ID = '770398581';
-
     public $repository;
     public $makeImage;
 

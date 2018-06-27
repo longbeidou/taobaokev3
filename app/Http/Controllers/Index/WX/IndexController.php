@@ -8,23 +8,24 @@ use App\Services\WX\IndexService;
 
 class IndexController extends Controller
 {
-    const ADZONE_ID = 770398581;
     const PAGE_SIZE = 20;
 
     public $repository;
+    public $couponAdzoneId; // 优惠券api获取的数据
 
     public function __construct(IndexService $api)
     {
       $this->repository = $api;
+      $this->couponAdzoneId = config('adzoneID.wx_index_coupon_adzone_id');
     }
 
     // 首页
     public function index()
     {
       $title = config('website.indexTitle');
-      $adzoneId = self::ADZONE_ID;
+      $adzoneId = $this->couponAdzoneId;
       $pageSize = self::PAGE_SIZE;
-      $couponItems = $this->repository->topGoodsCategoryCouponItems(['adzone_id' => self::ADZONE_ID, 'page_size'=>self::PAGE_SIZE]);
+      $couponItems = $this->repository->topGoodsCategoryCouponItems(['adzone_id' => $this->couponAdzoneId, 'page_size'=>self::PAGE_SIZE]);
       $topGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => 1]);
 
       return view('wx.index.index', compact('title', 'couponItems', 'adzoneId', 'pageSize', 'topGoodsCategory'));
