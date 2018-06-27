@@ -20,6 +20,9 @@ return [
 	// 领取优惠券的页面，链接可以展示的客户端
 	'show_client' => ['pc', 'wx', 'qq'],
 
+	// 无线端淘抢购的时间节点
+	'wx_tqg_hour' => ['00', '08', '10', '13', '15', '17', '19', '21', '23'],
+
 	// 网站专用的fonticon地址
 	// 'font_icon_src' => '//at.alicdn.com/t/font_581943_b2zuivwy5g8bmx6r.css',
 	'font_icon_src' => '/css/selfIcon/iconfont.css',

@@ -43,17 +43,49 @@ class TaoQiangGouService
     $today = Carbon::now();
     $todayStr = $today->year.' '.$today->month.' '.$today->day;
 
-    return [
-      0 => ['hour' => '00', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(0), 'end_time' => $this->getDateTimeStr(7, 59, 59), 'page_size' => $pageSize],
-      1 => ['hour' => '08', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(8), 'end_time' => $this->getDateTimeStr(9, 59, 59), 'page_size' => $pageSize],
-      2 => ['hour' => '10', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(10), 'end_time' => $this->getDateTimeStr(12, 59, 59), 'page_size' => $pageSize],
-      3 => ['hour' => '13', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(13), 'end_time' => $this->getDateTimeStr(14, 59, 59), 'page_size' => $pageSize],
-      4 => ['hour' => '15', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(15), 'end_time' => $this->getDateTimeStr(16, 59, 59), 'page_size' => $pageSize],
-      5 => ['hour' => '17', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(17), 'end_time' => $this->getDateTimeStr(18, 59, 59), 'page_size' => $pageSize],
-      6 => ['hour' => '19', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(19), 'end_time' => $this->getDateTimeStr(20, 59, 59), 'page_size' => $pageSize],
-      7 => ['hour' => '21', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(21), 'end_time' => $this->getDateTimeStr(21, 59, 59), 'page_size' => $pageSize],
-      8 => ['hour' => '23', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(23), 'end_time' => $this->getDateTimeStr(23, 59, 59), 'page_size' => $pageSize]
-    ];
+    return $this->getTqgRulesFromConfig(config('website.wx_tqg_hour'), $adzone_id, $pageSize);
+
+    // return [
+    //   0 => ['hour' => '00', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(0), 'end_time' => $this->getDateTimeStr(7, 59, 59), 'page_size' => $pageSize],
+    //   1 => ['hour' => '08', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(8), 'end_time' => $this->getDateTimeStr(9, 59, 59), 'page_size' => $pageSize],
+    //   2 => ['hour' => '10', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(10), 'end_time' => $this->getDateTimeStr(12, 59, 59), 'page_size' => $pageSize],
+    //   3 => ['hour' => '13', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(13), 'end_time' => $this->getDateTimeStr(14, 59, 59), 'page_size' => $pageSize],
+    //   4 => ['hour' => '15', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(15), 'end_time' => $this->getDateTimeStr(16, 59, 59), 'page_size' => $pageSize],
+    //   5 => ['hour' => '17', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(17), 'end_time' => $this->getDateTimeStr(18, 59, 59), 'page_size' => $pageSize],
+    //   6 => ['hour' => '19', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(19), 'end_time' => $this->getDateTimeStr(20, 59, 59), 'page_size' => $pageSize],
+    //   7 => ['hour' => '21', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(21), 'end_time' => $this->getDateTimeStr(21, 59, 59), 'page_size' => $pageSize],
+    //   8 => ['hour' => '23', 'adzone_id' => $adzone_id, 'start_time' => $this->getDateTimeStr(23), 'end_time' => $this->getDateTimeStr(23, 59, 59), 'page_size' => $pageSize]
+    // ];
+  }
+
+  // 从配置文件中获取淘抢购顶部的导航规则
+  public function getTqgRulesFromConfig($config, $adzone_id, $pageSize)
+  {
+    empty($config) ? $config = ['00', '08', '10', '15', '20', '22'] : '';
+    $rulesArr = [];
+    $longth = count($config);
+
+    foreach ($config as $key => $hour) {
+      if ($key == $longth-1) {
+        $rulesArr[] = [
+          'hour' => $hour,
+          'adzone_id' => $adzone_id,
+          'start_time' => $this->getDateTimeStr((int)$hour),
+          'end_time' => $this->getDateTimeStr(23, 59, 59),
+          'page_size' => $pageSize
+        ];
+      } else {
+        $rulesArr[] = [
+          'hour' => $hour,
+          'adzone_id' => $adzone_id,
+          'start_time' => $this->getDateTimeStr((int)$hour),
+          'end_time' => $this->getDateTimeStr($config[$key+1]-1, 59, 59),
+          'page_size' => $pageSize
+        ];
+      }
+    }
+
+    return $rulesArr;
   }
 
   // 获取开始时间的字符串
