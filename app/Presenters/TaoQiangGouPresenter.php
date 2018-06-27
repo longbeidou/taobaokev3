@@ -17,7 +17,7 @@ class TaoQiangGouPresenter
   public function activeShow($rulesArr, $key, $value)
   {
     $hour = Carbon::now()->hour;
-    
+
     if (
       $value < 23 &&
       in_array($value, $rulesArr[$key]) &&
@@ -37,8 +37,9 @@ class TaoQiangGouPresenter
   // 获取淘抢购链接的参数
   public function getParasStrFromClickUrl($click_url)
   {
-    $url = str_replace('taobao', 'jd', $click_url);
+    $paraArr = explode('?e=', $click_url);
+    $e = empty($paraArr[1]) ? '' : $paraArr[1];
 
-    return urlencode($url);
+    return urlencode($e);
   }
 }

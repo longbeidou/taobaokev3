@@ -18,13 +18,12 @@ class WebJumpController extends Controller
     // 淘抢购的跳转
     public function tqg(Request $request)
     {
-      empty($request->u) ? abort('404') : $para = $request->u;
-      $url = urldecode($para);
-      $urlNew = str_replace('jd.com', 'taobao.com', $url);
+      empty($request->e) ? abort('404') : $e = $request->e;
+      $url = 'https://s.click.taobao.com/t?e='.urldecode($e);
       $showClient = $this->repository->showClient(config('website.show_client'));
 
       if ($showClient) {
-        header('Location:'.$urlNew);
+        header('Location:'.$url);
       } else {
         $title = '提示';
         return view('wx.webJump.index', compact('title'));
