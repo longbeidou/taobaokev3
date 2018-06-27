@@ -37,10 +37,10 @@ Route::get('/item/{id?}', 'Index\WX\ItemInfoController@item')->name('wx.itemInfo
 Route::get('/couponaction/{id}', 'Index\WX\CouponActionController@index')->name('wx.CouponAction.index')->where('id', '[0-9]+');
 Route::get('/shareitem/{id}', 'Index\WX\ShareItemController@coupon')->name('wx.ShareItem.coupon')->where('id', '[0-9]+');
 Route::get('/coupon/image/{id}', 'Index\WX\ImageController@couponShareImage')->name('wx.image.couponShareImage')->where('id', '[0-9]+');
-Route::get('/url/derect/tqg', 'Index\WX\WebJumpController@tqg')->name('wx.webJump.tqg');
-Route::get('/url/derect/tqg/e/', 'Index\WX\WebJumpController@tqgForJs')->name('wx.webJump.tqgForJs');
-Route::get('/url/derect/ju', 'Index\WX\WebJumpController@ju')->name('wx.webJump.ju');
-Route::get('/url/derect/ju/js', 'Index\WX\WebJumpController@juForJs')->name('wx.webJump.juForJs');
+Route::get('/url/der/tqg', 'Index\WX\WebJumpController@tqg')->name('wx.webJump.tqg');
+Route::get('/url/der/tqg/e/', 'Index\WX\WebJumpController@tqgForJs')->name('wx.webJump.tqgForJs');
+Route::get('/url/der/ju', 'Index\WX\WebJumpController@ju')->name('wx.webJump.ju');
+Route::get('/url/der/ju/js', 'Index\WX\WebJumpController@juForJs')->name('wx.webJump.juForJs');
 
 Route::prefix('api/alimama')->group(function() {
 	Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('api.alimama.taobaoTbkDgItemCouponGet');
