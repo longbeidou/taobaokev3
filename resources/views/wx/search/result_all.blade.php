@@ -20,16 +20,16 @@
   <div class="mui-row lbd-index-list-head lbd-fixed" id="lbd-index-list-head">
     <ul>
       <li class="{{ $showActive->showActiveForSort($sort, '') }}">
-          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?q={{ $q }}">精选</a>
+          <a title="淘宝天猫优惠券搜索结果" class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?q={{ $q }}">精选</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'sales') }}">
-          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=sales&q={{ $q }}">销量</a>
+          <a title="淘宝天猫优惠券按照销量排序" class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=sales&q={{ $q }}">销量</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'commi') }}">
-          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=commi&q={{ $q }}">最热</a>
+          <a title="淘宝天猫优惠券按照最热程度排序" class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=commi&q={{ $q }}">最热</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'price') }}">
-          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=price&q={{ $q }}">价格</a>
+          <a title="淘宝天猫优惠券按照价格排序" class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=price&q={{ $q }}">价格</a>
       </li>
     </ul>
   </div>

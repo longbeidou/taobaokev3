@@ -3,9 +3,7 @@
   <div class="mui-slider-group mui-slider-loop">
     <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
     <div class="mui-slider-item mui-slider-item-duplicate">
-      <a href="#">
         <img src="{{ end($images )}}">
-      </a>
     </div>
     @foreach($images as $key => $image)
     <!-- 第{{ $key+1 }}张 -->
@@ -15,9 +13,7 @@
     @endforeach
     <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
     <div class="mui-slider-item mui-slider-item-duplicate">
-      <a href="#">
         <img src="{{ $images[0] }}">
-      </a>
     </div>
   </div>
   <div class="mui-slider-indicator">

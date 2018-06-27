@@ -17,10 +17,10 @@
 <div class="mui-content lbd-search">
 	<div id="slider" class="mui-slider">
 		<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-			<a class="mui-control-item mui-active" href="#item1mobile">全部</a>
-			<a class="mui-control-item" href="#item2mobile">天猫</a>
-			<a class="mui-control-item" href="#item3mobile">聚划算</a>
-			<a class="mui-control-item" href="#item4mobile">淘口令</a>
+			<a rel="nofollow" class="mui-control-item mui-active" href="#item1mobile">全部</a>
+			<a rel="nofollow" class="mui-control-item" href="#item2mobile">天猫</a>
+			<a rel="nofollow" class="mui-control-item" href="#item3mobile">聚划算</a>
+			<a rel="nofollow" class="mui-control-item" href="#item4mobile">淘口令</a>
 		</div>
 		<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
 		<div class="mui-slider-group">

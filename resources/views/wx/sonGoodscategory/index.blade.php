@@ -17,16 +17,16 @@
   <div class="mui-row lbd-index-list-head lbd-fixed" id="lbd-index-list-head">
     <ul>
       <li class="{{ $showActive->showActiveForSort($sort, '') }}">
-          <a class="lbd-a-no-tap" href="{{ route('goodsCategorys.categorySon', $id) }}">精选</a>
+          <a title="{{ $goodsCategoryInfo->name }}淘宝天猫优惠券" class="lbd-a-no-tap" href="{{ route('goodsCategorys.categorySon', $id) }}">精选</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'sales') }}">
-          <a class="lbd-a-no-tap" href="{{ route('goodsCategorys.categorySon', ['id' => $id, 'sort' => 'sales']) }}">销量</a>
+          <a title="{{ $goodsCategoryInfo->name }}淘宝天猫优惠券销量排序" class="lbd-a-no-tap" href="{{ route('goodsCategorys.categorySon', ['id' => $id, 'sort' => 'sales']) }}">销量</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'commi') }}">
-          <a class="lbd-a-no-tap" href="{{ route('goodsCategorys.categorySon', ['id' => $id, 'sort' => 'commi']) }}">最热</a>
+          <a title="{{ $goodsCategoryInfo->name }}淘宝天猫优惠券最热排序" class="lbd-a-no-tap" href="{{ route('goodsCategorys.categorySon', ['id' => $id, 'sort' => 'commi']) }}">最热</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'price') }}">
-          <a class="lbd-a-no-tap" href="{{ route('goodsCategorys.categorySon', ['id' => $id, 'sort' => 'price']) }}">价格</a>
+          <a title="{{ $goodsCategoryInfo->name }}淘宝天猫优惠券价格排序" class="lbd-a-no-tap" href="{{ route('goodsCategorys.categorySon', ['id' => $id, 'sort' => 'price']) }}">价格</a>
       </li>
     </ul>
   </div>

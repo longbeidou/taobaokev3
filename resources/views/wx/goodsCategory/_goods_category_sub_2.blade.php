@@ -3,9 +3,9 @@
   <ul>
     @foreach($subGoodsCategory as $category)
     <li>
-      <a class="lbd-a-no-tap" href="{{ route('goodsCategorys.categorySon', ['id' => $category->id]) }}">
+      <a class="lbd-a-no-tap" title="{{ $category->name }}淘宝优惠券商品" href="{{ route('goodsCategorys.categorySon', ['id' => $category->id]) }}">
         <div class="lbd-img">
-          <img src="{{ $category->image }}"/>
+          <img src="{{ $category->image }}" alt="{{ $category->name }}优惠券图片" />
         </div>
         <div class="lbd-text">{{ $category->name }}</div>
       </a>

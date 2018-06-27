@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="mui-col-xs-3 lbd-right">
-    <a rel="nofollow" href="{{ route('wx.search.all') }}?q={{ $itemInfo->title }}" class="lbd-link lbd-a-no-tap">点击查看</a>
+    <a title="搜索淘宝优惠券" href="{{ route('wx.search.all') }}?q={{ $itemInfo->title }}" class="lbd-link lbd-a-no-tap">点击查看</a>
     <div class="lbd-right-circle"></div>
   </div>
 </div><!--优惠券 结束-->
