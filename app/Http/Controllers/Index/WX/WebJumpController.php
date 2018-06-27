@@ -47,13 +47,13 @@ class WebJumpController extends Controller
     // 聚划算的跳转
     public function ju(Request $request)
     {
-      empty($request->u) ? abort('404') : $para = $request->u;
-      $url = urldecode($para);
-      $urlNew = str_replace('jd.com', 'taobao.com', $url);
+      empty($request->e) ? abort('404') : $para = $request->e;
+      $e = urldecode($para);
+      $url = 'https://s.click.taobao.com/t?e='.$e;
       $showClient = $this->repository->showClient(config('website.show_client'));
 
       if ($showClient) {
-        header('Location:'.$urlNew);
+        header('Location:'.$url);
       } else {
         $title = '提示';
         return view('wx.webJump.index', compact('title'));
@@ -61,12 +61,14 @@ class WebJumpController extends Controller
     }
 
     // 用于js通过ajax获取的链接跳转
-    public function juForJs($id, $itemId)
+    public function juForJs(Request $request)
     {
-      (empty($id) || empty($itemId)) ? abort('404') : '';
+      empty($request->e) ? abort('404') : $e = $request->e;
+      $url = 'https://s.click.taobao.com/t?e='.$e;
       $showClient = $this->repository->showClient(config('website.show_client'));
+
       if ($showClient) {
-        header('Location://detail.ju.taobao.com/home.htm?id='.$id.'&item_id='.$itemId);
+        header('Location:'.$url);
       } else {
         $title = '提示';
         return view('wx.webJump.index', compact('title'));

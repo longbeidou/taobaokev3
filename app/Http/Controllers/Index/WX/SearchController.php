@@ -12,9 +12,11 @@ class SearchController extends Controller
     const PAGE_SIZE = '40';
 
     public $repository;
+    public $juPid;
 
     public function __construct(SearchService $repository)
     {
+      $this->juPid = config('adzoneID.ju_search_pid');
       $this->repository = $repository;
     }
 
@@ -70,9 +72,14 @@ class SearchController extends Controller
       ]);
 
       $word = $request->q;
-      $juItems = $this->repository->ju(['current_page' => 1, 'page_size' => self::PAGE_SIZE, 'word' => $word]);
+      $juItems = $this->repository->ju([
+        'current_page' => 1,
+        'page_size' => self::PAGE_SIZE,
+        'word' => $word,
+        'pid' => $this->juPid
+      ]);
       $para['q'] = $word;
-      $para['adzone_id'] = self::ADZONE_ID;
+      $para['pid'] = $this->juPid;
       $title = $request->q.'的聚划算搜索结果';
 
       return view('wx.search.result_ju', compact('title', 'juItems', 'q', 'para'));

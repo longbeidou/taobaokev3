@@ -58,7 +58,7 @@ class AlimamaController extends Controller
     // 聚划算的api
     public function taobaoJuItemsSearch(Request $request)
     {
-      if (empty($request->adzone_id) || empty($request->page_size) || empty($request->current_page)) {
+      if (empty($request->pid) || empty($request->page_size) || empty($request->current_page)) {
         return 415;
       }
 

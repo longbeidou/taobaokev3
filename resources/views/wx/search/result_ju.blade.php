@@ -57,7 +57,7 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
         page_size : '24',
         platform : '2',
         word : '{{ $para['q'] or '' }}',
-        adzone_id : '{{ $para['adzone_id'] or '' }}',
+        pid : '{{ $para['pid'] or '' }}',
         current_page : pageNo
       },
       dataType:'json',//服务器返回json格式数据

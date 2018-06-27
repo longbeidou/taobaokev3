@@ -40,7 +40,7 @@ Route::get('/coupon/image/{id}', 'Index\WX\ImageController@couponShareImage')->n
 Route::get('/url/derect/tqg', 'Index\WX\WebJumpController@tqg')->name('wx.webJump.tqg');
 Route::get('/url/derect/tqg/e/', 'Index\WX\WebJumpController@tqgForJs')->name('wx.webJump.tqgForJs');
 Route::get('/url/derect/ju', 'Index\WX\WebJumpController@ju')->name('wx.webJump.ju');
-Route::get('/url/derect/ju/js/{id?}/{itemId?}', 'Index\WX\WebJumpController@juForJs')->name('wx.webJump.juForJs')->where('id', '[0-9]+');
+Route::get('/url/derect/ju/js', 'Index\WX\WebJumpController@juForJs')->name('wx.webJump.juForJs');
 
 Route::prefix('api/alimama')->group(function() {
 	Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('api.alimama.taobaoTbkDgItemCouponGet');
