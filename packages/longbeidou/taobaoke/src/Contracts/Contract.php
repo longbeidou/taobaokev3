@@ -141,4 +141,26 @@ interface Contract
 	* 淘宝客擎天柱通用物料API
 	*/
 	public function taobaoTbkScOptimusMaterial(Array $datas);
+
+	// 淘宝客-媒体-单品券高效转链包
+	/**
+	* 【导购】链接转换
+	*/
+	public function taobaoTbkCouponConvert(Array $datas);
+
+	// 淘宝客链接API
+	/**
+	* 淘宝客商品链接转换
+	*/
+	public function taobaoTbkItemConvert(Array $datas);
+
+	/**
+	* 淘宝客店铺链接转换
+	*/
+	public function taobaoTbkShopConvert(Array $datas);
+
+	/**
+	* 淘口令转链
+	*/
+	public function taobaoTbkTpwdConvert(Array $datas);
 }

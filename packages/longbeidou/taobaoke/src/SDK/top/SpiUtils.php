@@ -9,7 +9,7 @@ class SpiUtils{
 											"WL_Proxy_Client_IP", "HTTP_CLIENT_IP", "HTTP_X_FORWARDED_FOR");
 	/**
 	 * 校验SPI请求签名，适用于所有GET请求，及不包含文件参数的POST请求。
-	 * 
+	 *
 	 * @param request 请求对象
 	 * @param secret app对应的secret
 	 * @return true：校验通过；false：校验不通过
@@ -20,7 +20,7 @@ class SpiUtils{
 
 	/**
 	 * 校验SPI请求签名，适用于请求体是xml/json等可用文本表示的POST请求。
-	 * 
+	 *
 	 * @param request 请求对象
 	 * @param body 请求体的文本内容
 	 * @param secret app对应的secret
@@ -29,10 +29,10 @@ class SpiUtils{
 	public static function checkSign4TextRequest($body,$secret){
 		return self::checkSign(null,$body,$secret);
 	}
-	
+
 	/**
 	 * 校验SPI请求签名，适用于带文件上传的POST请求。
-	 * 
+	 *
 	 * @param request 请求对象
 	 * @param form 除了文件参数以外的所有普通文本参数的map集合
 	 * @param secret app对应的secret
@@ -143,22 +143,22 @@ class SpiUtils{
 
 	private static function getFormMap(){
 		$resultArray = array();
-		foreach($_POST as $key=>$v) { 
+		foreach($_POST as $key=>$v) {
 			$resultArray[$key] = $v ;
 		}
-		return $resultArray ;	
+		return $resultArray ;
 	}
 
 	private static function startsWith($haystack, $needle) {
     	return $needle === "" || strpos($haystack, $needle) === 0;
 	}
 
-	private static function endWith($haystack, $needle) {   
-	    $length = strlen($needle);  
+	private static function endWith($haystack, $needle) {
+	    $length = strlen($needle);
 	    if($length == 0)
-	    {    
-	        return true;  
-	    }  
+	    {
+	        return true;
+	    }
 	    return (substr($haystack, -$length) === $needle);
  	}
 

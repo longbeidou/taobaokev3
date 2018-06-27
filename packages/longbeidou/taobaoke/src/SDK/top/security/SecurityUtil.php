@@ -158,7 +158,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 				if($data[$strlen - 2] == $separator)
 				{
 					return $this->checkEncryptData($dataArray);
-				} 
+				}
 				else
 				{
 					$version = $dataArray[$arrayLength -1];
@@ -265,7 +265,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 		* 解密逻辑
 		*/
 		function decrypt($data,$type,$secretContext)
-		{			
+		{
 			if(!$this->isEncryptData($data,$type))
 			{
 				throw new Exception("数据[".$data."]不是类型为[".$type."]的加密数据");
@@ -279,7 +279,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 			}else{
 				$secretData = $this->getSecretData($data,$separator);
 			}
-			
+
 			if($secretData == null){
 				return $data;
 			}
@@ -376,7 +376,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 						$secretData->secretVersion = $version;
 					}
 	            }
-	            
+
 	        } else {
 	        	if($arrayLength != 3){
 					return null;
@@ -397,7 +397,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 
 		/**
 	     * 判断密文是否支持检索
-	     * 
+	     *
 	     * @param key
 	     * @param version
 	     * @return
@@ -410,8 +410,8 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 	            $key = "current_".$key;
 	        }
 
-	        return $secretContext->appConfig != null && 
-	               array_key_exists($key,$secretContext->appConfig) && 
+	        return $secretContext->appConfig != null &&
+	               array_key_exists($key,$secretContext->appConfig) &&
 	               $secretContext->appConfig[$key] == "2";
 		}
 
@@ -468,7 +468,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 
 	    /**
 	     * @see #hmacMD5Encrypt
-	     * 
+	     *
 	     * @param encryptText
 	     *            被签名的字符串
 	     * @param encryptKey
@@ -488,7 +488,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 
 	    /**
 	     * 生成滑动窗口
-	     * 
+	     *
 	     * @param input
 	     * @param slideSize
 	     * @return
@@ -501,7 +501,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 			$currentWindow = null;
 			$dataLength = $this->utf8_strlen($input);
 			$windows = array();
-			while($endIndex < $dataLength || $currentWindowSize > $slideSize) 
+			while($endIndex < $dataLength || $currentWindowSize > $slideSize)
 			{
 				$startsWithLetterOrDigit = false;
 				if(!empty($currentWindow)){
@@ -510,8 +510,8 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 				if($endIndex == $dataLength && $startsWithLetterOrDigit == false){
 					break;
 				}
-				if($currentWindowSize == $slideSize && 
-				   $startsWithLetterOrDigit == false && 
+				if($currentWindowSize == $slideSize &&
+				   $startsWithLetterOrDigit == false &&
 				   $this->isLetterOrDigit($this->utf8_str_at($input,$endIndex))) {
 				   $endIndex ++;
 				   $currentWindow = $this->utf8_substr($input,$startIndex,$endIndex);
@@ -570,19 +570,19 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 			return $default;
 		}
 
-		function getBytes($string) {  
-	        $bytes = array();  
-	        for($i = 0; $i < strlen($string); $i++){  
-	             $bytes[] = ord($string[$i]);  
-	        }  
-	        return $bytes;  
-	    }  
+		function getBytes($string) {
+	        $bytes = array();
+	        for($i = 0; $i < strlen($string); $i++){
+	             $bytes[] = ord($string[$i]);
+	        }
+	        return $bytes;
+	    }
 
 		function toStr($bytes) {
 			if(!is_array($bytes)){
 				return $bytes;
 			}
-	        $str = '';	        
+	        $str = '';
 	        foreach($bytes as $ch) {
 	            $str .= chr($ch);
 	        }

@@ -6,24 +6,24 @@ use Longbeidou\Taobaoke\SDK\top\RequestCheckUtil;
 
 /**
  * TOP API: taobao.openuid.change request
- * 
+ *
  * @author auto create
  * @since 1.0, 2018.01.11
  */
 class OpenuidChangeRequest
 {
-	/** 
+	/**
 	 * openUid
 	 **/
 	private $openUid;
-	
-	/** 
+
+	/**
 	 * 转换到的appkey
 	 **/
 	private $targetAppKey;
-	
+
 	private $apiParas = array();
-	
+
 	public function setOpenUid($openUid)
 	{
 		$this->openUid = $openUid;
@@ -50,19 +50,19 @@ class OpenuidChangeRequest
 	{
 		return "taobao.openuid.change";
 	}
-	
+
 	public function getApiParas()
 	{
 		return $this->apiParas;
 	}
-	
+
 	public function check()
 	{
-		
+
 		RequestCheckUtil::checkNotNull($this->openUid,"openUid");
 		RequestCheckUtil::checkNotNull($this->targetAppKey,"targetAppKey");
 	}
-	
+
 	public function putOtherTextParam($key, $value) {
 		$this->apiParas[$key] = $value;
 		$this->$key = $value;

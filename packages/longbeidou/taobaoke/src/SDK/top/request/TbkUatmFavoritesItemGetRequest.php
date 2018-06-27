@@ -1,9 +1,4 @@
 <?php
-
-namespace Longbeidou\Taobaoke\SDK\top\request;
-
-use Longbeidou\Taobaoke\SDK\top\RequestCheckUtil;
-
 /**
  * TOP API: taobao.tbk.uatm.favorites.item.get request
  * 

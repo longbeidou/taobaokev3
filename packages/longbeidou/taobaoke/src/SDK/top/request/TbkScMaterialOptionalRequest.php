@@ -6,134 +6,134 @@ use Longbeidou\Taobaoke\SDK\top\RequestCheckUtil;
 
 /**
  * TOP API: taobao.tbk.sc.material.optional request
- * 
+ *
  * @author auto create
  * @since 1.0, 2018.05.24
  */
 class TbkScMaterialOptionalRequest
 {
-	/** 
+	/**
 	 * adzone_id
 	 **/
 	private $adzoneId;
-	
-	/** 
+
+	/**
 	 * 后台类目ID，用,分割，最大10个，该ID可以通过taobao.itemcats.get接口获取到
 	 **/
 	private $cat;
-	
-	/** 
+
+	/**
 	 * 折扣价范围上限，单位：元
 	 **/
 	private $endPrice;
-	
-	/** 
+
+	/**
 	 * 淘客佣金比率上限，如：1234表示12.34%
 	 **/
 	private $endTkRate;
-	
-	/** 
+
+	/**
 	 * 是否有优惠券，设置为true表示该商品有优惠券，设置为false或不设置表示不判断这个属性
 	 **/
 	private $hasCoupon;
-	
-	/** 
+
+	/**
 	 * 好评率是否高于行业均值
 	 **/
 	private $includeGoodRate;
-	
-	/** 
+
+	/**
 	 * 成交转化是否高于行业均值
 	 **/
 	private $includePayRate30;
-	
-	/** 
+
+	/**
 	 * 退款率是否低于行业均值
 	 **/
 	private $includeRfdRate;
-	
-	/** 
+
+	/**
 	 * ip参数影响邮费获取，如果不传或者传入不准确，邮费无法精准提供
 	 **/
 	private $ip;
-	
-	/** 
+
+	/**
 	 * 是否海外商品，设置为true表示该商品是属于海外商品，设置为false或不设置表示不判断这个属性
 	 **/
 	private $isOverseas;
-	
-	/** 
+
+	/**
 	 * 是否商城商品，设置为true表示该商品是属于淘宝商城商品，设置为false或不设置表示不判断这个属性
 	 **/
 	private $isTmall;
-	
-	/** 
+
+	/**
 	 * 所在地
 	 **/
 	private $itemloc;
-	
-	/** 
+
+	/**
 	 * 是否包邮，true表示包邮，空或false表示不限
 	 **/
 	private $needFreeShipment;
-	
-	/** 
+
+	/**
 	 * 是否加入消费者保障，true表示加入，空或false表示不限
 	 **/
 	private $needPrepay;
-	
-	/** 
+
+	/**
 	 * 牛皮癣程度，取值：1:不限，2:无，3:轻微
 	 **/
 	private $npxLevel;
-	
-	/** 
+
+	/**
 	 * 第几页，默认：１
 	 **/
 	private $pageNo;
-	
-	/** 
+
+	/**
 	 * 页大小，默认20，1~100
 	 **/
 	private $pageSize;
-	
-	/** 
+
+	/**
 	 * 链接形式：1：PC，2：无线，默认：１
 	 **/
 	private $platform;
-	
-	/** 
+
+	/**
 	 * 查询词
 	 **/
 	private $q;
-	
-	/** 
+
+	/**
 	 * site_id
 	 **/
 	private $siteId;
-	
-	/** 
+
+	/**
 	 * 排序_des（降序），排序_asc（升序），销量（total_sales），淘客佣金比率（tk_rate）， 累计推广量（tk_total_sales），总支出佣金（tk_total_commi），价格（price）
 	 **/
 	private $sort;
-	
-	/** 
+
+	/**
 	 * 店铺dsr评分，筛选高于等于当前设置的店铺dsr评分的商品0-50000之间
 	 **/
 	private $startDsr;
-	
-	/** 
+
+	/**
 	 * 折扣价范围下限，单位：元
 	 **/
 	private $startPrice;
-	
-	/** 
+
+	/**
 	 * 淘客佣金比率下限，如：1234表示12.34%
 	 **/
 	private $startTkRate;
-	
+
 	private $apiParas = array();
-	
+
 	public function setAdzoneId($adzoneId)
 	{
 		$this->adzoneId = $adzoneId;
@@ -402,20 +402,20 @@ class TbkScMaterialOptionalRequest
 	{
 		return "taobao.tbk.sc.material.optional";
 	}
-	
+
 	public function getApiParas()
 	{
 		return $this->apiParas;
 	}
-	
+
 	public function check()
 	{
-		
+
 		RequestCheckUtil::checkNotNull($this->adzoneId,"adzoneId");
 		RequestCheckUtil::checkNotNull($this->siteId,"siteId");
 		RequestCheckUtil::checkMaxValue($this->startDsr,50000,"startDsr");
 	}
-	
+
 	public function putOtherTextParam($key, $value) {
 		$this->apiParas[$key] = $value;
 		$this->$key = $value;

@@ -1,5 +1,4 @@
 <?php
-
 namespace Longbeidou\Taobaoke\SDK\top;
 
 class ClusterTopClient extends TopClient {
@@ -70,7 +69,7 @@ class ClusterTopClient extends TopClient {
 		$degrade = $config['degrade'];
 		if(strcmp($degrade,'true') == 0){
 			return $url;
-		}		
+		}
 		$currentEnv = $this->getEnvByApiName($apiname,$session);
 		$vip = $this->getVipByEnv($url,$currentEnv);
 		if($vip)
@@ -84,7 +83,7 @@ class ClusterTopClient extends TopClient {
 			return null;
 		if(!ClusterTopClient::$dnsconfig['env'])
 			return null;
-		
+
 		if(!array_key_exists($currentEnv,ClusterTopClient::$dnsconfig['env']))
 			return null;
 
@@ -100,7 +99,7 @@ class ClusterTopClient extends TopClient {
 			}
 		}
 		$vip = $this->getRandomWeightElement($vipList['vip']);
-		
+
 		if($vip){
 			return $urlSchema['scheme']."://".$vip.$urlSchema['path'];
 		}
@@ -109,7 +108,7 @@ class ClusterTopClient extends TopClient {
 
 	private function getEnvByApiName($apiName,$session=""){
 		$apiCfgArray = ClusterTopClient::$dnsconfig['api'];
-		if($apiCfgArray){	
+		if($apiCfgArray){
 			if(array_key_exists($apiName,$apiCfgArray)){
 				$apiCfg = $apiCfgArray[$apiName];
 				if(array_key_exists('user',$apiCfg)){
@@ -175,7 +174,7 @@ class ClusterTopClient extends TopClient {
 	}
 	private function getElementValue($ele){
 		$params = explode('|', $ele);
-		return $params[0];		
+		return $params[0];
 	}
 
 	private function getDeafultEnv(){
@@ -186,15 +185,15 @@ class ClusterTopClient extends TopClient {
     	return $needle === "" || strpos($haystack, $needle) === 0;
 	}
 
-	private function object_to_array($obj) 
-	{ 
-    	$_arr= is_object($obj) ? get_object_vars($obj) : $obj; 
-    	foreach($_arr as $key=> $val) 
-    	{ 
-        	$val= (is_array($val) || is_object($val))? $this->object_to_array($val) : $val; 
-        	$arr[$key] = $val; 
-    	} 
-    	return$arr; 
+	private function object_to_array($obj)
+	{
+    	$_arr= is_object($obj) ? get_object_vars($obj) : $obj;
+    	foreach($_arr as $key=> $val)
+    	{
+        	$val= (is_array($val) || is_object($val))? $this->object_to_array($val) : $val;
+        	$arr[$key] = $val;
+    	}
+    	return$arr;
 	}
 
 	private function randomFloat($min = 0, $max = 1) { return $min + mt_rand() / mt_getrandmax() * ($max - $min); }

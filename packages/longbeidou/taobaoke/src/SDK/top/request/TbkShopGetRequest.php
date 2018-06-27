@@ -6,89 +6,89 @@ use Longbeidou\Taobaoke\SDK\top\RequestCheckUtil;
 
 /**
  * TOP API: taobao.tbk.shop.get request
- * 
+ *
  * @author auto create
  * @since 1.0, 2017.06.17
  */
 class TbkShopGetRequest
 {
-	/** 
+	/**
 	 * 累计推广商品上限
 	 **/
 	private $endAuctionCount;
-	
-	/** 
+
+	/**
 	 * 淘客佣金比率上限，1~10000
 	 **/
 	private $endCommissionRate;
-	
-	/** 
+
+	/**
 	 * 信用等级上限，1~20
 	 **/
 	private $endCredit;
-	
-	/** 
+
+	/**
 	 * 店铺商品总数上限
 	 **/
 	private $endTotalAction;
-	
-	/** 
+
+	/**
 	 * 需返回的字段列表
 	 **/
 	private $fields;
-	
-	/** 
+
+	/**
 	 * 是否商城的店铺，设置为true表示该是属于淘宝商城的店铺，设置为false或不设置表示不判断这个属性
 	 **/
 	private $isTmall;
-	
-	/** 
+
+	/**
 	 * 第几页，默认1，1~100
 	 **/
 	private $pageNo;
-	
-	/** 
+
+	/**
 	 * 页大小，默认20，1~100
 	 **/
 	private $pageSize;
-	
-	/** 
+
+	/**
 	 * 链接形式：1：PC，2：无线，默认：１
 	 **/
 	private $platform;
-	
-	/** 
+
+	/**
 	 * 查询词
 	 **/
 	private $q;
-	
-	/** 
+
+	/**
 	 * 排序_des（降序），排序_asc（升序），佣金比率（commission_rate）， 商品数量（auction_count），销售总数量（total_auction）
 	 **/
 	private $sort;
-	
-	/** 
+
+	/**
 	 * 累计推广商品下限
 	 **/
 	private $startAuctionCount;
-	
-	/** 
+
+	/**
 	 * 淘客佣金比率下限，1~10000
 	 **/
 	private $startCommissionRate;
-	
-	/** 
+
+	/**
 	 * 信用等级下限，1~20
 	 **/
 	private $startCredit;
-	
-	/** 
+
+	/**
 	 * 店铺商品总数下限
 	 **/
 	private $startTotalAction;
-	
+
 	private $apiParas = array();
-	
+
 	public function setEndAuctionCount($endAuctionCount)
 	{
 		$this->endAuctionCount = $endAuctionCount;
@@ -258,19 +258,19 @@ class TbkShopGetRequest
 	{
 		return "taobao.tbk.shop.get";
 	}
-	
+
 	public function getApiParas()
 	{
 		return $this->apiParas;
 	}
-	
+
 	public function check()
 	{
-		
+
 		RequestCheckUtil::checkNotNull($this->fields,"fields");
 		RequestCheckUtil::checkNotNull($this->q,"q");
 	}
-	
+
 	public function putOtherTextParam($key, $value) {
 		$this->apiParas[$key] = $value;
 		$this->$key = $value;

@@ -33,7 +33,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
     }
 
     $originalValue = $client->decrypt('~YjW+T6rCmKcc0tGqzWIDaQ==~-113~','nick',$session);
-    echo "公钥解密后:".$originalValue.PHP_EOL;    
+    echo "公钥解密后:".$originalValue.PHP_EOL;
 
 
     $secArray = array('~YjW+T6rCmKcc0tGqzWIDaQ==~-113~');

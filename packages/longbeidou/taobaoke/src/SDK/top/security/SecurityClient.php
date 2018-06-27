@@ -37,7 +37,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 
 	    /**
 	     * 密文检索,在秘钥升级场景下兼容查询
-	     * 
+	     *
 	     * @see #search(String, String, String, Long)
 	     * @return
 	     */
@@ -48,7 +48,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 
 	    /**
 	     * 密文检索（每个用户单独分配秘钥）
-	     * 
+	     *
 	     * @see #search(String, String, String, Long)
 	     * @return
 	     */
@@ -59,7 +59,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 
 	    /**
 	     * 密文检索。 手机号码格式：$base64(H-MAC(phone后4位))$ simple格式：base64(H-MAC(滑窗))
-	     * 
+	     *
 	     * @param data
 	     *            明文数据
 	     * @param type
@@ -77,7 +77,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 			}
 
 			$secretContext = null;
-			
+
 			$secretContext = $this->callSecretApiWithCache($session,$version);
 			$this->incrCounter(3,$type,$secretContext,true);
 
@@ -105,7 +105,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 		{
 			if(empty($data) || empty($type)){
 				return $data;
-			}			
+			}
 			$secretData = $this->securityUtil->getSecretDataByType($data,$type);
 			if(empty($secretData)){
 				return $data;
@@ -117,7 +117,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 				$secretContext = $this->callSecretApiWithCache($session,$secretData->secretVersion);
 			}
 			$this->incrCounter(2,$type,$secretContext,true);
-			
+
 			return $this->securityUtil->decrypt($data,$type,$secretContext);
 		}
 
@@ -439,7 +439,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 		{
 			if($this->cacheClient){
 				$this->cacheClient->setCache($secretContext->cacheKey,$secretContext);
-			}			
+			}
 		}
 
 		function clearReport($secretContext)
@@ -482,7 +482,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 			if(empty($secretContext->session)){
 				$request->setType(APP_SECRET_TYPE);
 			}else{
-				$request->setType(APP_USER_SECRET_TYPE);				
+				$request->setType(APP_USER_SECRET_TYPE);
 			}
 
 			$response = $this->topClient->execute($request,$secretContext->session);
@@ -507,7 +507,7 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 				}
 				$request->setSecretVersion($secretVersion);
 			}
-			
+
 			$topSession = $session;
 			if($session != null && $session[0] == '_')
 			{
@@ -542,5 +542,5 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 			}
 			return $secretContext;
 		}
-	}    
+	}
 ?>

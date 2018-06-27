@@ -32,6 +32,10 @@ use Longbeidou\Taobaoke\SDK\top\request\WirelessShareTpwdQueryRequest;
 use Longbeidou\Taobaoke\SDK\top\request\TbkContentGetRequest;
 use Longbeidou\Taobaoke\SDK\top\request\TbkDgOptimusMaterialRequest;
 use Longbeidou\Taobaoke\SDK\top\request\TbkScOptimusMaterialRequest;
+use Longbeidou\Taobaoke\SDK\top\request\TbkCouponConvertRequest;
+use Longbeidou\Taobaoke\SDK\top\request\TbkItemConvertRequest;
+use Longbeidou\Taobaoke\SDK\top\request\TbkShopConvertRequest;
+use Longbeidou\Taobaoke\SDK\top\request\TbkTpwdConvertRequest;
 
 class Library extends Base
 {
@@ -375,6 +379,58 @@ class Library extends Base
 	{
 		$standard = ['adzone_id', 'page_size', 'page_no', 'material_id', 'site_id'];
 		$req = new TbkScOptimusMaterialRequest;
+		$req = $this->setOptions->options($req, $datas, $standard);
+
+		return $this->c->execute($req);
+	}
+
+	// 淘宝客-媒体-单品券高效转链包
+	/**
+	* 【导购】链接转换
+	*/
+	public function taobaoTbkCouponConvert(Array $datas)
+	{
+		$standard = ['item_id', 'adzone_id', 'platform', 'me'];
+		$req = new TbkCouponConvertRequest;
+		$req = $this->setOptions->options($req, $datas, $standard);
+
+		return $this->c->execute($req);
+	}
+
+	// 淘宝客链接API
+	/**
+	* 淘宝客商品链接转换
+	*/
+	public function taobaoTbkItemConvert(Array $datas)
+	{
+		$standard = ['num_iids', 'adzone_id', 'platform', 'unid', 'dx'];
+		$req = new TbkItemConvertRequest;
+		$req->setFields("num_iid,click_url");
+		$req = $this->setOptions->options($req, $datas, $standard);
+
+		return $this->c->execute($req);
+	}
+
+	/**
+	* 淘宝客店铺链接转换
+	*/
+	public function taobaoTbkShopConvert(Array $datas)
+	{
+		$standard = ['user_ids', 'platform', 'adzone_id', 'unid'];
+		$req = new TbkShopConvertRequest;
+		$req->setFields("user_id,click_url");
+		$req = $this->setOptions->options($req, $datas, $standard);
+
+		return $this->c->execute($req);
+	}
+
+	/**
+	* 淘口令转链
+	*/
+	public function taobaoTbkTpwdConvert(Array $datas)
+	{
+		$standard = ['password_content', 'adzone_id', 'dx'];
+		$req = new TbkTpwdConvertRequest;
 		$req = $this->setOptions->options($req, $datas, $standard);
 
 		return $this->c->execute($req);

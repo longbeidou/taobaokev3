@@ -52,11 +52,11 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 			if($type == "nick"){
 				$item->$decryptNickNum += $delt;
 			}else if($type == "receiver_name"){
-				$item->$decryptReceiverNameNum += $delt ;	
+				$item->$decryptReceiverNameNum += $delt ;
 			}else if($type == "phone"){
-				$item->$decryptPhoneNum += $delt ;	
+				$item->$decryptPhoneNum += $delt ;
 			}else if($type == "simple"){
-				$item->$decryptSimpleNum += $delt ;	
+				$item->$decryptSimpleNum += $delt ;
 			}
 		}
 
@@ -71,11 +71,11 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
 			if($type == "nick"){
 				$item->$encryptNickNum += $delt ;
 			}else if($type == "receiver_name"){
-				$item->$encryptReceiverNameNum += $delt ;	
+				$item->$encryptReceiverNameNum += $delt ;
 			}else if($type == "phone"){
-				$item->$encryptPhoneNum += $delt ;	
+				$item->$encryptPhoneNum += $delt ;
 			}else if($type == "simple"){
-				$item->$encryptSimpleNum += $delt ;	
+				$item->$encryptSimpleNum += $delt ;
 			}
 		}
 

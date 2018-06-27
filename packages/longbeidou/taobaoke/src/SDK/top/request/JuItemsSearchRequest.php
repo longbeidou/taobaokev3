@@ -2,21 +2,23 @@
 
 namespace Longbeidou\Taobaoke\SDK\top\request;
 
+use Longbeidou\Taobaoke\SDK\top\RequestCheckUtil;
+
 /**
  * TOP API: taobao.ju.items.search request
- * 
+ *
  * @author auto create
  * @since 1.0, 2017.04.14
  */
 class JuItemsSearchRequest
 {
-	/** 
+	/**
 	 * query
 	 **/
 	private $paramTopItemQuery;
-	
+
 	private $apiParas = array();
-	
+
 	public function setParamTopItemQuery($paramTopItemQuery)
 	{
 		$this->paramTopItemQuery = $paramTopItemQuery;
@@ -32,17 +34,17 @@ class JuItemsSearchRequest
 	{
 		return "taobao.ju.items.search";
 	}
-	
+
 	public function getApiParas()
 	{
 		return $this->apiParas;
 	}
-	
+
 	public function check()
 	{
-		
+
 	}
-	
+
 	public function putOtherTextParam($key, $value) {
 		$this->apiParas[$key] = $value;
 		$this->$key = $value;

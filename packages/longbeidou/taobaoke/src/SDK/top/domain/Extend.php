@@ -8,10 +8,10 @@ namespace Longbeidou\Taobaoke\SDK\top\domain;
  */
 class Extend
 {
-	
-	/** 
+
+	/**
 	 * empty
 	 **/
-	public $empty;	
+	public $empty;
 }
 ?>

@@ -25,12 +25,12 @@ namespace Longbeidou\Taobaoke\SDK\top\security;
             $key = base64_decode($key);
             return hash_hmac('md5', $input, $key,true);
         }
-     
+
         private static function pkcs5_pad ($text, $blocksize) {
             $pad = $blocksize - (strlen($text) % $blocksize);
             return $text . str_repeat(chr($pad), $pad);
         }
-     
+
         public static function decrypt($sStr, $key) {
             $key = base64_decode($key);
             $localIV = Security::$iv;

@@ -120,7 +120,7 @@
           hourItem = parseInt(hour)
           var d = new Date();
           str = '';
-          if (d.getHours() > hourItem) {
+          if (d.getHours() >= hourItem) {
             @include('wx.taoQiangGou._content_li_js_before');
           } else {
             @include('wx.taoQiangGou._content_li_js_after');

@@ -6,34 +6,34 @@ use Longbeidou\Taobaoke\SDK\top\RequestCheckUtil;
 
 /**
  * TOP API: taobao.tbk.shop.recommend.get request
- * 
+ *
  * @author auto create
  * @since 1.0, 2017.06.17
  */
 class TbkShopRecommendGetRequest
 {
-	/** 
+	/**
 	 * 返回数量，默认20，最大值40
 	 **/
 	private $count;
-	
-	/** 
+
+	/**
 	 * 需返回的字段列表
 	 **/
 	private $fields;
-	
-	/** 
+
+	/**
 	 * 链接形式：1：PC，2：无线，默认：１
 	 **/
 	private $platform;
-	
-	/** 
+
+	/**
 	 * 卖家Id
 	 **/
 	private $userId;
-	
+
 	private $apiParas = array();
-	
+
 	public function setCount($count)
 	{
 		$this->count = $count;
@@ -82,19 +82,19 @@ class TbkShopRecommendGetRequest
 	{
 		return "taobao.tbk.shop.recommend.get";
 	}
-	
+
 	public function getApiParas()
 	{
 		return $this->apiParas;
 	}
-	
+
 	public function check()
 	{
-		
+
 		RequestCheckUtil::checkNotNull($this->fields,"fields");
 		RequestCheckUtil::checkNotNull($this->userId,"userId");
 	}
-	
+
 	public function putOtherTextParam($key, $value) {
 		$this->apiParas[$key] = $value;
 		$this->$key = $value;
