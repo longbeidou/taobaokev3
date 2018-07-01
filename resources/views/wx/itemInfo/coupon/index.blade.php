@@ -33,9 +33,9 @@
           @if(empty($couponInfo))
           <span class="lbd-price-now">￥??.??</span>
           @else
-          <span class="lbd-price-now">￥{{ $itemInfo->zk_final_price - $couponInfo->coupon_amount }}</span>
+          <span class="lbd-price-now">￥{{ number_format($itemInfo->zk_final_price - $couponInfo->coupon_amount, 2) }}</span>
           @endif
-          <span class="lbd-price-ori">￥{{ $itemInfo->zk_final_price }}</span>
+          <span class="lbd-price-ori">￥{{ number_format($itemInfo->zk_final_price, 2) }}</span>
         </div>
         <div class="lbd-right mui-pull-right">{{ $itemInfo->volume }}人已购</div>
       </div>

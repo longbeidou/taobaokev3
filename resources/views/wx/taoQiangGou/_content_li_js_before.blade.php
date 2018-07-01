@@ -1,4 +1,12 @@
 url = data[i].click_url.split('?e=')
+
+if(data[i].zk_final_price.toString().indexOf('.') < 0){
+  data[i].zk_final_price = data[i].zk_final_price.toString()+'.00'
+}
+if(data[i].zk_final_price.toString().indexOf('.') == data[i].zk_final_price.toString().length-2){
+  data[i].zk_final_price = data[i].zk_final_price.toString()+'0'
+}
+
 str += '<a rel="nofollow" href="{{ route('wx.webJump.tqgForJs') }}?e='+url[1]+'/">'
 str +=     '<div class="mui-row lbd-box">'
 str +=       '<div class="mui-col-xs-4 lbd-img"><img src="'+data[i].pic_url+'"/></div>'

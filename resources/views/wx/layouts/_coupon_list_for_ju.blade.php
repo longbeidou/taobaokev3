@@ -15,9 +15,9 @@
     			</p>
     			<p class="mui-text-right mui-price-info">
     				<span class="mui-mark-now">￥</span>
-    				<span class="mui-price_now">{{ $item->act_price }}</span>
+    				<span class="mui-price_now">{{ number_format($item->act_price, 2) }}</span>
     				<span class="mui-mark-ori">￥</span>
-    				<span class="mui-price_ori">{{ $item->orig_price }}</span>
+    				<span class="mui-price_ori">{{ number_format($item->orig_price, 2) }}</span>
     			</p>
     		</div>
     		<div class="mui-col-xs-8 lbd-content-buttom mui-text-right">

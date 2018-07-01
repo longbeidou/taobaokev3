@@ -23,7 +23,7 @@ class CouponListPresenter
 
     $finalPrice = $priceOrigin-$couponInfoArray[1]/$count;
 
-    return round($finalPrice, $num);
+    return number_format(round($finalPrice, $num), $num);
   }
 
   // 使用优惠券省多少钱
@@ -34,7 +34,7 @@ class CouponListPresenter
 
     $saveMoney = $couponInfoArray[1]/$count;
 
-    return round($saveMoney, $num);
+    return number_format(round($saveMoney, $num), $num);
   }
 
   // 买几件商品可以使用优惠券

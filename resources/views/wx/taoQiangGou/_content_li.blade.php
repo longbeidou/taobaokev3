@@ -18,8 +18,8 @@
       <div class="mui-col-xs-8 lbd-bottom">
         <div class="mui-pull-left">
           <p>
-            <span class="lbd-m">￥</span><span class="lbd-price-now">{{ $item->reserve_price }}</span>
-            <span class="lbd-price-ori">￥{{ $item->zk_final_price }}</span>
+            <span class="lbd-m">￥</span><span class="lbd-price-now">{{ number_format($item->reserve_price, 2) }}</span>
+            <span class="lbd-price-ori">￥{{ number_format($item->zk_final_price, 2) }}</span>
           </p>
           <div class="lbd-tip">疯抢进行中</div>
         </div>
@@ -46,8 +46,8 @@
       <div class="mui-col-xs-8 lbd-bottom">
         <div class="mui-pull-left lbd-bottom-box">
           <p class="mui-text-right">
-            <span class="lbd-m">￥</span><span class="lbd-price-now">{{ $item->reserve_price }}</span>
-            <span class="lbd-price-ori">￥{{ $item->zk_final_price }}</span>
+            <span class="lbd-m">￥</span><span class="lbd-price-now">{{ number_format($item->reserve_price, 2) }}</span>
+            <span class="lbd-price-ori">￥{{ number_format($item->zk_final_price, 2) }}</span>
           </p>
           <div class="lbd-tip-no">{{$targetHour}}:00准时开抢</div>
         </div>

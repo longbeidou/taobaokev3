@@ -8,6 +8,13 @@ price_now = item.zk_final_price-couponInfoArr[1]
 price_now = Math.round(parseFloat(price_now)*100)/100
 ePara = item.coupon_click_url.substr(39)
 
+if(price_now.toString().indexOf('.') < 0){
+  price_now = price_now.toString()+'.00'
+}
+if(price_now.toString().indexOf('.') == price_now.toString().length-2){
+  price_now = price_now.toString()+'0'
+}
+
 str += '<a class="addURL" e="'+ePara+'" href="{{ route('wx.itemInfo.item') }}/'+item.num_iid+'">'
 str +=       '<div class="mui-row">'
 str +=         '<div class="mui-col-xs-4 goods-image"><img src="'+item.pict_url+'"/></div>'

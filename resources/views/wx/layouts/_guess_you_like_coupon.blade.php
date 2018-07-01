@@ -25,14 +25,14 @@
                 </div>
                 <div class="lbd-bottom">
                   <div class="mui-pull-left">
-                    <div class="lbd-price-ori">原价￥{{ $coupon->zk_final_price }}</div>
+                    <div class="lbd-price-ori">原价￥{{ number_format($coupon->zk_final_price, 2) }}</div>
                     <div class="lbd-price-now"><span class="lbd-m">￥</span>{{ $couponShow->finalPrice($coupon->coupon_info, $coupon->zk_final_price) }}</div>
                   </div>
                   <div class="mui-pull-right">
                     <div class="lbd-coupon">
                       <div class="lbd-left-circle"></div>
                       <div class="lbd-right-circle"></div>
-                      <span class="lbd-m">￥</span>{{ $couponShow->saveMoney($coupon->coupon_info, $coupon->zk_final_price) }}元券
+                      <span class="lbd-m">￥</span>{{ $couponShow->saveMoney($coupon->coupon_info, $coupon->zk_final_price, 0) }}元券
                     </div>
                   </div>
                 </div>
