@@ -27,5 +27,6 @@
        document.location.href=this.href;
      })
    </script>
+   {!! config('website.baidu_push_js') !!}
 </body>
 </html>
