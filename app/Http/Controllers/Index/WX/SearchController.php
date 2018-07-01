@@ -47,7 +47,7 @@ class SearchController extends Controller
       $para['sort'] = $this->repository->getSortValue($request->sort);
       $para['q'] = $request->q;
       $para['adzone_id'] = $this->searchAllAdzonId;
-      $title = $request->q.'的淘宝天猫优惠券搜索结果';
+      $title = $request->q.'淘宝天猫优惠券';
       $couponItems = $this->repository->all(['adzone_id' => $this->searchAllAdzonId, 'page_size' => self::PAGE_SIZE, 'q' => $request->q, 'sort' => $sort]);
 
       return view('wx.search.result_all', compact('title', 'couponItems', 'q', 'para', 'sort'));
@@ -65,7 +65,7 @@ class SearchController extends Controller
       $para['sort'] = $this->repository->getSortValue($request->sort);
       $para['q'] = $request->q;
       $para['adzone_id'] = $this->searchTmallAdzoneId;
-      $title = $request->q.'的天猫优惠券搜索结果';
+      $title = $request->q.'天猫优惠券';
       $couponItems = $this->repository->tmall(['adzone_id' => $this->searchTmallAdzoneId, 'page_size' => self::PAGE_SIZE, 'q' => $request->q, 'sort' => $sort]);
 
       return view('wx.search.result_tmall', compact('title', 'couponItems', 'q', 'para', 'sort'));
@@ -87,7 +87,7 @@ class SearchController extends Controller
       ]);
       $para['q'] = $word;
       $para['pid'] = $this->juPid;
-      $title = $request->q.'的聚划算搜索结果';
+      $title = $request->q.'的聚划算商品';
 
       return view('wx.search.result_ju', compact('title', 'juItems', 'q', 'para'));
     }

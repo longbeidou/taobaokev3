@@ -8,6 +8,12 @@ return [
 	// 网站首页的title内容
 	'indexTitle' => 'sdfjlsdjf优惠券',
 
+	// 首页的keywords内容
+	'keywords' => '',
+
+	// 首页描述
+	'description' => '',
+
 	// 网站的域名
 	'domain' => 'www.52010000.cn',
 

@@ -1,6 +1,8 @@
 @extends('wx.layouts.master')
 @section('title')
   @include('wx.layouts._title_index')
+  <meta name="keywords" content="{{ config('website.keywords') }}">
+  <meta name="description" content="{{ config('website.description') }}">
 @stop
 @section('headcss')
 
