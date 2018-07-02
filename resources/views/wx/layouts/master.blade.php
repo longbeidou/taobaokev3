@@ -28,5 +28,9 @@
      })
    </script>
    {!! config('website.baidu_push_js') !!}
+   <!-- 站长统计 -->
+   <div style="position: absolute; bottom: 1px; z-index: -10;">
+     {!! config('website.analysis_js_wx') !!}
+   </div>
 </body>
 </html>

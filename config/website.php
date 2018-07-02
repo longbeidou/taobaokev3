@@ -34,7 +34,7 @@ return [
 	'font_icon_src' => '/css/selfIcon/iconfont.css',
 
 	// 网站统计代码
-	'analysisJs' => '<script src="https://s19.cnzz.com/z_stat.php?id=1263097006&web_id=1263097006" language="JavaScript"></script>',
+	'analysis_js_wx' => '<script src="https://s19.cnzz.com/z_stat.php?id=1274082543&web_id=1274082543" language="JavaScript"></script>',
 
 	// 百度推送
 	'baidu_push_js' => "",
