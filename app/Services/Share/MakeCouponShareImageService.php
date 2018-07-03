@@ -73,7 +73,7 @@ class MakeCouponShareImageService
     $info['priceOrigin'] = number_format($coupon->zk_final_price, 2);
     $info['priceNow']    = $coupon->coupon_amount === null ? '扫码领券' : number_format($coupon->zk_final_price - $coupon->coupon_amount, 2);
     $info['img']         = $coupon->pict_url;
-    $info['linkInfo']    = route('wx.image.couponShareImage', ['id'=>$coupon->num_iid]);
+    $info['linkInfo']    = route('wx.itemInfo.item', ['id'=>$coupon->num_iid]);
     $info['couponInfo']  = $coupon->coupon_amount === null ? 'VIP渠道券' : floor($coupon->coupon_amount).'元';
 
     return $info;
