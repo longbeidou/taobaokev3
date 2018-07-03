@@ -12,7 +12,7 @@ Route::prefix('admin')->group(function() {
   Route::get('dashboard', 'Admin\DashboardController@dashboard')->name('admin.dashboard');
   Route::get('changepassword', 'Admin\UserController@changePassword')->name('admin.changePassword');
   Route::post('changepassword', 'Admin\UserController@doChangePassword')->name('admin.doChangePassword');
-  Route::resource('goodsCategorys', 'Admin\goodsCategoryController');
+  Route::resource('goodsCategorys', 'Admin\GoodsCategoryController');
   Route::get('couponRules/{id}', 'Admin\CouponRulesController@show')->name('admin.couponRule.show');
   Route::get('couponRules/{id}/edit', 'Admin\CouponRulesController@edit')->name('admin.couponRule.edit');
   Route::post('couponRules/', 'Admin\CouponRulesController@store')->name('admin.couponRule.store');
