@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'appkey' => '24567452',
-	'secretKey' => '59023132261bb01eec7555738091eca5',
+	'appkey' => env('ALIMAMA_APPKEY'),
+	'secretKey' => env('ALIMAMA_SECRETKEY'),
 	// 淘口令的选项如果存在则按照选项的值来生成，否则将会被替换为商品信息
 	'tpwd' => [
 		'logo' => '',
