@@ -39,9 +39,11 @@
        var t = document.documentElement.scrollTop || document.body.scrollTop;
        if (t > 100) {
          document.getElementById('lbd-action-top').style.display = '';
+         document.getElementById('lbd-action-top').style.zIndex = 999;
        }
-       else if (t == 0) {
+       else {
          document.getElementById('lbd-action-top').style.display = 'none';
+         document.getElementById('lbd-action-top').style.zIndex = -1;
        }
      }
    </script>
