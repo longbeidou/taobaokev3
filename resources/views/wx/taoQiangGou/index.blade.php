@@ -56,16 +56,6 @@
 			//循环初始化所有下拉刷新，上拉加载。
 			$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
 				$(pullRefreshEl).pullToRefresh({
-//							down: {
-//								callback: function() {
-//									var self = this;
-//									setTimeout(function() {
-//										var ul = self.element.querySelector('.mui-table-view');
-//										ul.insertBefore(createFragment(ul, index, 10, true), ul.firstChild);
-//										self.endPullDownToRefresh();
-//									}, 1000);
-//								}
-//							},
 					up: {
             contentrefresh : '玩命加载中...',
             contentnomore : '使出吃奶的力气也没有找到更多宝贝~~~',
