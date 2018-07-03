@@ -5,12 +5,12 @@
         <span class="mui-tab-label">首页</span>
     </a>
     <a class="mui-tab-item" rel="nofollow" href="{{ route('wx.ShareItem.coupon', $itemInfo->num_iid) }}{{ $itemShow->concatCouponLinkPara($couponLinkPara) }}&coupon_amount={{ floor($couponInfo->coupon_amount) }}" style="width: 100%;">
-        <span class="mui-icon-extra mui-icon-extra-share"></span>
+        <span class="mui-icon mui-icon-extra mui-icon-extra-share"></span>
         <span class="mui-tab-label">分享</span>
     </a>
     <a title="搜索关于{{ $itemInfo->title }}的淘宝优惠券" class="mui-tab-item" href="{{ route('wx.search.all') }}?q={{ $itemInfo->title }}" style="width: 100%;">
         <span class="mui-icon mui-icon-search"></span>
-        <span class="mui-tab-label">搜同类</span>
+        <span class="mui-tab-label">搜同款</span>
     </a>
 
     <a class="mui-tab-item lbd-take" rel="nofollow" href="{{ route('wx.CouponAction.index', $itemInfo->num_iid) }}{{ $itemShow->concatCouponLinkPara($couponLinkPara) }}" style="width: 140px;">
