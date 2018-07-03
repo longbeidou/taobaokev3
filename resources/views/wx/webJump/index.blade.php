@@ -9,7 +9,7 @@
 
   @include('wx.layouts._footer_tab')
 <div class="mui-content">
-	<img src="/wxstyle/images/wechat.jpg" width="100%" alt="">
+	<img src="/wxstyle/images/wechat.jpg" width="100%" alt="提示">
 </div>
 @stop
 @section('footJs')
