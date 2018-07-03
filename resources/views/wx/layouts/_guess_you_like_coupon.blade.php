@@ -7,7 +7,8 @@
 <div class="mui-row lbd-goods-list" id="lbd-goods-list">
   <ul class="mui-table-view lbd-goods-list-info">
       @foreach($guessYouLikeCoupons as $coupon)
-      <li class="mui-table-view-cell mui-media">
+        @if(!empty($coupon->coupon_info))
+        <li class="mui-table-view-cell mui-media">
           <a class="addURL" e="{{ $couponShow->getParaStrFromCouponUrl($coupon->coupon_click_url) }}" href="{{ route('wx.itemInfo.item', $coupon->num_iid) }}">
             <div class="mui-row">
               <div class="mui-col-xs-4 goods-image">
@@ -39,7 +40,8 @@
               </div>
             </div>
           </a>
-      </li>
+        </li>
+        @endif
       @endforeach
   </ul>
 </div><!--商品列表 结束-->

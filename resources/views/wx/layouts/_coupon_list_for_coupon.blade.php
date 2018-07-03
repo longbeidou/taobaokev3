@@ -1,6 +1,7 @@
 @inject('couponShow', 'App\Presenters\CouponListPresenter')
 @foreach($couponItems as $item)
-<li class="mui-table-view-cell mui-media">
+  @if(!empty($item->coupon_info))
+  <li class="mui-table-view-cell mui-media">
     <a class="addURL" e="{{ $couponShow->getParaStrFromCouponUrl($item->coupon_click_url) }}" href="{{ route('wx.itemInfo.item', $item->num_iid) }}">
       <div class="mui-row">
         <div class="mui-col-xs-4 goods-image">
@@ -32,5 +33,6 @@
         </div>
       </div>
     </a>
-</li>
+  </li>
+  @endif
 @endforeach
