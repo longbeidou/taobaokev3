@@ -789,6 +789,10 @@ header a
 {
 	position: relative;
 }
+.lbd-tqg .lbd-info .lbd-box .lbd-img img
+{
+	min-height: 110px;
+}
 .lbd-tqg .lbd-info .lbd-box .lbd-more,
 .lbd-tqg .lbd-info .lbd-box .lbd-bottom
 {
