@@ -4,7 +4,7 @@
     <div class="mui-slider-group mui-slider-loop">
       <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
       <div class="mui-slider-item mui-slider-item-duplicate">
-        <a href="https://www.baidu.com">
+        <a href="#">
           <img src="http://placehold.it/400x150">
         </a>
       </div>
