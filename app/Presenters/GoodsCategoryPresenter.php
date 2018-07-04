@@ -91,7 +91,7 @@ class GoodsCategoryPresenter
       return '<p class="text-danger">图片不存在</p>';
     }
 
-    return '<img src="'.$imgSrc.'" style="max-width:100px;" />';
+    return '<img src="'.$imgSrc.'" style="max-width:43px;" />';
   }
 
   public function couponRuleAction($couponRule, $goodsCategoryId)
