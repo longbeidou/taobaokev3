@@ -40,7 +40,7 @@
 								<li class="mui-table-view-cell">
 									<h5>淘口令使用说明：</h5>
 									<p>
-										1.如果手机有淘宝APP，则可以使用此方式。否则，建议使用链接方式领取优惠券。<br />
+										1.如果手机有淘宝APP，则可以直接复制口令领券。手机没有淘宝APP，请先安装再复制淘口令领券。<br />
 										2.领券步骤：<br>
 										&nbsp;&nbsp;&nbsp;&nbsp;a.点击【复制淘口令】按钮<br />
 										&nbsp;&nbsp;&nbsp;&nbsp;b.打开手机淘宝APP<br />
@@ -65,11 +65,12 @@
 								<li class="mui-table-view-cell">
 									<h5>链接方式领券使用说明：</h5>
 									<p>
-										1.如果手机没有淘宝APP，则可以使用此方式。否则，建议使用淘口令方式领取优惠券。<br />
+										1.此方法是通过浏览器领券下单购物。<span style="color: #ed2a7a;">由于通过浏览器抢券的成功率低于淘口令方式并且操作复杂，所以<strong>强烈建议</strong>使用淘口令方式领取优惠券</span>。<br />
 										2.领券步骤：<br>
 										&nbsp;&nbsp;&nbsp;&nbsp;a.点击【立即领券】按钮<br />
-										&nbsp;&nbsp;&nbsp;&nbsp;b.在出现的淘宝领券页面领取优惠券<br />
-										&nbsp;&nbsp;&nbsp;&nbsp;c.登录淘宝下单即可享受优惠<br />
+										&nbsp;&nbsp;&nbsp;&nbsp;b.在出现的登录页面输入账号和密码<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;c.登录淘宝后在淘宝领券页面领取优惠券<br />
+										&nbsp;&nbsp;&nbsp;&nbsp;d.淘宝下单的时候就可以使用优惠券享受优惠了<br />
 										3.优惠券有使用期限，过期作废，请尽快下单。
 									</p>
 								</li>
