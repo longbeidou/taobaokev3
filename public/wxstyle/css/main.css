@@ -328,6 +328,10 @@ header a
 {
 	width: 100%;
 }
+.lbd-cate-list .lbd-img
+{
+	padding: 0px 12px;
+}
 .lbd-cate-list .lbd-text
 {
 	font-size: 12px;
