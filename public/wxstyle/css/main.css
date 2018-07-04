@@ -272,9 +272,9 @@ header a
 	background-color: rgba(237, 42, 122, 0.5);
 	color: #fff;
 	height: 34px;
-	padding: 7px 10px 0px;
+	padding: 7px 6px 0px;
 	border-radius: 5px;
-	font-size: 20px;
+	font-size: 18px;
 	position: relative;
 	margin-top: 3px;
 }
@@ -913,7 +913,7 @@ header a
 }
 .lbd-goods-list-info li a
 {
-	min-height: 145px;
+	min-height: 120px;
 }
 
 .lbd-goods-list .lbd-ju-info
