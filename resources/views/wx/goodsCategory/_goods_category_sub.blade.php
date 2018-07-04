@@ -2,7 +2,7 @@
 <div class="mui-row lbd-cate-list">
   <ul>
     @foreach($subGoodsCategory as $key => $category)
-      @if($key <= 8)
+      @if($key < 8)
       <li>
         <a class="lbd-a-no-tap" title="{{ $category->name }}淘宝优惠券商品" href="{{ route('goodsCategorys.categoryTwo', ['id' => $category->id]) }}">
           <div class="lbd-img">
