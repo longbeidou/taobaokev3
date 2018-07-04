@@ -10,7 +10,7 @@
     <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
     <h1 class="mui-title">{{ $goodsCategoryInfo->name }}优惠券</h1>
 </header>
-
+ 
 <div class="mui-content">
   <!--商品列表 开始-->
   @inject('showActive', 'App\Presenters\CouponListPresenter')
