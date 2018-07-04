@@ -104,8 +104,6 @@
 				var fragment = document.createDocumentFragment();
 				var li;
 				for (var i = 0, count = data.length; i < count; i++) {
-					li = document.createElement('li');
-					li.className = 'mui-table-view-cell lbd-info';
           var hour = data[i].start_time.substr(11, 2);
           hourItem = parseInt(hour)
           var d = new Date();
@@ -115,8 +113,6 @@
           } else {
             @include('wx.taoQiangGou._content_li_js_after');
           }
-					li.innerHTML = str;
-					fragment.appendChild(li);
 				}
 				return fragment;
 			};
