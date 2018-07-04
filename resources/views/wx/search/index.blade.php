@@ -80,7 +80,7 @@
 	</div>
 
   @include('wx.layouts._guess_you_like_coupon')
-
+  @include('wx.layouts._to_top')
 </div>
 @stop
 @section('footJs')

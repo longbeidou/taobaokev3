@@ -71,7 +71,7 @@
   </div><!--图文详情 结束-->
 
   @include('wx.layouts._guess_you_like_coupon')
-
+  @include('wx.layouts._to_top')
 </div>
 @stop
 @section('footJs')

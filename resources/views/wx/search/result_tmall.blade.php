@@ -51,6 +51,7 @@
 @endif
   </div><!--商品列表 结束-->
 </div>
+@include('wx.layouts._to_top')
 @stop
 @section('footJs')
 <script src="/wxstyle/js/mui.lazyload.js"></script>
@@ -118,14 +119,6 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
           console.log(type);
       }
   });
-
-  // var table = document.body.querySelector('.lbd-goods-list-info');
-  // var li = document.createElement('li');
-  // li.className = 'mui-table-view-cell mui-media';
-  // li.innerHTML = 'str';
-  // table.appendChild(li);
-
-
   setTimeout(function() {
     seemore = '<button type="button" class="mui-btn mui-btn-block mui-btn-danger lbd-index-info" data-loading-text="提交中">点击查看更多...</button>';
     document.getElementById('lbd-index-see-more').innerHTML = seemore;

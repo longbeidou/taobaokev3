@@ -42,6 +42,7 @@
   </div><!--商品列表 结束-->
 </div>
   @include('wx.index._mask')
+  @include('wx.layouts._to_top')
 @stop
 @section('footJs')
 <script src="/wxstyle/js/mui.lazyload.js"></script>
