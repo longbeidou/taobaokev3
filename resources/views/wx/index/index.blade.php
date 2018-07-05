@@ -127,43 +127,6 @@
   })
   </script>
   <script type="text/javascript">
-  function ___getPageScroll() {
-      var xScroll, yScroll;
-      if (self.pageYOffset) {
-          yScroll = self.pageYOffset;
-          xScroll = self.pageXOffset;
-      } else if (document.documentElement && document.documentElement.scrollTop) {     // Explorer 6 Strict
-          yScroll = document.documentElement.scrollTop;
-          xScroll = document.documentElement.scrollLeft;
-      } else if (document.body) {// all other Explorers
-          yScroll = document.body.scrollTop;
-          xScroll = document.body.scrollLeft;
-      }
-      arrayPageScroll = new Array(xScroll,yScroll);
-      return arrayPageScroll;
-  };
-  setInterval(function() {
-      var xScroll, yScroll;
-      if (self.pageYOffset) {
-          yScroll = self.pageYOffset;
-          xScroll = self.pageXOffset;
-      } else if (document.documentElement && document.documentElement.scrollTop) {     // Explorer 6 Strict
-          yScroll = document.documentElement.scrollTop;
-          xScroll = document.documentElement.scrollLeft;
-      } else if (document.body) {// all other Explorers
-          yScroll = document.body.scrollTop;
-          xScroll = document.body.scrollLeft;
-      }
-
-    if (yScroll > 280) {
-      document.getElementById('lbd-index-list-head').style.position = 'fixed';
-      document.getElementById('mui-row lbd-position-fixed').style.height = '31px';
-    } else {
-      document.getElementById('lbd-index-list-head').style.position = '';
-      document.getElementById('mui-row lbd-position-fixed').style.height = '0px';
-    }
-  }, 100)
-
   // 监听tap事件，让a标签自动加入url的参数
   mui('body').on('tap','.addURL',function(){
     document.location.href=this.href+'?url='+this.getAttribute('e');
