@@ -30,4 +30,7 @@ interface AlimamaRepositoryInterface
 
   // 生成淘口令
   public function taobaoWirelessShareTpwdCreate(Array $datas);
+
+  //淘宝客擎天柱通用物料API  淘宝客物料下行-导购
+  public function taobaoTbkDgOptimusMaterial(Array $datas);
 }

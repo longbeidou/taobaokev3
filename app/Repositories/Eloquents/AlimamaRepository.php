@@ -120,4 +120,12 @@ class AlimamaRepository implements AlimamaRepositoryInterface
 
     return $tpwd;
   }
+
+  //淘宝客擎天柱通用物料API  淘宝客物料下行-导购
+  public function taobaoTbkDgOptimusMaterial(Array $datas)
+  {
+    $result = $this->alimamaSdk->taobaoTbkDgOptimusMaterial($datas);
+    
+    return empty($result->result_list->map_data) ? false : $result->result_list->map_data;
+  }
 }

@@ -41,6 +41,13 @@ Route::get('/url/der/tqg', 'Index\WX\WebJumpController@tqg')->name('wx.webJump.t
 Route::get('/url/der/tqg/e/', 'Index\WX\WebJumpController@tqgForJs')->name('wx.webJump.tqgForJs');
 Route::get('/url/der/ju', 'Index\WX\WebJumpController@ju')->name('wx.webJump.ju');
 Route::get('/url/der/ju/js', 'Index\WX\WebJumpController@juForJs')->name('wx.webJump.juForJs');
+Route::get('/zhibo-{id}', 'Index\WX\OptimusMaterialController@zhibo')->name('wx.optimusMaterial.zhibo')->where('id', '[0-9]+');
+Route::get('/brand-{id}', 'Index\WX\OptimusMaterialController@brand')->name('wx.optimusMaterial.brand')->where('id', '[0-9]+');
+Route::get('/baby-{id}', 'Index\WX\OptimusMaterialController@baby')->name('wx.optimusMaterial.baby')->where('id', '[0-9]+');
+Route::get('/pintuan', 'Index\WX\OptimusMaterialController@pintuan')->name('wx.optimusMaterial.pintuan');
+Route::get('/sales', 'Index\WX\OptimusMaterialController@sales')->name('wx.optimusMaterial.sales');
+Route::get('/fashion', 'Index\WX\OptimusMaterialController@fashion')->name('wx.optimusMaterial.fashion');
+Route::get('/recommend', 'Index\WX\OptimusMaterialController@recommend')->name('wx.optimusMaterial.recommend');
 
 Route::prefix('api/alimama')->group(function() {
 	Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('api.alimama.taobaoTbkDgItemCouponGet');
