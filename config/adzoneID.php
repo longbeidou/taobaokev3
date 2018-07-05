@@ -11,7 +11,7 @@ return [
 	'wx_search_tmall_adzone_id' => '1459162255',
 
 	// 淘口令 搜索
-	'wx_search_tpwd' => '770398581',
+	'wx_search_tpwd' => '1459186177',
 
 	// 无线端首页coupon api获取的商品
 	'wx_index_coupon_adzone_id' => '1459254918',
