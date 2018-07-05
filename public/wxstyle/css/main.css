@@ -356,6 +356,7 @@ header a
 .lbd-goods-info img
 {
 	width: 100%;
+	display: block;
 }
 .lbd-goods-info .mui-table-view-cell.mui-active
 {
