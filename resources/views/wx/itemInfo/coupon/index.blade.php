@@ -62,7 +62,7 @@
   <div class="mui-row lbd-goods-info">
     <ul class="mui-table-view" id="lbd-images-box">
         <li class="mui-table-view-cell mui-collapse" id='lbd-goods-imgs'>
-            <a class="mui-navigate-right">图文详情</a>
+            <a class="mui-navigate-right">图文详情<small style="color: #777;">（点击查看）</small></a>
             <div class="mui-collapse-content mui-text-center" id="couponInfoDetails">
               <p>详情加载中...</p>
             </div>
