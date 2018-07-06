@@ -19,9 +19,10 @@
         @if($showClient)
 				<a class="mui-control-item" href="#item2mobile">链接方式</a>
         @endif
+        <a class="mui-control-item" href="#item3mobile">龙琴时代APP</a>
 			</div>
       @if($showClient)
-			<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6" style="background-color: #ED2A7A;"></div>
+			<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4" style="background-color: #ED2A7A;"></div>
       @else
       <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-12" style="background-color: #ED2A7A;"></div>
       @endif
@@ -77,9 +78,60 @@
 							</ul>
 						</div>
 					</div>
-
 				</div>
         @endif
+        <div id="item3mobile" class="mui-slider-item mui-control-content" style="min-height: 400px; background-color: #fff;">
+					<div id="scroll2" class="mui-scroll-wrapper-bak">
+						<div class="mui-scroll-bak">
+							<ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <div class="mui-row">
+                        <div class="mui-col-xs-3" style="padding-right: 5px;">
+                            <img src="http://placehold.it/400x400" alt="" style="width: 100%;">
+                        </div>
+                        <div class="mui-col-xs-7">
+                            <h5 style="margin-top: 0px; margin-bottom: 3px;"><strong>龙琴时代（安卓版）</strong></h5>
+                            <p style="font-size: 12px;"><span style="color: #ed2a7a;">☆☆☆☆☆</span> | <span>时尚购物</sapn> | <span>3.5M<span></p>
+                        </div>
+                        <div class="mui-col-xs-2 mui-text-center">
+                            <a class="mui-btn mui-btn-primary" rel="nofollow" href="https://m.52010000.cn/download/52010000.cn.apk">下载</a>
+                        </div>
+                        <div class="mui-col-xs-9">
+                          <p style="font-size: 12px;">龙琴时代APP是一个时尚购物的APP，免费分享全网最全最优的淘宝天猫优惠券。</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <div class="mui-row">
+                        <div class="mui-col-xs-3" style="padding-right: 5px;">
+                            <img src="http://placehold.it/400x400" alt="" style="width: 100%;">
+                        </div>
+                        <div class="mui-col-xs-7">
+                            <h5 style="margin-top: 0px; margin-bottom: 3px;"><strong>龙琴时代（IOS版）</strong></h5>
+                            <p style="font-size: 12px;"><span style="color: #ed2a7a;">☆☆☆☆☆</span> | <span>时尚购物</sapn> | <span>3.5M<span></p>
+                        </div>
+                        <div class="mui-col-xs-2 mui-text-center">
+                            <a class="mui-btn mui-btn-primary" rel="nofollow" href="https://m.52010000.cn/download/52010000.cn.ipa">下载</a>
+                        </div>
+                        <div class="mui-col-xs-9">
+                          <p style="font-size: 12px;">龙琴时代APP是一个时尚购物的APP，免费分享全网最全最优的淘宝天猫优惠券。</p>
+                        </div>
+                    </div>
+                </li>
+								<li class="mui-table-view-cell">
+									<h5>龙琴时代APP领券使用说明：</h5>
+									<p>
+										1.通过龙琴时代APP抢优惠券的成功率最高<br/>
+										2.优惠券每天24小时实时更新，保证优惠券的时效性<br />
+                    3.商品种类涉及上百个大类，上千个小分类，总能找到自己喜欢的宝贝<br />
+                    4.独家分享上千家合作的淘宝天猫店铺的大额优惠券，领券最低一折购物<br />
+										5.优惠券有使用期限，过期作废，请尽快下单。
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
