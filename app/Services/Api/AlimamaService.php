@@ -38,9 +38,16 @@ class AlimamaService
   }
 
   // 淘抢购api
-  public function taobaoTbkJuTqgGet(Array $para){
+  public function taobaoTbkJuTqgGet(Array $para)
+  {
     $tqgItems = $this->alimamaRepository->taobaoTbkJuTqgGet($para);
 
     return $tqgItems;
+  }
+
+  // 淘宝客物料下行
+  public function taobaoTbkDgOptimusMaterial(Array $para)
+  {
+     return $this->alimamaRepository->taobaoTbkDgOptimusMaterial($para);
   }
 }

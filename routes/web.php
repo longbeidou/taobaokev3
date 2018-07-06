@@ -32,6 +32,7 @@ Route::get('/search/ju/', 'Index\WX\SearchController@ju')->name('wx.search.ju');
 Route::get('/search/tpwd/', 'Index\WX\SearchController@tpwd')->name('wx.search.tpwd');
 Route::get('/taoqianggou', 'Index\WX\TaoQiangGouController@index')->name('wx.taoqianggou.index');
 Route::get('/item/{id?}', 'Index\WX\ItemInfoController@item')->name('wx.itemInfo.item')->where('id', '[0-9]+');
+Route::get('/iteminfo/{id?}', 'Index\WX\ItemInfoController@iteminfo')->name('wx.itemInfo.iteminfo')->where('id', '[0-9]+');
 // Route::get('/couponInfo/{id?}', 'Index\WX\ItemInfoController@couponIndex')->name('wx.itemInfo.index.coupon')->where('id', '[0-9]+');
 // Route::get('/itemInfo/{id?}', 'Index\WX\ItemInfoController@itemIndex')->name('wx.itemInfo.index.material')->where('id', '[0-9]+');
 Route::get('/couponaction/{id}', 'Index\WX\CouponActionController@index')->name('wx.CouponAction.index')->where('id', '[0-9]+');
@@ -54,6 +55,7 @@ Route::prefix('api/alimama')->group(function() {
 	Route::post('taobaoTbkDgMaterialOptional', 'Api\AlimamaController@taobaoTbkDgMaterialOptional')->name('api.alimama.taobaoTbkDgMaterialOptional');
 	Route::post('taobaoJuItemsSearch', 'Api\AlimamaController@taobaoJuItemsSearch')->name('api.alimama.taobaoJuItemsSearch');
 	Route::post('taobaoTbkJuTqgGet', 'Api\AlimamaController@taobaoTbkJuTqgGet')->name('api.alimama.taobaoTbkJuTqgGet');
+	Route::post('taobaoTbkDgOptimusMaterial', 'Api\AlimamaController@taobaoTbkDgOptimusMaterial')->name('api.alimama.taobaoTbkDgOptimusMaterial');
 });
 Route::prefix('api/item')->group(function() {
 	Route::post('itemimages/{id?}', 'Api\ItemInfoImagesController@itemDetailImage')->name('api.itemInfoImages.itemDetailImage')->where('id', '[0-9]+');

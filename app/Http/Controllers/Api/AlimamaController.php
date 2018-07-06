@@ -86,4 +86,16 @@ class AlimamaController extends Controller
 
       return $result;
     }
+
+    // 淘宝客物料下行-导购
+    public function taobaoTbkDgOptimusMaterial(Request $request)
+    {
+      if (empty($request->page_size) || empty($request->adzone_id) || empty($request->page_no) || empty($request->material_id)) {
+        return 415;
+      }
+
+      $items = $this->repository->taobaoTbkDgOptimusMaterial($request->all());
+
+      return $items ? $items : 415;
+    }
 }

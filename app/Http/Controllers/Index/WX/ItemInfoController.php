@@ -49,6 +49,29 @@ class ItemInfoController extends Controller
       }
     }
 
+    // 商品详情页面 更加全部对应传url参数的原则获取详情，是item的升级版
+    public function iteminfo($id = null, Request $request)
+    {
+      $id == null ? abort(404) : '';
+      $allParas = $request->all();
+      $couponInfoStr = $request->coupon_info;
+      unset($allParas['coupon_info']);
+      $couponLinkPara = (object)$allParas;
+      $itemInfo = $this->repository->itemInfo(['num_iids' => $id, 'platform' => '2']);
+      $itemInfo == false ? abort(404) : '';
+      $title = $itemInfo->title;
+      $images = $this->repository->images($itemInfo);
+      $guessYouLikeCoupons = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, '10');
+
+      if (empty($couponInfoStr)) {
+        $couponInfo = $this->repository->couponInfo(null, ['me' => $couponLinkPara->e]);
+      } else {
+        $couponInfo = $this->repository->couponInfoFromURLPara($couponInfoStr);
+      }
+
+      return view('wx.itemInfo.index.index', compact('title', 'itemInfo', 'images', 'couponInfo', 'guessYouLikeCoupons', 'couponLinkPara'));
+    }
+
     // 优惠券的详情页面  用于优惠券api获取
     public function couponIndex($id = null, Request $request)
     {

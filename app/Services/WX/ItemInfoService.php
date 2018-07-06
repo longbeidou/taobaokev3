@@ -66,6 +66,18 @@ class ItemInfoService
     }
   }
 
+  // 根据url的参数获取优惠券信息
+  public function couponInfoFromURLPara($couponInfoStr)
+  {
+      $couponInfo = [];
+      $couponInfoArr = explode('and', $couponInfoStr);
+      $couponInfo['coupon_start_time'] = $couponInfoArr[0];
+      $couponInfo['coupon_end_time'] = $couponInfoArr[1];
+      $couponInfo['coupon_amount'] = $couponInfoArr[2];
+
+      return (object)$couponInfo;
+  }
+
   // 获取优惠券的信息
   public function couponInfoFromUrl($request)
   {

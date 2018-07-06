@@ -1068,3 +1068,12 @@ header a
 {
 	color: #ed2a7a;
 }
+
+.lbd-material .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active
+{
+	color: #ed2a7a;
+}
+.lbd-material .mui-segmented-control.mui-scroll-wrapper .mui-control-item
+{
+	padding: 0px 8px;
+}

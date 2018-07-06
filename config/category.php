@@ -39,7 +39,7 @@ return [
 	2 => [
 		'name' => '母婴专场',
 		'rules' => [
-			0 => ['category' => '备孕阶段', 'page_size' => '20', 'adzone_id' => '1461260129', 'material_id' => '4040'],
+			0 => ['category' => '备孕期', 'page_size' => '20', 'adzone_id' => '1461260129', 'material_id' => '4040'],
 			1 => ['category' => '0-6个月', 'page_size' => '20', 'adzone_id' => '1461260129', 'material_id' => '4041'],
 			2 => ['category' => '7-12个月', 'page_size' => '20', 'adzone_id' => '1461260129', 'material_id' => '4042'],
 			3 => ['category' => '1-3岁', 'page_size' => '20', 'adzone_id' => '1461260129', 'material_id' => '4043'],

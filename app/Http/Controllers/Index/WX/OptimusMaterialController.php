@@ -24,11 +24,14 @@ class OptimusMaterialController extends Controller
         abort(404);
       }
 
-      $title = '淘宝天猫优惠券直播专场';
+      $category = $this->repository->getCategoryName(0, $id);
+      $title = empty($category) ? '淘宝天猫优惠券直播专场' : $category.'-'.'淘宝天猫优惠券直播专场';
+      $currentId = $id;
       $allInfo = $this->rulesArr[0];
-      $items = $this->repository->getItems($allInfo['rules'][$id]);
+      $requestPara = $allInfo['rules'][$id];
+      $items = $this->repository->getItems($requestPara);
 
-      dd($items);
+      return view('wx.material.index_zhibo', compact('title', 'allInfo', 'currentId', 'items', 'requestPara'));
     }
 
     // 品牌券
@@ -38,11 +41,14 @@ class OptimusMaterialController extends Controller
         abort(404);
       }
 
-      $title = '大牌淘宝内部优惠券专场';
+      $category = $this->repository->getCategoryName(1, $id);
+      $title = empty($category) ? '大牌淘宝内部优惠券专场' : $category.'-'.'大牌淘宝内部优惠券专场';
+      $currentId = $id;
       $allInfo = $this->rulesArr[1];
+      $requestPara = $allInfo['rules'][$id];
       $items = $this->repository->getItems($allInfo['rules'][$id]);
 
-      dd($items);
+      return view('wx.material.index_brand', compact('title', 'allInfo', 'currentId', 'items', 'requestPara'));
     }
 
     // 母婴专场
@@ -52,11 +58,14 @@ class OptimusMaterialController extends Controller
         abort(404);
       }
 
-      $title = '母婴类淘宝优惠券专场';
+      $category = $this->repository->getCategoryName(2, $id);
+      $title = empty($category) ? '母婴类淘宝优惠券专场' : $category.'-'.'母婴类淘宝优惠券专场';
+      $currentId = $id;
       $allInfo = $this->rulesArr[2];
+      $requestPara = $allInfo['rules'][$id];
       $items = $this->repository->getItems($allInfo['rules'][$id]);
 
-      dd($items);
+      return view('wx.material.index_baby', compact('title', 'allInfo', 'currentId', 'items', 'requestPara'));
     }
 
     // 聚划算拼团
@@ -72,11 +81,12 @@ class OptimusMaterialController extends Controller
     // 特惠
     public function sales()
     {
-      $title = '特价淘宝天猫优惠券专场';
+       $title = '特价淘宝天猫优惠券专场';
        $allInfo = $this->rulesArr[6];
+       $requestPara = $allInfo['rules'][0];
        $items = $this->repository->getItems($allInfo['rules'][0]);
 
-       dd($items);
+       return view('wx.material.index_one', compact('title', 'allInfo', 'items', 'requestPara'));
     }
 
     // 潮流范
@@ -84,9 +94,10 @@ class OptimusMaterialController extends Controller
     {
       $title = '淘宝天猫优惠券潮流范专场';
       $allInfo = $this->rulesArr[4];
+      $requestPara = $allInfo['rules'][0];
       $items = $this->repository->getItems($allInfo['rules'][0]);
 
-      dd($items);
+      return view('wx.material.index_one', compact('title', 'allInfo', 'items', 'requestPara'));
     }
 
     // 有好货
@@ -94,8 +105,9 @@ class OptimusMaterialController extends Controller
     {
       $title = '淘宝内部优惠券推荐专场';
       $allInfo = $this->rulesArr[5];
+      $requestPara = $allInfo['rules'][0];
       $items = $this->repository->getItems($allInfo['rules'][0]);
 
-      dd($items);
+      return view('wx.material.index_one', compact('title', 'allInfo', 'items', 'requestPara'));
     }
 }

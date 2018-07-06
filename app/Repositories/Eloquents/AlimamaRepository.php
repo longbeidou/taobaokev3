@@ -125,7 +125,7 @@ class AlimamaRepository implements AlimamaRepositoryInterface
   public function taobaoTbkDgOptimusMaterial(Array $datas)
   {
     $result = $this->alimamaSdk->taobaoTbkDgOptimusMaterial($datas);
-    
+
     return empty($result->result_list->map_data) ? false : $result->result_list->map_data;
   }
 }

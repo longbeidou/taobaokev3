@@ -20,4 +20,12 @@ class OptimusMaterialService
 
     return $result;
   }
+
+  // 获取页面的标题
+  public function getCategoryName($categoryId, $ruleId)
+  {
+    $configRule = config('category');
+
+    return $ruleId == 0 ? '' : $configRule[$categoryId]['rules'][$ruleId]['category'];
+  }
 }
