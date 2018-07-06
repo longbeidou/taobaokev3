@@ -17,8 +17,8 @@
   @include('wx.material._header')
 <div class="mui-content lbd-material">
   <div id="slider" class="mui-slider mui-fullscreen">
-		<div id="scroll1" class="mui-scroll-wrapper" style="top: 38px;">
-      @include('wx.material._coupon_list')
+		<div id="scroll1" class="mui-scroll-wrapper" style="top: 0px;">
+      @include('wx.material._pintuan_list')
 		</div>
 	</div>
 </div>
@@ -31,7 +31,7 @@
 <script src="/wxstyle/js/mui.lazyload.img.js"></script>
 <script>
     mui.init();
-    @include('wx.material._common_js')
+    @include('wx.material._pintuan_js')
 </script>
 <script type="text/javascript">
   mui('body').on('tap', '.a-can-do', function() {

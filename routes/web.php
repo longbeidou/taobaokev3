@@ -33,6 +33,7 @@ Route::get('/search/tpwd/', 'Index\WX\SearchController@tpwd')->name('wx.search.t
 Route::get('/taoqianggou', 'Index\WX\TaoQiangGouController@index')->name('wx.taoqianggou.index');
 Route::get('/item/{id?}', 'Index\WX\ItemInfoController@item')->name('wx.itemInfo.item')->where('id', '[0-9]+');
 Route::get('/iteminfo/{id?}', 'Index\WX\ItemInfoController@iteminfo')->name('wx.itemInfo.iteminfo')->where('id', '[0-9]+');
+Route::get('/pintuaninfo/{id?}', 'Index\WX\ItemInfoController@pinTuanInfo')->name('wx.itemInfo.pinTuanInfo')->where('id', '[0-9]+');
 // Route::get('/couponInfo/{id?}', 'Index\WX\ItemInfoController@couponIndex')->name('wx.itemInfo.index.coupon')->where('id', '[0-9]+');
 // Route::get('/itemInfo/{id?}', 'Index\WX\ItemInfoController@itemIndex')->name('wx.itemInfo.index.material')->where('id', '[0-9]+');
 Route::get('/couponaction/{id}', 'Index\WX\CouponActionController@index')->name('wx.CouponAction.index')->where('id', '[0-9]+');

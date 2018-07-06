@@ -72,6 +72,13 @@ class ItemInfoController extends Controller
       return view('wx.itemInfo.index.index', compact('title', 'itemInfo', 'images', 'couponInfo', 'guessYouLikeCoupons', 'couponLinkPara'));
     }
 
+    // 拼团详情页
+    public function pinTuanInfo($id = null, Request $request)
+    {
+      $id == null ? abort(404) : '';
+      $allParas = $request->all();
+    }
+
     // 优惠券的详情页面  用于优惠券api获取
     public function couponIndex($id = null, Request $request)
     {

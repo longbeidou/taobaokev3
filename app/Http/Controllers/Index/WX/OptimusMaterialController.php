@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\WX\OptimusMaterialService;
 
+use Taobaoke;
+
 class OptimusMaterialController extends Controller
 {
     public $repository;
@@ -73,9 +75,17 @@ class OptimusMaterialController extends Controller
     {
       $title = '聚划算拼团专场';
       $allInfo = $this->rulesArr[3];
+      $requestPara = $allInfo['rules'][0];
       $items = $this->repository->getItems($allInfo['rules'][0]);
 
-      dd($items);
+      // $tpwd = Taobaoke::taobaoWirelessShareTpwdCreate([
+      //   'url' => $items[0]->click_url,
+      //   'text' => 'sldfl'
+      // ]);
+      // dd($tpwd);
+      // dd($items);
+
+      return view('wx.material.index_pintuan', compact('title', 'allInfo', 'items', 'requestPara'));
     }
 
     // 特惠
