@@ -87,7 +87,7 @@
                 <li class="mui-table-view-cell">
                     <div class="mui-row">
                         <div class="mui-col-xs-3" style="padding-right: 5px;">
-                            <img src="http://placehold.it/400x400" alt="" style="width: 100%;">
+                            <img src="/wxstyle/images/app_logo.jpg" alt="龙琴时代APPlogo" style="width: 100%;">
                         </div>
                         <div class="mui-col-xs-7">
                             <h5 style="margin-top: 0px; margin-bottom: 3px;"><strong>龙琴时代（安卓版）</strong></h5>
@@ -104,7 +104,7 @@
                 <li class="mui-table-view-cell">
                     <div class="mui-row">
                         <div class="mui-col-xs-3" style="padding-right: 5px;">
-                            <img src="http://placehold.it/400x400" alt="" style="width: 100%;">
+                            <img src="/wxstyle/images/app_logo.jpg" alt="龙琴时代优惠券logo" style="width: 100%;">
                         </div>
                         <div class="mui-col-xs-7">
                             <h5 style="margin-top: 0px; margin-bottom: 3px;"><strong>龙琴时代（IOS版）</strong></h5>
