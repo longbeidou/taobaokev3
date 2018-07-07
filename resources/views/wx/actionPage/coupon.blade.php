@@ -24,7 +24,7 @@
       @if($showClient)
 			<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4" style="background-color: #ED2A7A;"></div>
       @else
-      <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-12" style="background-color: #ED2A7A;"></div>
+      <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6" style="background-color: #ED2A7A;"></div>
       @endif
 			<div class="mui-slider-group">
 				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="min-height: 400px; background-color: #fff;">
