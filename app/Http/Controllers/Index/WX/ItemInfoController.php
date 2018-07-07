@@ -10,11 +10,13 @@ class ItemInfoController extends Controller
 {
     public $repository;
     public $guessYouLikeAdzoneId;
+    public $guessYouLikePintuanAdzoneId;
 
     public function __construct(ItemInfoService $repository)
     {
       $this->repository = $repository;
       $this->guessYouLikeAdzoneId = config('adzoneID.wx_coupon_guess_you_like');
+      $this->guessYouLikePintuanAdzoneId = config('adzoneID.wx_coupon_guess_you_like_pintuan');
     }
 
     // 商品详情页面
@@ -77,6 +79,20 @@ class ItemInfoController extends Controller
     {
       $id == null ? abort(404) : '';
       $allParas = $request->all();
+      unset($allParas['pintuan_info']);
+      $pintuanLinkPara = (object)$allParas;
+      $itemInfo = $this->repository->itemInfo(['num_iids' => $id, 'platform' => '2']);
+      $itemInfo == false ? abort(404) : '';
+      $title = $itemInfo->title;
+      $images = $this->repository->images($itemInfo);
+      $guessYouLikePinTuan = $this->repository->guessYouLikePinTuan($this->guessYouLikePintuanAdzoneId, '10');
+// dd($guessYouLikePinTuan);
+      if (empty($request->pintuan_info)) {
+        return view('wx.itemInfo.pintuan.index_no', compact('title', 'itemInfo', 'images', 'guessYouLikePinTuan', 'couponLinkPara'));
+      } else {
+        $pintuanInfo = $this->repository->pinTuanInfo($request->pintuan_info);
+        return view('wx.itemInfo.pintuan.index', compact('title', 'itemInfo', 'images', 'pintuanInfo', 'guessYouLikePinTuan', 'couponLinkPara'));
+      }
     }
 
     // 优惠券的详情页面  用于优惠券api获取

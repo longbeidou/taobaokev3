@@ -95,7 +95,7 @@
           li = document.createElement('li');
           li.className = 'mui-table-view-cell mui-media';
           str += '<a class="addPara" no="data'+pageNo+'a'+i+'" href="'+targetURL+'/'+data[i].num_iid+'">'
-          str +=  '<data id="data'+pageNo+'a'+i+'" link="'+urlPara+'" pintuan="coupon_info='+data[i].ostime+'and'+data[i].oetime+'and'+data[i].orig_price+'and'+data[i].jdd_price+'and'+data[i].item_description+'"></data>'
+          str +=  '<data id="data'+pageNo+'a'+i+'" link="'+urlPara+'" pintuan="pintuan_info='+data[i].ostime+'and'+data[i].oetime+'and'+data[i].orig_price+'and'+data[i].jdd_price+'and'+data[i].item_description+'"></data>'
           str +=  '<div class="mui-row">'
           str +=    '<div class="mui-col-xs-4 goods-image"><img src="'+data[i].pict_url+'"/></div>'
           str +=    '<div class="mui-col-xs-8 lbd-content"><p class="lbd-title">'+data[i].title+'</p></div>'
@@ -124,6 +124,6 @@
 mui('body').on('tap','.addPara',function(){
   dataId = this.getAttribute('no');
   link = document.getElementById(dataId).getAttribute('link')
-  coupon = document.getElementById(dataId).getAttribute('coupon')
-  document.location.href=this.href+'?'+link+'&'+coupon;
+  pintuan = document.getElementById(dataId).getAttribute('pintuan')
+  document.location.href=this.href+'?'+link+'&'+pintuan;
 })

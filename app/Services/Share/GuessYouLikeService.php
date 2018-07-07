@@ -27,4 +27,12 @@ class GuessYouLikeService
 
     return $result;
   }
+
+  // 获取指定数量的拼团的数量，调用数据随机
+  public function pintuan($adzonId, $num)
+  {
+      $result = $this->alimama->taobaoTbkDgOptimusMaterial(['adzone_id' => $adzonId, 'page_size' => $num, 'page_no' => mt_rand(10, 30), 'material_id' => '4071']);
+
+      return empty($result) ? [] : $result;
+  }
 }

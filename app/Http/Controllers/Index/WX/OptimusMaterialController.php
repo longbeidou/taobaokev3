@@ -78,13 +78,6 @@ class OptimusMaterialController extends Controller
       $requestPara = $allInfo['rules'][0];
       $items = $this->repository->getItems($allInfo['rules'][0]);
 
-      // $tpwd = Taobaoke::taobaoWirelessShareTpwdCreate([
-      //   'url' => $items[0]->click_url,
-      //   'text' => 'sldfl'
-      // ]);
-      // dd($tpwd);
-      // dd($items);
-
       return view('wx.material.index_pintuan', compact('title', 'allInfo', 'items', 'requestPara'));
     }
 

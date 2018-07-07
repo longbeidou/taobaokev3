@@ -19,6 +19,9 @@ return [
 	// 无线端猜你喜欢 coupon api获取的商品
 	'wx_coupon_guess_you_like' => '1459300118',
 
+	// 无线端猜你喜欢 聚划算拼团  api获取的商品
+	'wx_coupon_guess_you_like_pintuan' => '1459300118',
+
 	// 无线端淘抢购
 	'wx_tqg' => '1459318297'
 ];

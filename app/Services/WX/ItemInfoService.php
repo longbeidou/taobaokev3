@@ -25,6 +25,12 @@ class ItemInfoService
     return $this->guessYouLike->coupons($adzonId, $num);
   }
 
+  // 获取猜你喜欢的聚划算批团的数量
+  public function guessYouLikePinTuan($adzonId, $num)
+  {
+    return $this->guessYouLike->pintuan($adzonId, $num);
+  }
+
   // 获取指定id的商品信息
   public function itemInfo($para)
   {
@@ -121,5 +127,19 @@ class ItemInfoService
     }
 
     return $result;
+  }
+
+  // 获取拼团的信息
+  public function pinTuanInfo($pintuanStr)
+  {
+    $pintuanInfo = [];
+    $pintuanInfoArr = explode('and', $pintuanStr);
+    $pintuanInfo['ostime'] = $pintuanInfoArr[0];
+    $pintuanInfo['oetime'] = $pintuanInfoArr[1];
+    $pintuanInfo['orig_price'] = $pintuanInfoArr[2];
+    $pintuanInfo['jdd_price'] = $pintuanInfoArr[3];
+    $pintuanInfo['item_description'] = empty($pintuanInfoArr[4]) ? '超值价位，限量供应，买到就是赚到！' : $pintuanInfoArr[4];
+
+    return (object)$pintuanInfo;
   }
 }

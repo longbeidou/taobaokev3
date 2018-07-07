@@ -4,7 +4,7 @@
         @foreach($items as $key => $item)
           <li class="mui-table-view-cell mui-media">
             <a class="addPara" no='data{{ $key }}' href="{{ route('wx.itemInfo.pinTuanInfo') }}/{{ $item->num_iid }}">
-              <data id="data{{ $key }}" link='{{ $material->getParaStrFromUrl($item->click_url) }}' pintuan="coupon_info={{ $item->ostime }}and{{ $item->oetime }}and{{ $item->orig_price }}and{{ $item->jdd_price }}and{{ $item->item_description }}"></data>
+              <data id="data{{ $key }}" link='{{ $material->getParaStrFromUrl($item->click_url) }}' pintuan="pintuan_info={{ $item->ostime }}and{{ $item->oetime }}and{{ $item->orig_price }}and{{ $item->jdd_price }}and{{ $item->item_description }}"></data>
               <div class="mui-row">
                 <div class="mui-col-xs-4 goods-image">
                   <img data-lazyload="{{ $item->pict_url }}"/>
