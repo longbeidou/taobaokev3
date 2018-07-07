@@ -8,7 +8,7 @@
 @section('content')
 <header class="mui-bar mui-bar-nav lbd-search-header">
   <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-  <a class="mui-icon mui-icon-home mui-pull-right" href="{{ route('wx.index') }}"></a>
+  <a class="mui-icon mui-icon-home mui-pull-right lbd-a-no-tap" title="淘宝天猫优惠券" href="{{ route('wx.index') }}"></a>
   <h1 class="mui-title">搜优惠券</h1>
 </header>
 
@@ -89,6 +89,10 @@
   // 监听tap事件，让a标签自动加入url的参数
   mui('body').on('tap','.addURL',function(){
     document.location.href=this.href+'?url='+this.getAttribute('e');
+  })
+  // 监听tap事件，让a标签实现点击
+  mui('body').on('tap','.lbd-a-no-tap',function(){
+    document.location.href=this.href;
   })
 </script>
 @stop
