@@ -127,3 +127,8 @@ mui('body').on('tap','.addPara',function(){
   pintuan = document.getElementById(dataId).getAttribute('pintuan')
   document.location.href=this.href+'?'+link+'&'+pintuan;
 })
+
+// 监听tap事件，让a标签实现点击
+mui('body').on('tap','.lbd-a-no-tap',function(){
+  document.location.href=this.href;
+})
