@@ -26,7 +26,7 @@
                 <span class="lbd-from-taobao">淘宝</span>
                 @endif
                 <span class="lbd-from-new">{{ $item->jdd_num }}人团</span>
-                {{ $item->sell_num }}人拼团购买
+                {{ $item->sell_num }}人已拼团
               </div>
               <div class="lbd-bottom">
                 <div class="mui-pull-left">
