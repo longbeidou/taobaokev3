@@ -19,6 +19,7 @@ class CouponActionController extends Controller
   {
     $showClient = config('website.show_client');
     $title = '领淘宝天猫优惠券';
+    $name = '领淘宝优惠券';
     $couponLink = $this->repository->couponLink($request->all());
     $linkPara = $this->repository->linkPara($couponLink);
 
@@ -33,6 +34,6 @@ class CouponActionController extends Controller
     $tpwd = $this->repository->makeTpwd($couponLink, $itemInfo);
     $showClient = $this->repository->showClient($showClient);
 
-    return view('wx.actionPage.coupon', compact('title', 'linkPara', 'tpwd', 'itemInfo', 'showClient'));
+    return view('wx.actionPage.coupon', compact('title', 'name', 'linkPara', 'tpwd', 'itemInfo', 'showClient'));
   }
 }
