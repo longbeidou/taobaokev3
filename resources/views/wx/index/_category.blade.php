@@ -26,7 +26,7 @@
       </a>
     </li>
     <li>
-      <a class="a-can-do" href="{{ route('wx.webJump.tqg') }}" title="淘抢购">
+      <a class="a-can-do" href="{{ route('wx.taoqianggou.index') }}" title="淘抢购">
         <div class="lbd-img"><img src="http://placehold.it/40x40"></div>
         <div class="lbd-text">整点秒杀</div>
       </a>
