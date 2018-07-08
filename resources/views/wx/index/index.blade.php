@@ -131,5 +131,10 @@
   mui('body').on('tap','.addURL',function(){
     document.location.href=this.href+'?url='+this.getAttribute('e');
   })
+
+  // 解决a不能跳转的问题
+  mui('body').on('tap', '.a-can-do', function() {
+    document.location.href = this.href;
+  })
   </script>
 @stop
