@@ -18,7 +18,7 @@
 <div class="mui-content lbd-material">
   <div id="slider" class="mui-slider mui-fullscreen">
     @include('wx.material._scroll_baby')
-		<div id="scroll1" class="mui-scroll-wrapper" style="top: 38px;">
+		<div id="scroll1" class="mui-scroll-wrapper lbd-content-box" style="top: 38px;">
       @include('wx.material._coupon_list')
 		</div>
 	</div>

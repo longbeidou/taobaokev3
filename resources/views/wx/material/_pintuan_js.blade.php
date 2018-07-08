@@ -133,24 +133,4 @@ mui('body').on('tap','.lbd-a-no-tap',function(){
   document.location.href=this.href;
 })
 
-// 回到顶部
-document.writeln("<div id=\'lbd-action-top\' class=\'lbd-action-top\'>");
-document.writeln("  <i class=\'mui-icon-extra mui-icon-extra-top\' onclick=\'goToTop()\'></i>");
-document.writeln("</div>");
-// // 点击回到顶部
-function goToTop()
-{
-  document.getElementById('lbd-action-top').style.display = 'none';
-  mui('#scroll1').scroll().scrollTo(0,0);
-}
-window.onscroll = function () {
-  y = mui('.mui-scroll-wrapper').scroll().y;
-  if (y < -500) {
-    document.getElementById('lbd-action-top').style.zIndex = 999;
-    document.getElementById('lbd-action-top').style.display = '';
-  }
-  else {
-    document.getElementById('lbd-action-top').style.zIndex = -1;
-    document.getElementById('lbd-action-top').style.display = 'none';
-  }
-}
+@include('wx.material._to_top_scroll')

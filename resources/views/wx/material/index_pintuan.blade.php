@@ -17,7 +17,7 @@
   @include('wx.material._header')
 <div class="mui-content lbd-material">
   <div id="slider" class="mui-slider mui-fullscreen">
-		<div id="scroll1" class="mui-scroll-wrapper" style="top: 0px;">
+		<div id="scroll1" class="mui-scroll-wrapper lbd-content-box" style="top: 0px;">
       @include('wx.material._pintuan_list')
 		</div>
 	</div>
