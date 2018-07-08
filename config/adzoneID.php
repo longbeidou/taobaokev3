@@ -2,7 +2,7 @@
 
 return [
 	// 无线端聚划算搜素的pid
-	'wx_ju_search_pid' => 'mm_46591525_34308672_1459170411',
+	'wx_ju_search_pid' => 'mm_'.env('PID_USER').'_'.env('PID_SITE').'_1459170411',
 
 	// 无线端全部搜索的adzone_id
 	'wx_search_all_adzone_id' => '1459124850',
