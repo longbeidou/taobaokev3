@@ -6,7 +6,7 @@ document.writeln("</div>");
 function goToTop()
 {
   document.getElementById('lbd-action-top').style.display = 'none';
-  mui.scrollTo(0,1000);
+  mui.scrollTo(0,0);
 }
 window.onscroll = function () {
   var t = document.documentElement.scrollTop || document.body.scrollTop;
