@@ -70,7 +70,7 @@
     </ul>
   </div><!--图文详情 结束-->
 
-  @include('wx.layouts._guess_you_like_coupon')
+  @include('wx.layouts._guess_you_like_items')
   @include('wx.layouts._to_top')
 </div>
 @stop
@@ -111,14 +111,15 @@
   mui('#lbd-footer-tab-item').on('tap','a',function(){
     document.location.href=this.href;
   })
-
-  // 监听tap事件，让a标签自动加入url的参数
-  mui('body').on('tap','.addURL',function(){
-    document.location.href=this.href+'?url='+this.getAttribute('e');
-  })
   // 监听tap事件，让a标签实现点击
   mui('body').on('tap','.lbd-a-no-tap',function(){
     document.location.href=this.href;
+  })
+  // 监听tap事件，让a标签自动加入url的参数
+  mui('body').on('tap','.addPara',function(){
+    dataId = this.getAttribute('no');
+    link = document.getElementById(dataId).getAttribute('link')
+    document.location.href=this.href+'?'+link;
   })
 </script>
 @stop

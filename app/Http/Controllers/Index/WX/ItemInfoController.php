@@ -86,7 +86,7 @@ class ItemInfoController extends Controller
       $title = $itemInfo->title;
       $images = $this->repository->images($itemInfo);
       $guessYouLikePinTuan = $this->repository->guessYouLikePinTuan($this->guessYouLikePintuanAdzoneId, '10');
-// dd($guessYouLikePinTuan);
+
       if (empty($request->pintuan_info)) {
         return view('wx.itemInfo.pintuan.index_no', compact('title', 'itemInfo', 'images', 'guessYouLikePinTuan', 'couponLinkPara'));
       } else {
