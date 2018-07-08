@@ -192,7 +192,7 @@ class MakeCouponShareImageService
     $webName = config('website.name').'独家分享！';
     $website = '更多淘宝天猫优惠券见:'.config('website.domain');
     $img = $this->addText($img, ['text'=>$webName, 'x'=>35, 'y'=>1230, 'size'=>'25', 'color'=>array(69, 69, 69, 0.5)]);
-    $img = $this->addText($img, ['text'=>$website, 'x'=>335, 'y'=>1230, 'size'=>'25', 'color'=>array(69, 69, 69, 0.5)]);
+    $img = $this->addText($img, ['text'=>$website, 'x'=>385, 'y'=>1230, 'size'=>'25', 'color'=>array(69, 69, 69, 0.5)]);
     return $img;
   }
 
