@@ -1,7 +1,7 @@
 @inject('couponShow', 'App\Presenters\CouponListPresenter')
 @inject('ju', 'App\Presenters\JuPresenter')
 
-@foreach($juItems as $item)
+@foreach($juItems as $item) 
 <li class="mui-table-view-cell mui-media lbd-ju-info">
     <a rel="nofollow" href="{{ route('wx.webJump.ju') }}?e={{ $ju->getParasStrFromWapUrl($item->wap_url) }}">
     	<div class="mui-row">
