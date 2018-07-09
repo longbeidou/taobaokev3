@@ -32,7 +32,7 @@
         </li>
     </ul>
 @else
-        @include('wx.layouts._coupon_list_for_item')
+        @include('wx.layouts._coupon_list_for_coupon_item')
     </ul>
     <!--查看更多商品 开始-->
     <div class="mui-col-xs-12 mui-text-center lbd-index-box" id="lbd-index-see-more">
@@ -106,7 +106,7 @@
               var table = document.body.querySelector('.lbd-goods-list-info');
               for (i = 0; i < len; i++) {
                 item = data[i];
-                @include('wx.layouts._coupon_list_for_js_item')
+                @include('wx.layouts._coupon_list_for_js_coupon_item')
                 var li = document.createElement('li');
                 li.className = 'mui-table-view-cell mui-media';
                 li.innerHTML = str;
