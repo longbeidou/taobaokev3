@@ -15,12 +15,12 @@
 <div class="mui-content">
 		<div id="slider" class="mui-slider lbd-coupon-take-box">
 			<div class="mui-slider-group">
-				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="min-height: 630px; background-color: #fff;">
+				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="min-height: 430px; background-color: #fff;">
 					<div id="scroll1" class="mui-scroll-wrapper-bak">
 						<div class="mui-scroll-bak">
 							<ul class="mui-table-view">
 								<li class="mui-table-view-cell">
-									<textarea rows="8" id="lbd-tpwd" style="margin-bottom: 0px; font-size: 12px; line-height: 14px;">VIP渠道客户专属淘口令：{{ $tpwd }}</textarea>
+									<textarea rows="4" id="lbd-tpwd" style="margin-bottom: 0px; font-size: 12px; line-height: 14px;">VIP渠道客户专属淘口令：{{ $tpwd }}</textarea>
 								    <div class="mui-button-row">
 								        <button type="button" id="lbd-tpwd-copy" data-clipboard-action="copy" data-clipboard-target="#lbd-tpwd" class="mui-btn mui-btn-yellow lbdTpwdCopy" >复制淘口令文案</button>
 								    </div>
