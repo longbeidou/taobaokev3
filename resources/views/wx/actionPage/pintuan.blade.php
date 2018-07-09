@@ -32,12 +32,12 @@
 								<li class="mui-table-view-cell">
 									<h5>淘口令使用说明：</h5>
 									<p>
-										1.如果手机有淘宝APP，则可以直接复制口令领券。手机没有淘宝APP，请先安装再复制淘口令领券。<br />
-										2.领券步骤：<br>
+										1.如果手机有淘宝APP，则可以直接复制口令拼团。手机没有淘宝APP，请先安装再复制淘口令参加拼团。<br />
+										2.拼团步骤：<br>
 										&nbsp;&nbsp;&nbsp;&nbsp;a.点击【复制淘口令】按钮<br />
 										&nbsp;&nbsp;&nbsp;&nbsp;b.打开手机淘宝APP<br />
-										&nbsp;&nbsp;&nbsp;&nbsp;c.在淘宝APP内领券下单<br />
-										3.优惠券有使用期限，过期作废，请尽快下单。
+										&nbsp;&nbsp;&nbsp;&nbsp;c.在淘宝APP内拼团购买<br />
+										3.参与拼团有时间限制，过期作废，请尽快下单。
 									</p>
 								</li>
 							</ul>
@@ -51,19 +51,19 @@
 							<ul class="mui-table-view">
 								<li class="mui-table-view-cell">
 								    <div class="mui-button-row" id="lbd-coupon-take-link">
-								        <a href="{{ $couponLink }}" rel="nofollow" class="mui-btn mui-btn-yellow mui-btn-block">立即领券</a>
+								        <a href="{{ $pinTuanLink }}" rel="nofollow"  class="mui-btn mui-btn-yellow mui-btn-block">立即拼团</a>
 								    </div>
 								</li>
 								<li class="mui-table-view-cell">
-									<h5>链接方式领券使用说明：</h5>
+									<h5>链接方式拼团使用说明：</h5>
 									<p>
-										1.此方法是通过浏览器领券下单购物。<span style="color: #ed2a7a;">由于通过浏览器抢券的成功率低于淘口令方式并且操作复杂，所以<strong>强烈建议</strong>使用淘口令方式领取优惠券</span>。<br />
+										1.此方法是通过浏览器参与拼团。<span style="color: #ed2a7a;">由于通过浏览器拼团的成功率低于淘口令方式并且操作复杂，所以<strong>强烈建议</strong>使用淘口令方式参与拼团</span>。<br />
 										2.领券步骤：<br>
-										&nbsp;&nbsp;&nbsp;&nbsp;a.点击【立即领券】按钮<br />
+										&nbsp;&nbsp;&nbsp;&nbsp;a.点击【立即拼团】按钮<br />
 										&nbsp;&nbsp;&nbsp;&nbsp;b.在出现的登录页面输入账号和密码<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;c.登录淘宝后在淘宝领券页面领取优惠券<br />
-										&nbsp;&nbsp;&nbsp;&nbsp;d.淘宝下单的时候就可以使用优惠券享受优惠了<br />
-										3.优惠券有使用期限，过期作废，请尽快下单。
+                    &nbsp;&nbsp;&nbsp;&nbsp;c.登录淘宝后参与拼团购买<br />
+										&nbsp;&nbsp;&nbsp;&nbsp;d.拼团成功就可以享受优惠了<br />
+                    3.参与拼团有时间限制，过期作废，请尽快下单。
 									</p>
 								</li>
 							</ul>
@@ -77,10 +77,10 @@
 							<ul class="mui-table-view">
                 @include('wx.actionPage._app_download')
 								<li class="mui-table-view-cell">
-									<h5>龙琴时代APP领券使用说明：</h5>
+									<h5>龙琴时代APP拼团使用说明：</h5>
 									<p>
-										1.通过龙琴时代APP抢优惠券的成功率最高<br/>
-										2.优惠券每天24小时实时更新，保证优惠券的时效性<br />
+                    1.通过龙琴时代APP拼团的成功率最高<br/>
+										2.拼团的产品每天24小时实时更新，保证时效性<br />
                     3.商品种类涉及上百个大类，上千个小分类，总能找到自己喜欢的宝贝<br />
                     4.独家分享上千家合作的淘宝天猫店铺的大额优惠券，领券最低一折购物<br />
 										5.优惠券有使用期限，过期作废，请尽快下单。

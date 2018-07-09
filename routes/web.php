@@ -38,6 +38,7 @@ Route::domain(env('DOMAIN_WX'))->group(function() {
 	// Route::get('/couponInfo/{id?}', 'Index\WX\ItemInfoController@couponIndex')->name('wx.itemInfo.index.coupon')->where('id', '[0-9]+');
 	// Route::get('/itemInfo/{id?}', 'Index\WX\ItemInfoController@itemIndex')->name('wx.itemInfo.index.material')->where('id', '[0-9]+');
 	Route::get('/couponaction/{id}', 'Index\WX\CouponActionController@index')->name('wx.CouponAction.index')->where('id', '[0-9]+');
+	Route::get('/pintuanaction/{id}', 'Index\WX\CouponActionController@pintuan')->name('wx.CouponAction.pintuan')->where('id', '[0-9]+');
 	Route::get('/shareitem/{id}', 'Index\WX\ShareItemController@coupon')->name('wx.ShareItem.coupon')->where('id', '[0-9]+');
 	Route::get('/coupon/image/{id}', 'Index\WX\ImageController@couponShareImage')->name('wx.image.couponShareImage')->where('id', '[0-9]+');
 	Route::get('/url/der/tqg', 'Index\WX\WebJumpController@tqg')->name('wx.webJump.tqg');

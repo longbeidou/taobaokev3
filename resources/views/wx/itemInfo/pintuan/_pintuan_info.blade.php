@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="mui-col-xs-3 lbd-right">
-    <a rel="nofollow" href=" route('wx.CouponAction.index', $itemInfo->num_iid) }} $itemShow->concatCouponLinkPara($couponLinkPara) }}" class="lbd-link lbd-a-no-tap">立即成团</a>
+    <a rel="nofollow" href="{{ route('wx.CouponAction.pintuan', $itemInfo->num_iid) }}{{ $itemShow->concatCouponLinkPara($pintuanLinkPara) }}" class="lbd-link lbd-a-no-tap">拼团购买</a>
     <!-- <div class="lbd-right-circle"></div> -->
   </div>
 </div><!--优惠券 结束-->

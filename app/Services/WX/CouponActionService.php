@@ -10,6 +10,7 @@ use Carbon\Carbon;
 class CouponActionService
 {
   const TAOBAO_DOMAIN = '//uland.taobao.com/coupon/edetail';
+  const PINTUAN_TAOBAO_DOMAIN = '//s.click.taobao.com/t';
   public $alimamaRepository;
   public $client;
   public $tpwd;
@@ -25,6 +26,17 @@ class CouponActionService
   public function couponLink($paraArr)
   {
     return $this->linkFromPara($paraArr);
+  }
+
+  // 获取拼团链接
+  public function pinTuanLink($paraArr)
+  {
+     $paraArrNew = [];
+     foreach ($paraArr as $para => $value) {
+        $paraArrNew[] = $para.'='.$value;
+     }
+
+     return self::PINTUAN_TAOBAO_DOMAIN.'?'.implode('&', $paraArrNew);
   }
 
   // 获取优惠券短连接
