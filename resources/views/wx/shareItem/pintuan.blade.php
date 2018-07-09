@@ -26,8 +26,8 @@
 							<ul class="mui-table-view">
 								<li class="mui-table-view-cell">
 									<textarea rows="8" id="lbd-tpwd" style="margin-bottom: 0px; font-size: 12px; line-height: 14px;">{{ $itemInfo->title }}
-【在售价】{{ number_format($itemInfo->zk_final_price, 2) }}元
-【券後价】{{ number_format($itemInfo->zk_final_price-$couponAmount, 2) }}元
+【单买价】{{ number_format($pintuanInfo->orig_price, 2) }}元
+【拼团价】{{ number_format($pintuanInfo->jdd_price, 2) }}元
 ================
 復.制这段文字，{{ $tpwd }} ，咑.閞【手.机淘.宝】即可查看</textarea>
 								    <div class="mui-button-row">
@@ -57,7 +57,7 @@
 						<div class="mui-scroll-bak">
 							<ul class="mui-table-view">
 								<li class="mui-table-view-cell">
-								    <img  src="{{ route('wx.image.couponShareImage', $itemInfo->num_iid) }}?couponAmount={{ $couponAmount }}"  width="100%" />
+								    <img  src="{{ route('wx.image.pintuanShareImage', $itemInfo->num_iid) }}?pintuan_info= {{ $pintuanStr }}&tpwd={{ $tpwd }}"  width="100%" />
 								</li>
 								<li class="mui-table-view-cell">
 									<h5>图片领优惠券步骤：</h5>

@@ -118,4 +118,16 @@ class CouponActionService
 
     return in_array($client, $canShowClientArr);
   }
+
+  // 获取拼团的信息，由字符串转化而来
+  public function pintuanInfo($pintuanStr)
+  {
+      $pintuanArr = explode('and', $pintuanStr);
+      $pintuanInfo['ostime'] = $pintuanArr[0];
+      $pintuanInfo['oetime'] = $pintuanArr[1];
+      $pintuanInfo['orig_price'] = $pintuanArr[2];
+      $pintuanInfo['jdd_price'] = $pintuanArr[3];
+
+      return (object)$pintuanInfo;
+  }
 }

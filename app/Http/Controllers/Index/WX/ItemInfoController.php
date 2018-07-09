@@ -91,7 +91,8 @@ class ItemInfoController extends Controller
         return view('wx.itemInfo.pintuan.index_no', compact('title', 'itemInfo', 'images', 'guessYouLikePinTuan', 'pintuanLinkPara'));
       } else {
         $pintuanInfo = $this->repository->pinTuanInfo($request->pintuan_info);
-        return view('wx.itemInfo.pintuan.index', compact('title', 'itemInfo', 'images', 'pintuanInfo', 'guessYouLikePinTuan', 'pintuanLinkPara'));
+        $pintuanInfoStr = $request->pintuan_info;
+        return view('wx.itemInfo.pintuan.index', compact('title', 'itemInfo', 'images', 'pintuanInfo', 'pintuanInfoStr', 'guessYouLikePinTuan', 'pintuanLinkPara'));
       }
     }
 

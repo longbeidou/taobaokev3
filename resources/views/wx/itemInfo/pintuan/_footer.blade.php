@@ -4,7 +4,7 @@
       <span class="mui-icon mui-icon-extra mui-icon-extra-peoples"></span>
       <span class="mui-tab-label">拼团主会场</span>
     </a>
-    <a class="mui-tab-item" rel="nofollow" href="" style="width: 100%;">
+    <a class="mui-tab-item" rel="nofollow" href="{{ route('wx.ShareItem.pintuan', $itemInfo->num_iid) }}{{ $itemShow->concatCouponLinkPara($pintuanLinkPara) }}&pintuan_info={{ $pintuanInfoStr }}" style="width: 100%;">
         <span class="mui-icon mui-icon-extra mui-icon-extra-share"></span>
         <span class="mui-tab-label">分享</span>
     </a>

@@ -73,4 +73,10 @@ class WebJumpController extends Controller
         return view('wx.webJump.index', compact('title'));
       }
     }
+
+    // 用于淘口令的跳转
+    public function tpwd($tpwd)
+    {
+      // 
+    }
 }

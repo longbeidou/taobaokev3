@@ -13,6 +13,7 @@ class MakeCouponShareImageService
   const QRCODES_SRC = 'coupon/qrcodes';   // 二维码的保存路径
   const IMG_SRC     = 'coupon/img';       // 商品的推广图片保存地址
   const BGIMG_SRC   = 'tuiguang/bg.png';  // 背景图的存放路径
+  const PINTUAN_BGIMG_SRC   = 'tuiguang/pintuan-bg.png';  // 背景图的存放路径
   const TAOBAO_SRC  = 'coupon/taobao';    // 淘宝网商品图的保存路径
   const NAME        = 'id';               // 文件的名称
 
@@ -32,6 +33,36 @@ class MakeCouponShareImageService
     $this->saveOutImageToLocal($info['img'], 889, self::TAOBAO_SRC.'/'.self::NAME.'.png');
 
     $img = Image::make(public_path(self::BGIMG_SRC))
+            ->insert(public_path(self::QRCODES_SRC.'/'.self::NAME.'.png'), 'bottom-right', 61, 66) // 插入二维码
+            ->insert(public_path(self::TAOBAO_SRC.'/'.self::NAME.'.png'), 'top');                  // 插入淘宝图
+
+    $img = $this->addGoodsNameToImage ($img, $info['goodsName']); // 将商品名称写入图片
+    $img = $this->addText($img, ['text'=>$info['priceNow'], 'x'=>369, 'y'=>1165, 'size'=>'60', 'color'=>array(255, 79, 30, 1)]); // 写入现价到图片
+    $img = $this->addText($img, ['text'=>$info['priceOrigin'], 'x'=>118, 'y'=>1120, 'size'=>'40', 'color'=>array(149, 149, 149, 1)]); // 写入现价到图片
+    $img = $this->addText($img, ['text'=>$info['couponInfo'], 'x'=>105, 'y'=>1180, 'size'=>'30', 'color'=>array(255, 79, 30, 1)]); // 写入优惠券面额
+    $img = $this->addCopyToImage($img); // 插入版权
+    $img = $img->save(public_path(self::IMG_SRC.'/'.self::NAME.'.jpg'));
+    $this->deleteImages(); // 删除生成的图片
+
+    return $img;
+  }
+
+  // 生成聚划算拼团的分享的图片
+  public function makePinTuanImage($coupon)
+  {
+    $info = $this->imagePintuanInfo($coupon);
+
+    // 检测并生成目录
+    $this->mkdirSelf(self::QRCODES_SRC);  // 二维码的目录
+    $this->mkdirSelf(self::IMG_SRC);      // 商品推广图片的路径
+    $this->mkdirSelf(self::TAOBAO_SRC);   // 淘宝商品图片的路径
+
+    // 生成二维码图片
+    $this->makeQrCode(242, 0, '0,0,0', '255,255,255', $info['linkInfo'], public_path(self::QRCODES_SRC.'/'.self::NAME.'.png'));
+    // 将淘宝的图片保存到本地
+    $this->saveOutImageToLocal($info['img'], 889, self::TAOBAO_SRC.'/'.self::NAME.'.png');
+
+    $img = Image::make(public_path(self::PINTUAN_BGIMG_SRC))
             ->insert(public_path(self::QRCODES_SRC.'/'.self::NAME.'.png'), 'bottom-right', 61, 66) // 插入二维码
             ->insert(public_path(self::TAOBAO_SRC.'/'.self::NAME.'.png'), 'top');                  // 插入淘宝图
 
@@ -75,6 +106,18 @@ class MakeCouponShareImageService
     $info['img']         = $coupon->pict_url;
     $info['linkInfo']    = route('wx.itemInfo.item', ['id'=>$coupon->num_iid]);
     $info['couponInfo']  = $coupon->coupon_amount === null ? 'VIP渠道券' : floor($coupon->coupon_amount).'元';
+
+    return $info;
+  }
+
+  public function imagePintuanInfo ($coupon)
+  {
+    $info['goodsName']   = $coupon->title;
+    $info['priceOrigin'] = number_format($coupon->zk_final_price, 2);
+    $info['priceNow']    = $coupon->coupon_amount === null ? '扫码拼团' : number_format($coupon->zk_final_price - $coupon->coupon_amount, 2);
+    $info['img']         = $coupon->pict_url;
+    $info['linkInfo']    = empty($coupon->tpwd) ? route('wx.itemInfo.pinTuanInfo', ['id'=>$coupon->num_iid]) : route('wx.webJump.tpwd', ['tpwd' => $coupon->tpwd]);
+    $info['couponInfo']  = $coupon->coupon_amount === null ? 'VIP渠道享' : floor($coupon->coupon_amount).'元';
 
     return $info;
   }

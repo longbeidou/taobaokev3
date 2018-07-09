@@ -40,11 +40,14 @@ Route::domain(env('DOMAIN_WX'))->group(function() {
 	Route::get('/couponaction/{id}', 'Index\WX\CouponActionController@index')->name('wx.CouponAction.index')->where('id', '[0-9]+');
 	Route::get('/pintuanaction/{id}', 'Index\WX\CouponActionController@pintuan')->name('wx.CouponAction.pintuan')->where('id', '[0-9]+');
 	Route::get('/shareitem/{id}', 'Index\WX\ShareItemController@coupon')->name('wx.ShareItem.coupon')->where('id', '[0-9]+');
+	Route::get('/sharepintuan/{id}', 'Index\WX\ShareItemController@pintuan')->name('wx.ShareItem.pintuan')->where('id', '[0-9]+');
 	Route::get('/coupon/image/{id}', 'Index\WX\ImageController@couponShareImage')->name('wx.image.couponShareImage')->where('id', '[0-9]+');
+	Route::get('/pintuan/image/{id}', 'Index\WX\ImageController@pintuanShareImage')->name('wx.image.pintuanShareImage')->where('id', '[0-9]+');
 	Route::get('/url/der/tqg', 'Index\WX\WebJumpController@tqg')->name('wx.webJump.tqg');
 	Route::get('/url/der/tqg/e/', 'Index\WX\WebJumpController@tqgForJs')->name('wx.webJump.tqgForJs');
 	Route::get('/url/der/ju', 'Index\WX\WebJumpController@ju')->name('wx.webJump.ju');
 	Route::get('/url/der/ju/js', 'Index\WX\WebJumpController@juForJs')->name('wx.webJump.juForJs');
+	Route::get('/url/der/t/{{ tpwd }}', 'Index\WX\WebJumpController@tpwd')->name('wx.webJump.tpwd');
 	Route::get('/zhibo-{id}', 'Index\WX\OptimusMaterialController@zhibo')->name('wx.optimusMaterial.zhibo')->where('id', '[0-9]+');
 	Route::get('/brand-{id}', 'Index\WX\OptimusMaterialController@brand')->name('wx.optimusMaterial.brand')->where('id', '[0-9]+');
 	Route::get('/baby-{id}', 'Index\WX\OptimusMaterialController@baby')->name('wx.optimusMaterial.baby')->where('id', '[0-9]+');

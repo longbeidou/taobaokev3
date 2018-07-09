@@ -28,4 +28,15 @@ class ImageController extends Controller
 
       return $img->response();
     }
+
+    // 生成聚划算拼团的分享图片
+    public function pintuanShareImage($id, Request $request)
+    {
+      $itemInfo = $this->repository->itemInfo(['num_iids' => $id, 'platform' => '2']);
+      $itemInfo == false ? abort(404) : '';
+      $imageInfo = $this->repository->imagePinTuanInfo($itemInfo, $request->all());
+      $img = $this->makeImage->makePinTuanImage($imageInfo);
+
+      return $img->response();
+    }
 }
