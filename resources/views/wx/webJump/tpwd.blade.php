@@ -15,7 +15,7 @@
 <div class="mui-content">
 		<div id="slider" class="mui-slider0 lbd-coupon-take-box">
 			<div class="mui-slider-group">
-				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="min-height: 430px; background-color: #fff;">
+				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="background-color: #fff;">
 					<div id="scroll1" class="mui-scroll-wrapper-bak">
 						<div class="mui-scroll-bak">
 							<ul class="mui-table-view">
