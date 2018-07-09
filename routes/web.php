@@ -47,7 +47,7 @@ Route::domain(env('DOMAIN_WX'))->group(function() {
 	Route::get('/url/der/tqg/e/', 'Index\WX\WebJumpController@tqgForJs')->name('wx.webJump.tqgForJs');
 	Route::get('/url/der/ju', 'Index\WX\WebJumpController@ju')->name('wx.webJump.ju');
 	Route::get('/url/der/ju/js', 'Index\WX\WebJumpController@juForJs')->name('wx.webJump.juForJs');
-	Route::get('/url/der/t/{{ tpwd }}', 'Index\WX\WebJumpController@tpwd')->name('wx.webJump.tpwd');
+	Route::get('/url/der/t/{tpwd}', 'Index\WX\WebJumpController@tpwd')->name('wx.webJump.tpwd');
 	Route::get('/zhibo-{id}', 'Index\WX\OptimusMaterialController@zhibo')->name('wx.optimusMaterial.zhibo')->where('id', '[0-9]+');
 	Route::get('/brand-{id}', 'Index\WX\OptimusMaterialController@brand')->name('wx.optimusMaterial.brand')->where('id', '[0-9]+');
 	Route::get('/baby-{id}', 'Index\WX\OptimusMaterialController@baby')->name('wx.optimusMaterial.baby')->where('id', '[0-9]+');

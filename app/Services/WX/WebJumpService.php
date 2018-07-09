@@ -26,4 +26,10 @@ class WebJumpService
 
     return in_array($client, $canShowClientArr);
   }
+
+  // 解析淘口令
+  public function tpwdInfo($tpwd)
+  {
+    return $this->alimamaRepository->taobaoWirelessShareTpwdQuery($tpwd);
+  }
 }

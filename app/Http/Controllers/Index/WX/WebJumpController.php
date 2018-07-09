@@ -77,6 +77,17 @@ class WebJumpController extends Controller
     // 用于淘口令的跳转
     public function tpwd($tpwd)
     {
-      // 
+      $showClient = $this->repository->showClient(config('website.show_client'));
+
+      if ($showClient) {
+        $tpwdInfo = $this->repository->tpwdInfo($tpwd);
+        empty($tpwdInfo) ? abort('404') : '';
+        header('Location:'.$tpwdInfo->url);
+      } else {
+        $title = 'VIP渠道专享淘口令';
+        $name = 'VIP渠道专享淘口令';
+
+        return view('wx.webJump.tpwd', compact('tpwd', 'title', 'name'));
+      }
     }
 }
