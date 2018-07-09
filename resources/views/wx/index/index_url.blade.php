@@ -1,6 +1,8 @@
 @extends('wx.layouts.master')
 @section('title')
   @include('wx.layouts._title_index')
+  <meta name="keywords" content="{{ config('website.keywords') }}">
+  <meta name="description" content="{{ config('website.description') }}">
 @stop
 @section('headcss')
 
@@ -40,24 +42,11 @@
   </div><!--商品列表 结束-->
 </div>
   @include('wx.index._mask')
+  @include('wx.layouts._to_top')
 @stop
 @section('footJs')
 <script src="/wxstyle/js/mui.lazyload.js"></script>
 <script src="/wxstyle/js/mui.lazyload.img.js"></script>
-<script type="text/javascript" charset="utf-8">
-  var $ajaxURL = '{{ route('api.alimama.taobaoTbkDgItemCouponGet') }}'
-  var $adzoneId = '{{ $adzoneId }}'
-  var $pageSize = '{{ $pageSize }}'
-  var $csrfToken = '{{ csrf_token() }}'
-  var paraInfo = new Array();
-  for (var i = 1; i < 20; i++) {
-    paraInfo[i] = new Array()
-  }
-  @inject('couponShow', 'App\Presenters\CouponListPresenter')
-  @foreach($couponItems as $item)
-    paraInfo[1][{{$item->num_iid}}] = '{{ $couponShow->getParaStrFromCouponUrl($item->coupon_click_url) }}'
-  @endforeach
-</script>
 <script type="text/javascript" charset="utf-8">
       mui.init();
       mui("#lbd-mask-cate").on('tap','#lbd-mask-hide',function(){
@@ -87,20 +76,19 @@
     document.getElementById('lbd-index-see-more').innerHTML = loadingstr;
     // ajax获取优惠券信息
     pageNo++
-    mui.ajax($ajaxURL,{
+    mui.ajax('{{ route('api.alimama.taobaoTbkDgItemCouponGet') }}',{
         data:{
             page_no : pageNo,
-            adzone_id : $adzoneId,
-            page_size : $pageSize,
+            adzone_id : {{ $adzoneId }},
+            page_size : {{ $pageSize }},
             platform : 2
         },
-        async: false,
         dataType:'json',//服务器返回json格式数据
         type:'post',//HTTP请求类型
         timeout:10000,//超时时间设置为10秒；
         headers:{
             'Content-Type':'application/json',
-            'X-CSRF-TOKEN' : $csrfToken
+            'X-CSRF-TOKEN' : '{{ csrf_token() }}'
         },
         success:function(data){
             //服务器返回响应，根据响应结果，分析是否登录成功；
@@ -118,39 +106,7 @@
               var table = document.body.querySelector('.lbd-goods-list-info');
               for (i = 0; i < len; i++) {
                 item = data[i];
-
-                couponInfo = item.coupon_info.replace(/满/g, '')
-                couponInfo = couponInfo.replace(/元/g, '')
-                couponInfo = couponInfo.replace(/元/g, '')
-                couponInfo = couponInfo.replace(/减/g, '-')
-                couponInfo = couponInfo.replace(/无条件券/g, '-')
-                couponInfoArr=couponInfo.split('-')
-                price_now = item.zk_final_price-couponInfoArr[1]
-                price_now = Math.round(parseFloat(price_now)*100)/100
-                ePara = item.coupon_click_url.substr(39)
-
-                paraInfo[pageNo][item.num_iid] = ePara
-
-                str += '<a class="addURL" tag="'+pageNo+'-'+item.num_iid+'" href="{{ route('wx.itemInfo.item') }}/'+item.num_iid+'">'
-                str +=       '<div class="mui-row">'
-                str +=         '<div class="mui-col-xs-4 goods-image"><img src="'+item.pict_url+'"/></div>'
-                str +=         '<div class="mui-col-xs-8 lbd-content"><p class="lbd-title">'+item.title+'</p></div>'
-                str +=         '<div class="mui-col-xs-8 lbd-content-more">'
-                str +=           '<div class="lbd-top">'
-                if (item.user_type == 1) {
-                  str += '<span class="lbd-from-tmall">天猫</span>'
-                } else {
-                  str += '<span class="lbd-from-taobao">淘宝</span>'
-                }
-                str +=             '<span class="lbd-from-new">今日上新</span>销量：'+item.volume+'</div>'
-                str +=           '<div class="lbd-bottom">'
-                str +=             '<div class="mui-pull-left"><div class="lbd-price-ori">原价￥'+item.zk_final_price+'</div><div class="lbd-price-now"><span class="lbd-m">￥</span>'+price_now+'</div></div>'
-                str +=             '<div class="mui-pull-right"><div class="lbd-coupon"><div class="lbd-left-circle"></div><div class="lbd-right-circle"></div><span class="lbd-m">￥</span>'+couponInfoArr[1]+'元券</div></div>'
-                str +=           '</div>'
-                str +=         '</div>'
-                str +=       '</div>'
-                str +=     '</a>'
-
+                @include('wx.layouts._coupon_list_for_js_coupon')
                 var li = document.createElement('li');
                 li.className = 'mui-table-view-cell mui-media';
                 li.innerHTML = str;
@@ -169,12 +125,16 @@
       document.getElementById('lbd-index-see-more').innerHTML = seemore;
     }, 1500);
   })
+  </script>
+  <script type="text/javascript">
   // 监听tap事件，让a标签自动加入url的参数
   mui('body').on('tap','.addURL',function(){
-    tag = this.getAttribute('tag');
-    tagArr = tag.split('-')
-    var e = paraInfo[tagArr[0]][tagArr[1]]
-    document.location.href=this.href+'?url='+e;
+    document.location.href=this.href+'?url='+this.getAttribute('e');
+  })
+
+  // 解决a不能跳转的问题
+  mui('body').on('tap', '.a-can-do', function() {
+    document.location.href = this.href;
   })
   </script>
 @stop

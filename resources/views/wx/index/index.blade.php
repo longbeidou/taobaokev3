@@ -32,7 +32,7 @@
         </li>
     </ul>
 @else
-        @include('wx.layouts._coupon_list_for_coupon')
+        @include('wx.layouts._coupon_list_for_item')
     </ul>
     <!--查看更多商品 开始-->
     <div class="mui-col-xs-12 mui-text-center lbd-index-box" id="lbd-index-see-more">
@@ -106,7 +106,7 @@
               var table = document.body.querySelector('.lbd-goods-list-info');
               for (i = 0; i < len; i++) {
                 item = data[i];
-                @include('wx.layouts._coupon_list_for_js_coupon')
+                @include('wx.layouts._coupon_list_for_js_item')
                 var li = document.createElement('li');
                 li.className = 'mui-table-view-cell mui-media';
                 li.innerHTML = str;
@@ -127,14 +127,16 @@
   })
   </script>
   <script type="text/javascript">
-  // 监听tap事件，让a标签自动加入url的参数
-  mui('body').on('tap','.addURL',function(){
-    document.location.href=this.href+'?url='+this.getAttribute('e');
-  })
-
   // 解决a不能跳转的问题
   mui('body').on('tap', '.a-can-do', function() {
     document.location.href = this.href;
+  })
+
+  // 监听tap事件，让a标签自动加入url的参数
+  mui('body').on('tap','.addPara',function(){
+    dataId = this.getAttribute('no');
+    link = document.getElementById(dataId).getAttribute('link')
+    document.location.href=this.href+'?'+link;
   })
   </script>
 @stop
