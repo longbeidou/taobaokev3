@@ -66,7 +66,7 @@ class ItemInfoController extends Controller
       $guessYouLikeCoupons = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, '10');
 
       if (empty($couponInfoStr)) {
-        $couponInfo = $this->repository->couponInfo(null, ['me' => $couponLinkPara->e]);
+        $couponInfo = empty($couponLinkPara->e) ? [] : $this->repository->couponInfo(null, ['me' => $couponLinkPara->e]);
       } else {
         $couponInfo = $this->repository->couponInfoFromURLPara($couponInfoStr);
       }

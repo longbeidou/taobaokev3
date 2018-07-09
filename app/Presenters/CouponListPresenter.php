@@ -86,4 +86,12 @@ class CouponListPresenter
 
     return str_replace('//uland.taobao.com/coupon/edetail', '', $link);
   }
+
+  // 返回链接的参数的字符串
+  public function getParaStrFromUrl($url)
+  {
+     $urlArr = explode('?', $url);
+
+     return empty($urlArr[1]) ? '' : $urlArr[1];
+  }
 }
