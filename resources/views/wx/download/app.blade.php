@@ -65,8 +65,8 @@
     <div class="mui-row">
         <div class="mui-col-xs-12 mui-text-center logo-box">
             <img class="mui-col-xs-4" src="/wxstyle/images/app_logo_400.png" alt="龙琴时代APP的logo">
-            <h1>龙琴时代APP</h1>
-            <h2>领取淘宝天猫优惠券的神器</h2>
+            <h1>龙琴时代</h1>
+            <h2>一个免费分享淘宝天猫优惠券的APP</h2>
         </div>
 
         <!-- 安卓版本下载 -->
@@ -77,7 +77,7 @@
                     <img src="/wxstyle/images/android.png" class="mui-col-xs-12" alt="龙琴时代安卓版本">
                   </div>
                   <div class="mui-col-xs-9 mui-text-center">
-                    <span class="action">iPhone版本下载</span>
+                    <span class="action">Android版本下载</span>
                   </div>
                 </div>
             </a>
