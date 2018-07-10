@@ -85,7 +85,7 @@
             <a rel="nofollow" title="龙琴时代APP苹果版本下载" href="/download/52010000.cn.ipa" class="mui-btn mui-col-xs-8 a-android" style="background-color: rgba(0, 215, 132, 1);">
                 <div class="mui-row box">
                   <div class="mui-col-xs-3 mui-text-center">
-                    <img src="/wxstyle/images/android.png" class="mui-col-xs-12" alt="龙琴时代ios版本">
+                    <img src="/wxstyle/images/ios.png" class="mui-col-xs-12" alt="龙琴时代ios版本">
                   </div>
                   <div class="mui-col-xs-9 mui-text-center">
                     <span class="action">iPhone版本下载</span>
