@@ -55,6 +55,7 @@ Route::domain(env('DOMAIN_WX'))->group(function() {
 	Route::get('/sales', 'Index\WX\OptimusMaterialController@sales')->name('wx.optimusMaterial.sales');
 	Route::get('/fashion', 'Index\WX\OptimusMaterialController@fashion')->name('wx.optimusMaterial.fashion');
 	Route::get('/recommend', 'Index\WX\OptimusMaterialController@recommend')->name('wx.optimusMaterial.recommend');
+	Route::get('/download/app', 'Index\Share\DownloadController@app')->name('wx.download.app');
 
 	Route::prefix('api/alimama')->group(function() {
 		Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('api.alimama.taobaoTbkDgItemCouponGet');

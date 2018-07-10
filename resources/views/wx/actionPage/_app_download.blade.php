@@ -8,7 +8,7 @@
             <p style="font-size: 12px;"><span style="color: #ed2a7a;">★★★★★</span> | <span>时尚购物</sapn> | <span>2.5M<span></p>
         </div>
         <div class="mui-col-xs-2 mui-text-center">
-            <a class="mui-btn mui-btn-primary" rel="nofollow" href="https://m.52010000.cn/download/52010000.cn.apk">下载</a>
+            <a class="mui-btn mui-btn-primary" rel="nofollow" href="/download/52010000.cn.apk">下载</a>
         </div>
         <div class="mui-col-xs-9">
           <p style="font-size: 12px;">龙琴时代APP是一个时尚购物的APP，免费分享全网最全最优的淘宝天猫优惠券。</p>
@@ -25,7 +25,7 @@
             <p style="font-size: 12px;"><span style="color: #ed2a7a;">★★★★★</span> | <span>时尚购物</sapn> | <span>7.3M<span></p>
         </div>
         <div class="mui-col-xs-2 mui-text-center">
-            <a class="mui-btn mui-btn-primary" rel="nofollow" href="https://m.52010000.cn/download/52010000.cn.ipa">下载</a>
+            <a class="mui-btn mui-btn-primary" rel="nofollow" href="/download/52010000.cn.ipa">下载</a>
         </div>
         <div class="mui-col-xs-9">
           <p style="font-size: 12px;">龙琴时代APP是一个时尚购物的APP，免费分享全网最全最优的淘宝天猫优惠券。</p>

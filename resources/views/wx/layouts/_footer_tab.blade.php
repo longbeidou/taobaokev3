@@ -8,6 +8,10 @@
         <span class="mui-icon mui-icon-list"></span>
         <span class="mui-tab-label">分类</span>
     </a>
+    <a title="龙琴时代APP下载" class="mui-tab-item a-can-do {{ $footer->isActiveAction(route('wx.download.app')) }}" href="{{ route('wx.download.app') }}">
+        <span class="mui-icon mui-icon-download"></span>
+        <span class="mui-tab-label">下载APP</span>
+    </a>
     <a title="搜索淘宝天猫优惠券" class="mui-tab-item a-can-do {{ $footer->isActiveAction(route('wx.search.index')) }}" href="{{ route('wx.search.index') }}">
         <span class="mui-icon mui-icon-search"></span>
         <span class="mui-tab-label">搜索</span>
