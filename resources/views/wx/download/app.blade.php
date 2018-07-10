@@ -11,21 +11,22 @@
    }
    .logo-box
    {
-     margin-top: 30px;
+     margin-top: 28px;
      margin-bottom: 30px;
    }
    h1
    {
-     font-size: 30px;
+     font-size: 28px;
      font-weight: 800;
      color: #333;
      font-family: “Microsoft YaHei” ! important;
    }
    h2
    {
-     font-size: 12px;
+     font-size: 16px;
+     line-height: 25px;
      font-weight: 600;
-     color: #777;
+     color: #555;
    }
    .mui-content
    {
@@ -54,10 +55,6 @@
 </style>
 @stop
 @section('content')
-<header class="mui-bar mui-bar-nav lbd-search-header">
-  <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-  <h1 class="mui-title">{{ $name }}</h1>
-</header>
 
 @include('wx.layouts._footer_tab')
 

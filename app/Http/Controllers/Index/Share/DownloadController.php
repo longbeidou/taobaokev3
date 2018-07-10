@@ -11,8 +11,7 @@ class DownloadController extends Controller
     public function app()
     {
         $title = "龙琴时代APP下载";
-        $name = '龙琴时代APP下载';
 
-        return view('wx.download.app', compact('title', 'name'));
+        return view('wx.download.app', compact('title'));
     }
 }
