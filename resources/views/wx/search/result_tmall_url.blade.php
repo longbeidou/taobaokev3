@@ -9,7 +9,7 @@
 <header class="mui-bar mui-bar-nav">
     <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
     <a class="mui-icon mui-icon-search mui-pull-right lbd-a-no-tap" href="{{ route('wx.search.index') }}"></a>
-    <h1 class="mui-title">淘口令优惠券搜索结果</h1>
+    <h1 class="mui-title">天猫优惠券搜索结果</h1>
 </header>
 
 @include('wx.layouts._footer_tab')
@@ -20,16 +20,16 @@
   <div class="mui-row lbd-index-list-head lbd-fixed" id="lbd-index-list-head">
     <ul>
       <li class="{{ $showActive->showActiveForSort($sort, '') }}">
-          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?q={{ $q }}">精选</a>
+          <a title="天猫优惠券搜索结果" class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?q={{ $q }}">精选</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'sales') }}">
-          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=sales&q={{ $q }}">销量</a>
+          <a title="天猫优惠券按照销量排序的搜索结果" class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=sales&q={{ $q }}">销量</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'commi') }}">
-          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=commi&q={{ $q }}">最热</a>
+          <a title="天猫优惠券按照最热程度排序的搜索结果" class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=commi&q={{ $q }}">最热</a>
       </li>
       <li class="{{ $showActive->showActiveForSort($sort, 'price') }}">
-          <a class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=price&q={{ $q }}">价格</a>
+          <a title="天猫优惠券按照价格排序的搜索结果" class="lbd-a-no-tap" href="{{ route('wx.search.all') }}?sort=price&q={{ $q }}">价格</a>
       </li>
     </ul>
   </div>
@@ -42,7 +42,7 @@
         </li>
     </ul>
 @else
-  @include('wx.layouts._coupon_list_for_material_item')
+  @include('wx.layouts._coupon_list_for_material')
     </ul>
     <!--查看更多商品 开始-->
     <div class="mui-col-xs-12 mui-text-center lbd-index-box" id="lbd-index-see-more">
@@ -79,6 +79,7 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
         has_coupon : 'true',
         adzone_id : '{{ $para['adzone_id'] or '' }}',
         sort : '{{ $para['sort'] }}',
+        is_tmall : 'true',
         page_no : pageNo
       },
       dataType:'json',//服务器返回json格式数据
@@ -104,7 +105,7 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
             var table = document.body.querySelector('.lbd-goods-list-info');
             for (i = 0; i < len; i++) {
               item = data[i];
-              @include('wx.layouts._coupon_list_for_js_material_item')
+              @include('wx.layouts._coupon_list_for_js_material')
               var li = document.createElement('li');
               li.className = 'mui-table-view-cell mui-media';
               li.innerHTML = str;
@@ -124,11 +125,8 @@ mui('#lbd-index-see-more').on('tap', 'button', function() {
   }, 1500);
 })
 // 监听tap事件，让a标签自动加入url的参数
-mui('body').on('tap','.addPara',function(){
-  dataId = this.getAttribute('no');
-  link = document.getElementById(dataId).getAttribute('link')
-  coupon = document.getElementById(dataId).getAttribute('coupon')
-  document.location.href=this.href+'?'+link+'&'+coupon;
+mui('body').on('tap','.addURL',function(){
+  document.location.href=this.href+'?url='+this.getAttribute('e')+'&coupon_start_time='+this.getAttribute('coupon_start_time')+'&coupon_end_time='+this.getAttribute('coupon_end_time')+'&coupon_amount='+this.getAttribute('coupon_amount');
 })
 // 监听tap事件，让a标签实现点击
 mui('body').on('tap','.lbd-a-no-tap',function(){
