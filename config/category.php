@@ -20,7 +20,7 @@ return [
 	],
 	// 品牌券
 	1 => [
-		'name' => '大牌券',
+		'name' => '大牌专场',
 		'rules' => [
 			0 => ['category' => '综合', 'page_size' => '20', 'adzone_id' => '1461208486', 'material_id' => '3786'],
 			1 => ['category' => '女装', 'page_size' => '20', 'adzone_id' => '1461208486', 'material_id' => '3788'],
@@ -37,7 +37,7 @@ return [
 	],
 	// 母婴专场
 	2 => [
-		'name' => '母婴专场',
+		'name' => '母婴生活馆',
 		'rules' => [
 			0 => ['category' => '备孕期', 'page_size' => '20', 'adzone_id' => '1461260129', 'material_id' => '4040'],
 			1 => ['category' => '0-6个月', 'page_size' => '20', 'adzone_id' => '1461260129', 'material_id' => '4041'],
