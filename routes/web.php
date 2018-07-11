@@ -86,7 +86,7 @@ Route::domain(env('DOMAIN_APP'))->group(function() {
 	Route::get('/pintuaninfo/{id?}', 'Index\WX\ItemInfoController@pinTuanInfo')->name('wx.itemInfo.pinTuanInfo')->where('id', '[0-9]+');
 	// Route::get('/couponInfo/{id?}', 'Index\WX\ItemInfoController@couponIndex')->name('wx.itemInfo.index.coupon')->where('id', '[0-9]+');
 	// Route::get('/itemInfo/{id?}', 'Index\WX\ItemInfoController@itemIndex')->name('wx.itemInfo.index.material')->where('id', '[0-9]+');
-	Route::get('/couponaction/{id}', 'Index\WX\CouponActionController@index')->name('wx.CouponAction.index')->where('id', '[0-9]+');
+	Route::get('/couponaction/{id}', 'Index\WX\CouponActionController@appIndex')->name('wx.CouponAction.index')->where('id', '[0-9]+');
 	Route::get('/pintuanaction/{id}', 'Index\WX\CouponActionController@pintuan')->name('wx.CouponAction.pintuan')->where('id', '[0-9]+');
 	Route::get('/shareitem/{id}', 'Index\WX\ShareItemController@coupon')->name('wx.ShareItem.coupon')->where('id', '[0-9]+');
 	Route::get('/sharepintuan/{id}', 'Index\WX\ShareItemController@pintuan')->name('wx.ShareItem.pintuan')->where('id', '[0-9]+');
