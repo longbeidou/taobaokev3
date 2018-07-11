@@ -9,7 +9,7 @@
 @stop
 @section('content')
   @include('wx.index._header_scroll_bar')
-  @include('wx.layouts._footer_tab_app')
+  @include('wx.layouts._footer_tab')
 
 <div class="mui-content">
   @include('wx.index._banner')
