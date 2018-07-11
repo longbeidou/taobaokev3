@@ -19,7 +19,7 @@ class IndexController extends Controller
       $this->couponAdzoneId = config('adzoneID.wx_index_coupon_adzone_id');
     }
 
-    // 首页
+    // 无线网站首页
     public function index()
     {
       $title = config('website.indexTitle');
@@ -29,6 +29,18 @@ class IndexController extends Controller
       $topGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => 1]);
 
       return view('wx.index.index', compact('title', 'couponItems', 'adzoneId', 'pageSize', 'topGoodsCategory'));
+    }
+
+    // 首页
+    public function appIndex()
+    {
+      $title = config('website.indexTitle');
+      $adzoneId = $this->couponAdzoneId;
+      $pageSize = self::PAGE_SIZE;
+      $couponItems = $this->repository->topGoodsCategoryCouponItems(['adzone_id' => $this->couponAdzoneId, 'page_size'=>self::PAGE_SIZE]);
+      $topGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => 1]);
+
+      return view('wx.index.index_app', compact('title', 'couponItems', 'adzoneId', 'pageSize', 'topGoodsCategory'));
     }
 
     // 顶级栏目分类

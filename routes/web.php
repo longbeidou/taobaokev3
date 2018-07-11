@@ -70,7 +70,7 @@ Route::domain(env('DOMAIN_WX'))->group(function() {
 });
 
 Route::domain(env('DOMAIN_APP'))->group(function() {
-	Route::get('/', 'Index\WX\IndexController@index')->name('wx.index');
+	Route::get('/', 'Index\WX\IndexController@appIndex')->name('wx.index');
 	Route::get('/{id}{sort?}', 'Index\WX\IndexController@categoryOne')->name('goodsCategorys.categoryOne')->where('id', '[0-9]+');
 	Route::get('/sub{id}{sort?}', 'Index\WX\IndexController@categoryTwo')->name('goodsCategorys.categoryTwo')->where('id', '[0-9]+');
 	Route::get('/son{id}{sort?}', 'Index\WX\IndexController@categorySon')->name('goodsCategorys.categorySon')->where('id', '[0-9]+');
