@@ -24,7 +24,7 @@
       <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6" style="background-color: #ED2A7A;"></div>
       @endif
 			<div class="mui-slider-group">
-				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="min-height: 400px; background-color: #fff;">
+				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="background-color: #fff;">
 					<div id="scroll1" class="mui-scroll-wrapper-bak">
 						<div class="mui-scroll-bak">
 							<ul class="mui-table-view">
@@ -45,7 +45,7 @@
 					</div>
 				</div>
         @if($showClient)
-				<div id="item2mobile" class="mui-slider-item mui-control-content" style="min-height: 400px; background-color: #fff;">
+				<div id="item2mobile" class="mui-slider-item mui-control-content" style="background-color: #fff;">
 					<div id="scroll2" class="mui-scroll-wrapper-bak">
 						<div class="mui-scroll-bak">
 							<ul class="mui-table-view">
@@ -71,7 +71,7 @@
 					</div>
 				</div>
         @endif
-        <div id="item3mobile" class="mui-slider-item mui-control-content" style="min-height: 400px; background-color: #fff;">
+        <div id="item3mobile" class="mui-slider-item mui-control-content" style="background-color: #fff;">
 					<div id="scroll2" class="mui-scroll-wrapper-bak">
 						<div class="mui-scroll-bak">
 							<ul class="mui-table-view">

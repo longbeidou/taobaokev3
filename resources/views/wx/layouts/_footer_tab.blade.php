@@ -8,11 +8,7 @@
         <span class="mui-icon mui-icon-list"></span>
         <span class="mui-tab-label">分类</span>
     </a>
-<?php
-    $current_domain = Request::server('HTTP_HOST');
-    $domain = env('DOMAIN_APP');
-?>
-    @if($domain !== $current_domain)
+    @if(!env('IS_APP'))
     <a title="龙琴时代APP下载" class="mui-tab-item a-can-do {{ $footer->isActiveAction(route('wx.download.app')) }}" href="{{ route('wx.download.app') }}">
         <span class="mui-icon mui-icon-download"></span>
         <span class="mui-tab-label">下载APP</span>

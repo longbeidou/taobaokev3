@@ -35,7 +35,11 @@ class CouponActionController extends Controller
     $tpwd = $this->repository->makeTpwd($couponLink, $itemInfo);
     $showClient = $this->repository->showClient($showClient);
 
-    return view('wx.actionPage.coupon', compact('title', 'name', 'couponLink', 'tpwd', 'itemInfo', 'showClient'));
+    if (env('IS_APP')) {
+      return view('wx.actionPage.coupon_app', compact('title', 'name', 'couponLink', 'tpwd', 'itemInfo', 'showClient'));
+    } else {
+      return view('wx.actionPage.coupon', compact('title', 'name', 'couponLink', 'tpwd', 'itemInfo', 'showClient'));
+    }
   }
 
   // 优惠券的领取页面_app专用

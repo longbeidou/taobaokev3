@@ -28,7 +28,11 @@ class IndexController extends Controller
       $couponItems = $this->repository->topGoodsCategoryCouponItems(['adzone_id' => $this->couponAdzoneId, 'page_size'=>self::PAGE_SIZE]);
       $topGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => 1]);
 
-      return view('wx.index.index', compact('title', 'couponItems', 'adzoneId', 'pageSize', 'topGoodsCategory'));
+      if (env('IS_APP')) {
+        return view('wx.index.index_app', compact('title', 'couponItems', 'adzoneId', 'pageSize', 'topGoodsCategory'));
+      } else {
+        return view('wx.index.index', compact('title', 'couponItems', 'adzoneId', 'pageSize', 'topGoodsCategory'));
+      }
     }
 
     // 首页
