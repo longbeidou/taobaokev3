@@ -9,7 +9,12 @@
 @section('content')
 
   @include('wx.layouts._footer_tab')
-
+  @if(env('IS_APP'))
+  <header class="mui-bar mui-bar-nav">
+      <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+      <h1 class="mui-title">整点秒杀-淘抢购</h1>
+  </header>
+  @endif
 @inject('tqg', 'App\Presenters\TaoQiangGouPresenter')
 <div class="mui-content lbd-tqg">
 	<div id="slider" class="mui-slider mui-fullscreen">
