@@ -24,7 +24,7 @@
       @foreach($tqgItems as $key => $items)
 			<div id="item{{ $key }}" class="mui-slider-item mui-control-content {{ $tqg->activeShow($rulesArr, $key, $rulesArr[$key]['hour']) }}">
 				<div id="scroll1" class="mui-scroll-wrapper">
-					<div class="mui-scroll">
+					<div class="mui-scroll" {!! $tqg->activeId($rulesArr, $key, $rulesArr[$key]['hour']) !!}>
 						<ul class="mui-table-view">
               @if($items == false)
                 @include('wx.taoQiangGou._content_li_no')
@@ -45,8 +45,28 @@
 @section('footJs')
 <script src="/wxstyle/js/mui.pullToRefresh.js"></script>
 <script src="/wxstyle/js/mui.pullToRefresh.material.js"></script>
+<script src="/wxstyle/js/mui.lazyload.js"></script>
+<script src="/wxstyle/js/mui.lazyload.img.js"></script>
 <script>
 	mui.init();
+  //	图片懒加载
+  (function($) {
+    var active_list = document.getElementById('active-img');
+    $(document).imageLazyload({
+      diff: 700,
+      placeholder: '/wxstyle/images/lazyimg.gif'
+    });
+    document.getElementById('slider').addEventListener('slide', function(e) {
+      no = e.detail.slideNumber
+      current_id = 'item'+no;
+      var list = document.getElementById(current_id);
+      $(document).imageLazyload({
+        diff: 700,
+        placeholder: '/wxstyle/images/lazyimg.gif'
+      });
+    });
+  })(mui);
+
 	(function($) {
 		//阻尼系数
 		var deceleration = mui.os.ios?0.003:0.0009;

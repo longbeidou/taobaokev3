@@ -9,7 +9,7 @@
     <a rel="nofollow" href="{{ route('wx.webJump.tqg') }}?e={{ $tqg->getParasStrFromClickUrl($item->click_url) }}">
       <div class="mui-row lbd-box">
         <div class="mui-col-xs-4 lbd-img">
-          <img src="{{ $item->pic_url }}"/>
+          <img data-lazyload="{{ $item->pic_url }}"/>
         </div>
         <div class="mui-col-xs-8 lbd-more">
           <div class="lbd-top">
@@ -39,7 +39,7 @@
     <a rel="nofollow" href="{{ route('wx.webJump.tqg') }}?e={{ $tqg->getParasStrFromClickUrl($item->click_url) }}">
       <div class="mui-row lbd-box">
         <div class="mui-col-xs-4 lbd-img">
-          <img src="{{ $item->pic_url }}"/>
+          <img data-lazyload="{{ $item->pic_url }}"/>
         </div>
         <div class="mui-col-xs-8 lbd-more">
           <div class="lbd-top">

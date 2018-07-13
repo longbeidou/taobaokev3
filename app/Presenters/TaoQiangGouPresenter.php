@@ -34,6 +34,26 @@ class TaoQiangGouPresenter
     return '';
   }
 
+  public function activeId($rulesArr, $key, $value)
+  {
+    $hour = Carbon::now()->hour;
+
+    if (
+      $value < 23 &&
+      in_array($value, $rulesArr[$key]) &&
+      $value <= $hour &&
+      $rulesArr[$key+1]['hour'] > $hour
+    ) {
+      return 'id="active-img"';
+    }
+
+    if ($value == 23 && in_array($value, $rulesArr[$key]) && $value <= $hour) {
+      return 'id="active-img"';
+    }
+
+    return '';
+  }
+
   // 获取淘抢购链接的参数
   public function getParasStrFromClickUrl($click_url)
   {
