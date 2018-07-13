@@ -28,6 +28,11 @@
 <script type="text/javascript" charset="utf-8">
   mui.init();
   (function($) {
+      var list = document.getElementById('top0');
+      $(document).imageLazyload({
+        diff: 700,
+        placeholder: '/wxstyle/images/lazyimg.gif'
+      });
       mui('#segmentedControls').on('tap', '.active-img', function() {
           box = this.getAttribute('box');
           var list = document.getElementById(box);
