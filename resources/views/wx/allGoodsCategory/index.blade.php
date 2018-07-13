@@ -23,7 +23,19 @@
 	</div>
 @stop
 @section('footJs')
+<script src="/wxstyle/js/mui.lazyload.js"></script>
+<script src="/wxstyle/js/mui.lazyload.img.js"></script>
 <script type="text/javascript" charset="utf-8">
   mui.init();
+  (function($) {
+      mui('#segmentedControls').on('tap', '.active-img', function() {
+          box = this.getAttribute('box');
+          var list = document.getElementById(box);
+          $(document).imageLazyload({
+            diff: 700,
+            placeholder: '/wxstyle/images/lazyimg.gif'
+          });
+      })
+  })(mui);
 </script>
 @stop

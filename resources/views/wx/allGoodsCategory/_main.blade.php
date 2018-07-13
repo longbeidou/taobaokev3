@@ -9,7 +9,7 @@
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
             <a href="{{ route('goodsCategorys.categorySon', $sonCategory->id) }}" title="{{ $sonCategory->name }}优惠券">
                 <div class="lbd-img">
-                  <img src="{{ $sonCategory->image }}" alt="{{ $sonCategory->name }}图片"/>
+                  <img data-lazyload="{{ $sonCategory->image }}" alt="{{ $sonCategory->name }}图片"/>
                 </div>
                 <div class="mui-media-body mui-text-center lbd-name">{{ $sonCategory->name }}</div>
             </a>
