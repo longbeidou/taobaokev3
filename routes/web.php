@@ -20,6 +20,10 @@ Route::domain(env('DOMAIN_PC'))->group(function() {
 		Route::get('couponRules/{id}/create', 'Admin\CouponRulesController@create')->name('admin.couponRule.create');
 		Route::post('couponRules/{id}/update', 'Admin\CouponRulesController@update')->name('admin.couponRule.update');
 	});
+
+	// PC端的页面
+	Route::get('/', 'Index\PC\IndexController@index')->name('pc.index');
+
 });
 
 Route::domain(env('DOMAIN_WX'))->group(function() {
