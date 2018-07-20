@@ -1,7 +1,7 @@
 <script type="text/javascript">
 var id = "{{ $para["id"] }}";
 var goods_category_id = "{{ $para["goods_category_id"] }}";
-var page_size = "{{ $para["page_size"]/2 }}";
+var page_size = "{{ $para["page_size"]/4 }}";
 var platform = "{{ $para["platform"] }}";
 var is_overseas = "{{ $para["is_overseas"] }}";
 var is_tmall = "{{ $para["is_tmall"] }}";
@@ -11,8 +11,8 @@ var adzone_id = "{{ $para["adzone_id"] }}";
 var need_free_shipment = "{{ $para["need_free_shipment"] }}";
 var need_prepay = "{{ $para["need_prepay"] }}";
 var npx_level = "{{ $para["npx_level"] }}";
-var sort = "{{ $para["sort"] }}";
-var page_no = 2;
+var sort = "{{ $para["sort"] or '' }}";
+var page_no = 4;
 var url = "{{ route('pc.api.alimama.taobaoTbkDgMaterialOptional') }}";
 
 // 将ajax获取到的数据插入到列表中

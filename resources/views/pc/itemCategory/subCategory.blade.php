@@ -12,17 +12,17 @@
         @include('pc.layouts._top')
     </header>
     @include('pc.layouts._nav_tab')
-    @include('pc.itemCategory._topCategory')
+    @include('pc.itemCategory._subCategory')
     <div class="container-fluid bread-crumb">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 box">
                     <ul class="list-inline">
                         @inject('showActive', 'App\Presenters\CouponListPresenter')
-                        <li class="text-center {{ $showActive->showActiveForSortPC($sort, '') }}"><a href="{{ route('pc.goodsCategorys.categoryOne', $goodsCategoryInfo->id) }}" target="_self" title="">综合排序</a></li>
-                        <li class="text-center {{ $showActive->showActiveForSortPC($sort, 'sales') }}"><a href="{{ route('pc.goodsCategorys.categoryOne', ['id' => $goodsCategoryInfo->id, 'sort' => 'sales']) }}" target="_self" title="">销量</a></li>
-                        <li class="text-center {{ $showActive->showActiveForSortPC($sort, 'price') }}"><a href="{{ route('pc.goodsCategorys.categoryOne', ['id' => $goodsCategoryInfo->id, 'sort' => 'price']) }}" target="_self" title="">价格</a></li>
-                        <li class="text-center {{ $showActive->showActiveForSortPC($sort, 'commi') }}"><a href="{{ route('pc.goodsCategorys.categoryOne', ['id' => $goodsCategoryInfo->id, 'sort' => 'commi']) }}" target="_self" title="">最热</a></li>
+                        <li class="text-center {{ $showActive->showActiveForSortPC($sort, '') }}"><a href="{{ route('pc.goodsCategorys.categoryTwo', $goodsCategoryInfo->id) }}" target="_self" title="">综合排序</a></li>
+                        <li class="text-center {{ $showActive->showActiveForSortPC($sort, 'sales') }}"><a href="{{ route('pc.goodsCategorys.categoryTwo', ['id' => $goodsCategoryInfo->id, 'sort' => 'sales']) }}" target="_self" title="">销量</a></li>
+                        <li class="text-center {{ $showActive->showActiveForSortPC($sort, 'price') }}"><a href="{{ route('pc.goodsCategorys.categoryTwo', ['id' => $goodsCategoryInfo->id, 'sort' => 'price']) }}" target="_self" title="">价格</a></li>
+                        <li class="text-center {{ $showActive->showActiveForSortPC($sort, 'commi') }}"><a href="{{ route('pc.goodsCategorys.categoryTwo', ['id' => $goodsCategoryInfo->id, 'sort' => 'commi']) }}" target="_self" title="">最热</a></li>
                     </ul>
                 </div>
             </div>

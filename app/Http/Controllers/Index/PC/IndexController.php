@@ -42,7 +42,7 @@ class IndexController extends Controller
       $currentCouponGetRule = $this->repository->currentCouponGetRule($id);
       $materialItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort, self::PAGE_SIZE);
       $subGoodsCategory = $this->repository->subGoodsCategory($id, ['order' => 'desc', 'is_shown' => 1]);
-      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort, self::PAGE_SIZE/2);
+      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort, self::PAGE_SIZE);
       $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, '5');
 
       return view('pc.itemCategory.topCategory', compact('title', 'sort', 'guessYouLikeItems', 'materialItems', 'goodsCategoryInfo', 'subGoodsCategory', 'para'));
@@ -52,16 +52,15 @@ class IndexController extends Controller
     public function categoryTwo($id, $sort = null)
     {
       $goodsCategoryInfo = $this->repository->currentCategoryInfo($id);
-      $olderFatherid = $this->repository->currentCategoryInfo($goodsCategoryInfo->parent_id)->id;
-      $topGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => 1]);
-      $upGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level4' => $goodsCategoryInfo->level, 'parent_id' => $olderFatherid]);
+      $fatherCategoryInfo = $this->repository->currentCategoryInfo($goodsCategoryInfo->parent_id);
       $title = $this->repository->title($sort, $goodsCategoryInfo->name);
       $currentCouponGetRule = $this->repository->currentCouponGetRule($id);
-      $couponItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort);
-      $subGoodsCategory = $this->repository->subGoodsCategory($id, ['order' => 'desc', 'is_shown' => 1, 'limt' => 8]);
-      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort);
+      $materialItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort, self::PAGE_SIZE);
+      $subGoodsCategory = $this->repository->subGoodsCategory($id, ['order' => 'desc', 'is_shown' => 1]);
+      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort, self::PAGE_SIZE);
+      $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, '5');
 
-      return view('wx.goodsCategory.index_two', compact('para', 'title', 'id', 'sort', 'couponItems', 'goodsCategoryInfo', 'topGoodsCategory', 'subGoodsCategory', 'upGoodsCategory'));
+      return view('pc.itemCategory.subCategory', compact('title', 'sort', 'guessYouLikeItems', 'materialItems', 'goodsCategoryInfo', 'fatherCategoryInfo', 'subGoodsCategory', 'para'));
     }
 
     // 子栏目的分类
