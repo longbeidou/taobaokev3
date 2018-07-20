@@ -61,6 +61,14 @@ class CouponListPresenter
     return $str;
   }
 
+  // 将优惠券排序的标准是否激活--pcdu端使用
+  public function showActiveForSortPC($now, $ori)
+  {
+    $now == $ori ? $str = 'active' : $str = '';
+
+    return $str;
+  }
+
   // 将时间戳转换成日期格式
   public function makeIntergerToDateTimeString($str)
   {

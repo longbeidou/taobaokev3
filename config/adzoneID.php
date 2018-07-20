@@ -27,4 +27,7 @@ return [
 
 	// PC端首页coupon api获取的商品
 	'pc_index_coupon_adzone_id' => '1459254918',
+
+	// PC端商品列表页猜你喜欢
+	'pc_coupon_guess_you_like' => '1459254918'
 ];

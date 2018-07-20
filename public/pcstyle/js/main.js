@@ -22,12 +22,18 @@ $('#banner-box .content-box .subCategory-box').bind('mouseout', function() {
 });
 
 // 商品详情页传参使用
-$('.coupon-list a').bind('click', function() {
+$('.coupon-list a[no^="data"]').bind('click', function(event) {
     no = this.getAttribute('no');
     para = document.getElementById(no).getAttribute('para');
     // document.location.href = this.href+'?'+para;
     window.open(this.href+'?'+para);
-    event.preventDefault();
+    //IE和Chrome下是window.event 火狐下是event
+    event = event || window.event;
+    if(event.preventDefault){
+      event.preventDefault();
+    }else{
+      event.returnValue = false;
+    }
     return false;
 });
 

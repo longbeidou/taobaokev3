@@ -1,8 +1,19 @@
 <script type="text/javascript">
-var page_size = {{ $pageSize }}/2;
-var adzone_id = {{ $adzoneId }};
+var id = "{{ $para["id"] }}";
+var goods_category_id = "{{ $para["goods_category_id"] }}";
+var page_size = "{{ $para["page_size"]/2 }}";
+var platform = "{{ $para["platform"] }}";
+var is_overseas = "{{ $para["is_overseas"] }}";
+var is_tmall = "{{ $para["is_tmall"] }}";
+var q = "{{ $para["q"] }}";
+var has_coupon = "{{ $para["has_coupon"] }}";
+var adzone_id = "{{ $para["adzone_id"] }}";
+var need_free_shipment = "{{ $para["need_free_shipment"] }}";
+var need_prepay = "{{ $para["need_prepay"] }}";
+var npx_level = "{{ $para["npx_level"] }}";
+var sort = '{{$sort}}';
 var page_no = 2;
-var url = "{{ route('pc.api.alimama.taobaoTbkDgItemCouponGet') }}";
+var url = "{{ route('pc.api.alimama.taobaoTbkDgMaterialOptional') }}";
 
 // 将ajax获取到的数据插入到列表中
 function addItems(data)
@@ -21,7 +32,7 @@ function addItems(data)
             couponInfoArr=couponInfo.split('-')
             price_now = item.zk_final_price-couponInfoArr[1]
             price_now = Math.round(parseFloat(price_now)*100)/100
-            urlArr = item.coupon_click_url.split('?')
+            urlArr = item.coupon_share_url.split('?')
             if(price_now.toString().indexOf('.') < 0){
               price_now = price_now.toString()+'.00'
             }
@@ -33,7 +44,7 @@ function addItems(data)
             } else {
               img_name = 'taobao32';
             }
-            itemhtml += '<div class="col-xs-3 item-box"><a no="ddata'+page_no+'-'+i+'" href="https://www.longbeidou.com/s?wd='+item.num_iid+'?'+urlArr[1]+'" title="'+item.title+'" target="_blank"><div class="item">'
+            itemhtml += '<div class="col-xs-3 item-box"><a no="ddata'+page_no+'-'+i+'" href="https://www.longbeidou.com/s?'+item.num_iid+'?'+urlArr[1]+'" title="'+item.title+'" target="_blank"><div class="item">'
             itemhtml +=       '<div class="img-box"><img class="lazy" src="'+item.pict_url+'"></div>'
             itemhtml +=       '<h2><img src="/pcstyle/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr>'
             itemhtml +=       '<div class="info">'
@@ -41,10 +52,10 @@ function addItems(data)
             itemhtml +=         '<div class="row price-ori"><div class="col-xs-12">'
             itemhtml +=             '<div class="pull-left">券后<span class="prefix">￥</span><span class="number">'+price_now+'</span></div>'
             itemhtml +=             '<div class="pull-right"><div class="circle-left"></div><div class="circle-right"></div>￥<span class="money">'+couponInfoArr[1]+'</span>元券</div></div>'
-            itemhtml +=         '</div></div></div></a><ddata id="data'+page_no+'-'+i+'" para="'+urlArr[1]+'"></data></div>'
+            itemhtml +=         '</div></div></div></a><data id="ddata'+page_no+'-'+i+'" para="'+urlArr[1]+'"></data></div>'
         }
     }
-    $('.coupon-list .container>.row').append(itemhtml);
+    $('#coupon-list .container>.row').append(itemhtml);
 }
 // 监听页面滚动的高度，确定抢购时间是否选择固定
 $(window).scroll(function() {
@@ -60,10 +71,31 @@ $(window).scroll(function() {
           timeout : 10000,
           type : 'POST',
           data : {
-              page_no : page_no,
-              adzone_id : adzone_id,
+              id : id,
+              goods_category_id : goods_category_id,
               page_size : page_size,
-              platform : 1
+              is_overseas : is_overseas,
+              is_tmall : is_tmall,
+              q : q,
+              has_coupon : has_coupon,
+              adzone_id : adzone_id,
+              need_free_shipment : need_free_shipment,
+              need_prepay : need_prepay,
+              npx_level : npx_level,
+              sort : sort,
+              page_no : page_no,
+              platform : '1',
+              start_dsr : '',
+              end_tk_rate : '',
+              start_tk_rate : '',
+              end_price : '',
+              start_price : '',
+              itemloc : '',
+              cat : '',
+              ip : '',
+              include_pay_rate_30 : '',
+              include_good_rate : '',
+              include_rfd_rate : ''
           },
           success : function(result) {
               if (result == 415) {

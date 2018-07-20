@@ -49,13 +49,17 @@ class IndexService
   }
 
   // 获取子商品分类的优惠券信息
-  public function subGoodsCategoryCouponItems($para, $sort)
+  public function subGoodsCategoryCouponItems($para, $sort, $pageSize = 0)
   {
     if (empty($para)) {
       return [];
     }
 
     $para = $para->toArray();
+
+    if ($para != 0 && $pageSize > 0 && $pageSize <= 100) {
+        $para['page_size'] = (int)$pageSize;
+    }
 
     switch ($sort) {
       case 'price':
@@ -107,7 +111,7 @@ class IndexService
   }
 
   // 获取ajax请求通用搜素api的参数
-  public function getAjaxPara($goodsCategoryInfo, $sort)
+  public function getAjaxPara($goodsCategoryInfo, $sort, $pageSize = 0)
   {
     if (empty($goodsCategoryInfo->dgMaterialOptionalRule)) {
       return [];
@@ -136,6 +140,10 @@ class IndexService
     }
 
     $paraArr['page_no'] = '1';
+
+    if ($pageSize != 0 && $pageSize <= 100 && $pageSize > 0) {
+      $paraArr['page_size'] = (string)$pageSize;
+    }
 
     return $paraArr;
   }

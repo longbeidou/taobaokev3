@@ -12,11 +12,13 @@ class IndexController extends Controller
 
     public $repository;
     public $couponAdzoneId; // 优惠券api获取的数据
+    public $guessYouLikeAdzoneId; // 猜你喜欢
 
     public function __construct(IndexService $api)
     {
       $this->repository = $api;
       $this->couponAdzoneId = config('adzoneID.pc_index_coupon_adzone_id');
+      $this->guessYouLikeAdzoneId = config('adzoneID.pc_coupon_guess_you_like');
     }
 
     public function index()
@@ -33,17 +35,17 @@ class IndexController extends Controller
     }
 
     // 顶级栏目分类
-    public function categoryOne($id, $sort = null)
+    public function categoryOne($id, $sort = '')
     {
-      $topGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => 1]);
       $goodsCategoryInfo = $this->repository->currentCategoryInfo($id);
       $title = $this->repository->title($sort, $goodsCategoryInfo->name);
       $currentCouponGetRule = $this->repository->currentCouponGetRule($id);
-      $couponItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort);
+      $materialItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort, self::PAGE_SIZE);
       $subGoodsCategory = $this->repository->subGoodsCategory($id, ['order' => 'desc', 'is_shown' => 1]);
-      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort);
+      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort, self::PAGE_SIZE/2);
+      $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, '5');
 
-      return view('wx.goodsCategory.index', compact('para', 'title', 'id', 'sort', 'couponItems', 'goodsCategoryInfo', 'topGoodsCategory', 'subGoodsCategory'));
+      return view('pc.itemCategory.topCategory', compact('title', 'sort', 'guessYouLikeItems', 'materialItems', 'goodsCategoryInfo', 'subGoodsCategory', 'para'));
     }
 
     // 二级栏目分类
