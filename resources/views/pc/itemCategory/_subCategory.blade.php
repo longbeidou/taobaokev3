@@ -4,7 +4,7 @@
             <div class="col-xs-12 box">
                 <ul class="list-inline">
                     <li class="text-center line"><a href="{{ route('pc.index') }}" target="_blank" title="天猫超市优惠券">首页</a></li>
-                    <li class="text-center line"><a href="" target="_self" title="">全部商品</a></li>
+                    <li class="text-center line"><a href="{{ route('pc.allGoodsCategory.index') }}" target="_self" title="淘宝天猫优惠券商品分类">全部商品</a></li>
                     <li class="text-center line"><a href="{{ route('pc.goodsCategorys.categoryOne', ['id'=>$fatherCategoryInfo->id]) }}" target="_self" title="">{{ $fatherCategoryInfo->name }}</a></li>
                     <li class="text-center line active"><a href="{{ route('pc.goodsCategorys.categoryTwo', ['id'=>$goodsCategoryInfo->id]) }}" target="_self" title="">{{ $goodsCategoryInfo->name }}</a></li>
                     @foreach($subGoodsCategory as $key => $category)

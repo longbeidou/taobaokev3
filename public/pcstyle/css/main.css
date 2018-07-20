@@ -546,6 +546,10 @@ body
 	padding-top: 15px;
 	margin-bottom: 15px;
 }
+#all-category-box .container
+{
+	padding-left: 25px;
+}
 #all-category-box .one-level
 {
 	width: 100%;
