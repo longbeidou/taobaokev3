@@ -31,9 +31,10 @@
             </div>
         </div>
     </div>
+    @include('pc.layouts._ajax_tips')
     @include('pc.layouts._footer_adv')
     @include('pc.layouts._footer')
 @stop
 @section('footJs')
-
+    @include('pc.index._ajax_items')
 @stop

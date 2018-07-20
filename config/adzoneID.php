@@ -23,5 +23,8 @@ return [
 	'wx_coupon_guess_you_like_pintuan' => '1459300118',
 
 	// 无线端淘抢购
-	'wx_tqg' => '1459318297'
+	'wx_tqg' => '1459318297',
+
+	// PC端首页coupon api获取的商品
+	'pc_index_coupon_adzone_id' => '1459254918',
 ];

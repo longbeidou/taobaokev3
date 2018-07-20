@@ -15,6 +15,12 @@ body
 	font-family: 'Microsoft YaHei';
 	padding: 0px;
 }
+.ajax-tips p
+{
+	font-size: 20px;
+	color: #777;
+	margin: 0px;
+}
 #save
 {
 	padding: 0px;
@@ -610,7 +616,7 @@ body
 	background-color: #fff;
 	margin: 0px;
 	padding-left: 15px;
-	padding-bottom: 0px; 
+	padding-bottom: 0px;
 }
 .bread-crumb ul li
 {

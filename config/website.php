@@ -23,6 +23,9 @@ return [
 	// 网站的备案号
 	'domain_beian' => '蜀ICP备15010745号-18',
 
+	// 联系客服的二维码图片 200*200px
+	'kefu_ercode' => 'http://placehold.it/200x200',
+
 	// 领取优惠券的页面，链接可以展示的客户端
 	'show_client' => ['pc', 'wx', 'qq'],
 

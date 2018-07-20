@@ -127,7 +127,7 @@ class GoodsCategoryRepository implements GoodsCategoryInterface
   }
 
   // 获取子分类的信息
-  public function subCategory($parentId, Array $para = ['name'=>null, 'order'=>'', 'is_shown'=>1, 'is_recommended'=>null, 'limit'=>8])
+  public function subCategory($parentId, Array $para = ['name'=>null, 'order'=>'', 'is_shown'=>1, 'is_recommended'=>null, 'limit'=>0])
   {
     $goodsCategory = $this->goodsCategory->where('parent_id', $parentId);
 

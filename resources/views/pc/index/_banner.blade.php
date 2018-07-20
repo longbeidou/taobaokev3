@@ -3,25 +3,9 @@
         <dir class="row banner-row">
             <div class="col-xs-2 category">
                 <ul class="list-unstyled">
-                    <a href="" title="" target="_blank"><li no='cate1'>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li no='cate2'>服装鞋帽2</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽3</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽4</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽5</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽6</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽7</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽8</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
-                    <a href="" title="" target="_blank"><li>服装鞋帽</li></a>
+                    @foreach($topGoodsCategory as $category)
+                    <a href="{{ $category->id }}" title="{{ $category->name }}淘宝天猫优惠券" target="_blank"><li no='cate{{ $category->id }}'>{{ $category->name }}</li></a>
+                    @endforeach
                 </ul>
             </div>
             <div class="col-xs-10 content-box">
@@ -50,126 +34,27 @@
                     </a>
                 </div>
                 <div class="subCategory-box">
-                    <div class="subCategory" id="cate1">
-
+                    @foreach($sonCategory as $key => $oneCategory)
+                    <div class="subCategory" id="cate{{ $oneCategory['topCategoryInfo']->id }}">
+                        @foreach($oneCategory['subList'] as $twoCategory)
                         <div class="row">
                             <div class="col-xs-2 text-right cate-left">
-                                <a href="" target="_blank" title="">
-                                    <span>服装衣服1<img src="http://placehold.it/170x170"></span>
+                                <a href="{{ $twoCategory['subCategoryInfo']->id }}" target="_blank" title="{{ $twoCategory['subCategoryInfo']->name }}淘宝天猫优惠券">
+                                    <span>{{ $twoCategory['subCategoryInfo']->name }}<img src="{{ $twoCategory['subCategoryInfo']->image }}" alt="{{ $twoCategory['subCategoryInfo']->name }}优惠券图片"></span>
                                 </a>
                                 <i class="glyphicon glyphicon-menu-right"></i>
                             </div>
                             <div class="col-xs-10 cate-right">
                                 <ul class="list-inline">
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
+                                    @foreach($twoCategory['sonList'] as $threeCategory)
+                                    <li class="text-left"><a href="{{ $threeCategory->id }}" target="_blank" title="{{ $threeCategory->name }}淘宝天猫优惠券"><img src="{{ $threeCategory->image }}" alt="{{ $threeCategory->name }}优惠券图片"> {{ $threeCategory->name }}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-2 text-right cate-left">
-                                <a href="" target="_blank" title="">
-                                    <span>服装衣服2<img src="http://placehold.it/170x170"></span>
-                                </a>
-                                <i class="glyphicon glyphicon-menu-right"></i>
-                            </div>
-                            <div class="col-xs-10 cate-right">
-                                <ul class="list-inline">
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-2 text-right cate-left">
-                                <a href="" target="_blank" title="">
-                                    <span>服装衣服3<img src="http://placehold.it/170x170"></span>
-                                </a>
-                                <i class="glyphicon glyphicon-menu-right"></i>
-                            </div>
-                            <div class="col-xs-10 cate-right">
-                                <ul class="list-inline">
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-2 text-right cate-left">
-                                <a href="" target="_blank" title="">
-                                    <span>服装衣服4<img src="http://placehold.it/170x170"></span>
-                                </a>
-                                <i class="glyphicon glyphicon-menu-right"></i>
-                            </div>
-                            <div class="col-xs-10 cate-right">
-                                <ul class="list-inline">
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-2 text-right cate-left">
-                                <a href="" target="_blank" title="">
-                                    <span>服装衣服5<img src="http://placehold.it/170x170"></span>
-                                </a>
-                                <i class="glyphicon glyphicon-menu-right"></i>
-                            </div>
-                            <div class="col-xs-10 cate-right">
-                                <ul class="list-inline">
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-2 text-right cate-left">
-                                <a href="" target="_blank" title="">
-                                    <span>服装衣服6<img src="http://placehold.it/170x170"></span>
-                                </a>
-                                <i class="glyphicon glyphicon-menu-right"></i>
-                            </div>
-                            <div class="col-xs-10 cate-right">
-                                <ul class="list-inline">
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                    <li class="text-left"><a href="" target="_blank" title=""><img src="http://placehold.it/170x170"> 男士服装</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
+                    @endforeach
                 </div>
             </div>
         </dir>

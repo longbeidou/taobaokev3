@@ -24,6 +24,14 @@ Route::domain(env('DOMAIN_PC'))->group(function() {
 	// PC端的页面
 	Route::get('/', 'Index\PC\IndexController@index')->name('pc.index');
 
+	Route::prefix('api/alimama')->group(function() {
+		Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('pc.api.alimama.taobaoTbkDgItemCouponGet');
+		Route::post('taobaoTbkDgMaterialOptional', 'Api\AlimamaController@taobaoTbkDgMaterialOptional')->name('pc.api.alimama.taobaoTbkDgMaterialOptional');
+		Route::post('taobaoJuItemsSearch', 'Api\AlimamaController@taobaoJuItemsSearch')->name('pc.api.alimama.taobaoJuItemsSearch');
+		Route::post('taobaoTbkJuTqgGet', 'Api\AlimamaController@taobaoTbkJuTqgGet')->name('pc.api.alimama.taobaoTbkJuTqgGet');
+		Route::post('taobaoTbkDgOptimusMaterial', 'Api\AlimamaController@taobaoTbkDgOptimusMaterial')->name('pc.api.alimama.taobaoTbkDgOptimusMaterial');
+	});
+
 });
 
 Route::domain(env('DOMAIN_WX'))->group(function() {
