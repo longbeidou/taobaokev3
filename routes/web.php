@@ -23,6 +23,9 @@ Route::domain(env('DOMAIN_PC'))->group(function() {
 
 	// PC端的页面
 	Route::get('/', 'Index\PC\IndexController@index')->name('pc.index');
+	Route::get('/{id}{sort?}', 'Index\PC\IndexController@categoryOne')->name('pc.goodsCategorys.categoryOne')->where('id', '[0-9]+');
+	Route::get('/sub{id}{sort?}', 'Index\PC\IndexController@categoryTwo')->name('pc.goodsCategorys.categoryTwo')->where('id', '[0-9]+');
+	Route::get('/son{id}{sort?}', 'Index\PC\IndexController@categorySon')->name('pc.goodsCategorys.categorySon')->where('id', '[0-9]+');
 
 	Route::prefix('api/alimama')->group(function() {
 		Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('pc.api.alimama.taobaoTbkDgItemCouponGet');
