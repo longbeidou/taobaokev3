@@ -11,7 +11,7 @@ var adzone_id = "{{ $para["adzone_id"] }}";
 var need_free_shipment = "{{ $para["need_free_shipment"] }}";
 var need_prepay = "{{ $para["need_prepay"] }}";
 var npx_level = "{{ $para["npx_level"] }}";
-var sort = '{{$sort}}';
+var sort = "{{ $para["sort"] }}";
 var page_no = 2;
 var url = "{{ route('pc.api.alimama.taobaoTbkDgMaterialOptional') }}";
 
