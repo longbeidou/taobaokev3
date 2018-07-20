@@ -5,10 +5,12 @@
                 <ul class="list-inline">
                     <li class="text-center line"><a href="{{ route('pc.index') }}" target="_blank" title="天猫超市优惠券">首页</a></li>
                     <li class="text-center line"><a href="" target="_self" title="">全部商品</a></li>
-                    <li class="text-center line"><a href="" target="_self" title="">服装</a></li>
-                    <li class="text-center active"><a href="" target="_self" title="">服装</a></li>
-                    <li class="text-center"><a href="" target="_self" title="">服装</a></li>
-                    <li class="text-center"><a href="" target="_self" title="">服装</a></li>
+                    <li class="text-center line"><a href="{{ route('pc.goodsCategorys.categoryOne', ['id'=>$grandpaCategoryInfo->id]) }}" target="_self" title="">{{ $grandpaCategoryInfo->name }}</a></li>
+                    <li class="text-center line"><a href="{{ route('pc.goodsCategorys.categoryTwo', ['id'=>$fatherCategoryInfo->id]) }}" target="_self" title="">{{ $fatherCategoryInfo->name }}</a></li>
+                    @inject('showActive', 'App\Presenters\CouponListPresenter')
+                    @foreach($twinGoodsCategory as $key => $category)
+                    <li class="text-center {{ $showActive->isActiveCategory($category->id, $goodsCategoryInfo->id) }}"><a href="{{ route('pc.goodsCategorys.categorySon', ['id'=>$category->id]) }}" target="_self" title="{{ $category->name }}淘宝天猫优惠券">{{ $category->name }}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>

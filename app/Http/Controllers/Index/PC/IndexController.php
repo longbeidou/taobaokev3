@@ -67,14 +67,15 @@ class IndexController extends Controller
     public function categorySon($id, $sort = null)
     {
       $goodsCategoryInfo = $this->repository->currentCategoryInfo($id);
-      $topGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => 1]);
-      $upGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => $goodsCategoryInfo->level]);
+      $fatherCategoryInfo = $this->repository->currentCategoryInfo($goodsCategoryInfo->parent_id);
+      $grandpaCategoryInfo = $this->repository->currentCategoryInfo($fatherCategoryInfo->parent_id);
       $title = $this->repository->title($sort, $goodsCategoryInfo->name);
       $currentCouponGetRule = $this->repository->currentCouponGetRule($id);
-      $couponItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort);
-      $subGoodsCategory = $this->repository->subGoodsCategory($id, ['order' => 'desc', 'is_shown' => 1, 'limt' => 8]);
-      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort);
+      $materialItems = $this->repository->subGoodsCategoryCouponItems($currentCouponGetRule, $sort, self::PAGE_SIZE);
+      $twinGoodsCategory = $this->repository->subGoodsCategory($goodsCategoryInfo->parent_id, ['order' => 'desc', 'is_shown' => 1]);
+      $para = $this->repository->getAjaxPara($goodsCategoryInfo, $sort, self::PAGE_SIZE);
+      $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, '5');
 
-      return view('wx.sonGoodsCategory.index', compact('para', 'title', 'id', 'sort', 'couponItems', 'goodsCategoryInfo', 'topGoodsCategory', 'subGoodsCategory', 'upGoodsCategory'));
+      return view('pc.itemCategory.sonCategory', compact('title', 'sort', 'guessYouLikeItems', 'materialItems', 'goodsCategoryInfo', 'fatherCategoryInfo', 'grandpaCategoryInfo', 'twinGoodsCategory', 'para'));
     }
 }

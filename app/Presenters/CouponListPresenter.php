@@ -111,4 +111,10 @@ class CouponListPresenter
 
       return $userType == 1 ? $imgTmall : $imgTaobao;
   }
+
+  // 商品分类是否处于激活状态
+  public function isActiveCategory($id, $currentId)
+  {
+     return $id == $currentId ? 'active' : '';
+  }
 }
