@@ -7,7 +7,6 @@
             </div>
         </div>
         <div class="row images-box" id="goods-images-box">
-            <!-- <div class="col-xs-12" id="goods-images">详情正在加载中...</div> -->
             <div class="col-xs-12 text-center" id="goods-images">详情正在加载中...</div>
         </div>
     </div>

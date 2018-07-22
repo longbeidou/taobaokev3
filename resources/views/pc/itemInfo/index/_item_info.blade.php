@@ -89,7 +89,7 @@
                                   @if(empty($couponInfo->coupon_amount))
                                   ??
                                   @else
-                                  {{ number_format($couponInfo->coupon_amount, 0) or '??' }}
+                                  {{ number_format($couponInfo->coupon_amount, 0) }}
                                   @endif
                                 </span>
                             </div>
