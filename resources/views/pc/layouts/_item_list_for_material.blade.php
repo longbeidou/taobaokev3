@@ -27,7 +27,7 @@
           </div>
         </div>
       </a>
-      <data id="data{{ $key }}" para="{{ $couponShow->getParaStrFromUrl($item->coupon_share_url) }}"></data>
+      <data id="data{{ $key }}" para="{{ $couponShow->getParaStrFromUrl($item->coupon_share_url) }}&coupon_info={{ $item->coupon_start_time }}and{{ $item->coupon_end_time }}and{{ $couponShow->saveMoney($item->coupon_info, $item->zk_final_price, 0) }}"></data>
     </div>
     @endif
 @endforeach
