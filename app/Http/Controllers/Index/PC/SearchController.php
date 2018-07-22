@@ -110,6 +110,7 @@ class SearchController extends Controller
           'q' => 'required'
         ]);
 
+        $tpwd = $request->q;
         $tpwdKeyword = $this->repository->tpwdQuery($request->q);
         $q = $this->repository->getGoodsTitle($tpwdKeyword);
         $sort = empty($request->sort) ? '' : $request->sort;
@@ -122,7 +123,6 @@ class SearchController extends Controller
         $name = '淘口令';
         $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM_RESULT);
 
-        return view('pc.search.result_coupons', compact('title', 'name', 'materialItems', 'q', 'para', 'sort', 'guessYouLikeItems'));
-        return view('wx.search.result_tpwd', compact('title', 'couponItems', 'q', 'para', 'sort'));
+        return view('pc.search.result_coupons', compact('title', 'name', 'materialItems', 'q', 'tpwd', 'para', 'sort', 'guessYouLikeItems'));
     }
 }

@@ -54,7 +54,7 @@
                                     <form class="form-group" action="{{ route('pc.search.tpwd') }}" method="get">
                                         <div class="col-xs-10">
                                             @if(route('pc.search.tpwd') == url()->current())
-                                            <input class="form-control input-sm" type="text" name="q" value="{{ $q }}" required placeholder="请输入要搜索的淘口令">
+                                            <input class="form-control input-sm" type="text" name="q" value="{{ $tpwd }}" required placeholder="请输入要搜索的淘口令">
                                             @else
                                             <input class="form-control input-sm" type="text" name="q" required placeholder="请输入要搜索的淘口令">
                                             @endif
