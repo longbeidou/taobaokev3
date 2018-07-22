@@ -637,6 +637,7 @@ body
 	right: -5px;
 	top: 0px;
 }
+.bread-crumb ul .active,
 .bread-crumb ul .active a
 {
 	color: #ed2a7a;

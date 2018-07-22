@@ -28,6 +28,9 @@ Route::domain(env('DOMAIN_PC'))->group(function() {
 	Route::get('/son{id}{sort?}', 'Index\PC\IndexController@categorySon')->name('pc.goodsCategorys.categorySon')->where('id', '[0-9]+');
 	Route::get('/agc', 'Index\PC\AllGoodsCategoryController@index')->name('pc.allGoodsCategory.index');
 
+	Route::get('/iteminfo/{id?}', 'Index\PC\ItemInfoController@iteminfo')->name('pc.itemInfo.iteminfo')->where('id', '[0-9]+');
+
+
 	Route::prefix('api/alimama')->group(function() {
 		Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('pc.api.alimama.taobaoTbkDgItemCouponGet');
 		Route::post('taobaoTbkDgMaterialOptional', 'Api\AlimamaController@taobaoTbkDgMaterialOptional')->name('pc.api.alimama.taobaoTbkDgMaterialOptional');
@@ -35,7 +38,9 @@ Route::domain(env('DOMAIN_PC'))->group(function() {
 		Route::post('taobaoTbkJuTqgGet', 'Api\AlimamaController@taobaoTbkJuTqgGet')->name('pc.api.alimama.taobaoTbkJuTqgGet');
 		Route::post('taobaoTbkDgOptimusMaterial', 'Api\AlimamaController@taobaoTbkDgOptimusMaterial')->name('pc.api.alimama.taobaoTbkDgOptimusMaterial');
 	});
-
+	Route::prefix('api/item')->group(function() {
+		Route::post('itemimages/{id?}', 'Api\ItemInfoImagesController@itemDetailImage')->name('pc.api.itemInfoImages.itemDetailImage')->where('id', '[0-9]+');
+	});
 });
 
 Route::domain(env('DOMAIN_WX'))->group(function() {

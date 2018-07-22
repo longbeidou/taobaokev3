@@ -33,7 +33,7 @@ function addItems(data)
             } else {
               img_name = 'taobao32';
             }
-            itemhtml += '<div class="col-xs-3 item-box"><a no="ddata'+page_no+'-'+i+'" href="https://www.longbeidou.com/s?wd='+item.num_iid+'?'+urlArr[1]+'" title="'+item.title+'" target="_blank"><div class="item">'
+            itemhtml += '<div class="col-xs-3 item-box"><a no="ddata'+page_no+'-'+i+'" href="{{ route('pc.itemInfo.iteminfo') }}/'+item.num_iid+'?'+urlArr[1]+'" title="'+item.title+'" target="_blank"><div class="item">'
             itemhtml +=       '<div class="img-box"><img class="lazy" src="'+item.pict_url+'"></div>'
             itemhtml +=       '<h2><img src="/pcstyle/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr>'
             itemhtml +=       '<div class="info">'

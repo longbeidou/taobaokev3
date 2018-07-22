@@ -2,7 +2,7 @@
 @foreach($couponItems as $key => $item)
     @if(!empty($item->coupon_info))
     <div class="col-xs-3 item-box">
-      <a no='data{{ $key }}' href="https://www.longbeidou.com/s?wd={{ $item->num_iid }}" title="{{ $item->title }}" target="_blank">
+      <a no='data{{ $key }}' href="{{ route('pc.itemInfo.iteminfo', ['id'=>$item->num_iid]) }}" title="{{ $item->title }}" target="_blank">
         <div class="item">
           <div class="img-box"><img class="lazy" data-original="{{ $item->pict_url }}"></div>
           <h2>{!! $couponShow->imgTaobaoOrTmall($item->user_type) !!} {{ $item->title }}</h2>
