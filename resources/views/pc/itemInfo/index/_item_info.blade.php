@@ -100,7 +100,7 @@
                             </div>
                             <div class="col-xs-3 text-center link">
                                 @if(empty($couponLink))
-                                <a href="" target="_blank">点击查看</a>
+                                <a href="{{ route('pc.search.all') }}?q={{ $itemInfo->title }}" target="_blank">点击查看</a>
                                 @else
                                 <a href="{{ $couponLink }}" rel="nofollow" target="_blank">立即领券</a>
                                 @endif
