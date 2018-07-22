@@ -27,6 +27,11 @@ Route::domain(env('DOMAIN_PC'))->group(function() {
 	Route::get('/sub{id}{sort?}', 'Index\PC\IndexController@categoryTwo')->name('pc.goodsCategorys.categoryTwo')->where('id', '[0-9]+');
 	Route::get('/son{id}{sort?}', 'Index\PC\IndexController@categorySon')->name('pc.goodsCategorys.categorySon')->where('id', '[0-9]+');
 	Route::get('/agc', 'Index\PC\AllGoodsCategoryController@index')->name('pc.allGoodsCategory.index');
+	Route::get('/search', 'Index\PC\SearchController@index')->name('pc.search.index');
+	Route::get('/search/all/', 'Index\PC\SearchController@all')->name('pc.search.all');
+	Route::get('/search/tmall/', 'Index\PC\SearchController@tmall')->name('pc.search.tmall');
+	Route::get('/search/ju/', 'Index\PC\SearchController@ju')->name('pc.search.ju');
+	Route::get('/search/tpwd/', 'Index\PC\SearchController@tpwd')->name('pc.search.tpwd');
 
 	Route::get('/iteminfo/{id?}', 'Index\PC\ItemInfoController@iteminfo')->name('pc.itemInfo.iteminfo')->where('id', '[0-9]+');
 

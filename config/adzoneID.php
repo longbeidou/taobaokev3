@@ -29,5 +29,17 @@ return [
 	'pc_index_coupon_adzone_id' => '1459254918',
 
 	// PC端商品列表页猜你喜欢
-	'pc_coupon_guess_you_like' => '1459254918'
+	'pc_coupon_guess_you_like' => '1459254918',
+
+	// PC端聚划算搜素的pid
+	'pc_ju_search_pid' => 'mm_'.env('PID_USER').'_'.env('PID_SITE').'_1459170411',
+
+	// PC端全部搜索的adzone_id
+	'pc_search_all_adzone_id' => '1459124850',
+
+	// PC端 只针对天猫的搜索
+	'pc_search_tmall_adzone_id' => '1459162255',
+
+	// PC端淘口令 搜索
+	'pc_search_tpwd' => '1459186177',
 ];
