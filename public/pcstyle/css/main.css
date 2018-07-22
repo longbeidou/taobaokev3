@@ -906,6 +906,10 @@ body
 	padding-bottom: 15px;
 	display: none;
 }
+.goods-detail-info .images-box .col-xs-12 img
+{
+	max-width: 790px;
+}
 
 #search-index
 {
