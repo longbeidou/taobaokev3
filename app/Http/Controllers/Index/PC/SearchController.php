@@ -8,8 +8,9 @@ use App\Services\PC\SearchService;
 
 class SearchController extends Controller
 {
-    const PAGE_SIZE = '40';
+    const PAGE_SIZE = '100';
     const GUESS_YOU_LIKE_NUM = '60';
+    const GUESS_YOU_LIKE_NUM_RESULT = '5';
 
     public $repository;
     public $juPid;
@@ -50,10 +51,13 @@ class SearchController extends Controller
         $para['sort'] = $this->repository->getSortValue($request->sort);
         $para['q'] = $request->q;
         $para['adzone_id'] = $this->searchAllAdzonId;
+        $para['page_size'] = self::PAGE_SIZE;
         $title = $request->q.'淘宝天猫优惠券';
-        $couponItems = $this->repository->all(['adzone_id' => $this->searchAllAdzonId, 'page_size' => self::PAGE_SIZE, 'q' => $request->q, 'sort' => $sort]);
+        $name = '综合搜索';
+        $materialItems = $this->repository->all(['adzone_id' => $this->searchAllAdzonId, 'page_size' => self::PAGE_SIZE, 'q' => $request->q, 'sort' => $sort]);
+        $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM_RESULT);
 
-        return view('wx.search.result_all', compact('title', 'couponItems', 'q', 'para', 'sort'));
+        return view('pc.search.result_coupons', compact('title', 'name', 'materialItems', 'q', 'para', 'sort', 'guessYouLikeItems'));
     }
 
     // 只搜索天猫
@@ -68,10 +72,14 @@ class SearchController extends Controller
         $para['sort'] = $this->repository->getSortValue($request->sort);
         $para['q'] = $request->q;
         $para['adzone_id'] = $this->searchTmallAdzoneId;
+        $para['page_size'] = self::PAGE_SIZE;
+        $para['is_tmall'] = 'true';
         $title = $request->q.'天猫优惠券';
-        $couponItems = $this->repository->tmall(['adzone_id' => $this->searchTmallAdzoneId, 'page_size' => self::PAGE_SIZE, 'q' => $request->q, 'sort' => $sort]);
+        $name = '天猫搜索';
+        $materialItems = $this->repository->tmall(['adzone_id' => $this->searchTmallAdzoneId, 'page_size' => self::PAGE_SIZE, 'q' => $request->q, 'sort' => $sort]);
+        $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM_RESULT);
 
-        return view('wx.search.result_tmall', compact('title', 'couponItems', 'q', 'para', 'sort'));
+        return view('pc.search.result_coupons', compact('title', 'name', 'materialItems', 'q', 'para', 'sort', 'guessYouLikeItems'));
     }
 
     // 搜索聚划算
@@ -105,12 +113,16 @@ class SearchController extends Controller
         $tpwdKeyword = $this->repository->tpwdQuery($request->q);
         $q = $this->repository->getGoodsTitle($tpwdKeyword);
         $sort = empty($request->sort) ? '' : $request->sort;
-        $couponItems = $this->repository->all(['adzone_id' => $this->searchTpwdAdzoneId, 'page_size' => self::PAGE_SIZE, 'q' => $q, 'sort' => $sort]);
+        $materialItems = $this->repository->all(['adzone_id' => $this->searchTpwdAdzoneId, 'page_size' => self::PAGE_SIZE, 'q' => $q, 'sort' => $sort]);
         $para['sort'] = $this->repository->getSortValue($request->sort);
         $para['q'] = $q;
         $para['adzone_id'] = $this->searchTpwdAdzoneId;
+        $para['page_size'] = self::PAGE_SIZE;
         $title = $request->q.'的淘口令优惠券搜索结果';
+        $name = '淘口令';
+        $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM_RESULT);
 
+        return view('pc.search.result_coupons', compact('title', 'name', 'materialItems', 'q', 'para', 'sort', 'guessYouLikeItems'));
         return view('wx.search.result_tpwd', compact('title', 'couponItems', 'q', 'para', 'sort'));
     }
 }

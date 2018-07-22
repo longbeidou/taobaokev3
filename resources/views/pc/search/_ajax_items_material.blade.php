@@ -1,16 +1,7 @@
 <script type="text/javascript">
-var id = "{{ $para["id"] }}";
-var goods_category_id = "{{ $para["goods_category_id"] }}";
 var page_size = "{{ $para["page_size"]/4 }}";
-var platform = "{{ $para["platform"] }}";
-var is_overseas = "{{ $para["is_overseas"] }}";
-var is_tmall = "{{ $para["is_tmall"] }}";
 var q = "{{ $para["q"] }}";
-var has_coupon = "{{ $para["has_coupon"] }}";
 var adzone_id = "{{ $para["adzone_id"] }}";
-var need_free_shipment = "{{ $para["need_free_shipment"] }}";
-var need_prepay = "{{ $para["need_prepay"] }}";
-var npx_level = "{{ $para["npx_level"] }}";
 var sort = "{{ $para["sort"] or '' }}";
 var page_no = 4;
 var url = "{{ route('pc.api.alimama.taobaoTbkDgMaterialOptional') }}";
@@ -71,31 +62,16 @@ $(window).scroll(function() {
           timeout : 10000,
           type : 'POST',
           data : {
-              id : id,
-              goods_category_id : goods_category_id,
+              @if(!empty($para['is_tmall']))
+              is_tmall : '{{ $para['is_tmall'] }}',
+              @endif
               page_size : page_size,
-              is_overseas : is_overseas,
-              is_tmall : is_tmall,
               q : q,
-              has_coupon : has_coupon,
+              has_coupon : 'true',
               adzone_id : adzone_id,
-              need_free_shipment : need_free_shipment,
-              need_prepay : need_prepay,
-              npx_level : npx_level,
               sort : sort,
               page_no : page_no,
-              platform : '1',
-              start_dsr : '',
-              end_tk_rate : '',
-              start_tk_rate : '',
-              end_price : '',
-              start_price : '',
-              itemloc : '',
-              cat : '',
-              ip : '',
-              include_pay_rate_30 : '',
-              include_good_rate : '',
-              include_rfd_rate : ''
+              platform : '1'
           },
           success : function(result) {
               if (result == 415) {

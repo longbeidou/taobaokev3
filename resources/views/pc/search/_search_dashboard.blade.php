@@ -13,7 +13,7 @@
                         <div class="row">
                             <form class="form-group" action="{{ route('pc.search.all') }}" method="get">
                                 <div class="col-xs-10">
-                                    <input class="form-control" type="text" name="q" placeholder="请输入要搜索的商品名称">
+                                    <input class="form-control" required type="text" name="q" placeholder="请输入要搜索的商品名称">
                                 </div>
                                 <div class="col-xs-2">
                                     <button type="submit" class="form-control">搜索</button>
@@ -42,7 +42,7 @@
                         <div class="row">
                             <form class="form-group" action="{{ route('pc.search.tmall') }}" method="get">
                                 <div class="col-xs-10">
-                                    <input class="form-control" type="text" name="q" placeholder="请输入要搜索的商品名称">
+                                    <input class="form-control" required type="text" name="q" placeholder="请输入要搜索的商品名称">
                                 </div>
                                 <div class="col-xs-2">
                                     <button type="submit" class="form-control">搜索</button>
@@ -71,7 +71,7 @@
                         <div class="row">
                             <form class="form-group" action="{{ route('pc.search.ju') }}" method="get">
                                 <div class="col-xs-10">
-                                    <input class="form-control" type="text" name="q" placeholder="请输入要搜索的商品名称">
+                                    <input class="form-control" required type="text" name="q" placeholder="请输入要搜索的商品名称">
                                 </div>
                                 <div class="col-xs-2">
                                     <button type="submit" class="form-control">搜索</button>
@@ -100,7 +100,7 @@
                         <div class="row">
                             <form class="form-group" action="{{ route('pc.search.tpwd') }}" method="get">
                                 <div class="col-xs-10">
-                                    <input class="form-control" type="text" name="q" placeholder="请输入要搜索的淘口令">
+                                    <input class="form-control" required type="text" name="q" placeholder="请输入要搜索的淘口令">
                                 </div>
                                 <div class="col-xs-2">
                                     <button type="submit" class="form-control">搜索</button>
