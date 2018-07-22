@@ -95,8 +95,8 @@
                             </div>
                             <div class="col-xs-5 text-center date">
                                 <p class="top">优惠券使用期限</p>
-                                <p class="bottem">起始日期：{{ $couponInfo->coupon_start_time or date('Y', time()) }}</p>
-                                <p class="bottem">结束日期：{{ $couponInfo->coupon_end_time or '??-??-??' }}</p>
+                                <p class="bottem">起始日期：{{ $couponInfo->coupon_start_time or date('Y-m-d', time()) }}</p>
+                                <p class="bottem">结束日期：{{ $couponInfo->coupon_end_time or date('Y-m-', time()).'??' }}</p>
                             </div>
                             <div class="col-xs-3 text-center link">
                                 @if(empty($couponLink))
