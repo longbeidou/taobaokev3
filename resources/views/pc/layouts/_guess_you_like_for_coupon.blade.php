@@ -5,7 +5,7 @@
       <a no='data{{ $key }}' href="{{ route('pc.itemInfo.iteminfo', ['id'=>$item->num_iid]) }}" title="{{ $item->title }}" target="_blank">
         <div class="item">
           <div class="img-box"><img class="lazy" data-original="{{ $item->pict_url }}"></div>
-          <h2>{!! $couponShow->imgTaobaoOrTmall($item->user_type) !!} {{ $item->title }}</h2>
+          <h2>{!! $couponShow->imgTaobaoOrTmall($item->user_type) !!}{{ $item->title }}</h2>
           <hr>
           <div class="info">
             <div class="row price-now">

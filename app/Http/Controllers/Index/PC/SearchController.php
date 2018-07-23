@@ -10,6 +10,8 @@ class SearchController extends Controller
 {
     const PAGE_SIZE = '100';
     const GUESS_YOU_LIKE_NUM = '60';
+    const PAGE_SIZE_JU = '20';
+    const GUESS_YOU_LIKE_NUM_JU = '20';
     const GUESS_YOU_LIKE_NUM_RESULT = '5';
 
     public $repository;
@@ -90,17 +92,21 @@ class SearchController extends Controller
         ]);
 
         $word = $request->q;
+        $q = $request->q;
         $juItems = $this->repository->ju([
           'current_page' => 1,
-          'page_size' => self::PAGE_SIZE,
+          'page_size' => self::PAGE_SIZE_JU,
           'word' => $word,
           'pid' => $this->juPid
         ]);
-        $para['q'] = $word;
+        $para['word'] = $word;
         $para['pid'] = $this->juPid;
+        $para['page_size'] = self::PAGE_SIZE_JU;
         $title = $request->q.'的聚划算商品';
+        $name = '聚划算搜索';
+        $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM_JU);
 
-        return view('wx.search.result_ju', compact('title', 'juItems', 'q', 'para'));
+        return view('pc.search.result_ju', compact('title', 'name', 'juItems', 'q', 'para', 'guessYouLikeItems'));
     }
 
     // 淘口令搜索

@@ -1232,6 +1232,7 @@ body
 {
 	padding-left: 0px;
 	padding-bottom: 15px;
+	margin-bottom: 0px;
 }
 .search-ju-list .ju-recommend .r-item .item-box a
 {
@@ -1239,7 +1240,8 @@ body
 }
 .search-ju-list .ju-recommend .r-item .item-box .item .img-box
 {
-
+	height: 173px;
+	overflow: hidden;
 }
 .search-ju-list .ju-recommend .r-item .item-box .item .img-box img
 {
