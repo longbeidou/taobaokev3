@@ -4,7 +4,7 @@
             <div class="col-xs-3"><img src="/pcstyle/images/logolist.png"></div>
             <div class="col-xs-6">
                 <div class="row">
-                    <form action="" method="get">
+                    <form action="{{ route('pc.search.all') }}" method="get">
                         <div class="col-xs-9 form-box"><input class="form-control" type="text" name="q" placeholder="请输入要搜索的商品名..."></div>
                         <div class="col-xs-3 form-box"><button class="form-control btn btn-danger" type="submit">搜索</button></div>
                     </form>
@@ -13,11 +13,11 @@
                     <div class="col-xs-12 hot-search">
                         <ul class="list-inline">
                           <strong>热门搜索:</strong>
-                          <li><a href="#" title="">服装</a></li>
-                          <li><a href="#" title="">服装</a></li>
-                          <li><a href="#" title="">服装</a></li>
-                          <li><a href="#" title="">服装</a></li>
-                          <li><a href="#" title="">服装</a></li>
+                          <li><a href="{{ route('pc.search.all') }}?q=凉拖鞋" title="">凉拖鞋</a></li>
+                          <li><a href="{{ route('pc.search.all') }}?q=时尚T恤" title="">时尚T恤</a></li>
+                          <li><a href="{{ route('pc.search.all') }}?q=防晒喷雾" title="">防晒喷雾</a></li>
+                          <li><a href="{{ route('pc.search.all') }}?q=纸巾" title="">纸巾</a></li>
+                          <li><a href="{{ route('pc.search.all') }}?q=裤子" title="">裤子</a></li>
                         </ul>
                     </div>
                 </div>
