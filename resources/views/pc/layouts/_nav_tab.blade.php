@@ -4,9 +4,9 @@
             <div class="col-xs-12">
                 <ul class="list-inline pull-left">
                     <li class="active"><a href="{{ route('pc.index') }}" title="淘宝天猫优惠券">首页</a></li>
-                    <li><a href="" title="" target="_blank">服装</a></li>
-                    <li><a href="" title="" target="_blank">服装</a></li>
-                    <li><a href="" title="" target="_blank">服装</a></li>
+                    <li><a href="{{ route('pc.allGoodsCategory.index') }}" title="淘宝内部优惠券商品分类" target="_blank">商品分类</a></li>
+                    <li><a href="{{ route('pc.search.index') }}" title="淘宝天猫优惠券查询" target="_blank">超级搜索</a></li>
+                    <li><a href="{{ route('pc.taoqianggou.index') }}" title="" target="_blank">淘抢购</a></li>
                     <li><a href="" title="" target="_blank">服装</a></li>
                     <li><a href="" title="" target="_blank">服装</a></li>
                 </ul>

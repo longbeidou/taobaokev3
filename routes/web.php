@@ -32,6 +32,7 @@ Route::domain(env('DOMAIN_PC'))->group(function() {
 	Route::get('/search/tmall/', 'Index\PC\SearchController@tmall')->name('pc.search.tmall');
 	Route::get('/search/ju/', 'Index\PC\SearchController@ju')->name('pc.search.ju');
 	Route::get('/search/tpwd/', 'Index\PC\SearchController@tpwd')->name('pc.search.tpwd');
+	Route::get('/taoqianggou', 'Index\PC\TaoQiangGouController@index')->name('pc.taoqianggou.index');
 
 	Route::get('/iteminfo/{id?}', 'Index\PC\ItemInfoController@iteminfo')->name('pc.itemInfo.iteminfo')->where('id', '[0-9]+');
 
