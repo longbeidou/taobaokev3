@@ -99,6 +99,7 @@ class OptimusMaterialController extends Controller
     public function sales()
     {
        $title = '特价淘宝天猫优惠券专场';
+       $name = '特惠商品专场';
        $allInfo = $this->rulesArr[6];
        $requestPara = $allInfo['rules'][0];
        unset($requestPara['page_size']);
@@ -113,6 +114,7 @@ class OptimusMaterialController extends Controller
     public function fashion()
     {
       $title = '淘宝天猫优惠券潮流范专场';
+      $name = '潮流街区';
       $allInfo = $this->rulesArr[4];
       $requestPara = $allInfo['rules'][0];
       unset($requestPara['page_size']);
@@ -127,6 +129,7 @@ class OptimusMaterialController extends Controller
     public function recommend()
     {
       $title = '淘宝内部优惠券推荐专场';
+      $name = '推荐好货专场';
       $allInfo = $this->rulesArr[5];
       $requestPara = $allInfo['rules'][0];
       unset($requestPara['page_size']);
