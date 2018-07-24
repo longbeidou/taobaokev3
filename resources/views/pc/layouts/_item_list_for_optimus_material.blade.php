@@ -1,5 +1,6 @@
 @inject('couponShow', 'App\Presenters\CouponListPresenter')
 @foreach($optimusMaterialItems as $key => $item)
+@if(!empty($item->coupon_click_url))
 <div class="col-xs-3 item-box">
     <a no='dataom{{ $key }}' href="{{ route('pc.itemInfo.iteminfo', ['id'=>$item->num_iid]) }}" title="{{ $item->title }}" target="_blank">
         <div class="item">
@@ -35,4 +36,5 @@
     </a>
     <data id="dataom{{ $key }}" para="{{ $couponShow->getParaStrFromUrl($item->coupon_click_url) }}&coupon_info={{ date('Y-m-d', $item->coupon_start_time/1000) }}and{{ date('Y-m-d', $item->coupon_end_time/1000) }}and{{ number_format($item->coupon_amount, 0) }}"></data>
 </div>
+@endif
 @endforeach
