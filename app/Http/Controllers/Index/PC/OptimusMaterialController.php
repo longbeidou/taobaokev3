@@ -56,9 +56,12 @@ class OptimusMaterialController extends Controller
       $currentId = $id;
       $allInfo = $this->rulesArr[1];
       $requestPara = $allInfo['rules'][$id];
-      $items = $this->repository->getItems($allInfo['rules'][$id]);
+      unset($requestPara['page_size']);
+      $requestPara['page_size'] = self::PAGE_SIZE;
+      $optimusMaterialItems = $this->repository->getItems($requestPara);
+      $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM);
 
-      return view('wx.material.index_brand', compact('title', 'allInfo', 'currentId', 'items', 'requestPara'));
+      return view('pc.material.index_brand', compact('title', 'allInfo', 'currentId', 'optimusMaterialItems', 'requestPara', 'guessYouLikeItems'));
     }
 
     // 母婴专场
