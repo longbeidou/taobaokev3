@@ -87,7 +87,11 @@ $(window).scroll(function() {
                   $('.ajax-tips p').append('使出吃奶的力气也没有找到更多的宝贝了~~~');
                   $('.ajax-tips p').attr('status', 'off');
               } else {
-                  addItems(result);
+                  try {
+                    addItems(result);
+                  } catch (e) {
+                    
+                  }
                   $('.ajax-tips p').attr('status', 'on');
               }
           }

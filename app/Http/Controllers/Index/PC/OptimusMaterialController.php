@@ -80,7 +80,7 @@ class OptimusMaterialController extends Controller
       $requestPara['page_size'] = self::PAGE_SIZE;
       $optimusMaterialItems = $this->repository->getItems($requestPara);
       $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM);
-// dd($optimusMaterialItems);
+
       return view('pc.material.index_baby', compact('title', 'allInfo', 'currentId', 'optimusMaterialItems', 'requestPara', 'guessYouLikeItems'));
     }
 
@@ -101,9 +101,12 @@ class OptimusMaterialController extends Controller
        $title = '特价淘宝天猫优惠券专场';
        $allInfo = $this->rulesArr[6];
        $requestPara = $allInfo['rules'][0];
-       $items = $this->repository->getItems($allInfo['rules'][0]);
+       unset($requestPara['page_size']);
+       $requestPara['page_size'] = self::PAGE_SIZE;
+       $optimusMaterialItems = $this->repository->getItems($requestPara);
+       $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM);
 
-       return view('wx.material.index_one', compact('title', 'allInfo', 'items', 'requestPara'));
+       return view('pc.material.index_sales', compact('title', 'name', 'allInfo', 'optimusMaterialItems', 'requestPara', 'guessYouLikeItems'));
     }
 
     // 潮流范
