@@ -2,7 +2,7 @@
 @foreach($guessYouLikeItems as $key => $item)
     @if(!empty($item->coupon_info))
     <div class="col-xs-3 item-box">
-      <a no='data{{ $key }}' href="{{ route('pc.itemInfo.iteminfo', ['id'=>$item->num_iid]) }}" title="{{ $item->title }}" target="_blank">
+      <a no='datag{{ $key }}' href="{{ route('pc.itemInfo.iteminfo', ['id'=>$item->num_iid]) }}" title="{{ $item->title }}" target="_blank">
         <div class="item">
           <div class="img-box"><img class="lazy" data-original="{{ $item->pict_url }}"></div>
           <h2>{!! $couponShow->imgTaobaoOrTmall($item->user_type) !!}{{ $item->title }}</h2>
@@ -27,7 +27,7 @@
           </div>
         </div>
       </a>
-      <data id="data{{ $key }}" para="{{ $couponShow->getParaStrFromUrl($item->coupon_click_url) }}"></data>
+      <data id="datag{{ $key }}" para="{{ $couponShow->getParaStrFromUrl($item->coupon_click_url) }}"></data>
     </div>
     @endif
 @endforeach

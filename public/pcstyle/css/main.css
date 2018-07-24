@@ -101,6 +101,8 @@ body
 #nav-tab .box ul .active
 {
 	background-color: #fef490;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 #nav-tab .box ul .active a
 {
@@ -112,8 +114,12 @@ body
 }
 #nav-tab .box ul li
 {
-	padding: 10px 10px;
+	padding: 10px 5px;
 	cursor: pointer;
+}
+#nav-tab .box ul .home
+{
+	padding: 10px 10px;
 }
 #nav-tab .box .other li,
 #nav-tab .box ul li a
@@ -350,6 +356,7 @@ body
 	padding: 0px 0px 0px 10px;
 	overflow: hidden;
 	margin-bottom: 10px;
+	height: 318px;
 }
 .coupon-list .item-box a
 {
@@ -365,10 +372,25 @@ body
 {
 	overflow: hidden;
 	height: 215px;
+	position: relative;
 }
 .coupon-list .item-box .item .img-box img
 {
 	width: 100%;
+}
+.coupon-list .item-box .item .img-box .item-desc
+{
+	position: absolute;
+	bottom: 0px;
+	background-color: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	width: 100%;
+	padding: 5px;
+	display: none;
+}
+.coupon-list .item-box .item .img-box:hover .item-desc
+{
+	display: block;
 }
 .coupon-list .item-box .item h2
 {
@@ -379,6 +401,10 @@ body
 	text-overflow: ellipsis;
 	margin-top: 10px;
 	margin-bottom: 5px;
+}
+.coupon-list .item-box a:hover .item h2
+{
+	color: #ed2a7a;
 }
 .coupon-list .item-box .item h2 img
 {
