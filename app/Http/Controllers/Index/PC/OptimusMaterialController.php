@@ -11,7 +11,9 @@ use App\Services\PC\OptimusMaterialService;
 class OptimusMaterialController extends Controller
 {
     const GUESS_YOU_LIKE_NUM = '10';
+    const GUESS_YOU_LIKE_NUM_PINTUAN = '5';
     const PAGE_SIZE = '100';
+    const PAGE_SIZE_PINTUAN = '20';
 
     public $repository;
     public $rulesArr;
@@ -88,11 +90,15 @@ class OptimusMaterialController extends Controller
     public function pintuan()
     {
       $title = '聚划算拼团专场';
+      $name = '聚划算拼团专场';
       $allInfo = $this->rulesArr[3];
       $requestPara = $allInfo['rules'][0];
-      $items = $this->repository->getItems($allInfo['rules'][0]);
+      unset($requestPara['page_size']);
+      $requestPara['page_size'] = self::PAGE_SIZE_PINTUAN;
+      $pinTuanItems = $this->repository->getItems($requestPara);
+      $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM_PINTUAN);
 
-      return view('wx.material.index_pintuan', compact('title', 'allInfo', 'items', 'requestPara'));
+      return view('pc.material.index_pintuan', compact('title', 'name', 'allInfo', 'pinTuanItems', 'requestPara', 'guessYouLikeItems'));
     }
 
     // 特惠

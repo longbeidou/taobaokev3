@@ -1,8 +1,8 @@
 <script type="text/javascript">
-var page_size = {{ $requestPara['page_size'] }}/4;
+var page_size = {{ $requestPara['page_size'] }};
 var adzone_id = {{ $requestPara['adzone_id'] }};
 var material_id = {{ $requestPara['material_id'] }};
-var page_no = 4;
+var page_no = 1;
 var url = "{{ route('pc.api.alimama.taobaoTbkDgOptimusMaterial') }}";
 
 function numberFormat(price_now)
@@ -46,20 +46,24 @@ function addItems(data)
         } else {
           var desc = item.item_description;
         }
-        var price_now = item.zk_final_price - item.coupon_amount
-        price_now = numberFormat(price_now)
-        price_ori = numberFormat(item.zk_final_price)
-        urlArr = item.coupon_click_url.split('?')
+        price_now = numberFormat(item.jdd_price)
+        price_ori = numberFormat(item.orig_price)
+        urlArr = item.click_url.split('?')
         itemhtml += '<div class="col-xs-3 item-box">'
-        itemhtml += '<a href="{{ route('pc.itemInfo.iteminfo') }}/'+item.num_iid+'?'+urlArr[1]+'&coupon_info='+timestempsToDate(item.coupon_start_time)+'and'+timestempsToDate(item.coupon_end_time)+'and'+item.coupon_amount+'" target="_blank">'
+        itemhtml += '<a href="{{ route('pc.itemInfo.pinTuanInfo') }}/'+item.num_iid+'?'+urlArr[1]+'&pintuan_info='+item.ostime+'and'+item.oetime+'and'+item.jdd_price+'and'+item.orig_price+'and'+item.item_description+'" target="_blank">'
         itemhtml += '<div class="item"><div class="img-box"><img src="'+item.pict_url+'">'
         itemhtml += '<div class="item-desc">'+desc+'</div></div>'
         itemhtml += '<h2><img src="/pcstyle/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr><div class="info">'
-        itemhtml += '<div class="row price-now"><div class="col-xs-12"><div class="pull-left">现价￥'+price_ori+'</div>'
-        itemhtml += '<div class="pull-right">月销:'+item.volume+'</div></div></div><div class="row price-ori"><div class="col-xs-12">'
-        itemhtml += '<div class="pull-left">券后<span class="prefix">￥</span><span class="number">'+price_now+'</span></div>'
-        itemhtml += '<div class="pull-right"><div class="circle-left"></div><div class="circle-right"></div>￥<span class="money">'+item.coupon_amount+'</span>元券</div>'
-        itemhtml += '</div></div></div></div></a></div>'
+        itemhtml += '<div class="row price-now"><div class="col-xs-12"><div class="pull-left  pt-dmj">单买价￥'+price_ori+'</div>'
+        itemhtml += '<div class="pull-right  pt-num">'+item.sell_num+'人已拼团</div></div></div><div class="row price-ori"><div class="col-xs-12">'
+        itemhtml += '<div class="pull-left  pt-ptj">拼团价<span class="prefix">￥</span><span class="number">'+price_now+'</span></div>'
+        itemhtml += '<div class="pull-right  pt-people-box">'
+        if (item.jdd_num == 2) {
+          itemhtml += '<span class="pt-people p2">2人团</span>';
+        } else {
+          itemhtml += '<span class="pt-people p4">4人团</span>';
+        }
+        itemhtml += '</div></div></div></div></div></a></div>'
     }
     $('.material-coupon-list .container>.row').append(itemhtml);
 }

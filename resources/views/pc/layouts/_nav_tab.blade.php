@@ -13,9 +13,7 @@
                     <li><a href="{{ route('pc.optimusMaterial.fashion') }}" title="淘宝天猫优惠券潮流范专场" target="_blank">潮流街区</a></li>
                     <li><a href="{{ route('pc.optimusMaterial.recommend') }}" title="淘宝内部优惠券推荐专场" target="_blank">推荐好货</a></li>
                     <li><a href="{{ route('pc.optimusMaterial.sales') }}" title="特价淘宝天猫优惠券专场" target="_blank">特惠专场</a></li>
-                    <li><a href="" title="聚划算拼团专场" target="_blank">拼团</a></li>
-                    <li><a href="" title="聚划算拼团专场" target="_blank">拼团</a></li>
-                    <li><a href="" title="聚划算拼团专场" target="_blank">拼团</a></li>
+                    <li><a href="{{ route('pc.optimusMaterial.pintuan')}}" title="聚划算拼团专场" target="_blank">拼团</a></li>
                 </ul>
                 <ul class="list-inline pull-right other">
                     <li class="name">手机网站 <span class="caret"></span><div class="content"><img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ route('wx.index') }}" alt="龙琴时代手机网站二维码"></div></li>
