@@ -13,8 +13,8 @@
     </header>
     @include('pc.layouts._nav_tab')
     @include('pc.taoQiangGou._qiang_time')
+    @include('pc.taoQiangGou._banner')
     @include('pc.taoQiangGou._item_list')
-    @include('pc.layouts._ajax_tips')
     @include('pc.layouts._footer_adv')
     @include('pc.layouts._footer')
 @stop
@@ -94,6 +94,8 @@
       }
     });
     @include('pc.taoQiangGou._ajax_rule_js')
+    now_date = new Date();
+    now_hour = now_date.getHours();
     $('.tqg-items-ajax').bind('click', function() {
         index = $(this).attr('index');
         status = $(this).attr('status');
@@ -129,40 +131,45 @@
       itemhtml = '';
       for (var i = 0, length = data.length; i < length; i++) {
         item = data[i]
+        var start_time_h = item.start_time.slice(11, 13)
+        var item_h = parseInt(start_time_h);
+        if (parseInt(start_time_h.indexOf(0)) == 0) {
+           var item_h = parseInt(start_time_h.indexOf(1))
+        }
         itemhtml += '<a rel="nofollow" href="'+item.click_url+'" target="_blank" title="'+item.title+'">'
         itemhtml += '<div class="col-xs-4 item"><div class="row"><div class="col-xs-6 img-box"><img src="'+item.pic_url+'"></div>'
         itemhtml += '<div class="col-xs-6 content"><h3>'+item.title+'</h3><div class="middle">'
         itemhtml += '<div class="pull-left price"><div class="ori">￥'+item.reserve_price+'</div>'
         itemhtml += '<div class="now"><span class="prefix">￥</span>'+item.zk_final_price+'</div>'
         itemhtml += '</div><div class="pull-right link">'
-        if(status == 1){
-        itemhtml += '<button class="btn btn-info">即将开始</button>'
+        if (item_h > now_hour) {
+            itemhtml += '<button class="btn btn-info">即将开始</button>'
         } else {
-        itemhtml += '<button class="btn btn-danger">马上抢</button>'
+            itemhtml += '<button class="btn btn-danger">马上抢</button>'
         }
         itemhtml += '</div></div>'
-        if(status == 1){
-          var start_time = item.start_time.slice(5, 16)
-          itemhtml +=     '<div class="bottom"><div class="data"><span class="text-success">'+start_time+'准时开始</span></div></div>'
+        if (item_h > now_hour) {
+            var start_time = item.start_time.slice(5, 16)
+            itemhtml +=     '<div class="bottom"><div class="data"><span class="text-success">'+start_time+'准时开始</span></div></div>'
         }else{
-        itemhtml +=     '<div class="bottom"><div class="data">'
-        sold_num = parseInt(item.sold_num)
-        total_amount = parseInt(item.total_amount)
-        num = Math.round(sold_num*100/total_amount)
-        itemhtml +=     '<div class="pull-left">已抢购'+num+'%</div><div class="pull-right">已抢'+item.sold_num+'件</div></div><div class="line"><div class="progress">'
-        if(num < 25){
-        itemhtml +=     '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="'+item.sold_num+'" aria-valuemin="0" aria-valuemax="'+item.total_amount+'" style="width: '+num+'%"></div>'
-        }
-        if(num< 50 && num >= 25){
-        itemhtml +=     '<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="'+item.sold_num+'" aria-valuemin="0" aria-valuemax="'+item.total_amount+'" style="width: '+num+'%"></div>'
-        }
-        if(num < 75 && num >= 50){
-        itemhtml +=     '<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="'+item.sold_num+'" aria-valuemin="0" aria-valuemax="'+item.total_amount+'" style="width: '+num+'%"></div>'
-        }
-        if(num >= 75){
-        itemhtml +=     '<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="'+item.sold_num+'" aria-valuemin="0" aria-valuemax="'+item.total_amount+'" style="width: '+num+'%"></div>'
-        }
-        itemhtml +=     '</div></div></div>'
+            itemhtml +=     '<div class="bottom"><div class="data">'
+            sold_num = parseInt(item.sold_num)
+            total_amount = parseInt(item.total_amount)
+            num = Math.round(sold_num*100/total_amount)
+            itemhtml +=     '<div class="pull-left">已抢购'+num+'%</div><div class="pull-right">已抢'+item.sold_num+'件</div></div><div class="line"><div class="progress">'
+            if(num < 25){
+                itemhtml +=     '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="'+item.sold_num+'" aria-valuemin="0" aria-valuemax="'+item.total_amount+'" style="width: '+num+'%"></div>'
+            }
+            if(num< 50 && num >= 25){
+                itemhtml +=     '<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="'+item.sold_num+'" aria-valuemin="0" aria-valuemax="'+item.total_amount+'" style="width: '+num+'%"></div>'
+            }
+            if(num < 75 && num >= 50){
+                itemhtml +=     '<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="'+item.sold_num+'" aria-valuemin="0" aria-valuemax="'+item.total_amount+'" style="width: '+num+'%"></div>'
+            }
+            if(num >= 75){
+                itemhtml +=     '<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="'+item.sold_num+'" aria-valuemin="0" aria-valuemax="'+item.total_amount+'" style="width: '+num+'%"></div>'
+            }
+            itemhtml +=     '</div></div></div>'
         }
         itemhtml += '</div></div></div></a>'
       }

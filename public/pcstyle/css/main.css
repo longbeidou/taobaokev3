@@ -1341,7 +1341,8 @@ body
 }
 .tqg-item
 {
-	margin-top: 52px;
+	/* margin-top: 52px; */
+	margin-top: 0px;
 }
 .tqg-item .item-pannel
 {
@@ -1474,4 +1475,16 @@ body
 .tqg-item .tqg-bottom .item .content .bottom .line .progress
 {
 	margin-bottom: 0px;
+}
+
+.tqg-banner .box
+{
+	padding-left: 10px;
+	padding-right: 0px;
+	overflow: hidden;
+	height: 242px;
+}
+.tqg-banner .box img
+{
+	width: 100%;
 }
