@@ -387,6 +387,8 @@ body
 	width: 100%;
 	padding: 5px;
 	display: none;
+	max-height: 215px;
+	overflow: hidden;
 }
 .coupon-list .item-box .item .img-box:hover .item-desc
 {
