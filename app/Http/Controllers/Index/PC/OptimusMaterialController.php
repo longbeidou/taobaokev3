@@ -106,7 +106,7 @@ class OptimusMaterialController extends Controller
        $optimusMaterialItems = $this->repository->getItems($requestPara);
        $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM);
 
-       return view('pc.material.index_sales', compact('title', 'name', 'allInfo', 'optimusMaterialItems', 'requestPara', 'guessYouLikeItems'));
+       return view('pc.material.index_common', compact('title', 'name', 'allInfo', 'optimusMaterialItems', 'requestPara', 'guessYouLikeItems'));
     }
 
     // 潮流范
@@ -115,9 +115,12 @@ class OptimusMaterialController extends Controller
       $title = '淘宝天猫优惠券潮流范专场';
       $allInfo = $this->rulesArr[4];
       $requestPara = $allInfo['rules'][0];
-      $items = $this->repository->getItems($allInfo['rules'][0]);
+      unset($requestPara['page_size']);
+      $requestPara['page_size'] = self::PAGE_SIZE;
+      $optimusMaterialItems = $this->repository->getItems($requestPara);
+      $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM);
 
-      return view('wx.material.index_one', compact('title', 'allInfo', 'items', 'requestPara'));
+      return view('pc.material.index_common', compact('title', 'name', 'allInfo', 'optimusMaterialItems', 'requestPara', 'guessYouLikeItems'));
     }
 
     // 有好货
@@ -126,8 +129,11 @@ class OptimusMaterialController extends Controller
       $title = '淘宝内部优惠券推荐专场';
       $allInfo = $this->rulesArr[5];
       $requestPara = $allInfo['rules'][0];
-      $items = $this->repository->getItems($allInfo['rules'][0]);
+      unset($requestPara['page_size']);
+      $requestPara['page_size'] = self::PAGE_SIZE;
+      $optimusMaterialItems = $this->repository->getItems($requestPara);
+      $guessYouLikeItems = $this->repository->guessYouLike($this->guessYouLikeAdzoneId, self::GUESS_YOU_LIKE_NUM);
 
-      return view('wx.material.index_one', compact('title', 'allInfo', 'items', 'requestPara'));
+      return view('pc.material.index_common', compact('title', 'name', 'allInfo', 'optimusMaterialItems', 'requestPara', 'guessYouLikeItems'));
     }
 }
