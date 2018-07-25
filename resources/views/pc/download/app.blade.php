@@ -9,7 +9,6 @@
 @stop
 @section('content')
     <header>
-        @include('pc.layouts._save_url')
         @include('pc.layouts._top')
     </header>
     @include('pc.layouts._nav_tab')
