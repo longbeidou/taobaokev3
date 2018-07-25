@@ -187,6 +187,7 @@ body
 }
 #banner-box .category
 {
+	background-image: url('/pcstyle/images/goods_category_bg.jpg');
 	background-color: rgba(0,0,0,0.6);
 	height: 510px;
 	overflow: hidden;
@@ -199,7 +200,9 @@ body
 }
 #banner-box .category ul li:hover
 {
-	background-color: #ed2a7a;
+	background-color: rgba(255, 255, 255, 0.3);
+	/* background-color: rgba(0, 0, 0, 0.3); */
+	/* background-color: rgba(237, 42, 122, 0.6); */
 }
 #banner-box .category ul a
 {
@@ -1543,11 +1546,11 @@ body
 	height: 100%;
 	width: 100%;
 	background: inherit;
-	-webkit-filter: blur(2px);
-	-moz-filter: blur(2px);
-	-ms-filter: blur(2px);
-	-o-filter: blur(2px);
-	filter: blur(2px);
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-ms-filter: blur(3px);
+	-o-filter: blur(3px);
+	filter: blur(3px);
 	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=4, MakeShadow=false);
 }
 .app-download-main .box .app-left>img
