@@ -1,8 +1,6 @@
 @extends('pc.layouts.master')
 @section('title')
   @include('pc.layouts._title_category')
-  <meta name="keywords" content="{{ config('website.keywords') }}">
-  <meta name="description" content="{{ config('website.description') }}">
 @stop
 @section('headcss')
 
