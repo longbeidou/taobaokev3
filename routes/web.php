@@ -35,9 +35,9 @@ Route::domain(env('DOMAIN_PC'))->group(function() {
 	Route::get('/taoqianggou', 'Index\PC\TaoQiangGouController@index')->name('pc.taoqianggou.index');
 	Route::get('/iteminfo/{id?}', 'Index\PC\ItemInfoController@iteminfo')->name('pc.itemInfo.iteminfo')->where('id', '[0-9]+');
 	Route::get('/pintuaninfo/{id?}', 'Index\PC\ItemInfoController@pinTuanInfo')->name('pc.itemInfo.pinTuanInfo')->where('id', '[0-9]+');
-	Route::get('/zhibo-{id}', 'Index\PC\OptimusMaterialController@zhibo')->name('pc.optimusMaterial.zhibo')->where('id', '[0-9]+');
-	Route::get('/brand-{id}', 'Index\PC\OptimusMaterialController@brand')->name('pc.optimusMaterial.brand')->where('id', '[0-9]+');
-	Route::get('/baby-{id}', 'Index\PC\OptimusMaterialController@baby')->name('pc.optimusMaterial.baby')->where('id', '[0-9]+');
+	Route::get('/zhibo-{id?}', 'Index\PC\OptimusMaterialController@zhibo')->name('pc.optimusMaterial.zhibo')->where('id', '[0-9]+');
+	Route::get('/brand-{id?}', 'Index\PC\OptimusMaterialController@brand')->name('pc.optimusMaterial.brand')->where('id', '[0-9]+');
+	Route::get('/baby-{id?}', 'Index\PC\OptimusMaterialController@baby')->name('pc.optimusMaterial.baby')->where('id', '[0-9]+');
 	Route::get('/pintuan', 'Index\PC\OptimusMaterialController@pintuan')->name('pc.optimusMaterial.pintuan');
 	Route::get('/sales', 'Index\PC\OptimusMaterialController@sales')->name('pc.optimusMaterial.sales');
 	Route::get('/fashion', 'Index\PC\OptimusMaterialController@fashion')->name('pc.optimusMaterial.fashion');
