@@ -19,7 +19,7 @@
                 <ul class="list-inline pull-right other">
                     <li class="name">手机网站 <span class="caret"></span><div class="content"><img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ route('wx.index') }}" alt="龙琴时代手机网站二维码"></div></li>
                     <li class="name">查券客服 <span class="caret"></span><div class="content"><img src="{{ config('website.kefu_ercode') }}" alt="龙琴时代客服二维码"></div></li>
-                    <li class="name">下载APP <span class="caret"></span><div class="content"><img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ route('wx.download.app') }}" alt="龙琴时代优惠券APP下载二维码"></div></li>
+                    <li class="name"><a href="{{ route('pc.download.app') }}" title="龙琴时代优惠券APP下载" target="_blank">下载APP <span class="caret"></span><div class="content"><img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ route('wx.download.app') }}" alt="龙琴时代优惠券APP下载二维码"></div></a></li>
                 </ul>
             </div>
         </div>
