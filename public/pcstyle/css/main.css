@@ -545,6 +545,17 @@ body
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+#footer .top .category ul
+{
+	overflow: hidden;
+	width: 836px;
+	height: 20px;
+}
+#footer .top .category ul li
+{
+	padding-left: 0px;
+	padding-right: 0px;
+}
 #footer .top .category ul li a
 {
 	color: #fff;

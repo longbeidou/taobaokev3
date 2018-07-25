@@ -43,6 +43,7 @@ Route::domain(env('DOMAIN_PC'))->group(function() {
 	Route::get('/fashion', 'Index\PC\OptimusMaterialController@fashion')->name('pc.optimusMaterial.fashion');
 	Route::get('/recommend', 'Index\PC\OptimusMaterialController@recommend')->name('pc.optimusMaterial.recommend');
 	Route::get('/pintuan', 'Index\PC\OptimusMaterialController@pintuan')->name('pc.optimusMaterial.pintuan');
+	Route::get('/download/app', 'Index\Share\DownloadController@app')->name('pc.download.app');
 
 	Route::prefix('api/alimama')->group(function() {
 		Route::post('taobaoTbkDgItemCouponGet', 'Api\AlimamaController@taobaoTbkDgItemCouponGet')->name('pc.api.alimama.taobaoTbkDgItemCouponGet');
