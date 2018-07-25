@@ -75,7 +75,7 @@ $(window).scroll(function() {
           },
           success : function(result) {
               if (result == 415) {
-                  $('.ajax-tips p').append('使出吃奶的力气也没有找到更多的宝贝了~~~');
+                  $('.ajax-tips p').text('使出吃奶的力气也没有找到更多的宝贝了~~~');
                   $('.ajax-tips p').attr('status', 'off');
               } else {
                   addItems(result);
