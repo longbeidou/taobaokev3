@@ -1527,3 +1527,77 @@ body
 {
 	width: 100%;
 }
+
+.app-download-main
+{
+	background: url('/pcstyle/images/app_download_bg2.jpg') no-repeat center bottom 0px;;
+	background-size: 100%;
+	height: 600px;
+	overflow: hidden;
+	position: relative;
+}
+.app-download-main .glass-box
+{
+	position: absolute;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	background: inherit;
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-ms-filter: blur(2px);
+	-o-filter: blur(2px);
+	filter: blur(2px);
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=4, MakeShadow=false);
+}
+.app-download-main .box .app-left>img
+{
+	display: block;
+	margin-top: 60px;
+	margin-bottom: 30px;
+}
+.app-download-main .box .app-left .app-active
+{
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+.app-download-main .box .app-left .app-active .app-a-link
+{
+	width: 60%;
+	padding: 0px;
+	margin: 0px;
+	float: left;
+}
+.app-download-main .box .app-left .app-active .app-a-link a
+{
+	display: block;
+	width: 90%;
+	height: 60px;
+	margin-bottom: 30px;
+	font-size: 20px;
+	padding-top: 15px;
+}
+.app-download-main .box .app-left .app-active .app-a-link a img
+{
+	width: 25px;
+	display: inline-block;
+	padding-bottom: px;
+}
+.app-download-main .box .app-left .app-active .ercode
+{
+	width: 40%;
+	padding: 0px;
+	margin: 0px;
+	float: left;
+}
+.app-download-main .box .app-left .app-active .ercode img
+{
+	display: inline-block;
+}
+.app-download-main .box .app-right img
+{
+	display: block;
+	margin-top: 32px;
+	width: 350px;
+}
