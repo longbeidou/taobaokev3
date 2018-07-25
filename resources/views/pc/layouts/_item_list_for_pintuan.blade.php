@@ -35,6 +35,6 @@
             </div>
         </div>
     </a>
-    <data id="dataom{{ $key }}" para="{{ $couponShow->getParaStrFromUrl($item->click_url) }}&pintuan_info={{ $item->ostime }}and{{ $item->oetime }}and{{ number_format($item->jdd_price, 2) }}and{{ number_format($item->orig_price, 2) }}and{{ $item->item_description }}"></data>
+    <data id="dataom{{ $key }}" para="{{ $couponShow->getParaStrFromUrl($item->click_url) }}&pintuan_info={{ $item->ostime }}and{{ $item->oetime }}and{{ number_format($item->orig_price, 2) }}and{{ number_format($item->jdd_price, 2) }}and{{ $item->item_description }}"></data>
 </div>
 @endforeach

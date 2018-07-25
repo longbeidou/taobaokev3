@@ -34,6 +34,28 @@ class ItemInfoService extends ItemInfo
         return $result;
     }
 
+    // 制作拼团的链接
+    public function makePinTuanLink($pintuanLinkPara)
+    {
+        $result = null;
+        $domain = 'https://s.click.taobao.com/t?';
+        $paraArr = (array)$pintuanLinkPara;
+
+        if(
+          !empty($paraArr['e']) &&
+          !empty($paraArr['scm']) &&
+          !empty($paraArr['pvid']) &&
+          !empty($paraArr['app_pvid']) &&
+          !empty($paraArr['ptl']) &&
+          !empty($paraArr['union_lens'])
+        ) {
+          $linkParaStr = $this->makeParasToStr($paraArr);
+          $result = $domain.$linkParaStr;
+        }
+
+        return $result;
+    }
+
     // 组合参数
     public function makeParasToStr($paras)
     {

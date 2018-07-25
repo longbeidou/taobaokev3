@@ -36,25 +36,26 @@
                 </div>
             </div>
             <div class="col-xs-8 right">
-                <h1>
-                  @if($itemInfo->user_type == 1)
-                  <img src="/pcstyle/images/tmall.png">{{ $itemInfo->title }}</h1>
-                  @else
-                  <img src="/pcstyle/images/taobao.png">{{ $itemInfo->title }}</h1>
-                  @endif
+                <h1><img src="/pcstyle/images/ju32.png">{{ $itemInfo->title }}</h1>
                 <div class="price-box">
                     <div class="pull-left">
-                        券后价<span class="m">￥</span> <span class="price-now">
-                          @if(empty($couponInfo->coupon_amount))
+                        拼团价<span class="m">￥</span> <span class="price-now">
+                          @if(empty($pinTuanInfo->jdd_price))
                           ??.??
                           @else
-                          {{ number_format($itemInfo->zk_final_price - $couponInfo->coupon_amount, 2) }}
+                          {{ number_format($pinTuanInfo->jdd_price, 2) }}
                           @endif
                         </span> 元&nbsp;&nbsp;&nbsp;&nbsp;
-                        现价<span class="price-ori">￥{{ number_format($itemInfo->zk_final_price, 2) }}</span>元
+                        现价<span class="price-ori">￥
+                          @if(empty($pinTuanInfo->orig_price))
+                          {{ number_format($itemInfo->zk_final_price, 2) }}
+                          @else
+                          {{ number_format($pinTuanInfo->orig_price, 2) }}
+                          @endif
+                        </span>元
                     </div>
                     <div class="pull-right">
-                        已有<span class="num">{{ $itemInfo->volume }}</span>人抢购
+                        已有<span class="num">{{ $itemInfo->volume }}</span>人拼团购买
                     </div>
                 </div>
                 <div class="row take">
@@ -83,40 +84,38 @@
                                 <p>成交率 <span class="text-success">高于</span> 行业均值</p>
                             </div>
                         </div>
-                        <div class="row coupon">
+                        <div class="row coupon pintuan">
                             <div class="col-xs-4 text-center money">
-                                <span class="m">￥</span> <span class="num">
-                                  @if(empty($couponInfo->coupon_amount))
-                                  ??
+                                  @if(empty($pinTuanInfo->orig_price) || empty($pinTuanInfo->jdd_price))
+                                  <span class="m">省</span> <span class="num">??</span>
                                   @else
-                                  {{ number_format($couponInfo->coupon_amount, 0) }}
+                                  <span class="m">省</span> <span class="num">{{ number_format($pinTuanInfo->orig_price - $pinTuanInfo->jdd_price) }}</span>
                                   @endif
-                                </span>
                             </div>
-                            <div class="col-xs-5 text-center date">
-                                <p class="top">优惠券使用期限</p>
-                                <p class="bottem">起始日期：{{ $couponInfo->coupon_start_time or date('Y-m-d', time()) }}</p>
-                                <p class="bottem">结束日期：{{ $couponInfo->coupon_end_time or date('Y-m-', time()).'??' }}</p>
+                            <div class="col-xs-6 text-center date">
+                                <p class="top">拼团有效期</p>
+                                <p class="bottem">拼团开始时间：{{ $pinTuanInfo->ostime or date('Y-m-d', time()) }}</p>
+                                <p class="bottem">拼团结束时间：{{ $pinTuanInfo->oetime or date('Y-m-', time()).'??' }}</p>
                             </div>
-                            <div class="col-xs-3 text-center link">
-                                @if(empty($couponLink))
-                                <a href="{{ route('pc.search.all') }}?q={{ $itemInfo->title }}" target="_blank">点击查看</a>
+                            <div class="col-xs-2 text-center link">
+                                @if(empty($pinTuanLink))
+                                <a href="{{ route('pc.optimusMaterial.pintuan') }}" target="_self">点击查看</a>
                                 @else
-                                <a href="{{ $couponLink }}" rel="nofollow" target="_blank">立即领券</a>
+                                <a href="{{ $pinTuanLink }}" rel="nofollow" target="_blank">立即拼团</a>
                                 @endif
                             </div>
-                            <div class="circle-right"></div>
+                            <!-- <div class="circle-right"></div> -->
                             <div class="circle-left-1"></div>
                             <div class="circle-left-2"></div>
                             <div class="circle-left-3"></div>
                         </div>
                     </div>
                     <div class="col-xs-3 text-right ercode">
-                        <p class="tips text-center">手机淘宝扫码领券购买</p>
-                        @if(empty($couponLink))
-                        <img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ route('wx.itemInfo.iteminfo', ['id'=>$id]) }}">
+                        <p class="tips text-center">手机淘宝扫码拼团购买</p>
+                        @if(empty($pinTuanLink))
+                        <img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ route('wx.itemInfo.pinTuanInfo', ['id'=>$id]) }}">
                         @else
-                        <img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ $couponLink }}">
+                        <img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ urlencode($pinTuanLink) }}">
                         @endif
                     </div>
                 </div>

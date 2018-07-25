@@ -50,7 +50,7 @@ function addItems(data)
         price_ori = numberFormat(item.orig_price)
         urlArr = item.click_url.split('?')
         itemhtml += '<div class="col-xs-3 item-box">'
-        itemhtml += '<a href="{{ route('pc.itemInfo.pinTuanInfo') }}/'+item.num_iid+'?'+urlArr[1]+'&pintuan_info='+item.ostime+'and'+item.oetime+'and'+item.jdd_price+'and'+item.orig_price+'and'+item.item_description+'" target="_blank">'
+        itemhtml += '<a href="{{ route('pc.itemInfo.pinTuanInfo') }}/'+item.num_iid+'?'+urlArr[1]+'&pintuan_info='+item.ostime+'and'+item.oetime+'and'+item.orig_price+'and'+item.jdd_price+'and'+item.item_description+'" target="_blank">'
         itemhtml += '<div class="item"><div class="img-box"><img src="'+item.pict_url+'">'
         itemhtml += '<div class="item-desc">'+desc+'</div></div>'
         itemhtml += '<h2><img src="/pcstyle/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr><div class="info">'

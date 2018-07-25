@@ -13,7 +13,6 @@
     </header>
     @include('pc.layouts._nav_tab')
     @include('pc.search._search_dashboard')
-    @include('pc.layouts._ajax_tips')
     <div class="container-fluid" id="recommend">
         <div class="container">
             <div class="row">
@@ -30,6 +29,7 @@
             </div>
         </div>
     </div>
+    @include('pc.layouts._ajax_tips')
     @include('pc.layouts._footer_adv')
     @include('pc.layouts._footer')
 @stop
