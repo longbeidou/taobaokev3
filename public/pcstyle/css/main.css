@@ -1601,3 +1601,20 @@ body
 	margin-top: 32px;
 	width: 350px;
 }
+
+#toTop
+{
+	color: #ed2a7a;
+	position: fixed;
+	right: 5px;
+	bottom: 100px;
+	z-index: 1000;
+	display: none;
+	cursor: pointer;
+}
+#toTop span
+{
+	font-size: 40px;
+	display: block;
+	line-height: 0px;
+}

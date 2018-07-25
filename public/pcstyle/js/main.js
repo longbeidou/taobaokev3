@@ -58,3 +58,20 @@ $(window).scroll(function() {
         $('.tqg-time').css('top', '139px')
     }
 });
+
+// 回到顶部
+$(function() {
+    var topHtml = '<span class="glyphicon glyphicon-chevron-up text-center"></span><br>回顶部'
+    var scrollDiv = document.createElement('div');
+    $(scrollDiv).attr('id', 'toTop').html(topHtml).appendTo('body');
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 800) {
+            $('#toTop').fadeIn();
+        } else {
+            $('#toTop').fadeOut();
+        }
+    });
+    $('#toTop').click(function() {
+        $('body,html').animate({ scrollTop: 0 }, 800);
+    })
+});
