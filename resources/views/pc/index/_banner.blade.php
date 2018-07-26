@@ -40,14 +40,14 @@
                         <div class="row">
                             <div class="col-xs-2 text-right cate-left">
                                 <a href="{{ route('pc.goodsCategorys.categoryTwo', ['id'=>$twoCategory['subCategoryInfo']->id]) }}" target="_blank" title="{{ $twoCategory['subCategoryInfo']->name }}淘宝天猫优惠券">
-                                    <span>{{ $twoCategory['subCategoryInfo']->name }}<img data-src="{{ $twoCategory['subCategoryInfo']->image }}" alt="{{ $twoCategory['subCategoryInfo']->name }}优惠券图片"></span>
+                                    <span>{{ $twoCategory['subCategoryInfo']->name }}<img data-src="{{ $twoCategory['subCategoryInfo']->image }}" src="/pcstyle/images/loading.gif" alt="{{ $twoCategory['subCategoryInfo']->name }}优惠券图片"></span>
                                 </a>
                                 <i class="glyphicon glyphicon-menu-right"></i>
                             </div>
                             <div class="col-xs-10 cate-right">
                                 <ul class="list-inline">
                                     @foreach($twoCategory['sonList'] as $threeCategory)
-                                    <li class="text-left"><a href="{{ route('pc.goodsCategorys.categorySon', ['id'=>$threeCategory->id]) }}" target="_blank" title="{{ $threeCategory->name }}淘宝天猫优惠券"><img data-src="{{ $threeCategory->image }}" alt="{{ $threeCategory->name }}优惠券图片"> {{ $threeCategory->name }}</a></li>
+                                    <li class="text-left"><a href="{{ route('pc.goodsCategorys.categorySon', ['id'=>$threeCategory->id]) }}" target="_blank" title="{{ $threeCategory->name }}淘宝天猫优惠券"><img data-src="{{ $threeCategory->image }}" src="/pcstyle/images/loading.gif" alt="{{ $threeCategory->name }}优惠券图片"> {{ $threeCategory->name }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
