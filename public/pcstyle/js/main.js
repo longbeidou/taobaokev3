@@ -4,6 +4,12 @@ $('#banner-box .category ul li').bind('mouseover', function() {
     no = '#'+this.getAttribute('no');
     m = $(no).css('display', 'block');
     $('#banner-box .content-box .subCategory-box').attr('no', no);
+    // 设置图片的懒加载
+    imgId = no+' img';
+    imgSrc = $(imgId).each(function(index, imgObj){
+      imgSrc = $(this).attr('data-src')
+      $(this).attr('src', imgSrc)
+    })
 });
 $('#banner-box .category ul li').bind('mouseout', function() {
     $('#banner-box .content-box .subCategory-box').css('display', 'none');
