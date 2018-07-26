@@ -13,16 +13,22 @@
                     <ol class="carousel-indicators">
                         <li data-target="#banner-list" data-slide-to="0" class="active"></li>
                         <li data-target="#banner-list" data-slide-to="1" class=""></li>
+                        <li data-target="#banner-list" data-slide-to="2" class=""></li>
                     </ol>
                     <div class="carousel-inner banners" role="listbox">
                         <div class="item active">
-                            <a href="" target="_blank">
-                                <img src="http://placehold.it/1013x510" alt="">
+                            <a href="{{ route('pc.optimusMaterial.zhibo', ['id'=>0]) }}" title="淘宝天猫优惠券直播专场" target="_blank">
+                                <img src="http://placehold.it/1013x510" alt="淘宝天猫优惠券直播专场banner">
                             </a>
                         </div>
                         <div class="item">
-                            <a href="" target="_blank">
-                              <img src="http://placehold.it/1013x510" alt="">
+                            <a href="{{ route('pc.optimusMaterial.brand', ['id'=>0]) }}" title="大牌淘宝内部优惠券专场" target="_blank">
+                              <img src="http://placehold.it/1013x510" alt="大牌淘宝内部优惠券专场banner">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="{{ route('pc.optimusMaterial.baby', ['id'=>0]) }}" title="母婴类淘宝优惠券专场" target="_blank">
+                              <img src="http://placehold.it/1013x510" alt="母婴类淘宝优惠券专场banner">
                             </a>
                         </div>
                     </div>
