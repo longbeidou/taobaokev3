@@ -1,6 +1,6 @@
 @inject('couponShow', 'App\Presenters\CouponListPresenter')
 @foreach($optimusMaterialItems as $key => $item)
-@if(!empty($item->coupon_click_url))
+@if(!empty($item->coupon_click_url) && !empty($item->coupon_start_time))
 <div class="col-xs-3 item-box">
     <a no='dataom{{ $key }}' href="{{ route('pc.itemInfo.iteminfo', ['id'=>$item->num_iid]) }}" title="{{ $item->title }}" target="_blank">
         <div class="item">
