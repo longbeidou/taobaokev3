@@ -5,7 +5,7 @@
             <div class="col-xs-6">
                 <div class="row">
                     <form action="{{ route('pc.search.all') }}" method="get">
-                        <div class="col-xs-9 form-box"><input class="form-control" type="text" name="q" placeholder="请输入要搜索的商品名..."></div>
+                        <div class="col-xs-9 form-box"><input class="form-control" type="text" name="q" required placeholder="请输入要搜索的商品名..."></div>
                         <div class="col-xs-3 form-box"><button class="form-control btn btn-danger" type="submit">搜索</button></div>
                     </form>
                 </div>
