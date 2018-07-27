@@ -29,8 +29,12 @@
    </script>
    {!! config('website.wx_search_engines_push_js') !!}
    <!-- 站长统计 -->
-   <div style="position: absolute; bottom: 1px; z-index: -10;">
+   <div style="position: absolute; bottom: 1px; z-index: -10; width: 20px; padding-left: 20px; overflow: hidden;">
+     @if(env('IS_APP'))
+     {!! config('website.analysis_js_app') !!}
+     @else
      {!! config('website.analysis_js_wx') !!}
+     @endif
    </div>
 </body>
 </html>

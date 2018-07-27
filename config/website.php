@@ -36,8 +36,14 @@ return [
 	// 'font_icon_src' => '//at.alicdn.com/t/font_581943_b2zuivwy5g8bmx6r.css',
 	'font_icon_src' => '/css/selfIcon/iconfont.css',
 
-	// 网站统计代码
-	'analysis_js_wx' => '<script src="https://s19.cnzz.com/z_stat.php?id=1274082543&web_id=1274082543" language="JavaScript"></script>',
+	// 网站统计代码-无线端
+	'analysis_js_wx' => env('ANALYSIS_JS_WX'),
+
+	// 网站统计代码-PC端
+	'analysis_js_app' => env('ANALYSIS_JS_APP'),
+
+	// 网站统计代码-PC端
+	'analysis_js_pc' => env('ANALYSIS_JS_PC'),
 
 	// 无线端搜素引擎自动推送
 	'wx_search_engines_push_js' => '<script src="/common/js/wx/wx_search_engines_push.js" language="JavaScript"></script>',
