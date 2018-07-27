@@ -18,17 +18,17 @@
                     <div class="carousel-inner banners" role="listbox">
                         <div class="item active">
                             <a href="{{ route('pc.optimusMaterial.zhibo', ['id'=>0]) }}" title="淘宝天猫优惠券直播专场" target="_blank">
-                                <img src="/pcstyle/images/banner_zhibo.jpg" alt="淘宝天猫优惠券直播专场banner">
+                                <img src="http://img.52010000.cn/banners/pc/banner_zhibo.jpg" alt="淘宝天猫优惠券直播专场banner">
                             </a>
                         </div>
                         <div class="item">
                             <a href="{{ route('pc.optimusMaterial.brand', ['id'=>0]) }}" title="大牌淘宝内部优惠券专场" target="_blank">
-                              <img src="/pcstyle/images/banner_brand.jpg" alt="大牌淘宝内部优惠券专场banner">
+                              <img src="http://img.52010000.cn/banners/pc/banner_brand.jpg" alt="大牌淘宝内部优惠券专场banner">
                             </a>
                         </div>
                         <div class="item">
                             <a href="{{ route('pc.optimusMaterial.baby', ['id'=>0]) }}" title="母婴类淘宝优惠券专场" target="_blank">
-                              <img src="/pcstyle/images/banner_baby.jpg" alt="母婴类淘宝优惠券专场banner">
+                              <img src="http://img.52010000.cn/banners/pc/banner_baby.jpg" alt="母婴类淘宝优惠券专场banner">
                             </a>
                         </div>
                     </div>
