@@ -31,9 +31,9 @@
    <!-- 站长统计 -->
    <div style="position: absolute; bottom: 1px; z-index: -10; width: 20px; padding-left: 20px; overflow: hidden;">
      @if(env('IS_APP'))
-     {!! config('website.analysis_js_app') !!}
+     <script src="{!! config('website.analysis_js_app') !!}" language="JavaScript"></script>
      @else
-     {!! config('website.analysis_js_wx') !!}
+     <script src="{!! config('website.analysis_js_wx') !!}" language="JavaScript"></script>
      @endif
    </div>
 </body>

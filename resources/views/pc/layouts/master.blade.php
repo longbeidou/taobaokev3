@@ -38,7 +38,7 @@
         @section('footJs')
         @show
         <div style="position: absolute; bottom: 1px; z-index: -10; width: 20px; padding-left: 20px; overflow: hidden;">
-          {!! config('website.analysis_js_pc') !!}
+          <script src="{!! config('website.analysis_js_pc') !!}" language="JavaScript"></script>
         </div>
     </body>
 </html>
