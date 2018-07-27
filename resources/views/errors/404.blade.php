@@ -86,9 +86,19 @@
             <h1>404页面</h1>
             <p class="lead">您访问的页面已失效，请访问其他页面查看信息。</p>
             <ul class="list-inline">
+              <?php
+                $domain = $_SERVER['HTTP_HOST'];
+                $envPCDomain = env('DOMAIN_PC');
+              ?>
+              @if($domain == $envPCDomain)
               <li><a href="{{ route('pc.index') }}">首页</a></li>
               <li><a href="{{ route('pc.allGoodsCategory.index') }}">商品分类</a></li>
               <li><a href="{{ route('pc.optimusMaterial.zhibo', ['id'=>0]) }}">好券直播</a></li>
+              @else
+              <li><a href="{{ route('wx.index') }}">首页</a></li>
+              <li><a href="{{ route('wx.allGoodsCategory.index') }}">商品分类</a></li>
+              <li><a href="{{ route('wx.optimusMaterial.zhibo', ['id'=>0]) }}">好券直播</a></li>
+              @endif
             </ul>
           </div>
       </div>
