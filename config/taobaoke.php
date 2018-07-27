@@ -3,6 +3,8 @@
 return [
 	'appkey' => env('ALIMAMA_APPKEY'),
 	'secretKey' => env('ALIMAMA_SECRETKEY'),
+	// 返回数据的格式，分为json和xml两种
+	'format' => 'json',
 	// 淘口令的选项如果存在则按照选项的值来生成，否则将会被替换为商品信息
 	'tpwd' => [
 		'logo' => '',

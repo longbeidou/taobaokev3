@@ -47,11 +47,12 @@ abstract class Base implements Contract
 			define("TOP_AUTOLOADER_PATH", dirname(__FILE__));
 		}
 
-		date_default_timezone_set('Asia/Shanghai'); 
+		date_default_timezone_set('Asia/Shanghai');
 
 		$this->c = new TopClient;
 	    $this->c->appkey = config('taobaoke.appkey');
 	    $this->c->secretKey = config('taobaoke.secretKey');
+			$this->c->format = config('taobaoke.format');
 
 	    $this->setOptions = new SetOptions();
 	}
