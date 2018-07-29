@@ -10,6 +10,6 @@
 
 [龙琴时代优惠券购物网站](https://www.52010000.cn/)PC端：https://www.52010000.cn/
 
-[龙琴时代优惠券购物网站](https://m.52010000.cn/)无线端：https://m.52010000.cn/
+[龙琴时代优惠券购物网站](https://m.52010000.cn/)无线端：https://m.52010000.cn/（请在手机上访问）
 
 [龙琴时代优惠券购物网站](https://www.52010000.cn/download/app)APP端：https://www.52010000.cn/download/app
