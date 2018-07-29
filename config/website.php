@@ -33,7 +33,6 @@ return [
 	'wx_tqg_hour' => ['00', '08', '10', '13', '15', '17', '19', '21', '23'],
 
 	// 网站专用的fonticon地址
-	// 'font_icon_src' => '//at.alicdn.com/t/font_581943_b2zuivwy5g8bmx6r.css',
 	'font_icon_src' => '/css/selfIcon/iconfont.css',
 
 	// 网站统计代码-无线端
