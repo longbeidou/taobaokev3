@@ -8,7 +8,8 @@ use App\Services\PC\IndexService;
 
 class IndexController extends Controller
 {
-    const PAGE_SIZE = 100;
+    const PAGE_SIZE = 40;
+    const PAGE_SIZE_INDEX = 30;
 
     public $repository;
     public $couponAdzoneId; // 优惠券api获取的数据
@@ -25,8 +26,8 @@ class IndexController extends Controller
     {
         $title = config('website.indexTitle');
         $adzoneId = $this->couponAdzoneId;
-        $pageSize = self::PAGE_SIZE;
-        $couponItems = $this->repository->recommendCoupons(['adzone_id' => $this->couponAdzoneId, 'page_size'=>self::PAGE_SIZE]);
+        $pageSize = self::PAGE_SIZE_INDEX;
+        $couponItems = $this->repository->recommendCoupons(['adzone_id' => $this->couponAdzoneId, 'page_size'=>self::PAGE_SIZE_INDEX]);
         $topGoodsCategory = $this->repository->topGoodsCategory(['order' => 'desc', 'level' => 1]);
         $subCategory = $this->repository->subCategory($topGoodsCategory);
         $sonCategory = $this->repository->sonCategory($subCategory);

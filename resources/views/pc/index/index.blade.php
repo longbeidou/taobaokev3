@@ -27,7 +27,9 @@
     <div class="container-fluid coupon-list">
         <div class="container">
             <div class="row">
+                @if($couponItems !== false)
                 @include('pc.layouts._item_list_for_copon')
+                @endif
             </div>
         </div>
     </div>
