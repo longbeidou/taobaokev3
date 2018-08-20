@@ -6,6 +6,9 @@
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
         @section('title')
         @show
+        <!-- 根据浏览器来进行跳转 -->
+        <script src="/js/uaredirect.js" type="text/JavaScript"></script>
+        <script type="text/javascript">uaredirect("http://{{ env('DOMAIN_WX') }}/");</script>
         <!-- Bootstrap -->
         <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <!-- 可选的 Bootstrap 主题文件 -->
