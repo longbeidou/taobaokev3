@@ -73,6 +73,7 @@
       var fragment = document.createDocumentFragment();
       var li;
       for (var i = 0, count = data.length; i < count; i++) {
+        if (typeof(data[i].orig_price) != 'undefined' && typeof(data[i].jdd_price) != 'undefined') {
           urlParaArr = data[i].click_url.split('?')
           if (urlParaArr[1] == null) {
             urlPara = '';
@@ -115,6 +116,7 @@
           str +=        '</div></div></div></div></a>'
           li.innerHTML = str;
           fragment.appendChild(li);
+        }
       }
       return fragment;
     };
