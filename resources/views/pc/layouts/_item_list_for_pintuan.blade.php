@@ -1,5 +1,6 @@
 @inject('couponShow', 'App\Presenters\CouponListPresenter')
 @foreach($pinTuanItems as $key => $item)
+@if(!empty($item->jdd_price))
 <div class="col-xs-3 item-box">
     <a no='dataom{{ $key }}' href="{{ route('pc.itemInfo.pinTuanInfo', ['id'=>$item->item_id]) }}" title="{{ $item->title }}" target="_blank">
         <div class="item">
@@ -37,4 +38,5 @@
     </a>
     <data id="dataom{{ $key }}" para="{{ $couponShow->getParaStrFromUrl($item->click_url) }}&pintuan_info={{ $item->ostime }}and{{ $item->oetime }}and{{ number_format($item->orig_price, 2) }}and{{ number_format($item->jdd_price, 2) }}and{{ $item->item_description }}"></data>
 </div>
+@endif
 @endforeach

@@ -2,6 +2,7 @@
     <ul class="mui-table-view lbd-goods-list-info">
         @inject('material', 'App\Presenters\OptimusMaterialPresenter')
         @foreach($items as $key => $item)
+          @if(!empty($item->jdd_price))
           <li class="mui-table-view-cell mui-media">
             <a class="addPara" no='data{{ $key }}' href="{{ route('wx.itemInfo.pinTuanInfo') }}/{{ $item->item_id }}">
               <data id="data{{ $key }}" link='{{ $material->getParaStrFromUrl($item->click_url) }}' pintuan="pintuan_info={{ $item->ostime }}and{{ $item->oetime }}and{{ $item->orig_price }}and{{ $item->jdd_price }}and{{ $item->item_description }}"></data>
@@ -37,6 +38,7 @@
               </div>
             </a>
           </li>
+          @endif
         @endforeach
     </ul>
 </div>
