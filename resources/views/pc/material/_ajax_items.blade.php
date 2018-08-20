@@ -51,7 +51,7 @@ function addItems(data)
         price_ori = numberFormat(item.zk_final_price)
         urlArr = item.coupon_click_url.split('?')
         itemhtml += '<div class="col-xs-3 item-box">'
-        itemhtml += '<a href="{{ route('pc.itemInfo.iteminfo') }}/'+item.num_iid+'?'+urlArr[1]+'&coupon_info='+timestempsToDate(item.coupon_start_time)+'and'+timestempsToDate(item.coupon_end_time)+'and'+item.coupon_amount+'" target="_blank">'
+        itemhtml += '<a href="{{ route('pc.itemInfo.iteminfo') }}/'+item.item_id+'?'+urlArr[1]+'&coupon_info='+timestempsToDate(item.coupon_start_time)+'and'+timestempsToDate(item.coupon_end_time)+'and'+item.coupon_amount+'" target="_blank">'
         itemhtml += '<div class="item"><div class="img-box"><img src="'+item.pict_url+'">'
         itemhtml += '<div class="item-desc">'+desc+'</div></div>'
         itemhtml += '<h2><img src="/pcstyle/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr><div class="info">'

@@ -94,7 +94,7 @@
           str = '';
           li = document.createElement('li');
           li.className = 'mui-table-view-cell mui-media';
-          str += '<a class="addPara" no="data'+pageNo+'a'+i+'" href="'+targetURL+'/'+data[i].num_iid+'">'
+          str += '<a class="addPara" no="data'+pageNo+'a'+i+'" href="'+targetURL+'/'+data[i].item_id+'">'
           str +=  '<data id="data'+pageNo+'a'+i+'" link="'+urlPara+'" pintuan="pintuan_info='+data[i].ostime+'and'+data[i].oetime+'and'+data[i].orig_price+'and'+data[i].jdd_price+'and'+data[i].item_description+'"></data>'
           str +=  '<div class="mui-row">'
           str +=    '<div class="mui-col-xs-4 goods-image"><img src="'+data[i].pict_url+'"/></div>'

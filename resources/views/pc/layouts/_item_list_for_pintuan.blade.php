@@ -1,7 +1,7 @@
 @inject('couponShow', 'App\Presenters\CouponListPresenter')
 @foreach($pinTuanItems as $key => $item)
 <div class="col-xs-3 item-box">
-    <a no='dataom{{ $key }}' href="{{ route('pc.itemInfo.pinTuanInfo', ['id'=>$item->num_iid]) }}" title="{{ $item->title }}" target="_blank">
+    <a no='dataom{{ $key }}' href="{{ route('pc.itemInfo.pinTuanInfo', ['id'=>$item->item_id]) }}" title="{{ $item->title }}" target="_blank">
         <div class="item">
             <div class="img-box">
               <img class="lazy" data-original="{{ $item->pict_url }}">

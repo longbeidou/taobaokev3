@@ -4,7 +4,7 @@
         @foreach($items as $key => $item)
           @if(!empty($item->coupon_click_url))
           <li class="mui-table-view-cell mui-media">
-            <a class="addPara" no='data{{ $key }}' href="{{ route('wx.itemInfo.iteminfo') }}/{{ $item->num_iid }}">
+            <a class="addPara" no='data{{ $key }}' href="{{ route('wx.itemInfo.iteminfo') }}/{{ $item->item_id }}">
               <data id="data{{ $key }}" link='{{ $material->getParaStrFromUrl($item->coupon_click_url) }}' coupon="coupon_info={{ date('Y-m-d', $item->coupon_start_time/1000) }}and{{ date('Y-m-d', $item->coupon_end_time/1000) }}and{{ $item->coupon_amount }}"></data>
               <div class="mui-row">
                 <div class="mui-col-xs-4 goods-image">
