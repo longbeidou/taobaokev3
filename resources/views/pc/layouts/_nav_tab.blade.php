@@ -17,9 +17,11 @@
                     <li class="{{ $navTab->pcNavTabActive(route('pc.optimusMaterial.sales')) }}"><a href="{{ route('pc.optimusMaterial.sales') }}" title="特价淘宝天猫优惠券专场" target="_blank">特惠专场</a></li>
                 </ul>
                 <ul class="list-inline pull-right other">
-                    <li class="name">手机网站 <span class="caret"></span><div class="content"><img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ route('wx.index') }}" alt="龙琴时代手机网站二维码"></div></li>
+                    <li class="name">手机网站 <span class="caret"></span><div class="content"><img src="/pcstyle/images/e_wx.png" alt="龙琴时代手机网站二维码"></div></li>
+                    <!-- <li class="name">手机网站 <span class="caret"></span><div class="content"><img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ route('wx.index') }}" alt="龙琴时代手机网站二维码"></div></li> -->
                     <li class="name">查券客服 <span class="caret"></span><div class="content"><img src="{{ config('website.kefu_ercode') }}" alt="龙琴时代客服二维码"></div></li>
-                    <li class="name {{ $navTab->pcNavTabActive(route('pc.download.app')) }}"><a href="{{ route('pc.download.app') }}" title="龙琴时代优惠券APP下载" target="_blank">下载APP <span class="caret"></span><div class="content"><img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ route('wx.download.app') }}" alt="龙琴时代优惠券APP下载二维码"></div></a></li>
+                    <li class="name {{ $navTab->pcNavTabActive(route('pc.download.app')) }}"><a href="{{ route('pc.download.app') }}" title="龙琴时代优惠券APP下载" target="_blank">下载APP <span class="caret"></span><div class="content"><img src="/pcstyle/images/e_app.png" alt="龙琴时代优惠券APP下载二维码"></div></a></li>
+                    <!-- <li class="name {{ $navTab->pcNavTabActive(route('pc.download.app')) }}"><a href="{{ route('pc.download.app') }}" title="龙琴时代优惠券APP下载" target="_blank">下载APP <span class="caret"></span><div class="content"><img src="http://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ route('wx.download.app') }}" alt="龙琴时代优惠券APP下载二维码"></div></a></li> -->
                 </ul>
             </div>
         </div>
