@@ -5,7 +5,11 @@
           @if(!empty($item->coupon_click_url))
           <li class="mui-table-view-cell mui-media">
             <a class="addPara" no='data{{ $key }}' href="{{ route('wx.itemInfo.iteminfo') }}/{{ $item->item_id }}">
+              @empty($item->coupon_start_time)
+              <data id="data{{ $key }}" link='{{ $material->getParaStrFromUrl($item->coupon_click_url) }}' coupon="coupon_info={{ date('Y-m-d', time()) }}and{{ date('Y-m-d', time()+24*3600) }}and{{ $item->coupon_amount }}"></data>
+              @else
               <data id="data{{ $key }}" link='{{ $material->getParaStrFromUrl($item->coupon_click_url) }}' coupon="coupon_info={{ date('Y-m-d', $item->coupon_start_time/1000) }}and{{ date('Y-m-d', $item->coupon_end_time/1000) }}and{{ $item->coupon_amount }}"></data>
+              @endempty
               <div class="mui-row">
                 <div class="mui-col-xs-4 goods-image">
                   <img data-lazyload="{{ $item->pict_url }}"/>
