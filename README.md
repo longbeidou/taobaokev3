@@ -17,3 +17,49 @@
 [龙琴时代优惠券购物网站](https://m.52010000.cn/)无线端：https://m.52010000.cn/ （请在手机上访问）
 
 [龙琴时代优惠券购物网站](https://www.52010000.cn/download/app)APP端：https://www.52010000.cn/download/app
+
+
+> 基础安装
+
+## 运行环境要求
+
+- PHP >= 7.0
+
+克隆源代码到本地：
+
+    > git clone git@github.com:longbeidou/taobaokev3.git
+    
+#### 进入项目目录
+
+    > cd taobaokev3
+    
+#### 安装扩展包依赖
+
+	composer install
+
+#### 生成配置文件
+
+```
+cp .env.example .env
+```
+
+你可以根据情况修改 `.env` 文件里的内容，如数据库连接、缓存、ALIMAMA_APPKEY等配置信息
+
+#### 迁移数据库
+
+```shell
+$ php artisan migrate --seed
+```
+
+#### 生成秘钥
+
+```shell
+$ php artisan key:generate
+```
+
+#### 配置 hosts 文件
+
+    echo "127.0.0.1   taobaokev3.test" | sudo tee -a /etc/hosts
+    
+至此, 安装完成
+
