@@ -50,7 +50,7 @@ $(function() {
         threshold: 200,
         failure_limit : 20,
         skip_invisible : false,
-        placeholder: "/pcstyle/images/loading.gif"
+        placeholder: "/storage/pc/images/loading.gif"
     });
   });
 

@@ -187,7 +187,7 @@ body
 }
 #banner-box .category
 {
-	/* background-image: url('/pcstyle/images/goods_category_bg.jpg'); */
+	/* background-image: url('/storage/pc/images/goods_category_bg.jpg'); */
 	background-color: rgba(0,0,0,0.6);
 	height: 510px;
 	overflow: hidden;
@@ -1533,7 +1533,7 @@ body
 
 .app-download-main
 {
-	background: url('/pcstyle/images/app_download_bg2.jpg') no-repeat center bottom 0px;;
+	background: url('/storage/pc/images/app_download_bg2.jpg') no-repeat center bottom 0px;;
 	background-size: 100%;
 	height: 600px;
 	overflow: hidden;
