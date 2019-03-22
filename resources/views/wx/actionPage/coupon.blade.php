@@ -16,7 +16,7 @@
         @if($showClient)
 				<a class="mui-control-item" href="#item2mobile">链接方式</a>
         @endif
-        <a class="mui-control-item" href="#item3mobile">龙琴时代APP</a>
+        <a class="mui-control-item" href="#item3mobile">{{ env('SITE_NAME') }}APP</a>
 			</div>
       @if($showClient)
 			<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4" style="background-color: #ED2A7A;"></div>
@@ -77,9 +77,9 @@
 							<ul class="mui-table-view">
                 @include('wx.actionPage._app_download')
 								<li class="mui-table-view-cell">
-									<h5>龙琴时代APP领券使用说明：</h5>
+									<h5>{{ env('SITE_NAME') }}APP领券使用说明：</h5>
 									<p>
-										1.通过龙琴时代APP抢优惠券的成功率最高<br/>
+										1.通过{{ env('SITE_NAME') }}APP抢优惠券的成功率最高<br/>
 										2.优惠券每天24小时实时更新，保证优惠券的时效性<br />
                     3.商品种类涉及上百个大类，上千个小分类，总能找到自己喜欢的宝贝<br />
                     4.独家分享上千家合作的淘宝天猫店铺的大额优惠券，领券最低一折购物<br />
@@ -96,7 +96,7 @@
 	</div>
 @stop
 @section('footJs')
-<script src="/wxstyle/js/clipboard.min.js"></script>
+<script src="/storage/wx/js/clipboard.min.js"></script>
 <script type="text/javascript" charset="utf-8">
   mui.init();
   @if($showClient)

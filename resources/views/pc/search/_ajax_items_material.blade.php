@@ -37,7 +37,7 @@ function addItems(data)
             }
             itemhtml += '<div class="col-xs-3 item-box"><a no="ddata'+page_no+'-'+i+'" href="{{ route('pc.itemInfo.iteminfo') }}/'+item.num_iid+'?'+urlArr[1]+'&coupon_info='+item.coupon_start_time+'and'+item.coupon_end_time+'and'+couponInfoArr[1]+'" title="'+item.title+'" target="_blank"><div class="item">'
             itemhtml +=       '<div class="img-box"><img class="lazy" src="'+item.pict_url+'"></div>'
-            itemhtml +=       '<h2><img src="/pcstyle/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr>'
+            itemhtml +=       '<h2><img src="/storage/pc/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr>'
             itemhtml +=       '<div class="info">'
             itemhtml +=         '<div class="row price-now"><div class="col-xs-12"><div class="pull-left">现价￥'+item.zk_final_price+'</div><div class="pull-right">月销:'+item.volume+'</div></div></div>'
             itemhtml +=         '<div class="row price-ori"><div class="col-xs-12">'

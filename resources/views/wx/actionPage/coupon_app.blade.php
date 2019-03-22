@@ -76,7 +76,7 @@
 	</div>
 @stop
 @section('footJs')
-<script src="/wxstyle/js/clipboard.min.js"></script>
+<script src="/storage/wx/js/clipboard.min.js"></script>
 <script type="text/javascript" charset="utf-8">
   mui.init();
   @if($showClient)

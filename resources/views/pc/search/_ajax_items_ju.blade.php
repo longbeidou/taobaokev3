@@ -47,7 +47,7 @@ function addItems(data)
         }
         itemhtml += '<div class="row ju-box"><div class="col-xs-4 ju-image">'
         itemhtml += '<a rel="nofollow" href="'+item.pc_url+'" target="_blank"><img src="'+item.pic_url_for_w_l+'"></a></div><div class="col-xs-8 ju-info">'
-        itemhtml += '<h2><a rel="nofollow" href="'+item.pc_url+'" target="_blank"><img src="/pcstyle/images/ju32.png" alt="聚划算logo"> '+item.title+'</a></h2>'
+        itemhtml += '<h2><a rel="nofollow" href="'+item.pc_url+'" target="_blank"><img src="/storage/pc/images/ju32.png" alt="聚划算logo"> '+item.title+'</a></h2>'
         itemhtml += '<div class="ju-special"><span class="tips">产品特点：</span>'
         itemhtml += '<ul class="list-inline"><li>'+item.item_usp_list.string[0]+'</li><li>'+item.item_usp_list.string[1]+'</li><li>'+item.item_usp_list.string[2]+'</li></ul>'
         itemhtml += '</div><div class="row ju-bottom"><div class="col-xs-8 ju-take-box">'

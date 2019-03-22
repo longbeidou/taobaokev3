@@ -43,10 +43,10 @@
 </div>
 @stop
 @section('footJs')
-<script src="/wxstyle/js/mui.pullToRefresh.js"></script>
-<script src="/wxstyle/js/mui.pullToRefresh.material.js"></script>
-<script src="/wxstyle/js/mui.lazyload.js"></script>
-<script src="/wxstyle/js/mui.lazyload.img.js"></script>
+<script src="/storage/wx/js/mui.pullToRefresh.js"></script>
+<script src="/storage/wx/js/mui.pullToRefresh.material.js"></script>
+<script src="/storage/wx/js/mui.lazyload.js"></script>
+<script src="/storage/wx/js/mui.lazyload.img.js"></script>
 <script>
 	mui.init();
   //	图片懒加载
@@ -54,7 +54,7 @@
     var active_list = document.getElementById('active-img');
     $(document).imageLazyload({
       diff: 700,
-      placeholder: '/wxstyle/images/lazyimg.gif'
+      placeholder: '/storage/wx/images/lazyimg.gif'
     });
     document.getElementById('slider').addEventListener('slide', function(e) {
       no = e.detail.slideNumber
@@ -62,7 +62,7 @@
       var list = document.getElementById(current_id);
       $(document).imageLazyload({
         diff: 700,
-        placeholder: '/wxstyle/images/lazyimg.gif'
+        placeholder: '/storage/wx/images/lazyimg.gif'
       });
     });
   })(mui);

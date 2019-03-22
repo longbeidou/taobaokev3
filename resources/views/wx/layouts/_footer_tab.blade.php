@@ -9,7 +9,7 @@
         <span class="mui-tab-label">分类</span>
     </a>
     @if(!env('IS_APP'))
-    <a title="龙琴时代APP下载" class="mui-tab-item a-can-do {{ $footer->isActiveAction(route('wx.download.app')) }}" href="{{ route('wx.download.app') }}">
+    <a title="{{ env('SITE_NAME') }}APP下载" class="mui-tab-item a-can-do {{ $footer->isActiveAction(route('wx.download.app')) }}" href="{{ route('wx.download.app') }}">
         <span class="mui-icon mui-icon-download"></span>
         <span class="mui-tab-label">下载APP</span>
     </a>

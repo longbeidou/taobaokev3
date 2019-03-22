@@ -23,22 +23,22 @@
 	</div>
 @stop
 @section('footJs')
-<script src="/wxstyle/js/mui.lazyload.js"></script>
-<script src="/wxstyle/js/mui.lazyload.img.js"></script>
+<script src="/storage/wx/js/mui.lazyload.js"></script>
+<script src="/storage/wx/js/mui.lazyload.img.js"></script>
 <script type="text/javascript" charset="utf-8">
   mui.init();
   (function($) {
       var list = document.getElementById('top0');
       $(document).imageLazyload({
         diff: 700,
-        placeholder: '/wxstyle/images/lazyimg.gif'
+        placeholder: '/storage/wx/images/lazyimg.gif'
       });
       mui('#segmentedControls').on('tap', '.active-img', function() {
           box = this.getAttribute('box');
           var list = document.getElementById(box);
           $(document).imageLazyload({
             diff: 700,
-            placeholder: '/wxstyle/images/lazyimg.gif'
+            placeholder: '/storage/wx/images/lazyimg.gif'
           });
       })
   })(mui);

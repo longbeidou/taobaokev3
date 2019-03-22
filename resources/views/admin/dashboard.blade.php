@@ -23,14 +23,14 @@
         <!--mini聊天窗口开始-->
         <!-- @ include('admin.layouts._small_chat_box') -->
     </div>
-    <script src="/adminstyle/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/adminstyle/js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="/adminstyle/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="/adminstyle/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="/adminstyle/js/plugins/layer/layer.min.js"></script>
-    <script src="/adminstyle/js/hplus.min.js?v=4.0.0"></script>
-    <script src="/adminstyle/js/contabs.min.js" type="text/javascript"></script>
-    <script src="/adminstyle/js/plugins/pace/pace.min.js"></script>
+    <script src="/storage/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/storage/admin/js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="/storage/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/storage/admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/storage/admin/js/plugins/layer/layer.min.js"></script>
+    <script src="/storage/admin/js/hplus.min.js?v=4.0.0"></script>
+    <script src="/storage/admin/js/contabs.min.js" type="text/javascript"></script>
+    <script src="/storage/admin/js/plugins/pace/pace.min.js"></script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
     var list = document.getElementById("lbd-goods-list");
     $(document).imageLazyload({
       diff: 700,
-      placeholder: '/wxstyle/images/lazyimg.gif'
+      placeholder: '/storage/wx/images/lazyimg.gif'
     });
   })(mui);
 

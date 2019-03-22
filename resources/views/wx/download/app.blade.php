@@ -5,7 +5,7 @@
 @section('headcss')
 <style media="screen">
    body{
-     background-image: url('/wxstyle/images/app_bg.jpg');
+     background-image: url('/storage/wx/images/app_bg.jpg');
      background-repeat: no-repeat;
      background-position: top;
    }
@@ -61,17 +61,17 @@
 <div class="mui-content">
     <div class="mui-row">
         <div class="mui-col-xs-12 mui-text-center logo-box">
-            <img class="mui-col-xs-4" src="/wxstyle/images/app_logo_400.png" alt="龙琴时代APP的logo">
-            <h1>龙琴时代</h1>
+            <img class="mui-col-xs-4" src="/storage/wx/images/app_logo_400.png" alt="{{ env('SITE_NAME') }}APP的logo">
+            <h1>{{ env('SITE_NAME') }}</h1>
             <h2>一个免费分享淘宝天猫优惠券的APP</h2>
         </div>
 
         <!-- 安卓版本下载 -->
         <div class="mui-col-xs-12 mui-text-center app-box">
-            <a rel="nofollow" title="龙琴时代APP安卓版本下载" href="/download/52010000.cn.apk" class="mui-btn mui-col-xs-8 a-android" style="background-color: rgba(87, 87, 255, 1);">
+            <a rel="nofollow" title="{{ env('SITE_NAME') }}APP安卓版本下载" href="/download/52010000.cn.apk" class="mui-btn mui-col-xs-8 a-android" style="background-color: rgba(87, 87, 255, 1);">
                 <div class="mui-row box">
                   <div class="mui-col-xs-3 mui-text-center">
-                    <img src="/wxstyle/images/android.png" class="mui-col-xs-12" alt="龙琴时代安卓版本">
+                    <img src="/storage/wx/images/android.png" class="mui-col-xs-12" alt="{{ env('SITE_NAME') }}安卓版本">
                   </div>
                   <div class="mui-col-xs-9 mui-text-center">
                     <span class="action">Android版本下载</span>
@@ -82,10 +82,10 @@
 
         <!-- iOS版本下载 -->
         <div class="mui-col-xs-12 mui-text-center app-box">
-            <a rel="nofollow" title="龙琴时代APP苹果版本下载" href="/download/52010000.cn.ipa" class="mui-btn mui-col-xs-8 a-android" style="background-color: rgba(0, 215, 132, 1);">
+            <a rel="nofollow" title="{{ env('SITE_NAME') }}APP苹果版本下载" href="/download/52010000.cn.ipa" class="mui-btn mui-col-xs-8 a-android" style="background-color: rgba(0, 215, 132, 1);">
                 <div class="mui-row box">
                   <div class="mui-col-xs-3 mui-text-center">
-                    <img src="/wxstyle/images/ios.png" class="mui-col-xs-12" alt="龙琴时代ios版本">
+                    <img src="/storage/wx/images/ios.png" class="mui-col-xs-12" alt="{{ env('SITE_NAME') }}ios版本">
                   </div>
                   <div class="mui-col-xs-9 mui-text-center">
                     <span class="action">iPhone版本下载</span>

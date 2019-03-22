@@ -5,7 +5,7 @@
         <ul class="nav" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element">
-                    <span><img alt="image" class="img-circle" src="/adminstyle/img/avatar.jpg" /></span>
+                    <span><img alt="image" class="img-circle" src="/storage/admin/img/avatar.jpg" /></span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                        <span class="block m-t-xs"><strong class="font-bold">{{ $admin->name }}</strong></span>

@@ -54,7 +54,7 @@ function addItems(data)
         itemhtml += '<a href="{{ route('pc.itemInfo.iteminfo') }}/'+item.item_id+'?'+urlArr[1]+'&coupon_info='+timestempsToDate(item.coupon_start_time)+'and'+timestempsToDate(item.coupon_end_time)+'and'+item.coupon_amount+'" target="_blank">'
         itemhtml += '<div class="item"><div class="img-box"><img src="'+item.pict_url+'">'
         itemhtml += '<div class="item-desc">'+desc+'</div></div>'
-        itemhtml += '<h2><img src="/pcstyle/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr><div class="info">'
+        itemhtml += '<h2><img src="/storage/pc/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr><div class="info">'
         itemhtml += '<div class="row price-now"><div class="col-xs-12"><div class="pull-left">现价￥'+price_ori+'</div>'
         itemhtml += '<div class="pull-right">月销:'+item.volume+'</div></div></div><div class="row price-ori"><div class="col-xs-12">'
         itemhtml += '<div class="pull-left">券后<span class="prefix">￥</span><span class="number">'+price_now+'</span></div>'

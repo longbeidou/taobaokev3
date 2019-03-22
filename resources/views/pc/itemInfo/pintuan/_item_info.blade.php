@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="col-xs-8 right">
-                <h1><img src="/pcstyle/images/ju32.png">{{ $itemInfo->title }}</h1>
+                <h1><img src="/storage/pc/images/ju32.png">{{ $itemInfo->title }}</h1>
                 <div class="price-box">
                     <div class="pull-left">
                         拼团价<span class="m">￥</span> <span class="price-now">
