@@ -24,7 +24,7 @@ return [
 	'domain_beian' => env('SITE_BEIAN'),
 
 	// 联系客服的二维码图片 200*200px
-	'kefu_ercode' => '/pcstyle/images/kefu.png',
+	'kefu_ercode' => '/storage/pc/images/kefu.png',
 
 	// 领取优惠券的页面，链接可以展示的客户端
 	'show_client' => ['pc', 'wx', 'qq'],
@@ -33,7 +33,7 @@ return [
 	'wx_tqg_hour' => ['00', '08', '10', '13', '15', '17', '19', '21', '23'],
 
 	// 网站专用的fonticon地址
-	'font_icon_src' => '/css/selfIcon/iconfont.css',
+	'font_icon_src' => '/storage/pc/css/iconfont.css',
 
 	// 网站统计代码-无线端
 	'analysis_js_wx' => env('ANALYSIS_JS_WX'),
