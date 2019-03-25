@@ -55,14 +55,14 @@
 @include('wx.layouts._to_top')
 @stop
 @section('footJs')
-<script src="/wxstyle/js/mui.lazyload.js"></script>
-<script src="/wxstyle/js/mui.lazyload.img.js"></script>
+<script src="/storage/wx/js/mui.lazyload.js"></script>
+<script src="/storage/wx/js/mui.lazyload.img.js"></script>
 <script type="text/javascript" charset="utf-8">
     mui.init();
 (function($) {
   var list = document.getElementById("lbd-goods-list");
   $(document).imageLazyload({
-    placeholder: '/wxstyle/images/lazyimg.gif'
+    placeholder: '/storage/wx/images/lazyimg.gif'
   });
 })(mui);
 var pageNo = 1;

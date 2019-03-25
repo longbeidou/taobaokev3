@@ -3,28 +3,28 @@
 return [
 
 	// 网站名称
-	'name' => '龙琴时代优惠券网',
+	'name' => env('SITE_NAME'),
 
 	// 网站首页的title内容
-	'indexTitle' => '淘宝内部优惠券|天猫超市优惠券|淘宝优惠券领取-龙琴时代优惠券购物网站',
+	'indexTitle' => env('SITE_NAME') . ' - ' . env('SITE_TITLE'),
 
 	// 首页的keywords内容
-	'keywords' => '淘宝内部优惠券,天猫超市优惠券,淘宝内部优惠券领取,淘宝优惠券网站,天猫优惠券网站',
+	'keywords' => env('SITE_KEYWORDS'),
 
 	// 首页描述
-	'description' => '龙琴时代优惠券网是一个专业的淘宝天猫优惠券分享网站,免费提供淘宝优惠券、天猫优惠券、内部优惠券、天猫超市优惠券、京东优惠券、拼多多优惠券等.淘宝天猫优惠券领取上龙琴时代网!',
+	'description' => env('SITE_DESC'),
 
 	// 网站的域名
-	'domain' => 'www.52010000.cn',
+	'domain' => env('SITE_DOMAIN'),
 
 	// 公司名称或组织名称
-	'company_name' => '四川龙琴科技有限公司',
+	'company_name' => env('SITE_COMPANY_NAME'),
 
 	// 网站的备案号
-	'domain_beian' => '蜀ICP备15010745号-18',
+	'domain_beian' => env('SITE_BEIAN'),
 
 	// 联系客服的二维码图片 200*200px
-	'kefu_ercode' => '/pcstyle/images/kefu.png',
+	'kefu_ercode' => '/storage/pc/images/kefu.png',
 
 	// 领取优惠券的页面，链接可以展示的客户端
 	'show_client' => ['pc', 'wx', 'qq'],
@@ -33,7 +33,7 @@ return [
 	'wx_tqg_hour' => ['00', '08', '10', '13', '15', '17', '19', '21', '23'],
 
 	// 网站专用的fonticon地址
-	'font_icon_src' => '/css/selfIcon/iconfont.css',
+	'font_icon_src' => '/storage/pc/css/iconfont.css',
 
 	// 网站统计代码-无线端
 	'analysis_js_wx' => env('ANALYSIS_JS_WX'),

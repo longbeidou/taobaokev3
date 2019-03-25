@@ -38,9 +38,9 @@
             <div class="col-xs-8 right">
                 <h1>
                   @if($itemInfo->user_type == 1)
-                  <img src="/pcstyle/images/tmall.png">{{ $itemInfo->title }}</h1>
+                  <img src="/storage/pc/images/tmall.png">{{ $itemInfo->title }}</h1>
                   @else
-                  <img src="/pcstyle/images/taobao.png">{{ $itemInfo->title }}</h1>
+                  <img src="/storage/pc/images/taobao.png">{{ $itemInfo->title }}</h1>
                   @endif
                 <div class="price-box">
                     <div class="pull-left">

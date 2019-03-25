@@ -25,11 +25,11 @@
 </div>
 @stop
 @section('footJs')
-<script src="/wxstyle/js/mui.min.js"></script>
-<script src="/wxstyle/js/mui.pullToRefresh.js"></script>
-<script src="/wxstyle/js/mui.pullToRefresh.material.js"></script>
-<script src="/wxstyle/js/mui.lazyload.js"></script>
-<script src="/wxstyle/js/mui.lazyload.img.js"></script>
+<script src="/storage/wx/js/mui.min.js"></script>
+<script src="/storage/wx/js/mui.pullToRefresh.js"></script>
+<script src="/storage/wx/js/mui.pullToRefresh.material.js"></script>
+<script src="/storage/wx/js/mui.lazyload.js"></script>
+<script src="/storage/wx/js/mui.lazyload.img.js"></script>
 <script>
     mui.init();
     @include('wx.material._common_js')

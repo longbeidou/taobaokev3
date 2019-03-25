@@ -1,7 +1,7 @@
 <div class="container-fluid" id="top-box">
     <div class="container" id="top">
         <div class="row">
-            <div class="col-xs-3"><img src="/pcstyle/images/logolist.png"></div>
+            <div class="col-xs-3"><img src="/storage/pc/images/logolist.png"></div>
             <div class="col-xs-6">
                 <div class="row">
                     <div class="col-xs-12 index-search-box">
@@ -66,15 +66,15 @@
             </div>
             <div class="col-xs-3 topimg">
                 <div class="table-cell text-center">
-                    <img src="/pcstyle/images/top01.png">
+                    <img src="/storage/pc/images/top01.png">
                     <p class="text-center">100%人工审核</p>
                 </div>
                 <div class="table-cell text-center">
-                    <img src="/pcstyle/images/top02.png">
+                    <img src="/storage/pc/images/top02.png">
                     <p class="text-center">实时维护排查</p>
                 </div>
                 <div class="table-cell text-center">
-                    <img src="/pcstyle/images/top03.png">
+                    <img src="/storage/pc/images/top03.png">
                     <p class="text-center">全天持续上新</p>
                 </div>
             </div>

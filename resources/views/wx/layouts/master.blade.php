@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     @section('title')
     @show
-    <link href="/wxstyle/css/mui.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="/wxstyle/css/icons-extra.css" />
-    <link href="/wxstyle/css/main.css" rel="stylesheet"/>
+    <link href="/storage/wx/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/storage/wx/css/icons-extra.css" />
+    <link href="/storage/wx/css/main.css" rel="stylesheet"/>
     @section('headcss')
     @show
     <script type="text/javascript">
@@ -17,7 +17,7 @@
     @section('content')
     @show
 
-	 <script src="/wxstyle/js/mui.min.js"></script>
+	 <script src="/storage/wx/js/mui.min.js"></script>
    @section('footJs')
    @show
 

@@ -106,8 +106,8 @@ class CouponListPresenter
   // PC首页标题前面的淘宝天猫小logo
   public function imgTaobaoOrTmall($userType)
   {
-      $imgTaobao = '<img src="/pcstyle/images/taobao32.png" alt="淘宝优惠券logo">';
-      $imgTmall = '<img src="/pcstyle/images/tmall32.png" alt="淘宝优惠券logo">';
+      $imgTaobao = '<img src="/storage/pc/images/taobao32.png" alt="淘宝优惠券logo">';
+      $imgTmall = '<img src="/storage/pc/images/tmall32.png" alt="淘宝优惠券logo">';
 
       return $userType == 1 ? $imgTmall : $imgTaobao;
   }

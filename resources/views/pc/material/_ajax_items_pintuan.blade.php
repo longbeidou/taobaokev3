@@ -53,7 +53,7 @@ function addItems(data)
         itemhtml += '<a href="{{ route('pc.itemInfo.pinTuanInfo') }}/'+item.item_id+'?'+urlArr[1]+'&pintuan_info='+item.ostime+'and'+item.oetime+'and'+item.orig_price+'and'+item.jdd_price+'and'+item.item_description+'" target="_blank">'
         itemhtml += '<div class="item"><div class="img-box"><img src="'+item.pict_url+'">'
         itemhtml += '<div class="item-desc">'+desc+'</div></div>'
-        itemhtml += '<h2><img src="/pcstyle/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr><div class="info">'
+        itemhtml += '<h2><img src="/storage/pc/images/'+img_name+'.png" alt="淘宝优惠券logo"> '+item.title+'</h2><hr><div class="info">'
         itemhtml += '<div class="row price-now"><div class="col-xs-12"><div class="pull-left  pt-dmj">单买价￥'+price_ori+'</div>'
         itemhtml += '<div class="pull-right  pt-num">'+item.sell_num+'人已拼团</div></div></div><div class="row price-ori"><div class="col-xs-12">'
         itemhtml += '<div class="pull-left  pt-ptj">拼团价<span class="prefix">￥</span><span class="number">'+price_now+'</span></div>'
