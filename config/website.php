@@ -6,7 +6,7 @@ return [
 	'name' => env('SITE_NAME'),
 
 	// 网站首页的title内容
-	'indexTitle' => env('SITE_TITLE'),
+	'indexTitle' => env('SITE_NAME') . ' - ' . env('SITE_TITLE'),
 
 	// 首页的keywords内容
 	'keywords' => env('SITE_KEYWORDS'),
